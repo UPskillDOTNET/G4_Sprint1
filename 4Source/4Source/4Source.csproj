@@ -44,6 +44,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Autarquia.cs" />
+    <Compile Include="Circular.cs" />
+    <Compile Include="Industrial.cs" />
+    <Compile Include="Rural.cs" />
+    <Compile Include="Urbana.cs" />
+    <Compile Include="Classificacao.cs" />
+    <Compile Include="Triangular.cs" />
+    <Compile Include="Rectangular.cs" />
+    <Compile Include="Forma.cs" />
+    <Compile Include="Escritura.cs" />
     <Compile Include="Funcionario.cs" />
     <Compile Include="Terreno.cs" />
     <Compile Include="Freguesia.cs" />
