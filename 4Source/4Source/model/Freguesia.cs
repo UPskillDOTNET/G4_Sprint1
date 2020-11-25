@@ -18,9 +18,9 @@ namespace _4Source
             terrenoList = new ArrayList();
         }
 
-        //public void AddToList(Terreno.id)
-        //{
-            //terrenoList.Add(Terreno.id);
-        //}
+        public void AddToList(Terreno t)
+        {
+            this.terrenoList.Add(t);
+        }
     }
 }
