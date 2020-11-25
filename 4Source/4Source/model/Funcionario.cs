@@ -10,5 +10,11 @@ namespace _4Source
     {
         string cargo;
         string numeroFunc;
-    }
+
+        public Funcionario(string cargo, string numeroFunc, string nome, string nif, DateTime dataNascimento) : base(nome, nif, dataNascimento)
+
+        {
+            
+        }
+    }   
 }
