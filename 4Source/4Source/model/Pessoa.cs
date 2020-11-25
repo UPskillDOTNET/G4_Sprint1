@@ -8,9 +8,27 @@ namespace _4Source
 {
     class Pessoa
     {
-        string nome { get; set; }
-        string nif { get; set; }
-        DateTime dataNascimento { get; set; }
+        private string nome;
+        private string nif;
+        private DateTime dataNascimento;
+
+        public string Nome
+        {
+            get { return nome; }
+            set { nome = value; }
+        }
+
+        public string Nif
+        {
+            get { return nif; }
+            set { nif = value; }
+        }
+
+        public DateTime DataNascimento
+        {
+            get { return dataNascimento; }
+            set { dataNascimento = value; }
+        }
 
         public Pessoa(string nome, string nif, DateTime dataNascimento)
         {
