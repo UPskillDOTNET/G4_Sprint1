@@ -6,10 +6,6 @@ using System.Threading.Tasks;
 
 namespace _4Source
 {
-    class Classificacao
-    {
-        string desc;
-        double areaConst;
-        string dataConst;
-    }
+    interface Classificacao
+    { double clacIMI(); }
 }
