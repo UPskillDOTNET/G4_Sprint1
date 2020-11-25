@@ -8,8 +8,8 @@ namespace _4Source
 {
     class Funcionario : Pessoa
     {
-        string cargo;
-        string numeroFunc;
+        string cargo { get; set; }
+        string numeroFunc { get; set; }
 
         public Funcionario(string cargo, string numeroFunc, string nome, string nif, DateTime dataNascimento) : base(nome, nif, dataNascimento)
 

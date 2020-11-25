@@ -8,9 +8,9 @@ namespace _4Source
 {
     class Pessoa
     {
-        string nome;
-        string nif;
-        DateTime dataNascimento;
+        string nome { get; set; }
+        string nif { get; set; }
+        DateTime dataNascimento { get; set; }
 
         public Pessoa(string nome, string nif, DateTime dataNascimento)
         {
