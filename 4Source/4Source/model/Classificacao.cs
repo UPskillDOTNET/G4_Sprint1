@@ -11,5 +11,11 @@ namespace _4Source
         string desc;
         double areaConst;
         string dataConst;
+
+        public Classificacao(string desc, double areaConst, string dataConst) {
+            this.desc = desc;
+            this.areaConst = areaConst;
+            this.dataConst = dataConst;
+        }
     }
 }
