@@ -8,6 +8,10 @@ namespace _4Source
 {
     class Autarquia
     {
-        string nome;
+        private string nome;
+
+        private ArrayList pessoa;
+
+
     }
 }
