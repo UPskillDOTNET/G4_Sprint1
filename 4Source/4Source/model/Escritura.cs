@@ -6,9 +6,17 @@ using System.Threading.Tasks;
 
 namespace _4Source
 {
-    class Escritura
+    class Escritura : Terreno
     {
-        int num;
-        string data;
-    }
+        int num { get; set;  }
+        DateTime data { get; set; }
+
+        public Escritura(int id, double indiceCont, double area, double imi, int num, DateTime data) : base(id, indiceCont, area, imi)
+        {
+        
+        this.num = num;
+        this.data = data;
+        
+        }
+    }   
 }

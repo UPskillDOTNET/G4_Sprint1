@@ -9,6 +9,7 @@ namespace _4Source {
     class Autarquia {
         private string nome;
         private ArrayList pessoas;
+        private ArrayList freguesias;
         private int valorbase;
 
         public Autarquia(string nome, int valorbase) {
