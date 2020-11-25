@@ -7,15 +7,16 @@ using System.Collections;
 
 namespace _4Source
 {
-    class Freguesia
+    public class Freguesia
     {
         string nome { get; set; }
-        ArrayList terreno;
+        ArrayList terrenoList;
 
         public Freguesia(string nome)
         {
             this.nome = nome;
-            terreno = new ArrayList();
+            terrenoList = new ArrayList();
         }
+
     }
 }

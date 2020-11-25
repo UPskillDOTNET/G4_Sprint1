@@ -6,11 +6,21 @@ using System.Threading.Tasks;
 
 namespace _4Source
 {
-    class Terreno
+    public class Terreno
     {
         int id;
-        string indiceCont;
+        double indiceCont;
         double area;
         double imi;
+
+        public Terreno(int id, double indiceCont, double area, double imi)
+        {
+            this.id = id;
+            this.indiceCont = indiceCont;
+            this.area = area;
+            this.imi = imi;
+        }
     }
 }
+
+
