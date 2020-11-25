@@ -23,25 +23,25 @@ namespace _4Source
             {
                 case "1":
                     Console.WriteLine("Escolheu 1");
-                    //registarPessoa();
+                    //registarPessoaUI();
                     break;
                 case "2":
                     Console.WriteLine("Escolheu 2");
-                    //registarFreguesia();
+                    //registarFreguesiaUI();
                     break;
                 case "3":
                     Console.WriteLine("Escolheu 3");
-                    //registarTerreno();
+                    //registarTerrenoUI();
                     break;
                 case "4":
                     Console.WriteLine("Escolheu 4");
-                    //registarEscritura();
+                    //registarEscrituraUI();
                     break;
                 case "5":
                     break;
                 default:
+                    Console.WriteLine("Wrong option");
                     break;
-
             }
         }
     }
