@@ -12,6 +12,7 @@ namespace _4Source
         double indiceCont;
         double area;
         double imi;
+        
 
         public Terreno(int id, double indiceCont, double area, double imi)
         {
