@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace _4Source
 {
-    class Forma
+    interface Forma
     {
-        double area;
+
+       double all_area 
+        {
+            //get;
+            set;
+        }
     }
-}
+    }
+

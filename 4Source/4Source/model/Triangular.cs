@@ -8,6 +8,15 @@ namespace _4Source
 {
     class Triangular : Forma
     {
-        double area;
+        private double area;
+        public double all_area
+        {
+            get => area;
+            set => area = Convert.ToDouble(Console.ReadLine());  
+        }
+
+    
     }
+
 }
+
