@@ -43,25 +43,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Autarquia.cs" />
-    <Compile Include="Circular.cs" />
-    <Compile Include="Industrial.cs" />
-    <Compile Include="Rural.cs" />
-    <Compile Include="Urbana.cs" />
-    <Compile Include="Classificacao.cs" />
-    <Compile Include="Triangular.cs" />
-    <Compile Include="Rectangular.cs" />
-    <Compile Include="Forma.cs" />
-    <Compile Include="Escritura.cs" />
-    <Compile Include="Funcionario.cs" />
-    <Compile Include="Terreno.cs" />
-    <Compile Include="Freguesia.cs" />
-    <Compile Include="Pessoa.cs" />
+    <Compile Include="model\Autarquia.cs" />
+    <Compile Include="model\Circular.cs" />
+    <Compile Include="model\Industrial.cs" />
+    <Compile Include="model\Rural.cs" />
+    <Compile Include="model\Urbana.cs" />
+    <Compile Include="model\Classificacao.cs" />
+    <Compile Include="model\Triangular.cs" />
+    <Compile Include="model\Rectangular.cs" />
+    <Compile Include="model\Forma.cs" />
+    <Compile Include="model\Escritura.cs" />
+    <Compile Include="model\Funcionario.cs" />
+    <Compile Include="model\Terreno.cs" />
+    <Compile Include="model\Freguesia.cs" />
+    <Compile Include="model\Pessoa.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="controller\" />
+    <Folder Include="view\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
