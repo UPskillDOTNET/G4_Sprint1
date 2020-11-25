@@ -8,14 +8,21 @@ namespace _4Source
 {
     class Classificacao
     {
-        string desc;
-        double areaConst;
-        string dataConst;
+        string desc { get; set; }
+        double areaConst { get; set; }
+        DateTime dataConst { get; set; }
 
-        public Classificacao(string desc, double areaConst, string dataConst) {
+        public Classificacao(string desc, double areaConst, DateTime dataConst) 
+        {
             this.desc = desc;
             this.areaConst = areaConst;
             this.dataConst = dataConst;
+        }
+
+        public Classificacao() {
+            this.desc = "Lorem ipsilum";
+            this.areaConst = 5000;
+            this.dataConst = new DateTime(1970, 1, 1);
         }
     }
 }
