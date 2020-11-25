@@ -8,6 +8,16 @@ namespace _4Source
 {
     class Rural : Classificacao
     {
-        string desc;
+        string descUso { get; set; }
+        int valorBase { get; }
+        double indiceCont { get; }
+
+
+        public double clacIMI()
+        {
+            double IMI = indiceCont * valorBase;
+            return IMI;
+        }
+    }
     }
 }

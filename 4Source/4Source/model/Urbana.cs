@@ -8,9 +8,20 @@ namespace _4Source
 {
     class Urbana : Classificacao
     {
-        string desc;
-        double areaConst;
-        string dataConst;
-        string tipologia;
+        string desc { get; set; }
+        int valorBase { get; }
+        double indiceCont { get; }
+        double areaConst { get; set; }
+        string dataConst { get; set; }
+        string tipologia { get; set; }
+
+
+
+
+        public double clacIMI()
+        {
+            double IMI = indiceCont * valorBase + (areaConst / area * 0.05);
+            return IMI;
+        }
     }
 }

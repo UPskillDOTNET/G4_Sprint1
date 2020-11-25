@@ -8,11 +8,20 @@ namespace _4Source
 {
     class Industrial : Classificacao
     {
-        string desc;
-        double areaConst;
-        string dataConst;
-        string dataInsp;
-        string descInsp;
-        string tipologia;
+        string desc { get; set; }
+        int valorBase { get;}
+        double indiceCont { get;}
+        double areaConst { get; set; }
+        string dataConst { get; set; }
+        string dataInsp { get; set; }
+        string descInsp { get; set; }
+        string tipologia { get; set; }
+
+
+        public double clacIMI()
+        {
+            double IMI = indiceCont*valorBase + (areaConst/area * 0.1);
+            return IMI;
+        }
     }
 }
