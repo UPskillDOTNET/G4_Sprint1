@@ -23,6 +23,11 @@ namespace _4Source {
         }
     }
 
+    public class TerrenoDuplicadoException : Exception {
+        public TerrenoDuplicadoException(string message) : base(message) {
+        }
+    }
+
     public class NomeFreguesiaInvalidoException : Exception
     {
         public NomeFreguesiaInvalidoException(string message) : base(message)
