@@ -43,15 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Compile Include="controller\RegistoEscrituraController.cs" />
     <Compile Include="controller\RegistoFreguesiaController.cs" />
     <Compile Include="controller\RegistoTerrenoController.cs" />
     <Compile Include="controller\RegistoPessoaController.cs" />
-    <Compile Include="view\GestaoEstatisticaUI.cs" />
-    <Compile Include="view\GestaoPessoaUI.cs" />
-    <Compile Include="view\GestaoFreguesiaUI.cs" />
-    <Compile Include="view\GestaoFuncionarioUI.cs" />
+    <Compile Include="view\RegistoTerrenoUI.cs" />
+    <Compile Include="view\RegistoEscrituraUI.cs" />
+    <Compile Include="view\RegistoFreguesiaUI.cs" />
+    <Compile Include="view\RegistoPessoaUI.cs" />
     <Compile Include="view\Menu.cs" />
     <Compile Include="model\Autarquia.cs" />
     <Compile Include="model\Circular.cs" />
@@ -67,40 +66,12 @@
     <Compile Include="model\Terreno.cs" />
     <Compile Include="model\Freguesia.cs" />
     <Compile Include="model\Pessoa.cs" />
-=======
-    <Compile Include="controllers\RegistoEscrituraController.cs" />
-    <Compile Include="controllers\RegistoFreguesiaController.cs" />
-    <Compile Include="controllers\RegistoTerrenoController.cs" />
-    <Compile Include="controllers\RegistoPessoaController.cs" />
-    <Compile Include="views\RegistoTerrenoUI.cs" />
-    <Compile Include="views\RegistoEscrituraUI.cs" />
-    <Compile Include="views\RegistoFreguesiaUI.cs" />
-    <Compile Include="views\RegistoPessoaUI.cs" />
-    <Compile Include="views\Menu.cs" />
-    <Compile Include="models\Autarquia.cs" />
-    <Compile Include="models\Circular.cs" />
-    <Compile Include="models\Industrial.cs" />
-    <Compile Include="models\Rural.cs" />
-    <Compile Include="models\Urbana.cs" />
-    <Compile Include="models\Classificacao.cs" />
-    <Compile Include="models\Triangular.cs" />
-    <Compile Include="models\Rectangular.cs" />
-    <Compile Include="models\Forma.cs" />
-    <Compile Include="models\Escritura.cs" />
-    <Compile Include="models\Funcionario.cs" />
-    <Compile Include="models\Terreno.cs" />
-    <Compile Include="models\Freguesia.cs" />
-    <Compile Include="models\Pessoa.cs" />
->>>>>>> 5a9e4d3f97a44e52c6625c9013f3fb382ed4f9c1
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="exceptions\" />
-    <Folder Include="persistência\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

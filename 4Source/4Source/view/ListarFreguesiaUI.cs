@@ -4,16 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _4Source.models
-{
-    interface Forma
-    {
+namespace _4Source.view {
+    class ListarFreguesiaUI {
+        public void ListarFreguesia() {
 
-       double all_area 
-        {
-            //get;
-            set;
         }
     }
-    }
-
+}
