@@ -18,6 +18,13 @@ namespace _4Source {
         }
     }
 
+    public class IdDuplicadoException : Exception
+    {
+        public IdDuplicadoException(string message) : base(message)
+        {
+        }
+    }
+
 
     public class NifDuplicadoException : Exception {
         public NifDuplicadoException(string message) : base(message) {
