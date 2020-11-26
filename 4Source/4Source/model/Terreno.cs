@@ -8,11 +8,11 @@ namespace _4Source
 {
     public class Terreno
     {
-        int id;
-        double indiceCont;
-        double area;
-        double imi;
-        
+        private int id;
+        private double indiceCont;
+        private double area;
+        private double imi;
+
 
         public Terreno(int id, double indiceCont, double area, double imi)
         {
@@ -20,6 +20,21 @@ namespace _4Source
             this.indiceCont = indiceCont;
             this.area = area;
             this.imi = imi;
+        }
+        public int Id   // property
+        {
+            get { return id; }
+            set { id = value; }
+        }
+        public double IndiceCont   // property
+        {
+            get { return indiceCont; }
+            set { indiceCont = value; }
+        }
+        public int Id   // property
+        {
+            get { return id; }
+            set { id = value; }
         }
     }
 }
