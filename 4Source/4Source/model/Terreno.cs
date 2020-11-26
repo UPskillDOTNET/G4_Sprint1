@@ -31,10 +31,15 @@ namespace _4Source
             get { return indiceCont; }
             set { indiceCont = value; }
         }
-        public int Id   // property
+        public double Area   // property
         {
-            get { return id; }
-            set { id = value; }
+            get { return area; }
+            set { area = value; }
+        }
+        public double Imi  // property
+        {
+            get { return imi; }
+            set { imi = value; }
         }
     }
 }

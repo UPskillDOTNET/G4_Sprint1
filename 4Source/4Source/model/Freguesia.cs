@@ -58,7 +58,7 @@ namespace _4Source
 
             foreach (Terreno t in this.terrenoList)
             {
-                if (t.id == id)
+                if (t.Id == id)
                 {
                     return t;
                 }
