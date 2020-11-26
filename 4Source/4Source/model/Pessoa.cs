@@ -38,13 +38,6 @@ namespace _4Source
             this.dataNascimento = dataNascimento;
         }
 
-        //public Pessoa()
-        //{
-        //    this.nome = "John Wick";
-        //    this.nif = "999999999";
-        //    this.dataNascimento = new DateTime(1970, 1, 1);
-        //
-
         public override string ToString()
         {
             return "NIF: " + nif + "\n Nome: " + nome + "\n Data de nascimento: " + dataNascimento.ToString();
