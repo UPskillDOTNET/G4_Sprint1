@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,19 +27,19 @@ namespace _4Source.views
                         Console.WriteLine("Volta para o menu anterior.");
                         break;
                     case 1:
-                        RegistarFuncionario();
+                        RegistarFreguesia();
                         break;
                     case 2:
-                        PesquisarFuncionario();
+                        PesquisarFreguesia();
                         break;
                     case 3:
-                        EliminarFuncionario();
+                        EliminarFreguesia();
                         break;
                     case 4:
-                        AlterarFuncionario();
+                        AlterarFreguesia();
                         break;
                     case 5:
-                        ListarFuncionarios();
+                        ListarFreguesias();
                         break;
                     default:
                         Console.WriteLine("Opção Errada");
@@ -47,8 +47,122 @@ namespace _4Source.views
                 }
 
             } while (numInput != 0);
+
+        }
+         private static void ListarFreguesias()
+        {
+            ArrayList lista = FregesiaController.ObterListaFreguesias();
+            foreach (Freguesia freguesia in lista)
+            {
+                Console.WriteLine(freguesia.ToString());
+            }
         }
 
+        private static void AlterarFreguesia()
+        {
+            long nif = Utils.GetLongNumber("Digite o NIF");
+            Freguesia freguesia = FreguesiaController.PesquisarFreguesia(nome);
+            if (freguesia != null)
+            {
+                Console.WriteLine(freguesia.ToString());
+                Freguesia freguesiaAlterada = AlterarFreguesia(freguesia);
+                PessoaController.AlterarFreguesia(freguesiaAlterada);
+            }
+            else
+            {
+                Console.WriteLine("Não  existe!!!");
+            }
+
+        }
+        private static void EliminarFreguesia()
+        {
+            long nif = Utils.GetLongNumber("Digite o NIF");
+            Freguesia freguesia = FreguesiaController.EliminarFreguesia(nome);
+            if (freguesia != null)
+            {
+                Console.WriteLine(freguesia.ToString());
+            }
+            else
+            {
+                Console.WriteLine("Não  existe!!!");
+            }
+
+        }
+
+        private static void PesquisarFreguesia()
+        {
+            long nif = Utils.GetLongNumber("Digite o NIF");
+            Freguesia freguesia = FreguesiaController.PesquisarFreguesia(nome);
+            if (freguesia != null)
+            {
+                Console.WriteLine(freguesia.ToString());
+            }
+            else
+            {
+                Console.WriteLine("Não  existe!!!");
+            }
+
+        }
+        private static void RegistarFreguesia()
+        {
+            Freguesia freguesia = CriarFreguesia();
+            FreguesiaController.Registarfreguesia(freguesia);
+
+        }
+
+        public static Freguesia CriarFreguesia()
+        {
+            Freguesia freguesia = new Freguesia();
+            bool flag;
+            do
+            {
+                try
+                {
+                    flag = false;
+                    freguesia.Nif = Utils.GetLongNumber("NIF");
+                }
+                catch (NifInvalidoException e)
+                {
+                    flag = true;
+                    Console.WriteLine("Atenção: " + e.ToString());
+                }
+            } while (flag);
+            do
+            {
+                try
+                {
+                    flag = false;
+                    freguesia.Nome = Utils.GetText("Nome");
+                }
+                catch (NomePessoaInvalidoException e)
+                {
+                    flag = true;
+                    Console.WriteLine("Atenção: " + e.ToString());
+                }
+            } while (flag);
+            freguesia.Nascimento = DataView.GetData();
+            return freguesia;
+        }
+        public static Freguesia AlterarFreguesia(Freguesia freguesia)
+        {
+            bool flag;
+           
+            do
+            {
+                try
+                {
+                    flag = false;
+                    freguesia.Nome = Utils.GetText("Nome");
+                }
+                catch (NomePessoaInvalidoException e)
+                {
+                    flag = true;
+                    Console.WriteLine("Atenção: " + e.ToString());
+                }
+            } while (flag);
+            freguesia.Nascimento = DataView.GetData();
+            return freguesia;
+        }
     }
 }
 

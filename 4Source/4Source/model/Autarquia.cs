@@ -26,11 +26,11 @@ namespace _4Source
         // Responsabilidade Pessoa
         public override string ToString()
         {
-            Pessoa p;
+            Freguesia p;
             string str = "Nome: " + this.Nome + "\n";
             foreach (Object obj in this.PessoaList)
             {
-                p = (Pessoa)obj;
+                p = (Freguesia)obj;
                 str += "\t" + p.ToString() + "\n";
             }
             return str;
@@ -45,9 +45,9 @@ namespace _4Source
         public string Nome { get => nome; set => nome = value; }
 
         //Criar Pessoa (Create)
-        public void RegistarPessoa(Pessoa p)
+        public void RegistarPessoa(Freguesia p)
         {
-            Pessoa temp = GetPessoaByNif(p.Nif);
+            Freguesia temp = GetPessoaByNif(p.Nif);
             if (temp == null)
             {
                 this.PessoaList.Add(p);
@@ -61,16 +61,16 @@ namespace _4Source
         }
                 
         //Pesquisar Pessoa (Read)
-        public Pessoa PesquisarPessoa(string nif)
+        public Freguesia PesquisarPessoa(string nif)
         {
-            Pessoa pessoa = GetPessoaByNif(nif);
+            Freguesia pessoa = GetPessoaByNif(nif);
             return pessoa;
         }
 
         //Eliminar Pessoa (Delete)
-        public Pessoa EliminarPessoa(string nif)
+        public Freguesia EliminarPessoa(string nif)
         {
-            Pessoa pessoa = GetPessoaByNif(nif);
+            Freguesia pessoa = GetPessoaByNif(nif);
             if (pessoa != null)
             {
                 this.PessoaList.Remove(pessoa);
@@ -82,10 +82,10 @@ namespace _4Source
             return pessoa;
         }
 
-        public Pessoa GetPessoaByNif(string nif)
+        public Freguesia GetPessoaByNif(string nif)
         {
 
-            foreach (Pessoa p in PessoaList)
+            foreach (Freguesia p in PessoaList)
             {
                 if (p.Nif == nif)
                 {

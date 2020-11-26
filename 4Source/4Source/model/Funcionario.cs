@@ -9,7 +9,7 @@ using System.Text.RegularExpressions;
 
 namespace _4Source
 {
-    class Funcionario : Pessoa
+    class Funcionario : Freguesia
     {
         private string cargo;
         private string numeroFunc;

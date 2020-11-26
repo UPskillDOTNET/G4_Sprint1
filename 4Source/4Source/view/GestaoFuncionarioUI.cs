@@ -114,7 +114,7 @@ namespace _4Source.views
         private static Funcionario CriarFuncionario()
         {
             Funcionario func = new Funcionario();
-            Pessoa pessoa = PessoaView.CriarPessoa();
+            Freguesia pessoa = PessoaView.CriarPessoa();
             func.Nif = pessoa.Nif;
             func.Nome = pessoa.Nome;
             func.Nascimento = pessoa.Nascimento;
@@ -138,7 +138,7 @@ namespace _4Source.views
         private static Funcionario AlterarFuncionario(Funcionario func)
         {
             //Assumo que não é possível alterar nem o NIF, nem o Numero 
-            Pessoa pessoa = PessoaView.AlterarPessoa((Pessoa)func);
+            Freguesia pessoa = PessoaView.AlterarPessoa((Freguesia)func);
             func.Nif = pessoa.Nif;
             func.Nome = pessoa.Nome;
             func.Nascimento = pessoa.Nascimento;
