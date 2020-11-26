@@ -10,7 +10,7 @@ namespace _4Source
     class Pessoa
     {
         private string nome;
-        private long nif;
+        private string nif;
         private DateTime dataNascimento;
 
         public string Nome
@@ -19,7 +19,7 @@ namespace _4Source
             set { nome = value; }
         }
 
-        public long Nif
+        public string Nif
         {
             get { return nif; }
             set { nif = value; }
@@ -31,7 +31,7 @@ namespace _4Source
             set { dataNascimento = value; }
         }
 
-        public Pessoa(string nome, long nif, DateTime dataNascimento)
+        public Pessoa(string nome, string nif, DateTime dataNascimento)
         {
             this.nome = nome;
             this.nif = nif;
@@ -64,17 +64,22 @@ namespace _4Source
                 return true;
             }
 
-            //if (nome == null)
-            //{
-            //    return false;
-            //}
-            //else if (nome.Length <= 2)
-            //{
-            //    return false;
-            //}
-            //else if (typeof
+            
+        }
+        
+        private static bool ValidarNif(string nif)
+        {
+            Regex regex = new Regex("^\\d{9}$", RegexOptions.IgnoreCase);
+            Match m = regex.Match(nif);
 
-            //}
-        } 
+            if (!m.Success)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
     }
 }
