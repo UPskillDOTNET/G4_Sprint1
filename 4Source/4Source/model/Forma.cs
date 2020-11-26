@@ -6,14 +6,9 @@ using System.Threading.Tasks;
 
 namespace _4Source
 {
-    interface Forma
+    interface IForma
     {
-
-       double all_area 
-        {
-            //get;
-            set;
-        }
+       double CalcArea();
     }
     }
 

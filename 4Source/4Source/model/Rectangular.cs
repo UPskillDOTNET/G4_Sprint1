@@ -6,13 +6,16 @@ using System.Threading.Tasks;
 
 namespace _4Source
 {
-    class Rectangular : Forma
+    class Rectangular : IForma
     {
-        private double area;
-        public double all_area
+        double area;
+        double largura;
+        double altura;
+        
+        public double CalcArea()
         {
-            get => area;
-            set => area = Convert.ToDouble(Console.ReadLine());
+            double area = largura * altura / 2;
+            return area;
         }
 
     }

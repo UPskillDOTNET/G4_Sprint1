@@ -6,14 +6,16 @@ using System.Threading.Tasks;
 
 namespace _4Source
 {
-    class Circular : Forma
+    class Circular : IForma
     {
-        private double area;
-        public double all_area
+        double area;
+        double raio;
+        public double CalcArea()
         {
-            //get => area;
-            set => area = Convert.ToDouble(Console.ReadLine());
-        }
+            double area = raio * Math.PI;
+            return area;
+            }
+
 
     }
 }

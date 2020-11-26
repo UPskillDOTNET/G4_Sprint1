@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace _4Source
 {
-    class Rural : Classificacao
+    class Rural : IClassificacao
     {
         string descUso { get; set; }
         int valorBase { get; }
         double indiceCont { get; }
 
 
-        public double clacIMI()
+        public double CalcIMI()
         {
             double IMI = indiceCont * valorBase;
             return IMI;

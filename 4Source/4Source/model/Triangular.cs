@@ -6,16 +6,17 @@ using System.Threading.Tasks;
 
 namespace _4Source
 {
-    class Triangular : Forma
+    class Triangular : IForma
     {
-        private double area;
-        public double all_area
+        public double area;
+        private double largura, comprimento;
+        public double CalcArea()
         {
-            get => area;
-            set => area = Convert.ToDouble(Console.ReadLine());  
+            double area = largura * comprimento;
+            return area;
         }
 
-    
+
     }
 
 }

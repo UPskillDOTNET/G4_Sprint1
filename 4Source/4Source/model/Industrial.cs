@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _4Source
 {
-    class Industrial : Classificacao
+    class Industrial : IClassificacao
     {
         string desc { get; set; }
         int valorBase { get;}
@@ -18,7 +18,7 @@ namespace _4Source
         string tipologia { get; set; }
 
 
-        public double clacIMI()
+        public double CalcIMI()
         {
             double IMI = indiceCont*valorBase + (areaConst/area * 0.1);
             return IMI;
