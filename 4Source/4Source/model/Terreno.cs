@@ -21,11 +21,24 @@ namespace _4Source
             this.area = area;
             this.imi = imi;
         }
+
+
         public int Id   // property
         {
-            get { return id; }
-            set { id = value; }
+            get { return id; }   // get method
+            set
+            {
+                if (ValidaId(value))
+                {
+                    id = value;
+                }
+                else
+                {
+                    throw new IdInvalidoException(id + " ID inválido");
+                }
+            }  // set method
         }
+
         public double IndiceCont   // property
         {
             get { return indiceCont; }
@@ -40,6 +53,14 @@ namespace _4Source
         {
             get { return imi; }
             set { imi = value; }
+        }
+        private bool ValidaId(int id)
+        {
+            if (id >= 1)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
