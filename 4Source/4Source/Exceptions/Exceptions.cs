@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace _4Source.Exceptions {
+namespace _4Source {
     public class DataInvalidaException : Exception {
         public DataInvalidaException(string message) : base(message) {
         }
