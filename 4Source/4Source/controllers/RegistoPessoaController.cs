@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _4Source.view {
-    class Class1 {
+namespace _4Source.controllers
+{
+    class RegistoPessoaController
+    {
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
 
-namespace _4Source {
+namespace _4Source.models {
     class Autarquia {
         private string nome;
         private ArrayList pessoas;

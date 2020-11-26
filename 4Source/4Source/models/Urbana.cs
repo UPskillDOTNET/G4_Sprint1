@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _4Source
+namespace _4Source.models
 {
     class Urbana : Classificacao
     {

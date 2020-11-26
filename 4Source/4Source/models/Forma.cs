@@ -4,12 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _4Source.view 
+namespace _4Source.models
 {
-    class ListarPessoaUI 
+    interface Forma
     {
-        public void ListarPessoa() {
 
+       double all_area 
+        {
+            //get;
+            set;
         }
     }
-}
+    }
+
