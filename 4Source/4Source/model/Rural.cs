@@ -8,6 +8,7 @@ namespace _4Source
 {
     class Rural : IClassificacao
     {
+        string classificacao = "Rural";
         string descUso { get; set; }
         int valorBase { get; }
         double indiceCont { get; }

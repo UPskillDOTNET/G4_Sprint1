@@ -9,6 +9,7 @@ namespace _4Source
     class Rectangular : IForma
     {
         double area;
+        public string forma = "Retangular";
         double largura;
         double altura;
         
