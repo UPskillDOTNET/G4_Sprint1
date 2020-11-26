@@ -10,12 +10,12 @@ namespace _4Source
     public class Freguesia
     {
         private string nome;
-        public ArrayList terrenoList;
+        private ArrayList terrenoList;
 
         public Freguesia(string nome)
         {
             this.nome = nome;
-            terrenoList = new ArrayList();
+            this.terrenoList = new ArrayList();
         }
 
         public override string ToString()
@@ -48,15 +48,40 @@ namespace _4Source
             }
         }
 
+        public ArrayList TerrenoList
+        {
+            get { return terrenoList; }
+        } 
+
         public void AddToListFreg(Terreno t)
         {
             this.terrenoList.Add(t);
         }
 
+        public Terreno PesquisarTerreno(int id)
+        {
+            Terreno terreno = GetTerrenoById(id);
+            return terreno;
+        }
+
+        public Terreno EliminarTerreno(int id)
+        {
+            Terreno terreno = GetTerrenoById(id);
+            if (terreno != null)
+            {
+                this.terrenoList.Remove(terreno);
+            }
+            else
+            {
+                throw new ElementoNaoExistenteException(nif + " Não existe");
+            }
+            return terreno;
+        }
+
         public Terreno GetTerrenoById(int id)
         {
 
-            foreach (Terreno t in terrenoList)
+            foreach (Terreno t in TerrenoList)
             {
                 if (t.Id == id)
                 {
@@ -65,7 +90,6 @@ namespace _4Source
             }
             return null;
         }
-
 
         private bool NomeValido(string nome)
         {
