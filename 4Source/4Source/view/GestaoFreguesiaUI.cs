@@ -12,12 +12,12 @@ namespace _4Source.views
         public static void MainFreguesia()
         {
 
-            Console.WriteLine("\nMenu Funcionario");
-            Console.WriteLine("1 - Inserir Funcionario");
-            Console.WriteLine("2 - Listar Funcionario");
-            Console.WriteLine("3 - Eliminar Funcionario");
-            Console.WriteLine("4 - Alterar Funcionario");
-            Console.WriteLine("5 - Listar Funcionarios");
+            Console.WriteLine("\nMenu Freguesia");
+            Console.WriteLine("1 - Inserir Freguesia");
+            Console.WriteLine("2 - Listar Freguesia");
+            Console.WriteLine("3 - Eliminar Freguesia");
+            Console.WriteLine("4 - Alterar Freguesia");
+            Console.WriteLine("5 - Listar Freguesias");
             Console.WriteLine("\n0 - Voltar");
             int numInput = Int32.Parse(Console.ReadLine());
             do

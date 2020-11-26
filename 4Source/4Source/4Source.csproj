@@ -51,6 +51,7 @@
     <Compile Include="model\Pessoa.cs" />
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="persistencia\dados.cs" />
+    <Compile Include="view\GestaoTerrenoUI.cs" />
     <Compile Include="view\GestaoEstatisticaUI.cs" />
     <Compile Include="view\GestaoFreguesiaUI.cs" />
     <Compile Include="view\GestaoFuncionarioUI.cs" />
