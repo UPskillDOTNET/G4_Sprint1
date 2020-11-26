@@ -45,9 +45,9 @@ namespace _4Source
         public string Nome { get => nome; set => nome = value; }
 
         //Criar Pessoa (Create)
-        public void RegistarPessoa(Freguesia p)
+        public void RegistarPessoa(Pessoa p)
         {
-            Freguesia temp = GetPessoaByNif(p.Nif);
+            Pessoa temp = GetPessoaByNif(p.Nif);
             if (temp == null)
             {
                 this.PessoaList.Add(p);
@@ -61,9 +61,9 @@ namespace _4Source
         }
                 
         //Pesquisar Pessoa (Read)
-        public Freguesia PesquisarPessoa(string nif)
+        public Pessoa PesquisarPessoa(string nif)
         {
-            Freguesia pessoa = GetPessoaByNif(nif);
+            Pessoa pessoa = GetPessoaByNif(nif);
             return pessoa;
         }
 
@@ -77,9 +77,9 @@ namespace _4Source
         }
 
         //Eliminar Pessoa (Delete)
-        public Freguesia EliminarPessoa(string nif)
+        public Pessoa EliminarPessoa(string nif)
         {
-            Freguesia pessoa = GetPessoaByNif(nif);
+            Pessoa pessoa = GetPessoaByNif(nif);
             if (pessoa != null)
             {
                 this.PessoaList.Remove(pessoa);
@@ -91,10 +91,10 @@ namespace _4Source
             return pessoa;
         }
 
-        public Freguesia GetPessoaByNif(string nif)
+        public Pessoa GetPessoaByNif(string nif)
         {
 
-            foreach (Freguesia p in PessoaList)
+            foreach (Pessoa p in PessoaList)
             {
                 if (p.Nif == nif)
                 {

@@ -19,6 +19,11 @@ namespace _4Source
             this.terrenoList = new ArrayList();
         }
 
+        public Freguesia()
+        {
+
+        }
+
         public override string ToString()
         {
             Terreno t;
@@ -50,7 +55,6 @@ namespace _4Source
             if (temp == null)
             {
                     this.terrenoList.Add(t);
-            
             }else
             {
                 throw new IdDuplicadoException(t.ToString() + "Id já existente");

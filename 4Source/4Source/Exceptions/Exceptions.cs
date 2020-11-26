@@ -23,6 +23,14 @@ namespace _4Source {
         }
     }
 
+    public class NomeFreguesiaInvalidoException : Exception
+    {
+        public NomeFreguesiaInvalidoException(string message) : base(message)
+        {
+
+        }
+    }
+
 
     public class NifDuplicadoException : Exception {
         public NifDuplicadoException(string message) : base(message) {

@@ -48,6 +48,7 @@
     <Compile Include="controller\RegistoTerrenoController.cs" />
     <Compile Include="controller\RegistoPessoaController.cs" />
     <Compile Include="Exceptions\Exceptions.cs" />
+    <Compile Include="model\Pessoa.cs" />
     <Compile Include="view\GestaoEstatisticaUI.cs" />
     <Compile Include="view\GestaoFreguesiaUI.cs" />
     <Compile Include="view\GestaoFuncionarioUI.cs" />
@@ -66,7 +67,6 @@
     <Compile Include="model\Funcionario.cs" />
     <Compile Include="model\Terreno.cs" />
     <Compile Include="model\Freguesia.cs" />
-    <Compile Include="model\Freguesia1.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

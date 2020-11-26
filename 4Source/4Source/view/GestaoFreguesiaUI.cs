@@ -51,7 +51,7 @@ namespace _4Source.views
         }
          private static void ListarFreguesias()
         {
-            ArrayList lista = FregesiaController.ObterListaFreguesias();
+            ArrayList lista = RegistoFreguesiaController.ObterListaFreguesias();
             foreach (Freguesia freguesia in lista)
             {
                 Console.WriteLine(freguesia.ToString());
@@ -61,12 +61,12 @@ namespace _4Source.views
         private static void AlterarFreguesia()
         {
             long nif = Utils.GetLongNumber("Digite o NIF");
-            Freguesia freguesia = FreguesiaController.PesquisarFreguesia(nome);
+            Freguesia freguesia = RegistoFreguesiaController.PesquisarFreguesia(nome);
             if (freguesia != null)
             {
                 Console.WriteLine(freguesia.ToString());
                 Freguesia freguesiaAlterada = AlterarFreguesia(freguesia);
-                PessoaController.AlterarFreguesia(freguesiaAlterada);
+                RegistoFreguesiaController.AlterarFreguesia(freguesiaAlterada);
             }
             else
             {
@@ -77,7 +77,7 @@ namespace _4Source.views
         private static void EliminarFreguesia()
         {
             long nif = Utils.GetLongNumber("Digite o NIF");
-            Freguesia freguesia = FreguesiaController.EliminarFreguesia(nome);
+            Freguesia freguesia = RegistoFreguesiaController.EliminarFreguesia(nome);
             if (freguesia != null)
             {
                 Console.WriteLine(freguesia.ToString());
@@ -92,7 +92,7 @@ namespace _4Source.views
         private static void PesquisarFreguesia()
         {
             long nif = Utils.GetLongNumber("Digite o NIF");
-            Freguesia freguesia = FreguesiaController.PesquisarFreguesia(nome);
+            Freguesia freguesia = RegistoFreguesiaController.PesquisarFreguesia(nome);
             if (freguesia != null)
             {
                 Console.WriteLine(freguesia.ToString());
@@ -106,7 +106,7 @@ namespace _4Source.views
         private static void RegistarFreguesia()
         {
             Freguesia freguesia = CriarFreguesia();
-            FreguesiaController.Registarfreguesia(freguesia);
+            RegistoFreguesiaController.Registarfreguesia(freguesia);
 
         }
 
@@ -119,28 +119,14 @@ namespace _4Source.views
                 try
                 {
                     flag = false;
-                    freguesia.Nif = Utils.GetLongNumber("NIF");
+                    freguesia.Nome = GetText("Nome");
                 }
-                catch (NifInvalidoException e)
+                catch (NomeFreguesiaInvalidoException e)
                 {
                     flag = true;
                     Console.WriteLine("Atenção: " + e.ToString());
                 }
             } while (flag);
-            do
-            {
-                try
-                {
-                    flag = false;
-                    freguesia.Nome = Utils.GetText("Nome");
-                }
-                catch (NomePessoaInvalidoException e)
-                {
-                    flag = true;
-                    Console.WriteLine("Atenção: " + e.ToString());
-                }
-            } while (flag);
-            freguesia.Nascimento = DataView.GetData();
             return freguesia;
         }
         public static Freguesia AlterarFreguesia(Freguesia freguesia)
@@ -163,6 +149,14 @@ namespace _4Source.views
             freguesia.Nascimento = DataView.GetData();
             return freguesia;
         }
+        public static string GetText(string label)
+        {
+            string text = "";
+            Console.WriteLine(label + ": ");
+            text = Console.ReadLine();
+            return text;
+        }
+
     }
 }
 
