@@ -4,17 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _4Source
+namespace _4Source.models
 {
-    class Rectangular : Forma
+    class Triangular : Forma
     {
         private double area;
         public double all_area
         {
             get => area;
-            set => area = Convert.ToDouble(Console.ReadLine());
+            set => area = Convert.ToDouble(Console.ReadLine());  
         }
 
+    
     }
 
 }
+
