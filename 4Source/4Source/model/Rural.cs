@@ -9,9 +9,11 @@ namespace _4Source
     class Rural : IClassificacao
     {
         string classificacao = "Rural";
-        string descUso { get; set; }
-        int valorBase { get; }
-        double indiceCont { get; }
+        string descUso;
+
+        public string DescUso { get => descUso; set => descUso = value; }
+        int valorBase { get => valorBase; }
+        double indiceCont { get => indiceCont; }
 
 
         public double CalcIMI()
