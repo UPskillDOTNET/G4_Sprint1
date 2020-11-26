@@ -53,18 +53,6 @@ namespace _4Source
             this.terrenoList.Add(t);
         }
 
-        private Terreno GetTerrenoById(int id)
-        {
-
-            foreach (Terreno t in this.terrenoList)
-            {
-                if (t.Id == id)
-                {
-                    return t;
-                }
-            }
-            return null;
-        }
 
         private bool NomeValido(string nome)
         {

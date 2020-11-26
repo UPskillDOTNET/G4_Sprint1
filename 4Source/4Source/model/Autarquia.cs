@@ -18,5 +18,17 @@ namespace _4Source {
             this.pessoas = new ArrayList();
 
         }
+        private Terreno GetTerrenoById(int id)
+        {
+
+            foreach (Terreno t in this.terrenoList)
+            {
+                if (t.Id == id)
+                {
+                    return t;
+                }
+            }
+            return null;
+        }
     }
 }
