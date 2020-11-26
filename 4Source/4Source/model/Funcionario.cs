@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using _4Source;
+using System.Text.RegularExpressions;
+
 
 namespace _4Source
 {
@@ -11,22 +14,32 @@ namespace _4Source
         private string cargo;
         private string numeroFunc;
 
+        public Funcionario(string cargo, string numeroFunc, string nome, string nif, DateTime dataNascimento) : base(nome, nif, dataNascimento) {
+            this.cargo = cargo;
+            this.numeroFunc = numeroFunc;
+
+        }
+
+        public override string ToString() {
+            return base.ToString() + "\nnumero: " + numeroFunc + "\ncargo='" + cargo;
+        }
+
         public string Cargo {
             get { return cargo; }
             set { cargo = value; }
         }
 
-        public string NumeroFunc {
-            get { return numeroFunc; }
-            set { numeroFunc = value; }
+        private static bool ValidarNumeroFunc (string numeroFunc) {
+            Regex regex = new Regex("^[1-9]\\d*$", RegexOptions.IgnoreCase);
+            Match m = regex.Match(numeroFunc);
+
+            if (!m.Success) {
+                return false;
+            } else {
+                return true;
+            }
         }
 
-        public Funcionario(string cargo, string numeroFunc, string nome, string nif, DateTime dataNascimento) : base(nome, nif, dataNascimento)
-
-        {
-            this.cargo = cargo;
-            this.numeroFunc = numeroFunc;
-
-        }
     }   
 }
+
