@@ -67,6 +67,15 @@ namespace _4Source
             return pessoa;
         }
 
+        //Editar Pessoa (Edit)
+        public void AlterarPessoa(Pessoa p)
+        {
+            Pessoa pessoa = GetPessoaByNif(p.Nif);
+            pessoa.Nif = p.Nif;
+            pessoa.Nome = p.Nome;
+            pessoa.DataNascimento = p.DataNascimento;
+        }
+
         //Eliminar Pessoa (Delete)
         public Pessoa EliminarPessoa(string nif)
         {
@@ -95,7 +104,22 @@ namespace _4Source
             return null;
         }
 
-        
+        //Validação Pessoa
+        private static bool ValidarNome(string nome)
+        {
+            Regex regex = new Regex("^[a-zA-Z]{3,24}$", RegexOptions.IgnoreCase);
+            Match m = regex.Match(nome);
+
+            if (!m.Success)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+        }
 
         // Responsabilidade Freguesia
 
