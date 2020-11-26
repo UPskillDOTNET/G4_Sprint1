@@ -22,7 +22,7 @@ namespace _4Source.views
             switch (Console.ReadLine())
             {
                 case "1":
-                    GestaoPessoaUI.MainPessoa();
+                    GestaoPessoaUI.Menu();
                     break;
                 case "2":
                     GestaoFuncionarioUI.MainFuncionario();
