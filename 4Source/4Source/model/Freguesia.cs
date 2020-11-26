@@ -10,7 +10,7 @@ namespace _4Source
     public class Freguesia
     {
         private string nome;
-        private ArrayList terrenoList;
+        public ArrayList terrenoList;
 
         public Freguesia(string nome)
         {
@@ -51,6 +51,19 @@ namespace _4Source
         public void AddToListFreg(Terreno t)
         {
             this.terrenoList.Add(t);
+        }
+
+        public Terreno GetTerrenoById(int id)
+        {
+
+            foreach (Terreno t in terrenoList)
+            {
+                if (t.Id == id)
+                {
+                    return t;
+                }
+            }
+            return null;
         }
 
 
