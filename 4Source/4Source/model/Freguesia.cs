@@ -33,7 +33,7 @@ namespace _4Source
             return str;
         }
 
-        public string Nome   // property
+        public string Nome  
         {
             get { return nome; }
             set
@@ -83,7 +83,7 @@ namespace _4Source
             }
             else
             {
-                throw new ElementoNaoExistenteException(nif + " Não existe");
+                throw new ElementoNaoExistenteException(id + " Não existe");
             }
             return terreno;
         }
