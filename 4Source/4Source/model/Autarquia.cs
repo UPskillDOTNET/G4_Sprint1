@@ -67,6 +67,15 @@ namespace _4Source
             return pessoa;
         }
 
+        //Editar Pessoa (Edit)
+        public void AlterarPessoa(Pessoa p)
+        {
+            Pessoa pessoa = GetPessoaByNif(p.Nif);
+            pessoa.Nif = p.Nif;
+            pessoa.Nome = p.Nome;
+            pessoa.DataNascimento = p.DataNascimento;
+        }
+
         //Eliminar Pessoa (Delete)
         public Freguesia EliminarPessoa(string nif)
         {
