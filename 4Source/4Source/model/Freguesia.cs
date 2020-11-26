@@ -48,7 +48,7 @@ namespace _4Source
             }
         }
 
-        public void AddToList(Terreno t)
+        public void AddToListFreg(Terreno t)
         {
             this.terrenoList.Add(t);
         }
