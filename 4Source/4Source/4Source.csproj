@@ -47,10 +47,10 @@
     <Compile Include="controller\RegistoFreguesiaController.cs" />
     <Compile Include="controller\RegistoTerrenoController.cs" />
     <Compile Include="controller\RegistoPessoaController.cs" />
-    <Compile Include="view\RegistoTerrenoUI.cs" />
-    <Compile Include="view\RegistoEscrituraUI.cs" />
-    <Compile Include="view\RegistoFreguesiaUI.cs" />
-    <Compile Include="view\RegistoPessoaUI.cs" />
+    <Compile Include="view\GestaoEstatisticaUI.cs" />
+    <Compile Include="view\GestaoPessoaUI.cs" />
+    <Compile Include="view\GestaoFreguesiaUI.cs" />
+    <Compile Include="view\GestaoFuncionarioUI.cs" />
     <Compile Include="view\Menu.cs" />
     <Compile Include="model\Autarquia.cs" />
     <Compile Include="model\Circular.cs" />

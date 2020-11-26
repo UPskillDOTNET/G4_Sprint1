@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _4Source
+namespace _4Source.views
 {
     public class Menu
     {
@@ -13,29 +13,25 @@ namespace _4Source
         {
             Console.Clear();
             Console.WriteLine("Bemvindo user. Escolha a opção pretendida\n");
-            Console.WriteLine("1) Registar uma pessoa.");
-            Console.WriteLine("2) Registar uma freguesia.");
-            Console.WriteLine("3) Registar um terreno.");
-            Console.WriteLine("4) Registar uma escritura");
+            Console.WriteLine("1) Gestão de Pessoa.");
+            Console.WriteLine("2) Gestão de Funcionários");
+            Console.WriteLine("3) Gestão de Freguesias.");
+            Console.WriteLine("4) Cálculo de Estatisticas");
             Console.WriteLine("5) Fechar Programa");
 
             switch (Console.ReadLine())
             {
                 case "1":
-                    Console.WriteLine("Escolheu 1");
-                    //registarPessoaUI();
+                    GestaoPessoaUI.MainPessoa();
                     break;
                 case "2":
-                    Console.WriteLine("Escolheu 2");
-                    //registarFreguesiaUI();
+                    GestaoFuncionarioUI.MainFuncionario();
                     break;
                 case "3":
-                    Console.WriteLine("Escolheu 3");
-                    //registarTerrenoUI();
+                    GestaoFreguesiaUI.MainFreguesia();
                     break;
                 case "4":
-                    Console.WriteLine("Escolheu 4");
-                    //registarEscrituraUI();
+                    GestaoEstatisticaUI.MainEstatistica();
                     break;
                 case "5":
                     break;
