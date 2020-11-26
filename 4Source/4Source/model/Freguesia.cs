@@ -36,17 +36,7 @@ namespace _4Source
         public string Nome  
         {
             get { return nome; }
-            set
-            {
-                if (NomeValido(value))
-                {
-                    this.nome = value;
-                }
-                else
-                {
-                    throw new NomeInvalidoException(value + ": Nome inválido");
-                }
-            }
+            set { nome = value; }
         }
 
         public ArrayList TerrenoList
