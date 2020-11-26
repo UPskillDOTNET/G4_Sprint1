@@ -12,10 +12,14 @@ namespace _4Source
         public string forma = "Retangular";
         double largura;
         double altura;
-        
+
+        public double Area { get => area; set => area = value; }
+        public double Largura { get => largura; set => largura = value; }
+        public double Altura { get => altura; set => altura = value; }
+
         public double CalcArea()
         {
-            double area = largura * altura / 2;
+            double area = Largura * Altura / 2;
             return area;
         }
 
