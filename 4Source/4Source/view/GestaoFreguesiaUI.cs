@@ -3,6 +3,7 @@ using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using _4Source.controllers;
 
 namespace _4Source.views
 {
@@ -106,7 +107,7 @@ namespace _4Source.views
         private static void RegistarFreguesia()
         {
             Freguesia freguesia = CriarFreguesia();
-            RegistoFreguesiaController.Registarfreguesia(freguesia);
+            RegistoFreguesiaController.RegistarFreguesia(freguesia);
 
         }
 

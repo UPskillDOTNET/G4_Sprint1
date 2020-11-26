@@ -32,6 +32,10 @@ namespace _4Source {
         public TerrenoDuplicadoException(string message) : base(message) {
         }
     }
+    public class FreguesiaDuplicadoException : Exception {
+        public FreguesiaDuplicadoException(string message) : base(message) {
+        }
+    }
 
     public class NomeFreguesiaInvalidoException : Exception
     {
