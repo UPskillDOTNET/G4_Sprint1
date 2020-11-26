@@ -9,6 +9,7 @@ namespace _4Source
     class Circular : IForma
     {
         double area;
+        public string forma = "Circular";
         double raio;
         public double CalcArea()
         {
