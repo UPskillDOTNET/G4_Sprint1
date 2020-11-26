@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace _4Source
 {
@@ -28,17 +29,7 @@ namespace _4Source
         public int Id   // property
         {
             get { return id; }   // get method
-            set
-            {
-                if (ValidaId(value))
-                {
-                    id = value;
-                }
-                else
-                {
-                    throw new IdInvalidoException(id + " ID inválido");
-                }
-            }  // set method
+            set { id = value; } 
         }
 
         public double IndiceCont   // property
@@ -55,14 +46,21 @@ namespace _4Source
         {
             get { return imi; }
             set { imi = value; }
-        }
-        private bool ValidaId(int id)
+        }   
+        private static bool ValidaId(int id)
         {
-            if (id >= 1)
+            Regex regex = new Regex("^[1-9]\\d*$", RegexOptions.IgnoreCase);
+            string idstring = id.ToString();
+            Match m = regex.Match(idstring);
+
+            if (!m.Success)
+            {
+                return false;
+            }
+            else
             {
                 return true;
             }
-            return false;
         }
     }
 }

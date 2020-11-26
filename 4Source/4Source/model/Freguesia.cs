@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
+using System.Text.RegularExpressions;
 
 namespace _4Source
 {
@@ -53,9 +54,18 @@ namespace _4Source
             get { return terrenoList; }
         } 
 
-        public void AddToListFreg(Terreno t)
+        public void RegistarTerreno(Terreno t)
         {
-            this.terrenoList.Add(t);
+            Terreno temp = GetTerrenoById(t.Id);
+            if (temp == null)
+            {
+                    this.terrenoList.Add(t);
+            
+            }else
+            {
+                throw new IdDuplicadoException(t.ToString() + "Id já existente");
+            }
+
         }
 
         public Terreno PesquisarTerreno(int id)
