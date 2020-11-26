@@ -36,7 +36,7 @@ namespace _4Source.views
                         //EliminarPessoa();
                         break;
                     case 5:
-                    //MostrarListaPessoa();
+                        //MostrarListaPessoa();
                     case 6:
                         //VoltarMenuPrincipal();
                         break;
