@@ -159,7 +159,7 @@ namespace _4Source
         public Freguesia GetFreguesiaByNome(string nome)
         {
 
-            foreach (Freguesia f in PessoaList)
+            foreach (Freguesia f in FreguesiaList)
             {
                 if (f.Nome == nome)
                 {
