@@ -9,7 +9,7 @@ namespace _4Source
     class Pessoa
     {
         private string nome;
-        private string nif;
+        private long nif;
         private DateTime dataNascimento;
 
         public string Nome
@@ -18,7 +18,7 @@ namespace _4Source
             set { nome = value; }
         }
 
-        public string Nif
+        public long Nif
         {
             get { return nif; }
             set { nif = value; }
@@ -30,18 +30,23 @@ namespace _4Source
             set { dataNascimento = value; }
         }
 
-        public Pessoa(string nome, string nif, DateTime dataNascimento)
+        public Pessoa(string nome, long nif, DateTime dataNascimento)
         {
             this.nome = nome;
             this.nif = nif;
             this.dataNascimento = dataNascimento;
         }
 
-        public Pessoa()
+        //public Pessoa()
+        //{
+        //    this.nome = "John Wick";
+        //    this.nif = "999999999";
+        //    this.dataNascimento = new DateTime(1970, 1, 1);
+        //
+
+        public override string ToString()
         {
-            this.nome = "John Wick";
-            this.nif = "999999999";
-            this.dataNascimento = new DateTime(1970, 1, 1);
+            return "NIF: " + nif + "\n Nome: " + nome + "\n Data de nascimento: " + dataNascimento.ToString();
         }
     }
 }
