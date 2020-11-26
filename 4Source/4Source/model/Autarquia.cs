@@ -8,7 +8,7 @@ using System.Text.RegularExpressions;
 
 namespace _4Source
 {
-    class Autarquia
+    public class Autarquia
     {
         private string nome;
         private ArrayList pessoaList;

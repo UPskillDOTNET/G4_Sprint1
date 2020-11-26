@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 
 namespace _4Source
 {
-    class Pessoa
+    public class Pessoa
     {
         private string nome;
         private string nif;
