@@ -60,7 +60,7 @@ namespace _4Source.views
 
         private static void AlterarFreguesia()
         {
-            long nif = Utils.GetLongNumber("Digite o NIF");
+            string nome = GetText("Digite o Nome");
             Freguesia freguesia = RegistoFreguesiaController.PesquisarFreguesia(nome);
             if (freguesia != null)
             {
@@ -76,7 +76,7 @@ namespace _4Source.views
         }
         private static void EliminarFreguesia()
         {
-            long nif = Utils.GetLongNumber("Digite o NIF");
+            string nome = GetText("Digite o Nome");
             Freguesia freguesia = RegistoFreguesiaController.EliminarFreguesia(nome);
             if (freguesia != null)
             {
@@ -91,7 +91,7 @@ namespace _4Source.views
 
         private static void PesquisarFreguesia()
         {
-            long nif = Utils.GetLongNumber("Digite o NIF");
+            string nome = GetText("Digite o Nome");
             Freguesia freguesia = RegistoFreguesiaController.PesquisarFreguesia(nome);
             if (freguesia != null)
             {
@@ -138,7 +138,7 @@ namespace _4Source.views
                 try
                 {
                     flag = false;
-                    freguesia.Nome = Utils.GetText("Nome");
+                    freguesia.Nome = GetText("Nome");
                 }
                 catch (NomePessoaInvalidoException e)
                 {
@@ -146,7 +146,6 @@ namespace _4Source.views
                     Console.WriteLine("Atenção: " + e.ToString());
                 }
             } while (flag);
-            freguesia.Nascimento = DataView.GetData();
             return freguesia;
         }
         public static string GetText(string label)

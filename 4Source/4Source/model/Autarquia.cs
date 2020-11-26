@@ -12,7 +12,7 @@ namespace _4Source
     {
         private string nome;
         private ArrayList pessoaList;
-        private ArrayList freguesias;
+        private ArrayList freguesiaList;
         private int valorbase;
 
         public Autarquia(string nome, int valorbase)
@@ -20,17 +20,17 @@ namespace _4Source
             this.Nome = nome;
             this.Valorbase = valorbase;
             this.PessoaList = new ArrayList();
-            this.Freguesias = new ArrayList();
+            this.FreguesiaList = new ArrayList();
         }
 
         // Responsabilidade Pessoa
         public override string ToString()
         {
-            Freguesia p;
+            Pessoa p;
             string str = "Nome: " + this.Nome + "\n";
             foreach (Object obj in this.PessoaList)
             {
-                p = (Freguesia)obj;
+                p = (Pessoa)obj;
                 str += "\t" + p.ToString() + "\n";
             }
             return str;
@@ -38,7 +38,7 @@ namespace _4Source
    
         public int Valorbase { get => valorbase; set => valorbase = value; }
         
-        public ArrayList Freguesias { get => freguesias; set => freguesias = value; }
+        public ArrayList FreguesiaList { get => freguesiaList; set => freguesiaList = value; }
         
         public ArrayList PessoaList { get => pessoaList; set => pessoaList = value; }
         
@@ -122,6 +122,5 @@ namespace _4Source
         }
 
         // Responsabilidade Freguesia
-
     }
 }
