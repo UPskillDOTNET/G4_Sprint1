@@ -15,7 +15,6 @@ namespace _4Source
         int valorBase { get => valorBase; }
         double indiceCont { get => indiceCont; }
 
-
         public double CalcIMI()
         {
             double IMI = indiceCont * valorBase;
