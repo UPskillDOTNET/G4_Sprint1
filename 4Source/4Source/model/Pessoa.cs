@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace _4Source
 {
@@ -48,5 +49,32 @@ namespace _4Source
         {
             return "NIF: " + nif + "\n Nome: " + nome + "\n Data de nascimento: " + dataNascimento.ToString();
         }
+
+        private static bool ValidarNome(string nome)
+        {
+            Regex regex = new Regex ("^[a-zA-Z]{3,24}$", RegexOptions.IgnoreCase);
+            Match m = regex.Match(nome);
+
+            if (!m.Success)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+            //if (nome == null)
+            //{
+            //    return false;
+            //}
+            //else if (nome.Length <= 2)
+            //{
+            //    return false;
+            //}
+            //else if (typeof
+
+            //}
+        } 
     }
 }
