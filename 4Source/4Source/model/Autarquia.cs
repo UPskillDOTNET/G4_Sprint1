@@ -24,18 +24,7 @@ namespace _4Source
         }
 
         // Responsabilidade Pessoa
-        public override string ToString()
-        {
-            Pessoa p;
-            string str = "Nome: " + this.Nome + "\n";
-            foreach (Object obj in this.PessoaList)
-            {
-                p = (Pessoa)obj;
-                str += "\t" + p.ToString() + "\n";
-            }
-            return str;
-        }
-   
+ 
         public int Valorbase { get => valorbase; set => valorbase = value; }
         
         public ArrayList FreguesiaList { get => freguesiaList; set => freguesiaList = value; }
@@ -104,7 +93,7 @@ namespace _4Source
             return null;
         }
 
-        //Validação Pessoa
+        //Validação Nome
         private static bool ValidarNome(string nome)
         {
             Regex regex = new Regex("^[a-zA-Z]{3,24}$", RegexOptions.IgnoreCase);
@@ -122,5 +111,62 @@ namespace _4Source
         }
 
         // Responsabilidade Freguesia
+        // Registar Freguesia (Create)
+        public void RegistarFreguesia(Freguesia f)
+        {
+            Freguesia temp = GetFreguesiaByNome(f.Nome);
+            if (temp == null)
+            {
+                this.PessoaList.Add(f);
+
+            }
+            else
+            {
+                throw new NomeDuplicadoException(f.ToString() + "Nome já existente");
+            }
+
+        }
+
+        //Pesquisar Freguesia (Read)
+        public Freguesia PesquisarFreguesia(string nome)
+        {
+            Freguesia freguesia = GetFreguesiaByNome(nome);
+            return freguesia;
+        }
+
+        //Editar Pessoa (Edit)
+        public void AlterarFreguesia(Freguesia f)
+        {
+            Freguesia freguesia = GetFreguesiaByNome(f.Nome);
+            freguesia.Nome = f.Nome;
+        }
+
+        //Eliminar Pessoa (Delete)
+        public Freguesia EliminarFreguesia(string nome)
+        {
+            Freguesia freguesia = GetFreguesiaByNome(nome);
+            if (freguesia != null)
+            {
+                this.FreguesiaList.Remove(freguesia);
+            }
+            else
+            {
+                throw new ElementoNaoExistenteException(nome + " Não existe");
+            }
+            return freguesia;
+        }
+
+        public Freguesia GetFreguesiaByNome(string nome)
+        {
+
+            foreach (Freguesia f in PessoaList)
+            {
+                if (f.Nome == nome)
+                {
+                    return f;
+                }
+            }
+            return null;
+        }
     }
 }
