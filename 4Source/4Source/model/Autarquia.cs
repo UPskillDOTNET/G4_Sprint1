@@ -95,22 +95,7 @@ namespace _4Source
             return null;
         }
 
-        //Validação Pessoa
-        private static bool ValidarNome(string nome)
-        {
-            Regex regex = new Regex("^[a-zA-Z]{3,24}$", RegexOptions.IgnoreCase);
-            Match m = regex.Match(nome);
-
-            if (!m.Success)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-
-        }
+        
 
         // Responsabilidade Freguesia
 

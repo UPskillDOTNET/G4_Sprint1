@@ -101,23 +101,20 @@ namespace _4Source
             return null;
         }
 
-        private bool NomeValido(string nome)
+        private static bool ValidarNome(string nome)
         {
-            if (nome == null)
-            {
-                return false;
-            }
-            if (nome.Length < 3)
-            {
-                return false;
-            }
-            for (int i = 0; i < nome.Length; i++)
-            {
-                if (nome[i] >= '0' && nome[i] <= '9')
+            Regex regex = new Regex("^[a-zA-Z]{3,24}$", RegexOptions.IgnoreCase);
+            Match m = regex.Match(nome);
 
-                    return false;
+            if (!m.Success)
+            {
+                return false;
             }
-            return true;
+            else
+            {
+                return true;
+            }
+
         }
     }
 }
