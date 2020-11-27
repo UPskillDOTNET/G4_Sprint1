@@ -5,6 +5,7 @@ using _4Source;
 
 namespace _4Source.controllers {
     class RegistoEscrituraController {
+
         public static bool RegistarEscritura(Escritura escritura) {
             bool flag = true;
             try {
