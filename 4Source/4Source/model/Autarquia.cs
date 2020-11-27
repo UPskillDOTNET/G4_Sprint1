@@ -200,8 +200,8 @@ namespace _4Source
             Funcionario func = GetFuncionarioByNr(p.numeroFunc);
             func.Nif = p.Nif;
             func.Nome = p.Nome;
-            func.Nascimento = p.Nascimento;
-            func.Numero = p.Numero;
+            func.dataNascimento = p.dataNascimento;
+            func.numeroFunc = p.numeroFunc;
             func.Cargo = p.Cargo;
         }
 
@@ -246,7 +246,7 @@ namespace _4Source
                 if (obj.GetType() == typeof(Funcionario))
                 {
                     f = (Funcionario)obj;
-                    if (f.numeroFunc == nr)
+                    if (f.numeroFunc == numeroFunc)
                     {
                         return f;
                     }
@@ -263,7 +263,7 @@ namespace _4Source
                 this.EscrituraList.Add(e);
 
             } else {
-                throw new NumDuplicadoException(e.ToString() + "Número já existente");
+                throw new EscrituraDuplicadoException(e.ToString() + "Número já existente");
             }
 
         }

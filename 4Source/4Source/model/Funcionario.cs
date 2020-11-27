@@ -11,8 +11,8 @@ namespace _4Source
 {
     public class Funcionario : Pessoa
     {
-        private string cargo;
-        private string numeroFunc;
+       public string cargo;
+       public string numeroFunc;
 
         public Funcionario(string cargo, string numeroFunc, string nome, string nif, DateTime dataNascimento) : base(nome, nif, dataNascimento) {
             this.cargo = cargo;

@@ -8,14 +8,17 @@ namespace _4Source
 {
     class Triangular : IForma
     {
-        public double area;
+        private double area;
         public string forma = "Triangular";
         private double largura, comprimento;
-        
-        
+
+        public double Area { get => area; set => area = value; }
+        public double Largura { get => largura; set => largura = value; }
+        public double Comprimento { get => comprimento; set => comprimento = value; }
+
         public double CalcArea()
         {
-            double area = largura * comprimento;
+            double area = Largura * Comprimento;
             return area;
         }
 
