@@ -83,6 +83,13 @@ namespace _4Source
             return pessoa;
         }
 
+        //Obter todas Pessoas
+
+        public ArrayList ObterTodasPessoas()
+        {
+            return this.pessoaList;
+        }
+
         public Pessoa GetPessoaByNif(string nif)
         {
 
