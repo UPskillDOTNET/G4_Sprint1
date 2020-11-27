@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using _4Source.controllers;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,7 +53,7 @@ namespace _4Source.views
 
         private static void ListarFuncionarios()
         {
-            ArrayList lista = FuncionarioController.ObterListaFuncionarios();
+            ArrayList lista = RegistoFuncionarioController.ObterListaFuncionarios();
             foreach (Funcionario func in lista)
             {
                 Console.WriteLine(func.ToString());
@@ -62,12 +63,12 @@ namespace _4Source.views
         private static void AlterarFuncionario()
         {
             int nr = Utils.GetIntNumber("Digite o Numero");
-            Funcionario func = FuncionarioController.PesquisarFuncionario(nr);
+            Funcionario func = RegistoFuncionarioController.PesquisarFuncionario(nr);
             if (func != null)
             {
                 Console.WriteLine(func.ToString());
                 Funcionario funcAlterada = AlterarFuncionario(func);
-                FuncionarioController.AlterarFuncionario(funcAlterada);
+                RegistoFuncionarioController.AlterarFuncionario(funcAlterada);
             }
             else
             {
@@ -78,7 +79,7 @@ namespace _4Source.views
         private static void EliminarFuncionario()
         {
             int nr = Utils.GetIntNumber("Digite o Numero");
-            Funcionario func = FuncionarioController.EliminarFuncionario(nr);
+            Funcionario func = RegistoFuncionarioController.EliminarFuncionario(nr);
             if (func != null)
             {
                 Console.WriteLine(func.ToString());
@@ -93,7 +94,7 @@ namespace _4Source.views
         private static void PesquisarFuncionario()
         {
             int nr = Utils.GetIntNumber("Digite o Numero");
-            Funcionario func = FuncionarioController.PesquisarFuncionario(nr);
+            Funcionario func = RegistoFuncionarioController.PesquisarFuncionario(nr);
             if (func != null)
             {
                 Console.WriteLine(func.ToString());
@@ -107,14 +108,14 @@ namespace _4Source.views
         private static void RegistarFuncionario()
         {
             Funcionario func = CriarFuncionario();
-            FuncionarioController.RegistarFuncionario(func);
+            RegistoFuncionarioController.RegistarFuncionario(func);
 
         }
 
         private static Funcionario CriarFuncionario()
         {
             Funcionario func = new Funcionario();
-            Freguesia pessoa = PessoaView.CriarPessoa();
+            Freguesia pessoa = GestaoPessoaUI.CriarPessoa();
             func.Nif = pessoa.Nif;
             func.Nome = pessoa.Nome;
             func.Nascimento = pessoa.Nascimento;
@@ -150,4 +151,3 @@ namespace _4Source.views
         }
 
     }
-}
