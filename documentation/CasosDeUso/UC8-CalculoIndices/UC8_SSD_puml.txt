@@ -1,13 +1,27 @@
 @startuml
-Utilizador -> Plataforma: Pede para consultar os índices territoriais da autarquia
-Plataforma --> Utilizador: Questiona qual o índice pretende verificar
+autonumber
 
-Utilizador -> Plataforma: Seleciona a opção pretendida
-Plataforma --> Utilizador: Apresenta a lista de freguesias disponíveis
+actor "Utilizador"
 
-Utilizador -> Plataforma: Seleciona a(s) freguesia(s)
-Plataforma --> Utilizador: Pede confirmação dos dados ao utilizador
+Utilizador -> ":Plataforma" : Pede para consultar os índices territoriais da autarquia
+activate ":Plataforma"
+":Plataforma" --> Utilizador: Questiona qual o índice pretende verificar
+deactivate ":Plataforma"
 
-Utilizador -> Plataforma: Confirma os dados
-Plataforma --> Utilizador: Apresenta o índice solicitado. Operação realizada e terminada com sucesso.
+Utilizador -> ":Plataforma" : Seleciona a opção pretendida
+activate ":Plataforma"
+":Plataforma" --> Utilizador: Apresenta a lista de freguesias disponíveis
+deactivate ":Plataforma"
+
+Utilizador ->":Plataforma" : Seleciona a(s) freguesia(s)
+activate ":Plataforma"
+":Plataforma" --> Utilizador: Pede confirmação dos dados ao utilizador
+deactivate ":Plataforma"
+
+Utilizador ->":Plataforma" : Confirma os dados
+activate ":Plataforma"
+":Plataforma" --> Utilizador: Apresenta o índice solicitado. Operação realizada e terminada com sucesso.
+deactivate ":Plataforma"
+
+deactivate "Utilizador"
 @enduml
