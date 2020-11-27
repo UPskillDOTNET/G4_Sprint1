@@ -23,22 +23,22 @@ namespace _4Source.controllers
             }
             return flag;
         }
-        public static bool AlterarFuncionario(Funcionario func)
-        {
-            bool flag = true;
-            try
-            {
-                Autarquia autarquia = Dados.CarregarDados();
-                autarquia.AlterarFuncionario(func);
-                Dados.GuardarDados(autarquia);
-            }
-            catch (ElementoNaoExistenteException e)
-            {
-                flag = false;
-                Console.WriteLine("Advertencia: " + e.ToString());
-            }
-            return flag;
-        }
+        //public static bool AlterarFuncionario(Funcionario func)
+        //{
+        //    bool flag = true;
+        //    try
+        //    {
+        //        Autarquia autarquia = Dados.CarregarDados();
+        //        autarquia.AlterarFuncionario(func);
+        //        Dados.GuardarDados(autarquia);
+        //    }
+        //    catch (ElementoNaoExistenteException e)
+        //    {
+        //        flag = false;
+        //        Console.WriteLine("Advertencia: " + e.ToString());
+        //    }
+        //    return flag;
+        //}
 
         public static Funcionario EliminarFuncionario(string nr)
         {

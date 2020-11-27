@@ -17,7 +17,7 @@ namespace _4Source.views
             Console.WriteLine("2 - Listar Funcionario");
             Console.WriteLine("3 - Eliminar Funcionario");
             Console.WriteLine("4 - Listar Funcionarios");
-            Console.WriteLine("\n0 - Voltar");
+            Console.WriteLine("\n0 - Voltar\n");
             int input = int.Parse(Console.ReadLine());
             do
             {
@@ -45,7 +45,7 @@ namespace _4Source.views
                         break;
                 }
 
-            } while (input != 0);
+            } while (input != 5);
         }
 
 
