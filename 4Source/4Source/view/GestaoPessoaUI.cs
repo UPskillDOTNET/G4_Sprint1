@@ -1,6 +1,7 @@
 ﻿using _4Source.controllers;
 using System;
 using System.Collections;
+using _4Source.view;
 
 namespace _4Source.views
 {
@@ -64,7 +65,7 @@ namespace _4Source.views
 
         private static void AlterarPessoa()
         {
-            string nif = GetText("Digite o NIF");
+            string nif = Utils.GetText("Digite o NIF");
             Pessoa pessoa = RegistoPessoaController.PesquisarPessoa(nif);
             if (pessoa != null)
             {
@@ -81,7 +82,7 @@ namespace _4Source.views
         }
         private static void EliminarPessoa()
         {
-            string nif = GetText("Digite o NIF");
+            string nif = Utils.GetText("Digite o NIF");
             Pessoa pessoa = RegistoPessoaController.EliminarPessoa(nif);
             if (pessoa != null)
             {
@@ -97,7 +98,7 @@ namespace _4Source.views
 
         private static void PesquisarPessoa()
         {
-            string nif = GetText("Digite o NIF");
+            string nif = Utils.GetText("Digite o NIF");
             Pessoa pessoa = RegistoPessoaController.PesquisarPessoa(nif);
             if (pessoa != null)
             {
@@ -127,7 +128,7 @@ namespace _4Source.views
                 try
                 {
                     flag = false;
-                    pessoa.Nif = GetText("NIF");
+                    pessoa.Nif = Utils.GetText("NIF");
                 }
                 catch (NifInvalidoException e)
                 {
@@ -140,7 +141,7 @@ namespace _4Source.views
                 try
                 {
                     flag = false;
-                    pessoa.Nome = GetText("Nome");
+                    pessoa.Nome = Utils.GetText("Nome");
                 }
                 catch (NomePessoaInvalidoException e)
                 {
@@ -171,7 +172,7 @@ namespace _4Source.views
                 try
                 {
                     flag = false;
-                    pessoa.Nome = GetText("Nome");
+                    pessoa.Nome = Utils.GetText("Nome");
                 }
                 catch (NomePessoaInvalidoException e)
                 {

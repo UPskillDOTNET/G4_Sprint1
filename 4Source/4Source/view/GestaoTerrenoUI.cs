@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using _4Source.controllers;
+using _4Source.view;
+
 
 
 namespace _4Source.views
@@ -63,7 +65,7 @@ namespace _4Source.views
         private static void EliminarTerreno()
         {
             string nome = GetText("Digite o nome da Freguesia");
-            int id = GetIntNumber("Digite o ID");
+            int id = Utils.GetIntNumber("Digite o ID");
             Terreno terreno = RegistoTerrenoController.EliminarTerreno(nome, id);
             if (terreno != null)
             {
@@ -79,7 +81,7 @@ namespace _4Source.views
         private static void PesquisarTerreno()
         {
             string nome = GetText("Digite o Nome da Freguesia");
-            int id = GetIntNumber("Digite o Id");
+            int id = Utils.GetIntNumber("Digite o Id");
             Terreno terreno = RegistoTerrenoController.PesquisarTerreno(nome, id);
             if (terreno != null)
             {
@@ -108,7 +110,7 @@ namespace _4Source.views
                 try
                 {
                     flag = false;
-                    terreno.Id = GetIntNumber("ID");
+                    terreno.Id = Utils.GetIntNumber("ID");
                 }
                 catch (IdTerrenoInvalidoException e)
                 {
@@ -127,7 +129,7 @@ namespace _4Source.views
                 try
                 {
                     flag = false;
-                    terreno.Id = GetIntNumber("ID: ");
+                    terreno.Id = Utils.GetIntNumber("ID: ");
                 }
                 catch (IdTerrenoInvalidoException e)
                 {
