@@ -183,12 +183,6 @@ namespace _4Source.views
             return pessoa;
         }
 
-        public static string GetText(string label)
-        {
-            string text = "";
-            Console.WriteLine(label + ": ");
-            text = Console.ReadLine();
-            return text;
-        }
+        
     }
 }

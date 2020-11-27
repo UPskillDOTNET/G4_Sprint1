@@ -144,30 +144,6 @@ namespace _4Source.views
             text = Console.ReadLine();
             return text;
         }
-        public static int GetIntNumber(String label)
-        {
-            bool flag;
-            int number = -1;
-            string text;
-            do
-            {
-                try
-                {
-                    flag = false;
-                    text = GetText(label);
-                    number = Convert.ToInt32(text);
-
-                }
-                catch (OverflowException)
-                {
-                    flag = true;
-                }
-                catch (FormatException)
-                {
-                    flag = true;
-                }
-            } while (flag);
-            return number;
-        }
+        
     }
 }
