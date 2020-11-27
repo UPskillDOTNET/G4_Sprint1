@@ -8,6 +8,7 @@ using System.Text.RegularExpressions;
 
 namespace _4Source
 {
+    [Serializable()]
     public class Autarquia
     {
         private string nome;
@@ -266,44 +267,44 @@ namespace _4Source
             return null;
         }
 
-        //Responsabilidade Escritura
-        //Criar Escritura (Create)
-        public void RegistarEscritura(Escritura e) {
-            Escritura temp = GetEscrituraByNum(e.Num);
-            if (temp == null) {
-                this.EscrituraList.Add(e);
+        ////Responsabilidade Escritura
+        ////Criar Escritura (Create)
+        //public void RegistarEscritura(Escritura e) {
+        //    Escritura temp = GetEscrituraByNum(e.Num);
+        //    if (temp == null) {
+        //        this.EscrituraList.Add(e);
 
-            } else {
-                throw new EscrituraDuplicadoException(e.ToString() + "Número já existente");
-            }
+        //    } else {
+        //        throw new EscrituraDuplicadoException(e.ToString() + "Número já existente");
+        //    }
 
-        }
+        //}
 
-        //Pesquisar Escritura (Read)
-        public Escritura PesquisarEscritura(int num) {
-            Escritura escritura = GetEscrituraByNum(num);
-            return escritura;
-        }
+        ////Pesquisar Escritura (Read)
+        //public Escritura PesquisarEscritura(int num) {
+        //    Escritura escritura = GetEscrituraByNum(num);
+        //    return escritura;
+        //}
 
-        //Eliminar Escritura (Delete)
-        public Escritura EliminarEscritura(int num) {
-            Escritura escritura = GetEscrituraByNum(num);
-            if (escritura != null) {
-                this.EscrituraList.Remove(escritura);
-            } else {
-                throw new ElementoNaoExistenteException(num + " Não existe");
-            }
-            return escritura;
-        }
+        ////Eliminar Escritura (Delete)
+        //public Escritura EliminarEscritura(int num) {
+        //    Escritura escritura = GetEscrituraByNum(num);
+        //    if (escritura != null) {
+        //        this.EscrituraList.Remove(escritura);
+        //    } else {
+        //        throw new ElementoNaoExistenteException(num + " Não existe");
+        //    }
+        //    return escritura;
+        //}
 
-        public Escritura GetEscrituraByNum(int num) {
+        //public Escritura GetEscrituraByNum(int num) {
 
-            foreach (Escritura e in EscrituraList) {
-                if (e.Num == num) {
-                    return e;
-                }
-            }
-            return null;
-        }
+        //    foreach (Escritura e in EscrituraList) {
+        //        if (e.Num == num) {
+        //            return e;
+        //        }
+        //    }
+        //    return null;
+        //}
     }
 }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace _4Source
 {
+    [Serializable()]
     class Rectangular : IForma
     {
         double area;

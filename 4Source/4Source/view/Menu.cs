@@ -35,7 +35,7 @@ namespace _4Source.views
                         GestaoFreguesiaUI.MainFreguesia();
                         break;
                     case 4:
-                        GestaoEstatisticaUI.MainEstatistica();
+                        //GestaoEstatisticaUI.MainEstatistica();
                         break;
                     case 5:
                         Environment.Exit(0);

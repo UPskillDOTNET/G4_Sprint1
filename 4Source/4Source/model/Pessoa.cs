@@ -7,6 +7,7 @@ using System.Text.RegularExpressions;
 
 namespace _4Source
 {
+    [Serializable()]
     public class Pessoa
     {
         public string nome;

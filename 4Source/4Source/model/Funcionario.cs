@@ -9,6 +9,7 @@ using System.Text.RegularExpressions;
 
 namespace _4Source
 {
+    [Serializable()]
     public class Funcionario : Pessoa
     {
        public string cargo;

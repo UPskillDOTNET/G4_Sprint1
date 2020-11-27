@@ -8,6 +8,7 @@ using System.Text.RegularExpressions;
 
 namespace _4Source
 {
+    [Serializable()]
     public class Freguesia
     {
         private string nome;

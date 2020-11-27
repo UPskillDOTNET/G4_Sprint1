@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace _4Source
 {
+    [Serializable()]
     class Industrial : IClassificacao
     {
         string classificacao = "Industrial";

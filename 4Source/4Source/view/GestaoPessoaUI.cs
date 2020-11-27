@@ -140,7 +140,19 @@ namespace _4Source.views
                     Console.WriteLine("Atenção: " + e.ToString());
                 }
             } while (flag);
-            pessoa.DataNascimento = new DateTime();
+            do
+            {
+                try
+                {
+                    flag = false;
+                    pessoa.DataNascimento = new DateTime();
+                }
+                catch (NomePessoaInvalidoException e)
+                {
+                    flag = true;
+                    Console.WriteLine("Atenção: " + e.ToString());
+                }
+            } while (flag);
             return pessoa;
         }
         public static Pessoa AlterarPessoa(Pessoa pessoa)
