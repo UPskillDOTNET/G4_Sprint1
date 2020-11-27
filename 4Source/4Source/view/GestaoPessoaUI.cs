@@ -34,7 +34,7 @@ namespace _4Source.views
                         PesquisarPessoa();
                         break;
                     case 3:
-                        EditarPessoa();
+                        AlterarPessoa();
                         break;
                     case 4:
                         EliminarPessoa();
@@ -62,7 +62,7 @@ namespace _4Source.views
         }
 
 
-        private static void AlterarFuncionario()
+        private static void AlterarPessoa()
         {
             int nr = Utils.GetIntNumber("Digite o Numero");
             Pessoa pessoa = RegistoPessoaController.PesquisarPessoa(nr);
@@ -70,7 +70,7 @@ namespace _4Source.views
             {
                 Console.WriteLine(pessoa.ToString());
                 Pessoa pessoa = AlterarPessoa(pessoa);
-                FuncionarioController.AlterarFuncionario(funcAlterada);
+                RegistoPessoaController.AlterarPessoa(pessoaAlterada);
             }
             else
             {
@@ -78,13 +78,13 @@ namespace _4Source.views
             }
 
         }
-        private static void EliminarFuncionario()
+        private static void EliminarPessoa()
         {
             int nr = Utils.GetIntNumber("Digite o Numero");
-            Funcionario func = FuncionarioController.EliminarFuncionario(nr);
-            if (func != null)
+            Pessoa pessoa = RegistoPessoaController.EliminarPessoa(nr);
+            if (pessoa != null)
             {
-                Console.WriteLine(func.ToString());
+                Console.WriteLine(pessoa.ToString());
             }
             else
             {
@@ -93,13 +93,13 @@ namespace _4Source.views
 
         }
 
-        private static void PesquisarFuncionario()
+        private static void PesquisarPessoa()
         {
             int nr = Utils.GetIntNumber("Digite o Numero");
-            Funcionario func = FuncionarioController.PesquisarFuncionario(nr);
-            if (func != null)
+            Pessoa pessoa = RegistoPessoaController.PesquisarPessoa(nr);
+            if (pessoa != null)
             {
-                Console.WriteLine(func.ToString());
+                Console.WriteLine(pessoa.ToString());
             }
             else
             {
@@ -107,16 +107,16 @@ namespace _4Source.views
             }
 
         }
-        private static void RegistarFuncionario()
+        private static void RegistarPessoa()
         {
-            Funcionario func = CriarFuncionario();
-            FuncionarioController.RegistarFuncionario(func);
+            Pessoa pessoa = CriarPessoa();
+            RegistoPessoaController.RegistarPessoa(pessoa);
 
         }
 
-        private static Funcionario CriarFuncionario()
+        private static Funcionario CriarPessoa()
         {
-            Funcionario func = new Funcionario();
+            Pessoa pessoa = new Pessoa();
             Freguesia pessoa = PessoaView.CriarPessoa();
             func.Nif = pessoa.Nif;
             func.Nome = pessoa.Nome;
