@@ -60,23 +60,6 @@ namespace _4Source.views
             Menu();
         }
 
-        //private static void AlterarFuncionario()
-        //{
-        //    string nr = GetText("Digite o Numero");
-        //    Funcionario func = RegistoFuncionarioController.PesquisarFuncionario(nr);
-        //    if (func != null)
-        //    {
-        //        Console.WriteLine(func.ToString());
-        //        Funcionario funcAlterada = AlterarFuncionario(func);
-        //        RegistoFuncionarioController.AlterarFuncionario(funcAlterada);
-        //    }
-        //    else
-        //    {
-        //        Console.WriteLine("Não  existe!!!");
-        //    }
-        //    Menu();
-
-        //}
         private static void EliminarFuncionario()
         {
             string nr = GetText("Digite o Numero");
@@ -138,17 +121,6 @@ namespace _4Source.views
             func.Cargo = GetText("Cargo");
             return func;
         }
-        //private static Funcionario AlterarFuncionario(Funcionario func)
-        //{
-        //    //Assumo que não é possível alterar nem o NIF, nem o Numero 
-        //    Pessoa pessoa = GestaoPessoaUI.AlterarPessoa((Pessoa)func);
-        //    func.Nif = pessoa.Nif;
-        //    func.Nome = pessoa.Nome;
-        //    func.dataNascimento = pessoa.dataNascimento;
-        //    func.Cargo = GetText("Cargo");
-        //    return func;
-        //}
-
 
             public static string GetText(string label)
         {
