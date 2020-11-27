@@ -156,7 +156,7 @@ namespace _4Source.views
                 try
                 {
                     flag = false;
-                    pessoa.DataNascimento = new DateTime();
+                    pessoa.DataNascimento = Utils.GetDataNascimento();
                 }
                 catch (NomePessoaInvalidoException e)
                 {

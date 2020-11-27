@@ -43,19 +43,17 @@ namespace _4Source.view
             return text;
         }
 
-        /*public static DateTime GetDataNascimento(string label) {
-            string text = "";
-        Console.WriteLine("ano");
-        ano = Console.ReadLine();
-        Console.WriteLine("mes");
-        mes = Console.ReadLine();
-        Console.WriteLine("dia");
-        dia = Console.ReadLine();
-        DateTime data = new DateTime(ano, mes, dia);
-        return data;
-        
-        Tratar das validações para nao ser possivel introduzir ano, mes, e dia nao validos.
+        public static DateTime GetDataNascimento() 
+        {
+            Console.WriteLine("ano");
+            int ano = int.Parse(Console.ReadLine());
+            Console.WriteLine("mes");
+            int mes = int.Parse(Console.ReadLine());
+            Console.WriteLine("dia");
+            int dia = int.Parse(Console.ReadLine());
+            DateTime data = new DateTime(ano, mes, dia);
+            return data;
         }
-         */
+         
     }
 }

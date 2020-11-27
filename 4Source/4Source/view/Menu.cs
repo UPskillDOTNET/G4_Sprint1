@@ -49,7 +49,7 @@ namespace _4Source.views
                             Environment.Exit(0);
                             break;
                         default:
-                            Console.WriteLine("Wrong option");
+                            Console.WriteLine("Wrong Number!");
                             break;
                     }
 
