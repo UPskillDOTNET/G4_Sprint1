@@ -13,6 +13,7 @@ namespace _4Source
         private string nome;
         private ArrayList pessoaList;
         private ArrayList freguesiaList;
+        private ArrayList escrituraList;
         private int valorbase;
 
         public Autarquia(string nome, int valorbase)
@@ -30,7 +31,9 @@ namespace _4Source
         public ArrayList FreguesiaList { get => freguesiaList; set => freguesiaList = value; }
         
         public ArrayList PessoaList { get => pessoaList; set => pessoaList = value; }
-        
+
+        public ArrayList EscrituraList { get => escrituraList; set => escrituraList = value; }
+
         public string Nome { get => nome; set => nome = value; }
 
         //Criar Pessoa (Create)
