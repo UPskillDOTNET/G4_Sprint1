@@ -24,7 +24,7 @@ namespace _4Source.views
                 switch (input)
                 {
                     case 1:
-                        CriarPessoa();
+                        RegistarPessoa();
                         break;
                     case 2:
                         PesquisarPessoa();
