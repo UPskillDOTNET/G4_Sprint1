@@ -1,4 +1,6 @@
-﻿using System;
+﻿using _4Source.controllers;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,25 +20,28 @@ namespace _4Source.views
             Console.WriteLine("4 - Eliminar Pessoa");
             Console.WriteLine("5 - Mostrar lista de Pessoas");
             Console.WriteLine("\n6 - Voltar ao Menu Principal");
+
             int input = int.Parse(Console.ReadLine());
+
             do
             {
                 switch (input)
                 {
                     case 1:
-                        //CriarPessoa();
+                        CriarPessoa();
                         break;
                     case 2:
-                        //PesquisarPessoa();
+                        PesquisarPessoa();
                         break;
                     case 3:
-                        //EditarPessoa();
+                        EditarPessoa();
                         break;
                     case 4:
-                        //EliminarPessoa();
+                        EliminarPessoa();
                         break;
                     case 5:
-                        //MostrarListaPessoa();
+                        ListarPessoas();
+                        break;
                     case 6:
                         //VoltarMenuPrincipal();
                         break;
@@ -45,6 +50,103 @@ namespace _4Source.views
                         break;
                 }
             } while (input != 0);
+        }
+
+        private static void ListarPessoas()
+        {
+            ArrayList lista = RegistoPessoaController.ObterListaPessoas();
+            foreach (Pessoa pessoa in lista)
+            {
+                Console.WriteLine(pessoa.ToString());
+            }
+        }
+
+
+        private static void AlterarFuncionario()
+        {
+            int nr = Utils.GetIntNumber("Digite o Numero");
+            Pessoa pessoa = RegistoPessoaController.PesquisarPessoa(nr);
+            if (pessoa != null)
+            {
+                Console.WriteLine(pessoa.ToString());
+                Pessoa pessoa = AlterarPessoa(pessoa);
+                FuncionarioController.AlterarFuncionario(funcAlterada);
+            }
+            else
+            {
+                Console.WriteLine("Não  existe!!!");
+            }
+
+        }
+        private static void EliminarFuncionario()
+        {
+            int nr = Utils.GetIntNumber("Digite o Numero");
+            Funcionario func = FuncionarioController.EliminarFuncionario(nr);
+            if (func != null)
+            {
+                Console.WriteLine(func.ToString());
+            }
+            else
+            {
+                Console.WriteLine("Não  existe!!!");
+            }
+
+        }
+
+        private static void PesquisarFuncionario()
+        {
+            int nr = Utils.GetIntNumber("Digite o Numero");
+            Funcionario func = FuncionarioController.PesquisarFuncionario(nr);
+            if (func != null)
+            {
+                Console.WriteLine(func.ToString());
+            }
+            else
+            {
+                Console.WriteLine("Não  existe!!!");
+            }
+
+        }
+        private static void RegistarFuncionario()
+        {
+            Funcionario func = CriarFuncionario();
+            FuncionarioController.RegistarFuncionario(func);
+
+        }
+
+        private static Funcionario CriarFuncionario()
+        {
+            Funcionario func = new Funcionario();
+            Freguesia pessoa = PessoaView.CriarPessoa();
+            func.Nif = pessoa.Nif;
+            func.Nome = pessoa.Nome;
+            func.Nascimento = pessoa.Nascimento;
+            bool flag;
+            do
+            {
+                try
+                {
+                    flag = false;
+                    func.Numero = Utils.GetIntNumber("Numero");
+                }
+                catch (NumeroFuncionarioInvalidoException e)
+                {
+                    flag = true;
+                    Console.WriteLine("Atenção: " + e.ToString());
+                }
+            } while (flag);
+            func.Cargo = Utils.GetText("Cargo");
+            return func;
+        }
+        private static Funcionario AlterarFuncionario(Funcionario func)
+        {
+            //Assumo que não é possível alterar nem o NIF, nem o Numero 
+            Freguesia pessoa = PessoaView.AlterarPessoa((Freguesia)func);
+            func.Nif = pessoa.Nif;
+            func.Nome = pessoa.Nome;
+            func.Nascimento = pessoa.Nascimento;
+            func.Cargo = Utils.GetText("Cargo");
+            return func;
         }
         //public static Pessoa CriarPessoa() { }
         //public static PesquisarPessoa() { }

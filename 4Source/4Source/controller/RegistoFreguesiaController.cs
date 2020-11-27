@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
-using _4Source;
+using _4Source.persistencia;
+
 
 namespace _4Source.controllers {
     class RegistoFreguesiaController {
