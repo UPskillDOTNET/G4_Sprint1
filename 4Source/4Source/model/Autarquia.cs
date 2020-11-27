@@ -144,6 +144,10 @@ namespace _4Source
             return freguesia;
         }
 
+        public ArrayList ObterTodasFreguesias() {
+            return this.freguesiaList;
+        }
+
         //Editar Pessoa (Edit)
         public void AlterarFreguesia(Freguesia f)
         {
