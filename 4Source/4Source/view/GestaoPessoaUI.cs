@@ -38,8 +38,8 @@ namespace _4Source.views
                     case 5:
                         ListarPessoas();
                         break;
-                    case 6:
-                        //VoltarMenuPrincipal();
+                    case 0:
+                        Console.WriteLine("Volta para o menu anterior.");
                         break;
                     default:
                         Console.WriteLine("Opção errada. Escolha novamente.");
