@@ -8,11 +8,12 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("4Source")]
 [assembly: AssemblyDescription("Gestão de Autarquia")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("CaioReis, JoãoMartins, MarianaGomes, TiagoAzevedo, SergioPinto")]
 [assembly: AssemblyProduct("4Source")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
+
 
 // Definir ComVisible como false torna os tipos neste assembly invisíveis
 // para componentes COM. Caso precise acessar um tipo neste assembly de
