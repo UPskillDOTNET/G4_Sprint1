@@ -207,16 +207,6 @@ namespace _4Source
             }
         }
 
-        //public void AlterarFuncionario(Funcionario p)
-        //{
-        //    Funcionario func = GetFuncionarioByNr(p.numeroFunc);
-        //    func.Nif = p.Nif;
-        //    func.Nome = p.Nome;
-        //    func.dataNascimento = p.dataNascimento;
-        //    func.numeroFunc = p.numeroFunc;
-        //    func.Cargo = p.Cargo;
-        //}
-
         public Funcionario PesquisarFuncionario(string nr)
         {
             Funcionario func = GetFuncionarioByNr(nr);
