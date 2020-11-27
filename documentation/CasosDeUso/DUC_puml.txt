@@ -1,0 +1,22 @@
+@startuml
+usecase UC1 as "UC1 - Registar Pessoa"
+usecase UC2 as "UC2 - Registar Feguesia"
+usecase UC3 as "UC3 - Registar Terreno"
+usecase UC4 as "UC4 - Registar Escritura"
+usecase UC5 as "UC5 - Listar Pessoas"
+usecase UC6 as "UC6 - Listar Terrenos"
+usecase UC7 as "UC7 - Listar Freguesias"
+usecase UC8 as "UC8 - Calcular Índices"
+
+actor "Utilizador" as UNR
+
+left to right direction
+UNR -->(UC1)
+UNR -->(UC2)
+UNR -->(UC3)
+UNR -->(UC4)
+UNR -->(UC5)
+UNR -->(UC6)
+UNR -->(UC7)
+UNR -->(UC8)
+@enduml
