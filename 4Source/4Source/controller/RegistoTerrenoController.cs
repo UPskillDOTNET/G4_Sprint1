@@ -7,10 +7,11 @@ namespace _4Source.controllers
 {
     class RegistoTerrenoController
     {
-        public static bool RegistarTerreno(Terreno terreno) {
+        public static bool RegistarTerreno(String nomeFreguesia,Terreno terreno) {
             bool flag = true;
             try {
                 Autarquia autarquia = Dados.CarregarDados();
+                Freguesia freguesia = autarquia.GetFreguesiaByNome(nomeFreguesia);
                 freguesia.RegistarTerreno(terreno);
                 Dados.GuardarDados(autarquia);
             } catch (TerrenoDuplicadoException e) {
