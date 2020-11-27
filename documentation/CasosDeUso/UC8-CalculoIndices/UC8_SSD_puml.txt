@@ -1,0 +1,13 @@
+@startuml
+Utilizador -> Plataforma: Pede para consultar os índices territoriais da autarquia
+Plataforma --> Utilizador: Questiona qual o índice pretende verificar
+
+Utilizador -> Plataforma: Seleciona a opção pretendida
+Plataforma --> Utilizador: Apresenta a lista de freguesias disponíveis
+
+Utilizador -> Plataforma: Seleciona a(s) freguesia(s)
+Plataforma --> Utilizador: Pede confirmação dos dados ao utilizador
+
+Utilizador -> Plataforma: Confirma os dados
+Plataforma --> Utilizador: Apresenta o índice solicitado. Operação realizada e terminada com sucesso.
+@enduml
