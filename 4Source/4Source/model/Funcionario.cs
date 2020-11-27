@@ -20,6 +20,10 @@ namespace _4Source
 
         }
 
+        public Funcionario()
+        {
+        }
+
         public override string ToString() {
             return base.ToString() + "\nnumero: " + numeroFunc + "\ncargo='" + cargo;
         }

@@ -1,6 +1,7 @@
 ﻿using System;
 using _4Source.persistencia;
 using _4Source;
+using System.Collections;
 
 namespace _4Source.controllers
 {
@@ -65,6 +66,16 @@ namespace _4Source.controllers
             Autarquia autarquia = Dados.CarregarDados();
             func = autarquia.PesquisarFuncionario(nr);
             return func;
+
+        }
+        public static ArrayList ObterListaFuncionarios()
+        {
+
+            ArrayList lista = null;
+
+            Autarquia autarquia = Dados.CarregarDados();
+            lista = autarquia.ObterTodosFuncionarios();
+            return lista;
 
         }
     }
