@@ -11,7 +11,7 @@ namespace _4Source.controllers
             bool flag = true;
             try {
                 Autarquia autarquia = Dados.CarregarDados();
-                autarquia.Freguesia(RegistarTerreno(terreno);
+                freguesia.RegistarTerreno(terreno);
                 Dados.GuardarDados(autarquia);
             } catch (TerrenoDuplicadoException e) {
                 flag = false;
