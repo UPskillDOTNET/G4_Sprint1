@@ -27,16 +27,7 @@ namespace _4Source
 
         public override string ToString()
         {
-            Terreno t;
-            string str = "Nome: " + this.nome + "\n";
-            foreach (Object obj in terrenoList)
-            {
-                t = (Terreno)obj;
-                str += "\t" + t.ToString() + "\n";
-            }
-
-
-            return str;
+            return "Nome da freguesia: " + nome;        
         }
 
         public string Nome  

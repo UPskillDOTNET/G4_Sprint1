@@ -26,7 +26,7 @@ namespace _4Source
         }
 
         // Responsabilidade Pessoa
- 
+
         public int Valorbase { get => valorbase; set => valorbase = value; }
         
         public ArrayList FreguesiaList { get => freguesiaList; set => freguesiaList = value; }
@@ -149,14 +149,14 @@ namespace _4Source
             return this.freguesiaList;
         }
 
-        //Editar Pessoa (Edit)
+        //Editar Freguesia (Edit)
         public void AlterarFreguesia(Freguesia f)
         {
             Freguesia freguesia = GetFreguesiaByNome(f.Nome);
             freguesia.Nome = f.Nome;
         }
 
-        //Eliminar Pessoa (Delete)
+        //Eliminar Freguesia (Delete)
         public Freguesia EliminarFreguesia(string nome)
         {
             Freguesia freguesia = GetFreguesiaByNome(nome);
@@ -168,6 +168,7 @@ namespace _4Source
             {
                 throw new ElementoNaoExistenteException(nome + " Não existe");
             }
+            Console.WriteLine("A freguesia {0} foi eliminada do sistema", nome);
             return freguesia;
         }
 

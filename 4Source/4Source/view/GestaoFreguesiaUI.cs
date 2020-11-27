@@ -59,6 +59,7 @@ namespace _4Source.views
             {
                 Console.WriteLine(freguesia.ToString());
             }
+            Console.ReadKey();
             Menu();
         }
 
@@ -74,8 +75,9 @@ namespace _4Source.views
             }
             else
             {
-                Console.WriteLine("Não  existe!!!");
+                Console.WriteLine("A freguesia que indicou não existe na base de dados. Tente novamente.");
             }
+            Console.ReadKey();
             Menu();
 
         }
@@ -89,8 +91,9 @@ namespace _4Source.views
             }
             else
             {
-                Console.WriteLine("Não  existe!!!");
+                Console.WriteLine("Essa freguesia não existe!");
             }
+            Console.ReadKey();
             Menu();
 
         }
@@ -107,6 +110,7 @@ namespace _4Source.views
             {
                 Console.WriteLine("Não  existe!!!");
             }
+            Console.ReadKey();
             Menu();
 
         }

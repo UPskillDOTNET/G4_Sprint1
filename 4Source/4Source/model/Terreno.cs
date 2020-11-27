@@ -30,6 +30,10 @@ namespace _4Source
             
         }
 
+        public override string ToString()
+        {
+            return "ID: " + id;
+        }
 
         public int Id   // property
         {
