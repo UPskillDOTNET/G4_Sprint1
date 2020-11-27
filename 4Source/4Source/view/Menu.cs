@@ -19,6 +19,7 @@ namespace _4Source.views
                 Console.WriteLine("1) Gestão de Pessoa.");
                 Console.WriteLine("2) Gestão de Funcionários");
                 Console.WriteLine("3) Gestão de Freguesias.");
+                Console.WriteLine("4) Gestão de Terrenos");
                 Console.WriteLine("4) Cálculo de Estatisticas");
                 Console.WriteLine("5) Fechar Programa\n\n");
                 int numInput = Int32.Parse(Console.ReadLine());
@@ -37,9 +38,12 @@ namespace _4Source.views
                             GestaoFreguesiaUI.Menu();
                             break;
                         case 4:
-                            //GestaoEstatisticaUI.MainEstatistica();
+                            GestaoTerrenoUI.Menu();
                             break;
                         case 5:
+                            //GestaoEstatisticaUI.MainEstatistica();
+                            break;
+                        case 6:
                             Console.WriteLine("Bye!!!");
                             Console.ReadKey();
                             Environment.Exit(0);
@@ -49,7 +53,7 @@ namespace _4Source.views
                             break;
                     }
 
-                } while (numInput < 0 || numInput > 5);
+                } while (numInput < 0 || numInput > 6);
             } while (true);
 
 

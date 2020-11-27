@@ -12,7 +12,7 @@ namespace _4Source.views
 {
     class GestaoTerrenoUI
     {
-        public static void MainTerreno()
+        public static void Menu()
         {
 
             Console.Clear();
