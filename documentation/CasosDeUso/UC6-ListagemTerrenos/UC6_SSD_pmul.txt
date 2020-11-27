@@ -1,0 +1,10 @@
+@startuml
+Utilizador -> Plataforma: Acede à plataforma para listar terrenos
+Plataforma --> Utilizador: Solicita o parâmetro de ordenação pretendido para a listagem de terrenos
+
+Utilizador -> Plataforma: Seleciona o parâmetro
+Plataforma --> Utilizador: Apresenta a listagem de terrenos ordenada pelo parâmetro escolhido
+
+Utilizador -> Plataforma: Confirma a listagem de terrenos
+Plataforma --> Utilizador: Informa do sucesso da operação
+@enduml
