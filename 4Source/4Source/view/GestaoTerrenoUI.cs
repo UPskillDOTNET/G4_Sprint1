@@ -49,7 +49,8 @@ namespace _4Source.views
         }
         private static void ListarTerrenos()
         {
-            ArrayList lista = RegistoTerrenoController.ObterListaTerrenos();
+            string nome = GetText("Digite o nome da Freguesia");
+            ArrayList lista = RegistoTerrenoController.ObterListaTerrenos(nome);
             foreach (Terreno terreno in lista)
             {
                 Console.WriteLine(terreno.ToString());
@@ -58,8 +59,9 @@ namespace _4Source.views
 
         private static void EliminarTerreno()
         {
+            string nome = GetText("Digite o nome da Freguesia");
             int id = GetIntNumber("Digite o ID");
-            Terreno terreno = RegistoTerrenoController.EliminarTerreno(id);
+            Terreno terreno = RegistoTerrenoController.EliminarTerreno(nome, id);
             if (terreno != null)
             {
                 Console.WriteLine(terreno.ToString());
@@ -73,8 +75,9 @@ namespace _4Source.views
 
         private static void PesquisarTerreno()
         {
+            string nome = GetText("Digite o Nome da Freguesia");
             int id = GetIntNumber("Digite o Id");
-            Terreno terreno = RegistoTerrenoController.PesquisarTerreno(id);
+            Terreno terreno = RegistoTerrenoController.PesquisarTerreno(nome, id);
             if (terreno != null)
             {
                 Console.WriteLine(terreno.ToString());
@@ -87,8 +90,9 @@ namespace _4Source.views
         }
         private static void RegistarTerreno()
         {
+            string nome = GetText("Digite o Nome da Freguesia");
             Terreno terreno = CriarTerreno();
-            RegistoTerrenoController.RegistarTerreno(terreno);
+            RegistoTerrenoController.RegistarTerreno(nome, terreno);
 
         }
 
