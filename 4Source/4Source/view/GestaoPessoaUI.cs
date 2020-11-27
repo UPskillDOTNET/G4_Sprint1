@@ -6,7 +6,7 @@ namespace _4Source.views
 {
     class GestaoPessoaUI
     {
-      
+
         public static void Menu()
         {
             Console.WriteLine("\n=== Gestão de Pessoas ===");
@@ -16,7 +16,7 @@ namespace _4Source.views
             Console.WriteLine("4 - Eliminar Pessoa");
             Console.WriteLine("5 - Mostrar lista de Pessoas");
             Console.WriteLine("\n6 - Voltar ao Menu Principal");
-
+            Console.WriteLine("===========================");
             int input = int.Parse(Console.ReadLine());
 
             do
@@ -38,7 +38,7 @@ namespace _4Source.views
                     case 5:
                         ListarPessoas();
                         break;
-                    case 0:
+                    case 6:
                         Console.WriteLine("Volta para o menu anterior.");
                         break;
                     default:
@@ -46,7 +46,7 @@ namespace _4Source.views
                         Menu();
                         break;
                 }
-            } while (true);
+            } while (input != 0);
         }
 
         private static void ListarPessoas()
@@ -180,11 +180,6 @@ namespace _4Source.views
             pessoa.DataNascimento = new DateTime();
             return pessoa;
         }
-
-        //public static Menu MenuInicial()
-        //{
-        //   return Menu.MainMenu();
-        //}
 
         public static string GetText(string label)
         {
