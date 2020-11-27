@@ -9,7 +9,7 @@ namespace _4Source.views
 {
     class GestaoFreguesiaUI
     {
-        public static void MainFreguesia()
+        public static void Menu()
         {
 
             Console.WriteLine("\nMenu Freguesia");
@@ -19,10 +19,10 @@ namespace _4Source.views
             Console.WriteLine("4 - Alterar Freguesia");
             Console.WriteLine("5 - Listar Freguesias");
             Console.WriteLine("\n0 - Voltar\n");
-            int numInput = Int32.Parse(Console.ReadLine());
+            int input = int.Parse(Console.ReadLine());
             do
             {
-                switch (numInput)
+                switch (input)
                 {
                     case 0:
                         Console.WriteLine("Volta para o menu anterior.");
@@ -47,7 +47,7 @@ namespace _4Source.views
                         break;
                 }
 
-            } while (numInput != 0);
+            } while (input != 0);
 
         }
          private static void ListarFreguesias()
@@ -57,6 +57,7 @@ namespace _4Source.views
             {
                 Console.WriteLine(freguesia.ToString());
             }
+            Menu();
         }
 
         private static void AlterarFreguesia()
@@ -73,6 +74,7 @@ namespace _4Source.views
             {
                 Console.WriteLine("Não  existe!!!");
             }
+            Menu();
 
         }
         private static void EliminarFreguesia()
@@ -87,6 +89,7 @@ namespace _4Source.views
             {
                 Console.WriteLine("Não  existe!!!");
             }
+            Menu();
 
         }
 
@@ -102,13 +105,14 @@ namespace _4Source.views
             {
                 Console.WriteLine("Não  existe!!!");
             }
+            Menu();
 
         }
         private static void RegistarFreguesia()
         {
             Freguesia freguesia = CriarFreguesia();
             RegistoFreguesiaController.RegistarFreguesia(freguesia);
-
+            Menu();
         }
 
         public static Freguesia CriarFreguesia()

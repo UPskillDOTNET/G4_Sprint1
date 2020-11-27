@@ -29,7 +29,7 @@ namespace _4Source
         {
             Terreno t;
             string str = "Nome: " + this.nome + "\n";
-            foreach (Object obj in this.terrenoList)
+            foreach (Object obj in terrenoList)
             {
                 t = (Terreno)obj;
                 str += "\t" + t.ToString() + "\n";
