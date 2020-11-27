@@ -38,7 +38,7 @@ namespace _4Source.views
                     case 5:
                         ListarPessoas();
                         break;
-                    case 6:
+                    case 0:
                         Console.WriteLine("Volta para o menu anterior.");
                         break;
                     default:
@@ -46,7 +46,7 @@ namespace _4Source.views
                         Menu();
                         break;
                 }
-            } while (input != 0);
+            } while (true);
         }
 
         private static void ListarPessoas()
@@ -180,6 +180,11 @@ namespace _4Source.views
             pessoa.DataNascimento = new DateTime();
             return pessoa;
         }
+
+        //public static Menu MenuInicial()
+        //{
+        //   return Menu.MainMenu();
+        //}
 
         public static string GetText(string label)
         {

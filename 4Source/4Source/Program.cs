@@ -12,7 +12,7 @@ namespace _4Source
         static void Main(string[] args)
         {
             Menu menu = new Menu();
-            menu.mainMenu();
+            Menu.mainMenu();
             Console.ReadKey();
         }
     }

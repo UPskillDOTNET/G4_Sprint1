@@ -9,7 +9,7 @@ namespace _4Source.views
     public class Menu
     {
 
-        public void mainMenu()
+        public static void mainMenu()
         {
             Console.Clear();
             Console.WriteLine("Bem vindo. Escolha a opção pretendida\n");
@@ -38,6 +38,8 @@ namespace _4Source.views
                         //GestaoEstatisticaUI.MainEstatistica();
                         break;
                     case 5:
+                        Console.WriteLine("Bye!!!");
+                        Console.ReadKey();
                         Environment.Exit(0);
                         break;
                     default:
