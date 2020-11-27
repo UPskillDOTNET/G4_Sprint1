@@ -59,6 +59,7 @@ namespace _4Source.views
             {
                 Console.WriteLine(pessoa.ToString());
             }
+            Console.ReadKey();
             Menu();
         }
 

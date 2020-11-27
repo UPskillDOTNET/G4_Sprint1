@@ -20,8 +20,8 @@ namespace _4Source.views
                 Console.WriteLine("2) Gestão de Funcionários");
                 Console.WriteLine("3) Gestão de Freguesias.");
                 Console.WriteLine("4) Gestão de Terrenos");
-                Console.WriteLine("4) Cálculo de Estatisticas");
-                Console.WriteLine("5) Fechar Programa\n\n");
+                Console.WriteLine("5) Cálculo de Estatisticas");
+                Console.WriteLine("6) Fechar Programa\n\n");
                 int numInput = Int32.Parse(Console.ReadLine());
 
                 do

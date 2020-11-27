@@ -54,17 +54,19 @@ namespace _4Source.views
         }
         private static void ListarTerrenos()
         {
-            string nome = GetText("Digite o nome da Freguesia");
+            string nome = Utils.GetText("Digite o nome da Freguesia");
             ArrayList lista = RegistoTerrenoController.ObterListaTerrenos(nome);
             foreach (Terreno terreno in lista)
             {
                 Console.WriteLine(terreno.ToString());
             }
+            Console.ReadKey();
+            Menu();
         }
 
         private static void EliminarTerreno()
         {
-            string nome = GetText("Digite o nome da Freguesia");
+            string nome = Utils.GetText("Digite o nome da Freguesia");
             int id = Utils.GetIntNumber("Digite o ID");
             Terreno terreno = RegistoTerrenoController.EliminarTerreno(nome, id);
             if (terreno != null)
@@ -75,12 +77,13 @@ namespace _4Source.views
             {
                 Console.WriteLine("Não  existe!!!");
             }
-
+            Console.ReadKey();
+            Menu();
         }
 
         private static void PesquisarTerreno()
         {
-            string nome = GetText("Digite o Nome da Freguesia");
+            string nome = Utils.GetText("Digite o Nome da Freguesia");
             int id = Utils.GetIntNumber("Digite o Id");
             Terreno terreno = RegistoTerrenoController.PesquisarTerreno(nome, id);
             if (terreno != null)
@@ -91,14 +94,15 @@ namespace _4Source.views
             {
                 Console.WriteLine("Não  existe!!!");
             }
-
+            Console.ReadKey();
+            Menu();
         }
         private static void RegistarTerreno()
         {
-            string nome = GetText("Digite o Nome da Freguesia");
+            string nome = Utils.GetText("Digite o Nome da Freguesia");
             Terreno terreno = CriarTerreno();
             RegistoTerrenoController.RegistarTerreno(nome, terreno);
-
+            Menu();
         }
 
         public static Terreno CriarTerreno()
@@ -119,32 +123,6 @@ namespace _4Source.views
                 }
             } while (flag);
             return terreno;
-        }
-        public static Terreno AlterarTerreno(Terreno terreno)
-        {
-            bool flag;
-
-            do
-            {
-                try
-                {
-                    flag = false;
-                    terreno.Id = Utils.GetIntNumber("ID: ");
-                }
-                catch (IdTerrenoInvalidoException e)
-                {
-                    flag = true;
-                    Console.WriteLine("Atenção: " + e.ToString());
-                }
-            } while (flag);
-            return terreno;
-        }
-        public static string GetText(string label)
-        {
-            string text = "";
-            Console.WriteLine(label + ": ");
-            text = Console.ReadLine();
-            return text;
         }
         
     }

@@ -14,7 +14,7 @@ namespace _4Source
         private string nome;
         private ArrayList terrenoList;
 
-        public Freguesia(string nome)
+        public Freguesia(string nome, ArrayList terrenoList)
         {
             this.nome = nome;
             this.terrenoList = new ArrayList();
@@ -36,10 +36,7 @@ namespace _4Source
             set { nome = value; }
         }
 
-        public ArrayList TerrenoList
-        {
-            get { return terrenoList; }
-        } 
+        public ArrayList TerrenoList { get => terrenoList; set => terrenoList = value; }
 
         public void RegistarTerreno(Terreno t)
         {
@@ -76,13 +73,13 @@ namespace _4Source
 
         public ArrayList ObterTodosTerrenos()
         {
-            return this.terrenoList;
+            return this.TerrenoList;
         }
 
         public Terreno GetTerrenoById(int id)
         {
 
-            foreach (Terreno t in TerrenoList)
+            foreach (Terreno t in terrenoList)
             {
                 if (t.Id == id)
                 {

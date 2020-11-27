@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using _4Source.controllers;
+using _4Source.view;
 
 namespace _4Source.views
 {
@@ -25,10 +26,7 @@ namespace _4Source.views
             {
                 switch (numInput)
                 {
-                    case 6:
-                        Console.WriteLine("Volta para o menu anterior.\n");
-                        Console.ReadKey();
-                        break;
+                  
                     case 1:
                         RegistarFreguesia();
                         break;
@@ -44,8 +42,14 @@ namespace _4Source.views
                     case 5:
                         ListarFreguesias();
                         break;
+                    case 6:
+                        Console.WriteLine("Volta para o menu anterior.\n");
+                        Console.ReadKey();
+                        break;
                     default:
                         Console.WriteLine("Opção Errada\n");
+                        Console.ReadKey();
+                        Menu();
                         break;
                 }
 
@@ -65,7 +69,7 @@ namespace _4Source.views
 
         private static void AlterarFreguesia()
         {
-            string nome = GetText("Digite o Nome");
+            string nome = Utils.GetText("Digite o Nome");
             Freguesia freguesia = RegistoFreguesiaController.PesquisarFreguesia(nome);
             if (freguesia != null)
             {
@@ -79,11 +83,10 @@ namespace _4Source.views
             }
             Console.ReadKey();
             Menu();
-
         }
         private static void EliminarFreguesia()
         {
-            string nome = GetText("Digite o Nome");
+            string nome = Utils.GetText("Digite o Nome");
             Freguesia freguesia = RegistoFreguesiaController.EliminarFreguesia(nome);
             if (freguesia != null)
             {
@@ -100,7 +103,7 @@ namespace _4Source.views
 
         private static void PesquisarFreguesia()
         {
-            string nome = GetText("Digite o Nome");
+            string nome = Utils.GetText("Digite o Nome");
             Freguesia freguesia = RegistoFreguesiaController.PesquisarFreguesia(nome);
             if (freguesia != null)
             {
@@ -130,7 +133,7 @@ namespace _4Source.views
                 try
                 {
                     flag = false;
-                    freguesia.Nome = GetText("Nome");
+                    freguesia.Nome = Utils.GetText("Nome");
                 }
                 catch (NomeFreguesiaInvalidoException e)
                 {
@@ -140,6 +143,7 @@ namespace _4Source.views
             } while (flag);
             return freguesia;
         }
+
         public static Freguesia AlterarFreguesia(Freguesia freguesia)
         {
             bool flag;
@@ -149,7 +153,7 @@ namespace _4Source.views
                 try
                 {
                     flag = false;
-                    freguesia.Nome = GetText("Nome");
+                    freguesia.Nome = Utils.GetText("Nome");
                 }
                 catch (NomeFreguesiaInvalidoException e)
                 {
@@ -158,13 +162,6 @@ namespace _4Source.views
                 }
             } while (flag);
             return freguesia;
-        }
-        public static string GetText(string label)
-        {
-            string text = "";
-            Console.WriteLine(label + ": ");
-            text = Console.ReadLine();
-            return text;
         }
 
     }
