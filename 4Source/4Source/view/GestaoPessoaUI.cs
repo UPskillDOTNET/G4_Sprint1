@@ -110,10 +110,41 @@ namespace _4Source.views
 
         }
 
-        private static Pessoa CriarPessoa()
+        public static Pessoa CriarPessoa()
         {
             Pessoa pessoa = new Pessoa();
-
+            bool flag;
+            do
+            {
+                try
+                {
+                    flag = false;
+                    pessoa.Nif = GetText("NIF");
+                }
+                catch (NifInvalidoException e)
+                {
+                    flag = true;
+                    Console.WriteLine("Atenção: " + e.ToString());
+                }
+            } while (flag);
+            do
+            {
+                try
+                {
+                    flag = false;
+                    pessoa.Nome = GetText("Nome");
+                }
+                catch (NomePessoaInvalidoException e)
+                {
+                    flag = true;
+                    Console.WriteLine("Atenção: " + e.ToString());
+                }
+            } while (flag);
+            pessoa.DataNascimento = DataView.GetData();
+            return pessoa;
+        }
+        public static Pessoa AlterarPessoa(Pessoa pessoa)
+        {
             bool flag;
             do
             {
@@ -128,18 +159,10 @@ namespace _4Source.views
                     Console.WriteLine("Atenção: " + e.ToString());
                 }
             } while (flag);
-            func.Cargo = Utils.GetText("Cargo");
-            return func;
+            pessoa.DataNascimento = DataView.GetData();
+            return pessoa;
         }
-        private static Pessoa AlterarPessoa(Pessoa pessoa)
-        {
-            Pessoa pessoa = PessoaView.AlterarPessoa((Freguesia)func);
-            func.Nif = pessoa.Nif;
-            func.Nome = pessoa.Nome;
-            func.Nascimento = pessoa.Nascimento;
-            func.Cargo = GetText("Cargo");
-            return func;
-        }
+
         public static string GetText(string label)
         {
             string text = "";
