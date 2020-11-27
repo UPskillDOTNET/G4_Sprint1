@@ -12,12 +12,13 @@ namespace _4Source.views
         public static void Menu()
         {
 
-            Console.WriteLine("\nMenu Funcionario");
+            Console.WriteLine("\n===Gestão de Funcionarios===\n\n");
             Console.WriteLine("1 - Inserir Funcionario");
             Console.WriteLine("2 - Listar Funcionario");
             Console.WriteLine("3 - Eliminar Funcionario");
             Console.WriteLine("4 - Listar Funcionarios");
-            Console.WriteLine("\n0 - Voltar");
+            Console.WriteLine("\n5 - Voltar\n");
+            Console.WriteLine("===========================\n");
             int input = int.Parse(Console.ReadLine());
             do
             {
@@ -45,7 +46,7 @@ namespace _4Source.views
                         break;
                 }
 
-            } while (input != 0);
+            } while (input != 5);
         }
 
 
