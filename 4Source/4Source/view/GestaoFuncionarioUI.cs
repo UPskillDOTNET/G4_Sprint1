@@ -11,7 +11,7 @@ namespace _4Source.views
     {
         public static void MainFuncionario()
         {
-            
+
             Console.WriteLine("\nMenu Funcionario");
             Console.WriteLine("1 - Inserir Funcionario");
             Console.WriteLine("2 - Listar Funcionario");
@@ -47,7 +47,7 @@ namespace _4Source.views
                         break;
                 }
 
-            } while (numInput != 0);        
+            } while (numInput != 0);
         }
 
 
@@ -62,7 +62,7 @@ namespace _4Source.views
 
         private static void AlterarFuncionario()
         {
-            int nr = Utils.GetIntNumber("Digite o Numero");
+            string nr = GetText("Digite o Numero");
             Funcionario func = RegistoFuncionarioController.PesquisarFuncionario(nr);
             if (func != null)
             {
@@ -78,7 +78,7 @@ namespace _4Source.views
         }
         private static void EliminarFuncionario()
         {
-            int nr = Utils.GetIntNumber("Digite o Numero");
+            string nr = GetText("Digite o Numero");
             Funcionario func = RegistoFuncionarioController.EliminarFuncionario(nr);
             if (func != null)
             {
@@ -93,7 +93,7 @@ namespace _4Source.views
 
         private static void PesquisarFuncionario()
         {
-            int nr = Utils.GetIntNumber("Digite o Numero");
+            string nr = GetText("Digite o Numero");
             Funcionario func = RegistoFuncionarioController.PesquisarFuncionario(nr);
             if (func != null)
             {
@@ -115,17 +115,17 @@ namespace _4Source.views
         private static Funcionario CriarFuncionario()
         {
             Funcionario func = new Funcionario();
-            Freguesia pessoa = GestaoPessoaUI.CriarPessoa();
+            Pessoa pessoa = GestaoPessoaUI.CriarPessoa();
             func.Nif = pessoa.Nif;
             func.Nome = pessoa.Nome;
-            func.Nascimento = pessoa.Nascimento;
+            func.dataNascimento = pessoa.dataNascimento;
             bool flag;
             do
             {
                 try
                 {
                     flag = false;
-                    func.Numero = Utils.GetIntNumber("Numero");
+                    func.numeroFunc = GetText("Numero");
                 }
                 catch (NumeroFuncionarioInvalidoException e)
                 {
@@ -133,21 +133,31 @@ namespace _4Source.views
                     Console.WriteLine("Atenção: " + e.ToString());
                 }
             } while (flag);
-            func.Cargo = Utils.GetText("Cargo");
+            func.Cargo = GetText("Cargo");
             return func;
         }
         private static Funcionario AlterarFuncionario(Funcionario func)
         {
             //Assumo que não é possível alterar nem o NIF, nem o Numero 
-            Freguesia pessoa = PessoaView.AlterarPessoa((Freguesia)func);
+            Pessoa pessoa = GestaoPessoaUI.AlterarPessoa((Pessoa)func);
             func.Nif = pessoa.Nif;
             func.Nome = pessoa.Nome;
-            func.Nascimento = pessoa.Nascimento;
-            func.Cargo = Utils.GetText("Cargo");
+            func.dataNascimento = pessoa.dataNascimento;
+            func.Cargo = GetText("Cargo");
             return func;
         }
 
-     
+
+            public static string GetText(string label)
+        {
+            string text = "";
+            Console.WriteLine(label + ": ");
+            text = Console.ReadLine();
+            return text;
+        }
+       
+
         }
 
     }
+
