@@ -18,14 +18,12 @@ namespace _4Source {
         }
     }
 
-    public class IdTerrenoInvalidoException : Exception
-    {
+    public class IdTerrenoInvalidoException : Exception {
         public IdTerrenoInvalidoException(string message) : base(message) { }
     }
 
-    public class NomeDuplicadoException : Exception
-    {
-        public NomeDuplicadoException (string message) : base(message) { }
+    public class NomeDuplicadoException : Exception {
+        public NomeDuplicadoException(string message) : base(message) { }
     }
 
     public class IdDuplicadoException : Exception {
@@ -37,15 +35,18 @@ namespace _4Source {
         public TerrenoDuplicadoException(string message) : base(message) {
         }
     }
+
+    public class EscrituraDuplicadoException : Exception {
+        public EscrituraDuplicadoException(string message) : base(message) {
+        }
+    }
     public class FreguesiaDuplicadoException : Exception {
         public FreguesiaDuplicadoException(string message) : base(message) {
         }
     }
 
-    public class NomeFreguesiaInvalidoException : Exception
-    {
-        public NomeFreguesiaInvalidoException(string message) : base(message)
-        {
+    public class NomeFreguesiaInvalidoException : Exception {
+        public NomeFreguesiaInvalidoException(string message) : base(message) {
 
         }
     }
