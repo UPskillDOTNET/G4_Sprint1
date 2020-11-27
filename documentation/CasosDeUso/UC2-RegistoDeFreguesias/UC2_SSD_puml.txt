@@ -1,13 +1,27 @@
 @startuml
-Utilizador -> Plataforma: Acede à plataforma
-Plataforma --> Utilizador: Questiona que operação o utilizador pretende efetuar (Registar, Consultar, Apagar)
+autonumber
 
-Utilizador -> Plataforma: Seleciona registar uma freguesia
-Plataforma --> Utilizador: Solicita o preenchimento do nome de freguesia
+actor "Utilizador"
 
-Utilizador -> Plataforma: Introduz os dados solicitados
-Plataforma --> Utilizador: Apresenta os dados e pede a confirmação destes
+Utilizador -> ":Plataforma" : Acede à plataforma
+activate ":Plataforma"
+":Plataforma" --> Utilizador: Questiona que operação o utilizador pretende efetuar (Registar, Consultar, Editar, Apagar)
+deactivate ":Plataforma"
 
-Utilizador -> Plataforma: Confirma os dados
-Plataforma --> Utilizador: Regista a freguesia e informa do sucesso da operação
+Utilizador -> ":Plataforma" : Seleciona registar uma freguesia
+activate ":Plataforma"
+":Plataforma" --> Utilizador: Solicita o preenchimento do nome de freguesia
+deactivate ":Plataforma"
+
+Utilizador ->":Plataforma" : Introduz os dados solicitados
+activate ":Plataforma"
+":Plataforma" --> Utilizador: Apresenta os dados e pede a confirmação destes
+deactivate ":Plataforma"
+
+Utilizador -> ":Plataforma" : Confirma os dados
+activate ":Plataforma"
+":Plataforma" --> Utilizador: Regista a freguesia e informa do sucesso da operação
+deactivate ":Plataforma"
+
+deactivate "Utilizador"
 @enduml
