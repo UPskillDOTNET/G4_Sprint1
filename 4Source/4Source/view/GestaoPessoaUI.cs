@@ -16,7 +16,7 @@ namespace _4Source.views
             Console.WriteLine("2 - Pesquisar Pessoa");
             Console.WriteLine("3 - Editar Pessoa");
             Console.WriteLine("4 - Eliminar Pessoa");
-            Console.WriteLine("5 - Mostrar lista de Pessoas");
+            Console.WriteLine("5 - Mostrar Lista de Pessoas");
             Console.WriteLine("6 - Voltar ao Menu Principal");
             Console.WriteLine("===========================\n");
             int input = int.Parse(Console.ReadLine());
@@ -109,9 +109,10 @@ namespace _4Source.views
             {
                 Console.WriteLine("Não existe!!!");
             }
+            Console.ReadKey();
             Menu();
-
         }
+
         private static void RegistarPessoa()
         {
             Pessoa pessoa = CriarPessoa();
