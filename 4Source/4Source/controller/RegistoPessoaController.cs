@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using _4Source;
 using _4Source.persistencia;
 
@@ -64,6 +65,18 @@ namespace _4Source.controllers
                 Console.WriteLine("Advertencia: " + e.ToString());
             }
             return pessoa;
+        }
+
+        public static ArrayList ObterListaPessoas()
+        {
+
+            ArrayList lista = null;
+
+            Autarquia autarquia = Dados.CarregarDados();
+            lista = autarquia.ObterTodasPessoas();
+            //Dados.GuardarDados(autarquia);
+            return lista;
+
         }
     }
 }

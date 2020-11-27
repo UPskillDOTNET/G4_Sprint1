@@ -1,10 +1,6 @@
 ﻿using _4Source.controllers;
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _4Source.views
 {
@@ -64,24 +60,24 @@ namespace _4Source.views
 
         private static void AlterarPessoa()
         {
-            int nr = Utils.GetIntNumber("Digite o Numero");
-            Pessoa pessoa = RegistoPessoaController.PesquisarPessoa(nr);
+            string nif = GetText("Digite o NIF");
+            Pessoa pessoa = RegistoPessoaController.PesquisarPessoa(nif);
             if (pessoa != null)
             {
                 Console.WriteLine(pessoa.ToString());
-                Pessoa pessoa = AlterarPessoa(pessoa);
+                Pessoa pessoaAlterada = AlterarPessoa(pessoa);
                 RegistoPessoaController.AlterarPessoa(pessoaAlterada);
             }
             else
             {
-                Console.WriteLine("Não  existe!!!");
+                Console.WriteLine("Não existe!!!");
             }
 
         }
         private static void EliminarPessoa()
         {
-            int nr = Utils.GetIntNumber("Digite o Numero");
-            Pessoa pessoa = RegistoPessoaController.EliminarPessoa(nr);
+            string nif = GetText("Digite o NIF");
+            Pessoa pessoa = RegistoPessoaController.EliminarPessoa(nif);
             if (pessoa != null)
             {
                 Console.WriteLine(pessoa.ToString());
@@ -95,8 +91,8 @@ namespace _4Source.views
 
         private static void PesquisarPessoa()
         {
-            int nr = Utils.GetIntNumber("Digite o Numero");
-            Pessoa pessoa = RegistoPessoaController.PesquisarPessoa(nr);
+            string nif = GetText("Digite o NIF");
+            Pessoa pessoa = RegistoPessoaController.PesquisarPessoa(nif);
             if (pessoa != null)
             {
                 Console.WriteLine(pessoa.ToString());
@@ -114,22 +110,19 @@ namespace _4Source.views
 
         }
 
-        private static Funcionario CriarPessoa()
+        private static Pessoa CriarPessoa()
         {
             Pessoa pessoa = new Pessoa();
-            Freguesia pessoa = PessoaView.CriarPessoa();
-            func.Nif = pessoa.Nif;
-            func.Nome = pessoa.Nome;
-            func.Nascimento = pessoa.Nascimento;
+
             bool flag;
             do
             {
                 try
                 {
                     flag = false;
-                    func.Numero = Utils.GetIntNumber("Numero");
+                    pessoa.Nome = GetText("Nome");
                 }
-                catch (NumeroFuncionarioInvalidoException e)
+                catch (NomePessoaInvalidoException e)
                 {
                     flag = true;
                     Console.WriteLine("Atenção: " + e.ToString());
@@ -138,21 +131,22 @@ namespace _4Source.views
             func.Cargo = Utils.GetText("Cargo");
             return func;
         }
-        private static Funcionario AlterarFuncionario(Funcionario func)
+        private static Pessoa AlterarPessoa(Pessoa pessoa)
         {
-            //Assumo que não é possível alterar nem o NIF, nem o Numero 
-            Freguesia pessoa = PessoaView.AlterarPessoa((Freguesia)func);
+            Pessoa pessoa = PessoaView.AlterarPessoa((Freguesia)func);
             func.Nif = pessoa.Nif;
             func.Nome = pessoa.Nome;
             func.Nascimento = pessoa.Nascimento;
-            func.Cargo = Utils.GetText("Cargo");
+            func.Cargo = GetText("Cargo");
             return func;
         }
-        //public static Pessoa CriarPessoa() { }
-        //public static PesquisarPessoa() { }
-        //public static EditarPessoa() { }
-        //public static EliminarPessoa() { }
-        //public static MostrarListaPessoa() { }
-        //public static VoltarMenuPrincipal() { }
+        public static string GetText(string label)
+        {
+            string text = "";
+            Console.WriteLine(label + ": ");
+            text = Console.ReadLine();
+            return text;
+        }
+
     }
 }
