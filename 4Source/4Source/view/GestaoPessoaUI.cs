@@ -38,11 +38,12 @@ namespace _4Source.views
                     case 5:
                         ListarPessoas();
                         break;
-                    case 0:
+                    case 6:
                         Console.WriteLine("Volta para o menu anterior.");
                         break;
                     default:
                         Console.WriteLine("Opção errada. Escolha novamente.");
+                        Menu();
                         break;
                 }
             } while (input != 0);
@@ -55,6 +56,7 @@ namespace _4Source.views
             {
                 Console.WriteLine(pessoa.ToString());
             }
+            Menu();
         }
 
 
@@ -72,6 +74,7 @@ namespace _4Source.views
             {
                 Console.WriteLine("Não existe!!!");
             }
+            Menu();
 
         }
         private static void EliminarPessoa()
@@ -86,6 +89,7 @@ namespace _4Source.views
             {
                 Console.WriteLine("Não  existe!!!");
             }
+            Menu();
 
         }
 
@@ -101,12 +105,14 @@ namespace _4Source.views
             {
                 Console.WriteLine("Não existe!!!");
             }
+            Menu();
 
         }
         private static void RegistarPessoa()
         {
             Pessoa pessoa = CriarPessoa();
             RegistoPessoaController.RegistarPessoa(pessoa);
+            Menu();
 
         }
 
