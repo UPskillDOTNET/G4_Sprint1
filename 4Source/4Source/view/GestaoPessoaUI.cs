@@ -15,8 +15,8 @@ namespace _4Source.views
             Console.WriteLine("3 - Editar Pessoa");
             Console.WriteLine("4 - Eliminar Pessoa");
             Console.WriteLine("5 - Mostrar lista de Pessoas");
-            Console.WriteLine("\n6 - Voltar ao Menu Principal");
-            Console.WriteLine("===========================");
+            Console.WriteLine("6 - Voltar ao Menu Principal");
+            Console.WriteLine("===========================\n");
             int input = int.Parse(Console.ReadLine());
 
             do
@@ -39,14 +39,15 @@ namespace _4Source.views
                         ListarPessoas();
                         break;
                     case 6:
-                        Console.WriteLine("Volta para o menu anterior.");
+                        Console.WriteLine("\nVolta para o menu anterior.\n");
+                        Console.ReadKey();
                         break;
                     default:
-                        Console.WriteLine("Opção errada. Escolha novamente.");
+                        Console.WriteLine("\nOpção errada. Escolha novamente.\n");
                         Menu();
                         break;
                 }
-            } while (input != 0);
+            } while (input != 6);
         }
 
         private static void ListarPessoas()

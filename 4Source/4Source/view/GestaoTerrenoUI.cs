@@ -18,14 +18,14 @@ namespace _4Source.views
             Console.WriteLine("2 - Listar Terreno");
             Console.WriteLine("3 - Eliminar Terreno");
             Console.WriteLine("4 - Listar Terrenos");
-            Console.WriteLine("\n0 - Voltar");
+            Console.WriteLine("\n0 - Voltar\n");
             int numInput = Int32.Parse(Console.ReadLine());
             do
             {
                 switch (numInput)
                 {
                     case 0:
-                        Console.WriteLine("Volta para o menu anterior.");
+                        Console.WriteLine("\nVolta para o menu anterior.");
                         break;
                     case 1:
                         RegistarTerreno();
@@ -40,7 +40,7 @@ namespace _4Source.views
                         ListarTerrenos();
                         break;
                     default:
-                        Console.WriteLine("Opção Errada");
+                        Console.WriteLine("\nOpção Errada");
                         break;
                 }
 

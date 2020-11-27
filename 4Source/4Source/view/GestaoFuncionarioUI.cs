@@ -18,14 +18,14 @@ namespace _4Source.views
             Console.WriteLine("3 - Eliminar Funcionario");
             Console.WriteLine("4 - Alterar Funcionario");
             Console.WriteLine("5 - Listar Funcionarios");
-            Console.WriteLine("\n0 - Voltar");
+            Console.WriteLine("\n6 - Voltar\n");
             int numInput = Int32.Parse(Console.ReadLine());
             do
             {
                 switch (numInput)
                 {
-                    case 0:
-                        Console.WriteLine("Volta para o menu anterior.");
+                    case 6:
+                        Console.WriteLine("\nVolta para o menu anterior.\n");
                         break;
                     case 1:
                         RegistarFuncionario();
@@ -43,11 +43,11 @@ namespace _4Source.views
                         ListarFuncionarios();
                         break;
                     default:
-                        Console.WriteLine("Opção Errada");
+                        Console.WriteLine("\nOpção Errada\n");
                         break;
                 }
 
-            } while (numInput != 0);
+            } while (numInput != 6);
         }
 
 

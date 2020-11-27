@@ -25,32 +25,7 @@ namespace _4Source.views
 
 
 
-                do
-                {
-<<<<<<< Updated upstream
-                    case 1:
-                        GestaoPessoaUI.Menu();
-                        break;
-                    case 2:
-                        GestaoFuncionarioUI.MainFuncionario();
-                        break;
-                    case 3:
-                        GestaoFreguesiaUI.MainFreguesia();
-                        break;
-                    case 4:
-                        //GestaoEstatisticaUI.MainEstatistica();
-                        break;
-                    case 5:
-                        Console.WriteLine("Bye!!!");
-                        Console.ReadKey();
-                        Environment.Exit(0);
-                        break;
-                    default:
-                        Console.WriteLine("Wrong option");
-                        break;
-                }
-            } while (numInput < 0 || numInput > 5);
-=======
+                do {
                     switch (numInput)
                     {
                         case 1:
@@ -66,16 +41,21 @@ namespace _4Source.views
                             //GestaoEstatisticaUI.MainEstatistica();
                             break;
                         case 5:
+                            Console.WriteLine("Bye!!!");
+                            Console.ReadKey();
                             Environment.Exit(0);
                             break;
                         default:
                             Console.WriteLine("Wrong option");
                             break;
                     }
+
                 } while (numInput < 0 || numInput > 5);
 
+                   
+
             } while (true);
->>>>>>> Stashed changes
+
 
             
         }   

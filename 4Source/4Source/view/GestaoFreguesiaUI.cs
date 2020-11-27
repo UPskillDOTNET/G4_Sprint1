@@ -18,7 +18,7 @@ namespace _4Source.views
             Console.WriteLine("3 - Eliminar Freguesia");
             Console.WriteLine("4 - Alterar Freguesia");
             Console.WriteLine("5 - Listar Freguesias");
-            Console.WriteLine("\n0 - Voltar");
+            Console.WriteLine("\n0 - Voltar\n");
             int numInput = Int32.Parse(Console.ReadLine());
             do
             {
