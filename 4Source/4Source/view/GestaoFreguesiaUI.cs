@@ -11,22 +11,23 @@ namespace _4Source.views
     {
         public static void Menu()
         {
-
+            Console.Clear();
             Console.WriteLine("\n===Gestão de Freguesias===\n\n");
             Console.WriteLine("1 - Inserir Freguesia");
             Console.WriteLine("2 - Listar Freguesia");
             Console.WriteLine("3 - Eliminar Freguesia");
             Console.WriteLine("4 - Alterar Freguesia");
             Console.WriteLine("5 - Listar Freguesias");
-            Console.WriteLine("\n5 - Voltar\n");
+            Console.WriteLine("\n6 - Voltar\n");
             Console.WriteLine("===========================\n");
             int numInput = Int32.Parse(Console.ReadLine());
             do
             {
-                switch (input)
+                switch (numInput)
                 {
-                    case 0:
+                    case 6:
                         Console.WriteLine("Volta para o menu anterior.\n");
+                        Console.ReadKey();
                         break;
                     case 1:
                         RegistarFreguesia();
@@ -48,7 +49,7 @@ namespace _4Source.views
                         break;
                 }
 
-            } while (numInput != 5);
+            } while (numInput != 6);
 
         }
          private static void ListarFreguesias()

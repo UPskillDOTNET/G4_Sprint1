@@ -13,6 +13,7 @@ namespace _4Source.views
         public static void MainTerreno()
         {
 
+            Console.Clear();
             Console.WriteLine("\n===Gestão de Terrenos===");
             Console.WriteLine("1 - Inserir Terreno");
             Console.WriteLine("2 - Listar Terreno");
@@ -27,6 +28,7 @@ namespace _4Source.views
                 {
                     case 5:
                         Console.WriteLine("\nVolta para o menu anterior.");
+                        Console.ReadKey();
                         break;
                     case 1:
                         RegistarTerreno();
