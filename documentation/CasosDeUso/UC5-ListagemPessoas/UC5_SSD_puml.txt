@@ -1,10 +1,22 @@
 @startuml
-Utilizador -> Plataforma: Acede à plataforma para listar pessoas
-Plataforma --> Utilizador: Solicita o parâmetro de ordenação pretendido para a listagem de pessoas  
+autonumber
 
-Utilizador -> Plataforma: Seleciona o parâmetro
-Plataforma --> Utilizador: Apresenta a listagem de pessoas ordenada pelo parâmetro escolhido
+actor "Utilizador"
 
-Utilizador -> Plataforma: Confirma a listagem de pessoas
-Plataforma --> Utilizador: Informa do sucesso da operação
+Utilizador -> ":Plataforma" : Acede à plataforma para listar pessoas
+activate ":Plataforma"
+":Plataforma" --> Utilizador: Solicita o parâmetro de ordenação pretendido para a listagem de pessoas
+deactivate ":Plataforma"
+
+Utilizador -> ":Plataforma" : Seleciona o parâmetro
+activate ":Plataforma"
+":Plataforma" --> Utilizador: Apresenta a listagem de pessoas ordenada pelo parâmetro escolhido
+deactivate ":Plataforma"
+
+Utilizador ->":Plataforma" : Confirma a listagem de pessoas
+activate ":Plataforma"
+":Plataforma" --> Utilizador: Informa do sucesso da operação
+deactivate ":Plataforma"
+
+deactivate "Utilizador"
 @enduml
