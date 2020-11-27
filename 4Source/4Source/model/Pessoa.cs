@@ -38,6 +38,11 @@ namespace _4Source
             this.dataNascimento = dataNascimento;
         }
 
+        public Pessoa()
+        {
+
+        }
+
         public override string ToString()
         {
             return "NIF: " + nif + "\n Nome: " + nome + "\n Data de nascimento: " + dataNascimento.ToString();
