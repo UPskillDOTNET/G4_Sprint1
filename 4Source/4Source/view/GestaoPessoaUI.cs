@@ -140,7 +140,7 @@ namespace _4Source.views
                     Console.WriteLine("Atenção: " + e.ToString());
                 }
             } while (flag);
-            pessoa.DataNascimento = DataView.GetData();
+            pessoa.DataNascimento = new DateTime();
             return pessoa;
         }
         public static Pessoa AlterarPessoa(Pessoa pessoa)
@@ -159,7 +159,7 @@ namespace _4Source.views
                     Console.WriteLine("Atenção: " + e.ToString());
                 }
             } while (flag);
-            pessoa.DataNascimento = DataView.GetData();
+            pessoa.DataNascimento = new DateTime();
             return pessoa;
         }
 
@@ -170,6 +170,5 @@ namespace _4Source.views
             text = Console.ReadLine();
             return text;
         }
-
     }
 }

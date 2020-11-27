@@ -120,7 +120,7 @@ namespace _4Source
             Freguesia temp = GetFreguesiaByNome(f.Nome);
             if (temp == null)
             {
-                this.PessoaList.Add(f);
+                this.FreguesiaList.Add(f);
 
             }
             else
