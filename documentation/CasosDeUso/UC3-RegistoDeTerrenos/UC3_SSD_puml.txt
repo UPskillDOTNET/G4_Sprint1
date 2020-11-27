@@ -1,0 +1,22 @@
+@startuml
+Utilizador -> Plataforma: Acede à plataforma e inicia o registo do terreno
+Plataforma --> Utilizador: Solicita os dados (número único, índice de contribuição autárquica, nome da freguesia, forma do terreno e tipo de classificação)
+
+Utilizador -> Plataforma: Introduz os dados solicitados
+Plataforma --> Utilizador: Apresenta os dados e pede a confirmação destes
+
+Utilizador -> Plataforma: Confirma os dados
+Plataforma --> Utilizador: Solicita a descrição, a área de construção e a data da construção referindo a classificação do terreno
+
+Utilizador -> Plataforma: Introduz os dados solicitados
+Plataforma --> Utilizador: Apresenta os dados e pede a confirmação destes
+
+Utilizador -> Plataforma: Confirma os dados
+Plataforma --> Utilizador: Solicita a introdução do nome do proprietário do terreno
+
+Utilizador -> Plataforma: Introduz os dados solicitados
+Plataforma --> Utilizador: Apresenta os dados e pede a confirmação destes
+
+Utilizador -> Plataforma: Confirma os dados
+Plataforma --> Utilizador: Regista o terreno e informa do sucesso da operação
+@enduml

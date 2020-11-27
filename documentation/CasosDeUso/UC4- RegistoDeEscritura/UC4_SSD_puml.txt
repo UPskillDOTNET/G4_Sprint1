@@ -1,0 +1,13 @@
+@startuml
+Utilizador -> Plataforma: Acede à plataforma e inicia o registo da escritura
+Plataforma --> Utilizador: Questiona que operação o utilizador pretende efetuar (Registar, Consultar, Apagar)
+
+Utilizador -> Plataforma: Seleciona registar uma escritura
+Plataforma --> Utilizador: Solicita o preenchimento dos dados necessários (i.e. proprietário(s), número único \n do terreno, número da escritura, data)
+
+Utilizador -> Plataforma: Introduz os dados solicitados
+Plataforma --> Utilizador: Valida e apresenta os dados e pede a confirmação destes
+
+Utilizador -> Plataforma: Confirma os dados
+Plataforma --> Utilizador: Regista os dados e informa do sucesso da operação
+@enduml
