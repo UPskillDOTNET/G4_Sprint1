@@ -16,12 +16,12 @@ namespace _4Source.views
             do
             {
                 Console.Clear();
-                Console.WriteLine("Bem vindo. Escolha a opção pretendida\n");
+                Console.WriteLine("Bem vindo. Escolha a opção pretendida\n\n");
                 Console.WriteLine("1) Gestão de Pessoa.");
                 Console.WriteLine("2) Gestão de Funcionários");
                 Console.WriteLine("3) Gestão de Freguesias.");
                 Console.WriteLine("4) Cálculo de Estatisticas");
-                Console.WriteLine("5) Fechar Programa");
+                Console.WriteLine("5) Fechar Programa\n\n");
                 int numInput = Int32.Parse(Console.ReadLine());
 
 

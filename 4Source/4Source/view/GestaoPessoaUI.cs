@@ -9,7 +9,7 @@ namespace _4Source.views
 
         public static void Menu()
         {
-            Console.WriteLine("\n=== Gestão de Pessoas ===");
+            Console.WriteLine("\n=== Gestão de Pessoas ===\n\n");
             Console.WriteLine("1 - Registar Pessoa");
             Console.WriteLine("2 - Pesquisar Pessoa");
             Console.WriteLine("3 - Editar Pessoa");

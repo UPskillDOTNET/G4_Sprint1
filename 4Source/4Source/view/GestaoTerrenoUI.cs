@@ -13,18 +13,19 @@ namespace _4Source.views
         public static void MainTerreno()
         {
 
-            Console.WriteLine("\nMenu Terreno");
+            Console.WriteLine("\n===Gestão de Terrenos===");
             Console.WriteLine("1 - Inserir Terreno");
             Console.WriteLine("2 - Listar Terreno");
             Console.WriteLine("3 - Eliminar Terreno");
             Console.WriteLine("4 - Listar Terrenos");
-            Console.WriteLine("\n0 - Voltar\n");
+            Console.WriteLine("\n5 - Voltar\n");
+            Console.WriteLine("===========================\n");
             int numInput = Int32.Parse(Console.ReadLine());
             do
             {
                 switch (numInput)
                 {
-                    case 0:
+                    case 5:
                         Console.WriteLine("\nVolta para o menu anterior.");
                         break;
                     case 1:
@@ -44,7 +45,7 @@ namespace _4Source.views
                         break;
                 }
 
-            } while (numInput != 0);
+            } while (numInput != 5);
 
         }
         private static void ListarTerrenos()
