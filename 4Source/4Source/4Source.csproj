@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="controller\RegistoEscrituraController.cs" />
     <Compile Include="controller\RegistoFreguesiaController.cs" />
+    <Compile Include="controller\RegistoFuncionarioController.cs" />
     <Compile Include="controller\RegistoTerrenoController.cs" />
     <Compile Include="controller\RegistoPessoaController.cs" />
     <Compile Include="Exceptions\Exceptions.cs" />

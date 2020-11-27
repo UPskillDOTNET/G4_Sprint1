@@ -168,5 +168,88 @@ namespace _4Source
             }
             return null;
         }
+
+        //Registar Funcionario (Create)
+        public void RegistarFuncionario(Funcionario p)
+        {
+
+            Pessoa temp = GetPessoaByNif(p.Nif);
+            if (temp == null)
+            {
+                Funcionario temp1 = GetFuncionarioByNr(p.numeroFunc);
+                if (temp1 == null)
+                {
+                    this.pessoaList.Add(p);
+                }
+                else
+                {
+                    throw new NumeroFuncionarioDuplicadoException(p.ToString() + " O número está duplicado");
+                }
+            }
+            else
+            {
+                throw new NifDuplicadoException(p.ToString() + " O NIF está duplicado");
+            }
+        }
+
+        public void AlterarFuncionario(Funcionario p)
+        {
+            Funcionario func = GetFuncionarioByNr(p.numeroFunc);
+            func.Nif = p.Nif;
+            func.Nome = p.Nome;
+            func.Nascimento = p.Nascimento;
+            func.Numero = p.Numero;
+            func.Cargo = p.Cargo;
+        }
+
+        public Funcionario PesquisarFuncionario(string nr)
+        {
+            Funcionario func = GetFuncionarioByNr(nr);
+            return func;
+        }
+
+        public Funcionario EliminarFuncionario(string nr)
+        {
+            Funcionario func = GetFuncionarioByNr(nr);
+            if (func != null)
+            {
+                this.pessoaList.Remove(func);
+            }
+            else
+            {
+                throw new ElementoNaoExistenteException(nr + " Não existe");
+            }
+            return func;
+        }
+
+        public ArrayList ObterTodosFuncionarios()
+        {
+            ArrayList lista = new ArrayList();
+            foreach (Pessoa p in this.pessoaList)
+            {
+                if (p.GetType() == typeof(Funcionario))
+                {
+                    lista.Add(p);
+                }
+            }
+            return lista;
+        }
+
+        Funcionario GetFuncionarioByNr(string numeroFunc)
+        {
+            Funcionario f = null;
+            foreach (Object obj in this.pessoaList)
+            {
+                if (obj.GetType() == typeof(Funcionario))
+                {
+                    f = (Funcionario)obj;
+                    if (f.numeroFunc == nr)
+                    {
+                        return f;
+                    }
+                }
+            }
+            return null;
+        }
     }
 }
