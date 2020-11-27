@@ -141,7 +141,7 @@ namespace _4Source.views
                     flag = false;
                     freguesia.Nome = GetText("Nome");
                 }
-                catch (NomePessoaInvalidoException e)
+                catch (NomeFreguesiaInvalidoException e)
                 {
                     flag = true;
                     Console.WriteLine("Atenção: " + e.ToString());

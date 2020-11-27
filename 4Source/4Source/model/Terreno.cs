@@ -15,6 +15,10 @@ namespace _4Source
         private double area;
         private double imi;
 
+        public Terreno()
+        {
+
+        }
         public Terreno(int id, double indiceCont, string forma, double area, double imi)
         {
             this.id = id;

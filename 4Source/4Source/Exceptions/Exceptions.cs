@@ -18,6 +18,11 @@ namespace _4Source {
         }
     }
 
+    public class IdTerrenoInvalidoException : Exception
+    {
+        public IdTerrenoInvalidoException(string message) : base(message) { }
+    }
+
     public class NomeDuplicadoException : Exception
     {
         public NomeDuplicadoException (string message) : base(message) { }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using _4Source;
+using _4Source.persistencia;
 
 namespace _4Source.controllers
 {
@@ -10,7 +11,7 @@ namespace _4Source.controllers
             bool flag = true;
             try {
                 Autarquia autarquia = Dados.CarregarDados();
-                autarquia.RegistarTerreno(terreno);
+                autarquia.Freguesia(RegistarTerreno(terreno);
                 Dados.GuardarDados(autarquia);
             } catch (TerrenoDuplicadoException e) {
                 flag = false;
@@ -19,18 +20,6 @@ namespace _4Source.controllers
             return flag;
         }
 
-        public static bool AlterarTerreno(Terreno terreno) {
-            bool flag = true;
-            try {
-                Autarquia autarquia = Dados.CarregarDados();
-                autarquia.AlterarTerreno(terreno);
-                Dados.GuardarDados(autarquia);
-            } catch (ElementoNaoExistenteException e) {
-                flag = false;
-                Console.WriteLine("Atenção: " + e.ToString());
-            }
-            return flag;
-        }
 
         public static Terreno EliminarTerreno(int id) {
 

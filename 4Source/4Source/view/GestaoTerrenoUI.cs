@@ -28,19 +28,16 @@ namespace _4Source.views
                         Console.WriteLine("Volta para o menu anterior.");
                         break;
                     case 1:
-                        RegistarFreguesia();
+                        RegistarTerreno();
                         break;
                     case 2:
-                        PesquisarFreguesia();
+                        PesquisarTerreno();
                         break;
                     case 3:
-                        EliminarFreguesia();
+                        EliminarTerreno();
                         break;
                     case 4:
-                        AlterarFreguesia();
-                        break;
-                    case 5:
-                        ListarFreguesias();
+                        ListarTerrenos();
                         break;
                     default:
                         Console.WriteLine("Opção Errada");
@@ -50,38 +47,22 @@ namespace _4Source.views
             } while (numInput != 0);
 
         }
-        private static void ListarFreguesias()
+        private static void ListarTerrenos()
         {
-            ArrayList lista = RegistoFreguesiaController.ObterListaFreguesias();
-            foreach (Freguesia freguesia in lista)
+            ArrayList lista = RegistoTerrenoController.ObterListaTerrenos();
+            foreach (Terreno terreno in lista)
             {
-                Console.WriteLine(freguesia.ToString());
+                Console.WriteLine(terreno.ToString());
             }
         }
 
-        private static void AlterarFreguesia()
+        private static void EliminarTerreno()
         {
-            string nome = GetText("Digite o Nome");
-            Freguesia freguesia = RegistoFreguesiaController.PesquisarFreguesia(nome);
-            if (freguesia != null)
+            int id = GetIntNumber("Digite o ID");
+            Terreno terreno = RegistoTerrenoController.EliminarTerreno(id);
+            if (terreno != null)
             {
-                Console.WriteLine(freguesia.ToString());
-                Freguesia freguesiaAlterada = AlterarFreguesia(freguesia);
-                RegistoFreguesiaController.AlterarFreguesia(freguesiaAlterada);
-            }
-            else
-            {
-                Console.WriteLine("Não  existe!!!");
-            }
-
-        }
-        private static void EliminarFreguesia()
-        {
-            string nome = GetText("Digite o Nome");
-            Freguesia freguesia = RegistoFreguesiaController.EliminarFreguesia(nome);
-            if (freguesia != null)
-            {
-                Console.WriteLine(freguesia.ToString());
+                Console.WriteLine(terreno.ToString());
             }
             else
             {
@@ -90,13 +71,13 @@ namespace _4Source.views
 
         }
 
-        private static void PesquisarFreguesia()
+        private static void PesquisarTerreno()
         {
-            string nome = GetText("Digite o Nome");
-            Freguesia freguesia = RegistoFreguesiaController.PesquisarFreguesia(nome);
-            if (freguesia != null)
+            int id = GetIntNumber("Digite o Id");
+            Terreno terreno = RegistoTerrenoController.PesquisarTerreno(id);
+            if (terreno != null)
             {
-                Console.WriteLine(freguesia.ToString());
+                Console.WriteLine(terreno.ToString());
             }
             else
             {
@@ -104,33 +85,33 @@ namespace _4Source.views
             }
 
         }
-        private static void RegistarFreguesia()
+        private static void RegistarTerreno()
         {
-            Freguesia freguesia = CriarFreguesia();
-            RegistoFreguesiaController.RegistarFreguesia(freguesia);
+            Terreno terreno = CriarTerreno();
+            RegistoTerrenoController.RegistarTerreno(terreno);
 
         }
 
-        public static Freguesia CriarFreguesia()
+        public static Terreno CriarTerreno()
         {
-            Freguesia freguesia = new Freguesia();
+            Terreno terreno = new Terreno();
             bool flag;
             do
             {
                 try
                 {
                     flag = false;
-                    freguesia.Nome = GetText("Nome");
+                    terreno.Id = GetIntNumber("ID");
                 }
-                catch (NomeFreguesiaInvalidoException e)
+                catch (IdTerrenoInvalidoException e)
                 {
                     flag = true;
                     Console.WriteLine("Atenção: " + e.ToString());
                 }
             } while (flag);
-            return freguesia;
+            return terreno;
         }
-        public static Freguesia AlterarFreguesia(Freguesia freguesia)
+        public static Terreno AlterarTerreno(Terreno terreno)
         {
             bool flag;
 
@@ -139,15 +120,15 @@ namespace _4Source.views
                 try
                 {
                     flag = false;
-                    freguesia.Nome = GetText("Nome");
+                    terreno.Id = GetIntNumber("ID: ");
                 }
-                catch (NomePessoaInvalidoException e)
+                catch (IdTerrenoInvalidoException e)
                 {
                     flag = true;
                     Console.WriteLine("Atenção: " + e.ToString());
                 }
             } while (flag);
-            return freguesia;
+            return terreno;
         }
         public static string GetText(string label)
         {
@@ -156,6 +137,30 @@ namespace _4Source.views
             text = Console.ReadLine();
             return text;
         }
+        public static int GetIntNumber(String label)
+        {
+            bool flag;
+            int number = -1;
+            string text;
+            do
+            {
+                try
+                {
+                    flag = false;
+                    text = GetText(label);
+                    number = Convert.ToInt32(text);
 
+                }
+                catch (OverflowException)
+                {
+                    flag = true;
+                }
+                catch (FormatException)
+                {
+                    flag = true;
+                }
+            } while (flag);
+            return number;
+        }
     }
 }
