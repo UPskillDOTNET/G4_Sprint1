@@ -9,9 +9,9 @@ namespace _4Source
 {
     public class Pessoa
     {
-        private string nome;
-        private string nif;
-        private DateTime dataNascimento;
+        public string nome;
+        public string nif;
+        public DateTime dataNascimento;
 
         public string Nome
         {

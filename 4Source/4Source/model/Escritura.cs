@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace _4Source {
-    class Escritura : Terreno {
+    public class Escritura : Terreno {
 
         int num;
         DateTime data;
