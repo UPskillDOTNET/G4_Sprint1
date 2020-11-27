@@ -29,6 +29,8 @@ namespace _4Source
             set { cargo = value; }
         }
 
+        public string NumeroFunc { get => numeroFunc; set => numeroFunc = value; }
+
         private static bool ValidarNumeroFunc (string numeroFunc) {
             Regex regex = new Regex("^[1-9]\\d*$", RegexOptions.IgnoreCase);
             Match m = regex.Match(numeroFunc);
