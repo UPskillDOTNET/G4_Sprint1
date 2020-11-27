@@ -7,7 +7,7 @@ namespace _4Source.controllers
 {
     class RegistoTerrenoController
     {
-        public static bool RegistarTerreno(String nomeFreguesia,Terreno terreno) {
+        public static bool RegistarTerreno(string nomeFreguesia,Terreno terreno) {
             bool flag = true;
             try {
                 Autarquia autarquia = Dados.CarregarDados();
@@ -22,12 +22,14 @@ namespace _4Source.controllers
         }
 
 
-        public static Terreno EliminarTerreno(int id) {
+        public static Terreno EliminarTerreno(string nomeFreguesia, int id) {
 
             Terreno terreno = null;
             try {
                 Autarquia autarquia = Dados.CarregarDados();
-                terreno = autarquia.EliminarTerreno(id);
+                Freguesia freguesia = autarquia.GetFreguesiaByNome(nomeFreguesia);
+                freguesia.PesquisarTerreno(id);
+                terreno = freguesia.EliminarTerreno(id);
                 Dados.GuardarDados(autarquia);
             } catch (ElementoNaoExistenteException e) {
 
@@ -37,22 +39,24 @@ namespace _4Source.controllers
 
 
         }
-        public static Terreno PesquisarTerreno(int id) {
+        public static Terreno PesquisarTerreno(string nomeFreguesia, int id) {
 
             Terreno terreno = null;
             Autarquia autarquia = Dados.CarregarDados();
-            terreno = autarquia.PesquisarTerreno(id);
+            Freguesia freguesia = autarquia.GetFreguesiaByNome(nomeFreguesia);
+            terreno = freguesia.PesquisarTerreno(id);
             //Dados.GuardarDados(autarquia);
             return terreno;
 
         }
 
-        public static ArrayList ObterListaTerrenos() {
+        public static ArrayList ObterListaTerrenos(string nomeFreguesia) {
 
             ArrayList lista = null;
 
             Autarquia autarquia = Dados.CarregarDados();
-            lista = autarquia.ObterTodosTerrenos();
+            Freguesia freguesia = autarquia.GetFreguesiaByNome(nomeFreguesia);
+            lista = freguesia.ObterTodosTerrenos();
             //Dados.GuardarDados(autarquia);
             return lista;
 

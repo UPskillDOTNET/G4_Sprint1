@@ -82,6 +82,11 @@ namespace _4Source
             return terreno;
         }
 
+        public ArrayList ObterTodosTerrenos()
+        {
+            return this.terrenoList;
+        }
+
         public Terreno GetTerrenoById(int id)
         {
 
