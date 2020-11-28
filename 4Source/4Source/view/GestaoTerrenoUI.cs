@@ -15,7 +15,7 @@ namespace _4Source.views
     {
         public static void Menu()
         {
-
+            int numInput;
             Console.Clear();
             Console.WriteLine("\n===Gestão de Terrenos===");
             Console.WriteLine("1 - Inserir Terreno");
@@ -24,7 +24,7 @@ namespace _4Source.views
             Console.WriteLine("4 - Listar Terrenos");
             Console.WriteLine("\n5 - Voltar\n");
             Console.WriteLine("===========================\n");
-            int numInput = Int32.Parse(Console.ReadLine());
+            numInput = Utils.GetIntNumber("Por favor escolha uma opção: ");
             do
             {
                 switch (numInput)
@@ -60,7 +60,7 @@ namespace _4Source.views
             ArrayList lista = RegistoTerrenoController.ObterListaTerrenos(nome);
             foreach (Terreno terreno in lista)
             {
-                Console.WriteLine(terreno.ToString());
+                Console.WriteLine("\n" + terreno.ToString());
             }
             Console.ReadKey();
             Menu();
@@ -68,8 +68,8 @@ namespace _4Source.views
 
         private static void EliminarTerreno()
         {
-            string nome = Utils.GetText("Digite o nome da Freguesia");
-            int id = Utils.GetIntNumber("Digite o ID");
+            string nome = Utils.GetText("\n Digite o nome da Freguesia");
+            int id = Utils.GetIntNumber("\n Digite o ID");
             Terreno terreno = RegistoTerrenoController.EliminarTerreno(nome, id);
             if (terreno != null)
             {
@@ -77,7 +77,7 @@ namespace _4Source.views
             }
             else
             {
-                Console.WriteLine("Não  existe!!!");
+                Console.WriteLine("\n Não  existe!!!");
             }
             Console.ReadKey();
             Menu();
@@ -85,8 +85,8 @@ namespace _4Source.views
 
         private static void PesquisarTerreno()
         {
-            string nome = Utils.GetText("Digite o Nome da Freguesia");
-            int id = Utils.GetIntNumber("Digite o Id");
+            string nome = Utils.GetText("\nDigite o Nome da Freguesia");
+            int id = Utils.GetIntNumber("\nDigite o Id");
             Terreno terreno = RegistoTerrenoController.PesquisarTerreno(nome, id);
             if (terreno != null)
             {
@@ -94,14 +94,14 @@ namespace _4Source.views
             }
             else
             {
-                Console.WriteLine("Não  existe!!!");
+                Console.WriteLine("\nNão  existe!!!");
             }
             Console.ReadKey();
             Menu();
         }
         private static void RegistarTerreno()
         {
-            string nome = Utils.GetText("Introduza o nome da freguesia a qual o terreno pertence: ");
+            string nome = Utils.GetText("\nIntroduza o nome da freguesia a qual o terreno pertence: ");
             Terreno terreno = CriarTerreno();
             RegistoTerrenoController.RegistarTerreno(nome, terreno);
             Menu();

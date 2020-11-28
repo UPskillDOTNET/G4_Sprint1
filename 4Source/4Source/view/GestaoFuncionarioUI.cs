@@ -11,7 +11,8 @@ namespace _4Source.views
     {
         public static void Menu()
         {
-
+            int numInput;
+            Console.Clear();
             Console.WriteLine("\n===Gestão de Funcionarios===\n\n");
             Console.WriteLine("1 - Inserir Funcionario");
             Console.WriteLine("2 - Listar Funcionario");
@@ -19,10 +20,10 @@ namespace _4Source.views
             Console.WriteLine("4 - Listar Funcionarios");
             Console.WriteLine("\n5 - Voltar\n");
             Console.WriteLine("===========================\n");
-            int input = int.Parse(Console.ReadLine());
+            numInput = Utils.GetIntNumber("Por favor escolha uma opção: ");
             do
             {
-                switch (input)
+                switch (numInput)
                 {
                  
                     case 1:
@@ -40,7 +41,7 @@ namespace _4Source.views
                     case 5:
                         Console.WriteLine("Volta para o menu anterior");
                         Console.ReadKey();
-                        _4Source.views.Menu.mainMenu();
+                       views.Menu.mainMenu();
                         break;
                     default:
                         Console.WriteLine("Opção errada. Escolha novamente.");
@@ -48,7 +49,7 @@ namespace _4Source.views
                         break;
                 }
 
-            } while (input != 5);
+            } while (numInput != 5);
         }
 
 

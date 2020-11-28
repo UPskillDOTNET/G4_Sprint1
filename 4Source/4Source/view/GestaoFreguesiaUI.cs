@@ -12,6 +12,7 @@ namespace _4Source.views
     {
         public static void Menu()
         {
+            int numInput;
             Console.Clear();
             Console.WriteLine("\n===Gestão de Freguesias===\n\n");
             Console.WriteLine("1 - Inserir Freguesia");
@@ -21,7 +22,7 @@ namespace _4Source.views
             Console.WriteLine("5 - Listar Freguesias");
             Console.WriteLine("\n6 - Voltar\n");
             Console.WriteLine("===========================\n");
-            int numInput = Int32.Parse(Console.ReadLine());
+            numInput = Utils.GetIntNumber("Por favor escolha uma opção: ");
             do
             {
                 switch (numInput)
