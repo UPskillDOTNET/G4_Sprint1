@@ -32,7 +32,7 @@ namespace _4Source
 
         public override string ToString()
         {
-            return "ID: " + id;
+            return "ID do Terreno: " + id;
         }
 
         public int Id   // property

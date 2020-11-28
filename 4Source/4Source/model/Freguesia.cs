@@ -22,7 +22,7 @@ namespace _4Source
 
         public Freguesia()
         {
-
+            this.terrenoList = new ArrayList();
         }
 
         public override string ToString()
@@ -40,7 +40,7 @@ namespace _4Source
 
         public void RegistarTerreno(Terreno t)
         {
-            this.terrenoList.Add(3);
+
             Terreno temp = GetTerrenoById(t.Id);
             if (temp == null)
             {
