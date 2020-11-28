@@ -156,9 +156,59 @@ namespace _4Source.views
             return number;
         }
 
-        //string input = GetText("Forma")
-        //    switch (input) {
+        public static IForma GetForma(String label)
+        {
+            Console.WriteLine("\n=== Que forma tem o terreno? ===\n\n");
+            Console.WriteLine("1 - Triangular");
+            Console.WriteLine("2 - Rectangular");
+            Console.WriteLine("3 - Circular");
 
-        //    case "triangular"
+            string text = "";
+            int number;
+            bool flag;
+            IForma forma;
+
+            do
+            {
+                try
+                {
+                    flag = false;
+                    text = GetText(label);
+                    number = Convert.ToInt32(text);
+
+                    switch (number)
+                    {
+                        case 1:
+                            IForma forma = new Triangular();
+                            break;
+                        case 2:
+                            IForma forma = new Rectangular();
+                            break;
+                        case 3:
+                            IForma forma = new Circular();
+                            break;
+                        default:
+                            Console.WriteLine("Nao DEU.");
+                            break;
+                    }
+
+                }
+                catch (OverflowException)
+                {
+                    flag = true;
+                }
+                catch (FormatException)
+                {
+                    flag = true;
+                }
+            } while (flag);
+            return forma;
+           
+  
+            //string input = GetText("Forma")
+            //    switch (input) {
+
+            //    case "triangular"
+        }
     }
 }

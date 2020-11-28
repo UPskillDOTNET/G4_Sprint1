@@ -13,6 +13,11 @@ namespace _4Source
         double largura;
         double altura;
 
+        public Rectangular()
+        {
+
+        }
+
         public Rectangular(double area, double largura, double altura)
         {
             this.area = area;

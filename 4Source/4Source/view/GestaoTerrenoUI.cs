@@ -142,7 +142,7 @@ namespace _4Source.views
                 try
                 {
                     flag = false;
-                    terreno. = Utils.GetIntNumber("ID");
+                    terreno.Forma = Utils.GetIntNumber("ID");
                 }
                 catch (IdTerrenoInvalidoException e)
                 {

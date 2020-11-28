@@ -89,20 +89,20 @@ namespace _4Source
             return null;
         }
 
-        private static bool ValidarNome(string nome)
-        {
-            Regex regex = new Regex("^[a-zA-Z]{3,24}$", RegexOptions.IgnoreCase);
-            Match m = regex.Match(nome);
+        //private static bool ValidarNome(string nome)
+        //{
+        //    Regex regex = new Regex("^[a-zA-Z]{3,24}$", RegexOptions.IgnoreCase);
+        //    Match m = regex.Match(nome);
 
-            if (!m.Success)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+        //    if (!m.Success)
+        //    {
+        //        return false;
+        //    }
+        //    else
+        //    {
+        //        return true;
+        //    }
 
-        }
+        //}
     }
 }
