@@ -26,6 +26,7 @@ namespace _4Source
             this.IndiceCont = indiceCont;
             this.forma = forma;
             this.Imi = imi;
+            this.Escritura = escritura;
 
         }
 
