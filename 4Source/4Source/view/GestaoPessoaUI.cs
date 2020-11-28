@@ -43,6 +43,7 @@ namespace _4Source.views
                     case 6:
                         Console.WriteLine("\nVolta para o menu anterior.\n");
                         Console.ReadKey();
+                        _4Source.views.Menu.mainMenu();
                         break;
                     default:
                         Console.WriteLine("\nOpção errada. Escolha novamente.\n");

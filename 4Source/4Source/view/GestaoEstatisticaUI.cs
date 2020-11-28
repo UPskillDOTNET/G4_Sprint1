@@ -41,6 +41,7 @@ namespace _4Source.views
     //                case 5:
     //                    ListarFuncionarios();
     //                    break;
+    //                    _4Source.views.Menu.mainMenu();
     //                default:
     //                    Console.WriteLine("Opção Errada");
     //                    break;
