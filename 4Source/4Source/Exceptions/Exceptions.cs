@@ -36,8 +36,8 @@ namespace _4Source {
         }
     }
 
-    public class FormaTerrenoInvalidoException : Exception {
-        public FormaTerrenoInvalidoException(string message) : base(message) {
+    public class FormaTerrenoInvalidaException : Exception {
+        public FormaTerrenoInvalidaException(string message) : base(message) {
         }
     }
 
