@@ -18,11 +18,11 @@ namespace _4Source.controllers {
             return flag;
         }
 
-        public static bool AlterarFreguesia(Freguesia freguesia) {
+        public static bool AlterarFreguesia(Freguesia freguesia, string nomeNovo) {
             bool flag = true;
             try {
                 Autarquia autarquia = Dados.CarregarDados();
-                autarquia.AlterarFreguesia(freguesia);
+                autarquia.AlterarFreguesia(freguesia, nomeNovo);
                 Dados.GuardarDados(autarquia);
             } catch (ElementoNaoExistenteException e) {
                 flag = false;

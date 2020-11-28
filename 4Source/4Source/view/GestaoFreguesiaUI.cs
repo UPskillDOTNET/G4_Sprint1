@@ -70,13 +70,13 @@ namespace _4Source.views
 
         private static void AlterarFreguesia()
         {
-            string nome = Utils.GetText("Digite o Nome");
+            string nome = Utils.GetText("Digite o nome da freguesia que pretende alterar ");
             Freguesia freguesia = RegistoFreguesiaController.PesquisarFreguesia(nome);
             if (freguesia != null)
             {
                 Console.WriteLine(freguesia.ToString());
-                Freguesia freguesiaAlterada = AlterarFreguesia(freguesia);
-                RegistoFreguesiaController.AlterarFreguesia(freguesiaAlterada);
+                string nomeNovo = AlterarFreguesia(freguesia);
+                RegistoFreguesiaController.AlterarFreguesia(freguesia, nomeNovo);
             }
             else
             {
@@ -145,16 +145,17 @@ namespace _4Source.views
             return freguesia;
         }
 
-        public static Freguesia AlterarFreguesia(Freguesia freguesia)
+        public static string AlterarFreguesia(Freguesia freguesia)
         {
             bool flag;
+            string nome = "";
            
             do
             {
                 try
                 {
                     flag = false;
-                    freguesia.Nome = Utils.GetText("Nome");
+                    nome = Utils.GetText("Nome");
                 }
                 catch (NomeFreguesiaInvalidoException e)
                 {
@@ -162,7 +163,7 @@ namespace _4Source.views
                     Console.WriteLine("Atenção: " + e.ToString());
                 }
             } while (flag);
-            return freguesia;
+            return nome;
         }
 
     }

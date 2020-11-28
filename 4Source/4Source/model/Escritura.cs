@@ -10,6 +10,7 @@ namespace _4Source {
 
         int num;
         DateTime data;
+        
 
         public Escritura(int id, double indiceCont, string forma, double area, double imi, int num, DateTime data) : base(id, indiceCont, forma, area, imi) {
 
@@ -27,6 +28,8 @@ namespace _4Source {
             get { return data; }
             set { data = value; }
         }
+
+
 
     }
 }

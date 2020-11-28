@@ -146,10 +146,10 @@ namespace _4Source
         }
 
         //Editar Freguesia (Edit)
-        public void AlterarFreguesia(Freguesia f)
+        public void AlterarFreguesia(Freguesia f, string nomeNovo)
         {
             Freguesia freguesia = GetFreguesiaByNome(f.Nome);
-            freguesia.Nome = f.Nome;
+            freguesia.Nome = nomeNovo;
         }
 
         //Eliminar Freguesia (Delete)
