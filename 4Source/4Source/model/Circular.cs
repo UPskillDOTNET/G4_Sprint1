@@ -10,8 +10,14 @@ namespace _4Source
     class Circular : IForma
     {
         double area;
-        public string forma = "Circular";
         double raio;
+
+        public Circular(double area, double raio)
+        {
+            this.area = area;
+            this.raio = raio;
+        }
+
         public double CalcArea()
         {
             double area = raio * Math.PI;

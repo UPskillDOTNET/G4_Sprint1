@@ -15,6 +15,7 @@ namespace _4Source
         private string forma;
         private double area;
         private double imi;
+        //private Forma forma;
 
         public Terreno()
         {
@@ -27,6 +28,8 @@ namespace _4Source
             this.forma = forma;
             this.area = area;
             this.imi = imi;
+            
+            
             
         }
 
