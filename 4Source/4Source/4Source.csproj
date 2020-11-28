@@ -49,6 +49,7 @@
     <Compile Include="controller\RegistoTerrenoController.cs" />
     <Compile Include="controller\RegistoPessoaController.cs" />
     <Compile Include="Exceptions\Exceptions.cs" />
+    <Compile Include="model\Proprietario.cs" />
     <Compile Include="model\Pessoa.cs" />
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="persistencia\dados.cs" />

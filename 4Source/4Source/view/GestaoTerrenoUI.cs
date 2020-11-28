@@ -22,9 +22,10 @@ namespace _4Source.views
             Console.WriteLine("2 - Listar Terreno");
             Console.WriteLine("3 - Eliminar Terreno");
             Console.WriteLine("4 - Listar Terrenos");
+            Console.WriteLine("5 - Calcular Percentagem de Posse de Terreno");
             Console.WriteLine("\n5 - Voltar\n");
             Console.WriteLine("===========================\n");
-           
+
             do
             {
                 numInput = Utils.GetIntNumber("Por favor escolha uma opção: ");
@@ -43,6 +44,9 @@ namespace _4Source.views
                         ListarTerrenos();
                         break;
                     case 5:
+                        CalcularPercentagem();
+                        break;
+                    case 6:
                         Console.WriteLine("\nVolta para o menu anterior.");
                         Console.ReadKey();
                         views.Menu.mainMenu();
@@ -52,7 +56,7 @@ namespace _4Source.views
                         break;
                 }
 
-            } while (numInput != 5);
+            } while (numInput != 6);
 
         }
         private static void ListarTerrenos()
@@ -151,7 +155,7 @@ namespace _4Source.views
                     case 2:
                         terreno.Forma = GetAreaRect();
                         break;
-                    case 3:                        
+                    case 3:
                         terreno.Forma = GetAreaCirc();
                         break;
                     default:
@@ -170,7 +174,7 @@ namespace _4Source.views
             do
             {
                 largura = Utils.GetDouble("Qual a largura do Terreno?");
-                comprimento = Utils.GetDouble("Qual o comprimento do Terreno?");                
+                comprimento = Utils.GetDouble("Qual o comprimento do Terreno?");
             } while (largura <= 0 || comprimento <= 0);
             return new Triangular(largura, comprimento);
         }
@@ -193,6 +197,33 @@ namespace _4Source.views
 
             } while (diametro <= 0);
             return new Circular(diametro / 2);
+        }
+
+        public static void CalcularPercentagem()
+        {
+            Console.WriteLine("Quantos proprietários tem o terreno?");
+            int numProprietarios = int.Parse(Console.ReadLine());
+            double percentagem = 0;
+            double totalPercentagem = 0;
+            double[] array = new double[numProprietarios];
+            int count = 1;
+
+            for (int i = 0; i < numProprietarios; i++)
+            {
+                Console.WriteLine("Introduza a percentagem do proprietario:");
+                percentagem = double.Parse(Console.ReadLine());
+                array[i] = percentagem;
+                totalPercentagem += percentagem;
+            }
+            foreach (double perc in array)
+            {
+
+                Console.WriteLine("O proprietário {0} possui {1} % do terreno", count, perc);
+                count += 1;
+            }
+            double sum = array.Sum();
+            Console.WriteLine("Posse total dos proprietários em relação ao terreno: {0} ", sum);
+
         }
     }
 }

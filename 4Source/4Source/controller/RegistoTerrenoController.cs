@@ -46,7 +46,6 @@ namespace _4Source.controllers
             Autarquia autarquia = Dados.CarregarDados();
             Freguesia freguesia = autarquia.GetFreguesiaByNome(nomeFreguesia);
             terreno = freguesia.PesquisarTerreno(id);
-            //Dados.GuardarDados(autarquia);
             return terreno;
 
         }
@@ -58,7 +57,6 @@ namespace _4Source.controllers
             Autarquia autarquia = Dados.CarregarDados();
             Freguesia freguesia = autarquia.GetFreguesiaByNome(nomeFreguesia);
             lista = freguesia.ObterTodosTerrenos();
-            //Dados.GuardarDados(autarquia);
             return lista;
 
         }

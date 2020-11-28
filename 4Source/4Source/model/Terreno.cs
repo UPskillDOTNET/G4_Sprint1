@@ -14,45 +14,33 @@ namespace _4Source
         private double indiceCont;
         private double imi;
         private IForma forma;
+        private Escritura escritura;
 
         public Terreno()
         {
 
         }
-        public Terreno(int id, double indiceCont, IForma forma, double imi)
+        public Terreno(int id, double indiceCont, IForma forma, double imi, Escritura escritura)
         {
-            this.id = id;
-            this.indiceCont = indiceCont;
+            this.Id = id;
+            this.IndiceCont = indiceCont;
             this.forma = forma;
-            this.imi = imi;
+            this.Imi = imi;
 
         }
 
         public override string ToString()
         {
-            return String.Format("ID do Terreno: {0} Indice de Contribuição: {1} Forma: {2} de área {3}", Id, indiceCont, forma.GetForma(), forma.CalcArea());
+            return String.Format("ID do Terreno: {0} Indice de Contribuição: {1} Forma: {2} de área {3}", Id, IndiceCont, forma.GetForma(), forma.CalcArea());
         }
 
-        public int Id   // property
-        {
-            get { return id; }   // get method
-            set { id = value; } 
-        }
-
-        public double IndiceCont   // property
-        {
-            get { return indiceCont; }
-            set { indiceCont = value; }
-        }
-
-        public double Imi  // property
-        {
-            get { return imi; }
-            set { imi = value; }
-        }
-
+        public int Id { get => id; set => id = value; }
+        public double IndiceCont { get => indiceCont; set => indiceCont = value; }
+        public double Imi { get => imi; set => imi = value; }
         public IForma Forma { get => forma; set => forma = value; }
-
+        public Escritura Escritura { get => escritura; set => escritura = value; }
+        
+        
         private static bool ValidaId(int id)
         {
             Regex regex = new Regex("^[1-9]\\d*$", RegexOptions.IgnoreCase);
