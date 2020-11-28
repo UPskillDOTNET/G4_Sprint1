@@ -31,7 +31,6 @@ namespace _4Source
             get { return dataNascimento; }
             set { dataNascimento = value; }
         }
-
         public Pessoa(string nome, string nif, DateTime dataNascimento)
         {
             this.nome = nome;
@@ -79,6 +78,15 @@ namespace _4Source
             {
                 return true;
             }
+        }
+        public static bool ValidarAno(DateTime ano)
+        {
+            if (ano.Year > DateTime.Now.Year)
+            {
+                return false;
+            }
+            return true;
+
         }
     }
 }

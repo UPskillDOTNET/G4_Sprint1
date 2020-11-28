@@ -22,8 +22,10 @@ namespace _4Source.views
                 Console.WriteLine("4) Gestão de Terrenos");
                 Console.WriteLine("5) Cálculo de Estatisticas");
                 Console.WriteLine("6) Fechar Programa\n\n");
-                int numInput = Int32.Parse(Console.ReadLine());
 
+                Console.Write("Introduza a opção pretendida: ");
+                int numInput = Int32.Parse(Console.ReadLine());
+                
                 do
                 {
                     switch (numInput)
@@ -44,13 +46,15 @@ namespace _4Source.views
                             //GestaoEstatisticaUI.MainEstatistica();
                             break;
                         case 6:
-                            Console.WriteLine("Bye!!!");
+                            Console.WriteLine("Obrigado por usar 4Source.");
                             Console.ReadKey();
                             Environment.Exit(0);
                             break;
                         default:
-                            Console.WriteLine("Wrong Number!");
+                            Console.WriteLine("Número de input inválido, tente novamente.");
+                            // Sair fora deste loop, pedir novamente o input.
                             break;
+                            
                     }
 
                 } while (numInput < 0 || numInput > 6);

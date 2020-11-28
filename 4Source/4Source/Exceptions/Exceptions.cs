@@ -51,7 +51,6 @@ namespace _4Source {
         }
     }
 
-
     public class NifDuplicadoException : Exception {
         public NifDuplicadoException(string message) : base(message) {
         }
@@ -70,5 +69,25 @@ namespace _4Source {
         }
     }
 
+    public class AnoInvalidoException : Exception
+    {
+        public AnoInvalidoException(string message) : base(message)
+        {
+        }
+    }
+
+    public class MesInvalidoException : Exception
+    {
+        public MesInvalidoException(string message) : base(message)
+        {
+        }
+    }
+
+    public class DiaInvalidoException : Exception
+    {
+        public DiaInvalidoException(string message) : base(message)
+        {
+        }
+    }
 
 }
