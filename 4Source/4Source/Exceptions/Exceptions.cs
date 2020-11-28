@@ -41,6 +41,11 @@ namespace _4Source {
         }
     }
 
+    public class IndiceTerrenoInvalidoException : Exception {
+        public IndiceTerrenoInvalidoException(string message) : base(message) {
+        }
+    }
+
     public class EscrituraDuplicadoException : Exception {
         public EscrituraDuplicadoException(string message) : base(message) {
         }
