@@ -12,8 +12,6 @@ namespace _4Source
     {
         private int id;
         private double indiceCont;
-        //private string forma;
-        private double area;
         private double imi;
         private IForma forma;
 
@@ -21,21 +19,18 @@ namespace _4Source
         {
 
         }
-        public Terreno(int id, double indiceCont, IForma forma, double area, double imi)
+        public Terreno(int id, double indiceCont, IForma forma, double imi)
         {
             this.id = id;
             this.indiceCont = indiceCont;
             this.forma = forma;
-            this.area = area;
             this.imi = imi;
-            
-            
-            
+
         }
 
         public override string ToString()
         {
-            return "ID do Terreno: " + id;
+            return String.Format("ID do Terreno: {0} Indice de Contribuição: {1} Forma: {2} de área {3}", Id, indiceCont, forma.GetForma(), forma.CalcArea());
         }
 
         public int Id   // property
@@ -49,11 +44,7 @@ namespace _4Source
             get { return indiceCont; }
             set { indiceCont = value; }
         }
-        public double Area   // property
-        {
-            get { return area; }
-            set { area = value; }
-        }
+
         public double Imi  // property
         {
             get { return imi; }

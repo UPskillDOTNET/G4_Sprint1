@@ -12,7 +12,7 @@ namespace _4Source {
         DateTime data;
         
 
-        public Escritura(int id, double indiceCont, IForma forma, double area, double imi, int num, DateTime data) : base(id, indiceCont, forma, area, imi) {
+        public Escritura(int id, double indiceCont, IForma forma, double imi, int num, DateTime data) : base(id, indiceCont, forma, imi) {
 
             this.num = num;
             this.data = data;

@@ -25,7 +25,7 @@ namespace _4Source
 
         public double CalcArea()
         {
-            return largura * altura;
+            return largura * comprimento;
 
         }
         public string GetForma()

@@ -24,9 +24,10 @@ namespace _4Source.views
             Console.WriteLine("4 - Listar Terrenos");
             Console.WriteLine("\n5 - Voltar\n");
             Console.WriteLine("===========================\n");
-            numInput = Utils.GetIntNumber("Por favor escolha uma opção: ");
+           
             do
             {
+                numInput = Utils.GetIntNumber("Por favor escolha uma opção: ");
                 switch (numInput)
                 {
                     case 1:
@@ -101,7 +102,7 @@ namespace _4Source.views
         }
         private static void RegistarTerreno()
         {
-            string nome = Utils.GetText("\nIntroduza o nome da freguesia a qual o terreno pertence: ");
+            string nome = Utils.GetText("\nIntroduza o nome da freguesia a qual o terreno pertence");
             Terreno terreno = CriarTerreno();
             RegistoTerrenoController.RegistarTerreno(nome, terreno);
             Menu();
@@ -140,7 +141,7 @@ namespace _4Source.views
             do
             {
                 flag = false;
-                int number = Utils.GetIntNumber("Que forma tem o terreno?\n1 - Triangular\n2 - Rectangular\n3 - Circular");
+                int number = Utils.GetIntNumber("Que forma tem o terreno?\n1 - Triangular\n2 - Rectangular\n3 - Circular\n");
                 switch (number)
                 {
                     case 1:
