@@ -12,6 +12,11 @@ namespace _4Source
         double area;
         double raio;
 
+        public Circular()
+        {
+
+        }
+
         public Circular(double area, double raio)
         {
             this.area = area;

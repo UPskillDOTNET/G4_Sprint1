@@ -13,6 +13,11 @@ namespace _4Source
         private double largura;
         private double comprimento;
 
+        public Triangular()
+        {
+
+        }
+
         public Triangular(double area, double largura, double comprimento)
         {
             this.area = area;

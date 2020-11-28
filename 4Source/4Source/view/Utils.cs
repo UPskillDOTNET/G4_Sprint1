@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using _4Source;
 
 namespace _4Source.views
 {
@@ -129,19 +130,35 @@ namespace _4Source.views
             return number;
         }
 
+        public static double GetDouble(String label)
+        {
+            bool flag;
+            double number = 1.0;
+            string text;
+            do
+            {
+                try
+                {
+                    flag = false;
+                    text = GetText(label);
+                    number = Convert.ToDouble(text);
 
+                }
+                catch (OverflowException)
+                {
+                    flag = true;
+                }
+                catch (FormatException)
+                {
+                    flag = true;
+                }
+            } while (flag);
+            return number;
+        }
 
-        //Console.Write("Introduza o ano: ");
-        //    int ano = int.Parse(Console.ReadLine());
-        //    Console.WriteLine("mes");
-        //    int mes = int.Parse(Console.ReadLine());
-        //    Console.WriteLine("dia");
-        //    int dia = int.Parse(Console.ReadLine());
-        //    DateTime data = new DateTime(ano, mes, dia);
-        //    return data;
-        //}
+        //string input = GetText("Forma")
+        //    switch (input) {
 
-        //DateTime.Compare(dateNascimento, DateTime.Now());
-
+        //    case "triangular"
     }
 }

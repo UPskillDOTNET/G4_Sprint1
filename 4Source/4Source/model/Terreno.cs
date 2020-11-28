@@ -12,16 +12,16 @@ namespace _4Source
     {
         private int id;
         private double indiceCont;
-        private string forma;
+        //private string forma;
         private double area;
         private double imi;
-        //private Forma forma;
+        private IForma forma;
 
         public Terreno()
         {
 
         }
-        public Terreno(int id, double indiceCont, string forma, double area, double imi)
+        public Terreno(int id, double indiceCont, IForma forma, double area, double imi)
         {
             this.id = id;
             this.indiceCont = indiceCont;

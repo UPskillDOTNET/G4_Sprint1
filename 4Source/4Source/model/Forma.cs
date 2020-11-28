@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _4Source
 {
-    interface IForma
+    public interface IForma
     {
        double CalcArea();
     }

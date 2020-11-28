@@ -129,9 +129,9 @@ namespace _4Source.views
                 try
                 {
                     flag = false;
-                    terreno.Forma = Utils.GetText("Forma do Terreno");
+                    terreno.IndiceCont = Utils.GetDouble("Indice de Contribuição");
                 }
-                catch (FormaTerrenoInvalidaException e)
+                catch (IndiceTerrenoInvalidoException e)
                 {
                     flag = true;
                     Console.WriteLine("Atenção: " + e.ToString());
