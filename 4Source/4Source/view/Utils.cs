@@ -38,7 +38,7 @@ namespace _4Source.views
         public static string GetText(string label)
         {
             string text = "";
-            Console.WriteLine(label + ": ");
+            Console.Write(label + ": ");
             text = Console.ReadLine();
             return text;
         }
@@ -46,7 +46,6 @@ namespace _4Source.views
         public static DateTime GetDataNascimento() 
         {
             bool flag;
-            string text;
             DateTime dataNascimento;
             int ano = -1;
             int mes = -1;
