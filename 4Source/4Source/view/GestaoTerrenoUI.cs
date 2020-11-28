@@ -29,10 +29,6 @@ namespace _4Source.views
             {
                 switch (numInput)
                 {
-                    case 5:
-                        Console.WriteLine("\nVolta para o menu anterior.");
-                        Console.ReadKey();
-                        break;
                     case 1:
                         RegistarTerreno();
                         break;
@@ -44,6 +40,11 @@ namespace _4Source.views
                         break;
                     case 4:
                         ListarTerrenos();
+                        break;
+                    case 5:
+                        Console.WriteLine("\nVolta para o menu anterior.");
+                        Console.ReadKey();
+                        _4Source.views.Menu.mainMenu();
                         break;
                     default:
                         Console.WriteLine("\nOpção Errada");
