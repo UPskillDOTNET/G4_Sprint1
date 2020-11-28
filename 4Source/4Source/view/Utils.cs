@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _4Source.view
+namespace _4Source.views
 {
     public class Utils
     {

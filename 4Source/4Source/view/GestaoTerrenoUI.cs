@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using _4Source.controllers;
-using _4Source.view;
+using _4Source.views;
 using System.Collections.Generic;
 
 
@@ -44,7 +44,7 @@ namespace _4Source.views
                     case 5:
                         Console.WriteLine("\nVolta para o menu anterior.");
                         Console.ReadKey();
-                        _4Source.views.Menu.mainMenu();
+                        views.Menu.mainMenu();
                         break;
                     default:
                         Console.WriteLine("\nOpção Errada");

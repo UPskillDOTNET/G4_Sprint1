@@ -1,7 +1,6 @@
 ﻿using _4Source.controllers;
 using System;
 using System.Collections;
-using _4Source.view;
 
 namespace _4Source.views
 {
