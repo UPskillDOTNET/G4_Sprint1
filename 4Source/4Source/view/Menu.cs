@@ -14,6 +14,7 @@ namespace _4Source.views
 
             do
             {
+                int numInput;
                 Console.Clear();
                 Console.WriteLine("Bem vindo. Escolha a opção pretendida\n\n");
                 Console.WriteLine("1) Gestão de Pessoa.");
@@ -23,9 +24,9 @@ namespace _4Source.views
                 Console.WriteLine("5) Cálculo de Estatisticas");
                 Console.WriteLine("6) Fechar Programa\n\n");
 
-                Console.Write("Introduza a opção pretendida: ");
-                int numInput = Int32.Parse(Console.ReadLine());
-                
+               
+                numInput = Utils.GetIntNumber("Por favor escolha uma opção: \n");
+
                 do
                 {
                     switch (numInput)

@@ -9,6 +9,7 @@ namespace _4Source.views
 
         public static void Menu()
         {
+            int numInput;
             Console.Clear();
             Console.WriteLine("\n=== Gestão de Pessoas ===\n\n");
             Console.WriteLine("1 - Registar Pessoa");
@@ -18,11 +19,11 @@ namespace _4Source.views
             Console.WriteLine("5 - Mostrar Lista de Pessoas");
             Console.WriteLine("6 - Voltar ao Menu Principal");
             Console.WriteLine("===========================\n");
-            int input = int.Parse(Console.ReadLine());
+            numInput = Utils.GetIntNumber("Por favor escolha uma opção: ");
 
             do
             {
-                switch (input)
+                switch (numInput)
                 {
                     case 1:
                         RegistarPessoa();
@@ -42,14 +43,14 @@ namespace _4Source.views
                     case 6:
                         Console.WriteLine("\nVolta para o menu anterior.\n");
                         Console.ReadKey();
-                        _4Source.views.Menu.mainMenu();
+                        views.Menu.mainMenu();
                         break;
                     default:
                         Console.WriteLine("\nOpção errada. Escolha novamente.\n");
                         Menu();
                         break;
                 }
-            } while (input != 6);
+            } while (numInput != 6);
         }
 
         private static void ListarPessoas()
