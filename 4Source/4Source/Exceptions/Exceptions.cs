@@ -36,6 +36,11 @@ namespace _4Source {
         }
     }
 
+    public class FormaTerrenoInvalidoException : Exception {
+        public FormaTerrenoInvalidoException(string message) : base(message) {
+        }
+    }
+
     public class EscrituraDuplicadoException : Exception {
         public EscrituraDuplicadoException(string message) : base(message) {
         }
