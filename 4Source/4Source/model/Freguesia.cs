@@ -14,7 +14,7 @@ namespace _4Source
         private string nome;
         private ArrayList terrenoList;
 
-        public Freguesia(string nome, ArrayList terrenoList)
+        public Freguesia(string nome)
         {
             this.nome = nome;
             this.terrenoList = new ArrayList();
@@ -27,10 +27,10 @@ namespace _4Source
 
         public override string ToString()
         {
-            return "Nome da freguesia: " + nome;        
+            return "Nome da freguesia: " + nome;
         }
 
-        public string Nome  
+        public string Nome
         {
             get { return nome; }
             set { nome = value; }
@@ -40,6 +40,7 @@ namespace _4Source
 
         public void RegistarTerreno(Terreno t)
         {
+            this.terrenoList.Add(3);
             Terreno temp = GetTerrenoById(t.Id);
             if (temp == null)
             {
@@ -48,7 +49,6 @@ namespace _4Source
             {
                 throw new IdDuplicadoException(t.ToString() + "Id já existente");
             }
-
         }
 
         public Terreno PesquisarTerreno(int id)
@@ -78,8 +78,8 @@ namespace _4Source
 
         public Terreno GetTerrenoById(int id)
         {
-
-            foreach (Terreno t in terrenoList)
+            // A primeira interação do terreno está sempre nula por isso causa erro
+            foreach (Terreno t in TerrenoList)
             {
                 if (t.Id == id)
                 {

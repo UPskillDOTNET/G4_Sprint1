@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using _4Source.controllers;
 using _4Source.view;
+using System.Collections.Generic;
 
 
 
@@ -99,7 +100,7 @@ namespace _4Source.views
         }
         private static void RegistarTerreno()
         {
-            string nome = Utils.GetText("Digite o Nome da Freguesia");
+            string nome = Utils.GetText("Introduza o nome da freguesia a qual o terreno pertence: ");
             Terreno terreno = CriarTerreno();
             RegistoTerrenoController.RegistarTerreno(nome, terreno);
             Menu();
