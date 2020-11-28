@@ -55,7 +55,10 @@ namespace _4Source
         {
             get { return imi; }
             set { imi = value; }
-        }   
+        }
+
+        public string Forma { get => forma; set => forma = value; }
+
         private static bool ValidaId(int id)
         {
             Regex regex = new Regex("^[1-9]\\d*$", RegexOptions.IgnoreCase);
