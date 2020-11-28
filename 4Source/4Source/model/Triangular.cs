@@ -31,7 +31,7 @@ namespace _4Source
 
         public string GetForma()
         {
-            return "triangular";
+            return "Triangular";
         }
     }
 

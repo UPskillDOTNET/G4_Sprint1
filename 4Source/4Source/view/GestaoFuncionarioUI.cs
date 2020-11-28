@@ -65,7 +65,7 @@ namespace _4Source.views
 
         private static void EliminarFuncionario()
         {
-            string nr = GetText("Digite o Numero");
+            string nr = Utils.GetText("Digite o Numero:");
             Funcionario func = RegistoFuncionarioController.EliminarFuncionario(nr);
             if (func != null)
             {
@@ -80,7 +80,7 @@ namespace _4Source.views
 
         private static void PesquisarFuncionario()
         {
-            string nr = GetText("Digite o Numero");
+            string nr = Utils.GetText("Digite o Numero:");
             Funcionario func = RegistoFuncionarioController.PesquisarFuncionario(nr);
             if (func != null)
             {
@@ -113,7 +113,7 @@ namespace _4Source.views
                 try
                 {
                     flag = false;
-                    func.numeroFunc = GetText("Numero");
+                    func.numeroFunc = Utils.GetText("Numero:");
                 }
                 catch (NumeroFuncionarioInvalidoException e)
                 {
@@ -121,17 +121,11 @@ namespace _4Source.views
                     Console.WriteLine("Atenção: " + e.ToString());
                 }
             } while (flag);
-            func.Cargo = GetText("Cargo");
+            func.Cargo = Utils.GetText("Cargo:");
             return func;
         }
 
-            public static string GetText(string label)
-        {
-            string text = "";
-            Console.WriteLine(label + ": ");
-            text = Console.ReadLine();
-            return text;
-        }
+          
        
 
         }

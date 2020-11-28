@@ -39,7 +39,7 @@ namespace _4Source.views
         public static string GetText(string label)
         {
             string text = "";
-            Console.Write(label + ": ");
+            Console.Write(label + " ");
             text = Console.ReadLine();
             return text;
         }

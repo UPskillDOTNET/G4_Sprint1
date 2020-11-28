@@ -25,7 +25,7 @@ namespace _4Source.views
                 Console.WriteLine("6) Fechar Programa\n\n");
 
                
-                numInput = Utils.GetIntNumber("Por favor escolha uma opção");
+                numInput = Utils.GetIntNumber("Por favor escolha uma opção:");
 
                 do
                 {

@@ -67,7 +67,7 @@ namespace _4Source.views
 
         private static void AlterarPessoa()
         {
-            string nif = Utils.GetText("Digite o NIF");
+            string nif = Utils.GetText("Digite o NIF:");
             Pessoa pessoa = RegistoPessoaController.PesquisarPessoa(nif);
             if (pessoa != null)
             {
@@ -84,7 +84,7 @@ namespace _4Source.views
         }
         private static void EliminarPessoa()
         {
-            string nif = Utils.GetText("Digite o NIF");
+            string nif = Utils.GetText("Digite o NIF:");
             Pessoa pessoa = RegistoPessoaController.EliminarPessoa(nif);
             if (pessoa != null)
             {
@@ -100,7 +100,7 @@ namespace _4Source.views
 
         private static void PesquisarPessoa()
         {
-            string nif = Utils.GetText("Digite o NIF");
+            string nif = Utils.GetText("Digite o NIF:");
             Pessoa pessoa = RegistoPessoaController.PesquisarPessoa(nif);
             if (pessoa != null)
             {
@@ -131,7 +131,7 @@ namespace _4Source.views
                 try
                 {
                     flag = false;
-                    pessoa.Nif = Utils.GetText("NIF");
+                    pessoa.Nif = Utils.GetText("NIF:");
                 }
                 catch (NifInvalidoException e)
                 {

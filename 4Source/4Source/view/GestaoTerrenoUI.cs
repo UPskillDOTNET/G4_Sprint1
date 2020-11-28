@@ -57,7 +57,7 @@ namespace _4Source.views
         }
         private static void ListarTerrenos()
         {
-            string nome = Utils.GetText("Digite o nome da Freguesia");
+            string nome = Utils.GetText("Digite o nome da Freguesia:");
             ArrayList lista = RegistoTerrenoController.ObterListaTerrenos(nome);
             foreach (Terreno terreno in lista)
             {
@@ -69,8 +69,8 @@ namespace _4Source.views
 
         private static void EliminarTerreno()
         {
-            string nome = Utils.GetText("\n Digite o nome da Freguesia");
-            int id = Utils.GetIntNumber("\n Digite o ID");
+            string nome = Utils.GetText("\n Digite o nome da Freguesia:");
+            int id = Utils.GetIntNumber("\n Digite o ID:");
             Terreno terreno = RegistoTerrenoController.EliminarTerreno(nome, id);
             if (terreno != null)
             {
@@ -86,8 +86,8 @@ namespace _4Source.views
 
         private static void PesquisarTerreno()
         {
-            string nome = Utils.GetText("\nDigite o Nome da Freguesia");
-            int id = Utils.GetIntNumber("\nDigite o Id");
+            string nome = Utils.GetText("\nDigite o Nome da Freguesia:");
+            int id = Utils.GetIntNumber("\nDigite o Id:");
             Terreno terreno = RegistoTerrenoController.PesquisarTerreno(nome, id);
             if (terreno != null)
             {
@@ -102,7 +102,7 @@ namespace _4Source.views
         }
         private static void RegistarTerreno()
         {
-            string nome = Utils.GetText("\nIntroduza o nome da freguesia a qual o terreno pertence");
+            string nome = Utils.GetText("\nIntroduza o nome da freguesia a qual o terreno pertence:");
             Terreno terreno = CriarTerreno();
             RegistoTerrenoController.RegistarTerreno(nome, terreno);
             Menu();
@@ -130,7 +130,7 @@ namespace _4Source.views
                 try
                 {
                     flag = false;
-                    terreno.IndiceCont = Utils.GetDouble("Indice de Contribuição");
+                    terreno.IndiceCont = Utils.GetDouble("Indice de Contribuição:");
                 }
                 catch (IndiceTerrenoInvalidoException e)
                 {

@@ -28,7 +28,7 @@ namespace _4Source
 
         public string GetForma()
         {
-            return "circular";
+            return "Circular";
         }
     }
 }
