@@ -1,0 +1,97 @@
+UC1- Registar Pessoa
+
+Formato Completo
+
+Designação:
+Registar Pessoa
+
+Ator principal:
+Utilizador
+
+Partes interessadas e seus interesses: 
+●	Utilizador: capacidade de efetuar novos registos de pessoas da sua autarquia e manter esse registo atualizado.
+●	Pessoa: ficar registada na freguesia.
+●	Autarquia: ter uma lista de todas as pessoas correspondentes à mesma, com a sua informação atualizada.
+
+Pré-condições:
+A pessoa tem de pertencer obrigatoriamente à freguesia que irá ser registada.
+
+Pós-condições: 
+A pessoa é adicionada à plataforma e à lista de pessoas pertencentes à freguesia.
+ 
+Cenário de Sucesso principal (ou fluxo básico): 
+1. O utilizador acede à plataforma.
+2. A plataforma questiona que função deseja escolher (Registar, Consultar, Editar, Apagar).
+3. O utilizador escolhe a opção de registar uma pessoa.
+4. A plataforma solicita o preenchimento dos dados requeridos: nome, NIF e data de nascimento.
+5. O utilizador introduz os dados solicitados.
+6. A plataforma pergunta se o novo registo é de um funcionário da autarquia.
+7. A plataforma valida e apresenta os dados ao utilizador, pedindo que este os confirme.
+8. O utilizador confirma.
+9. A plataforma regista os dados e informa a autarquia do sucesso da operação.
+
+Extensões (fluxo alternativos):
+
+*a.
+1. O utilizador solicita o cancelamento do registo da pessoa.
+2. O caso de uso termina.
+
+O utilizador escolhe Consultar, Editar ou Apagar mas não existem dados registados.
+1. A plataforma questiona se o utilizador deseja registar um dado.
+2. O utilizador aceita.
+3. O caso de uso termina. Continue do passo 1.
+
+O utilizador quer apenas ler os dados
+1. O utilizador solicita consultar a lista de pessoas.
+2. A plataforma apresenta a lista de pessoas que já foram registadas.
+3. O utilizador seleciona uma pessoa.
+4. A plataforma apresenta os dados da pessoa selecionada. 
+5. O caso de uso termina.
+
+O utilizador quer editar uma pessoa registada
+1. O utilizador solicita editar pessoa.
+2. A plataforma apresenta a lista de pessoas que já foram registadas.
+3. O utilizador seleciona uma das pessoas.
+4. A plataforma apresenta os dados das pessoas selecionadas.
+5. O utilizador edita as informações que deseja.
+6. A plataforma confirma as informações editadas.
+7. O utilizador confirma.
+8. A plataforma regista os dados e da operação com sucesso.
+9. O caso de uso termina.
+
+O utilizador quer apagar uma pessoa
+1. O utilizador solicita apagar.
+2. A plataforma apresenta a lista de pessoas que já foram registadas.
+3. O utilizador seleciona uma pessoa.
+4. A plataforma apresenta os dados da pessoa selecionada e pede confirmação.
+5. O utilizador confirma que quer apagar os dados.
+6. A plataforma elimina o registo da pessoa.
+7. O caso de uso termina.
+
+4.1 Registo de um funcionário
+1. O utilizador confirma que o registo é de um funcionário.
+2. A plataforma solicita dados adicionais: número de funcionário e cargo.
+3. O utilizador introduz os dados solicitados.
+4. A plataforma mostra os dados, pedindo uma confirmação.
+5. O utilizador confirma.
+6. O caso de uso termina.
+
+A plataforma verifica que o NIF já se encontra no sistema
+1. A plataforma alerta o utilizador para o facto.
+2. O utilizador não muda o NIF.
+3. O caso de uso termina.
+ 
+A plataforma verifica que o NIF introduzido possui mais que 9 números
+1. A plataforma alerta o utilizador para o facto.
+2. O utilizador não muda o NIF.
+3. O caso de uso termina.
+
+Requisitos especiais
+- Se for funcionário: preencher dados adicionais (cargo e número de funcionário)
+
+Lista de variações em tecnologias e dados: N/A
+
+Frequência de ocorrência: Não definido.
+
+Questões em aberto:
+- Quem tem permissão para registar/consultar/editar/apagar, na plataforma? O utilizador?

@@ -1,0 +1,5 @@
+UC1- Registar Pessoa
+
+Formato Breve
+
+O utilizador acede à plataforma. A plataforma questiona que operação o utilizador pretende efetuar (Registar, Consultar, Editar, Apagar). O utilizador escolhe registar uma pessoa. A plataforma solicita o preenchimento dos dados requeridos (nome, NIF e data de nascimento). O utilizador introduz os dados solicitados. A plataforma apresenta os dados ao utilizador, pedindo que os confirme. O utilizador confirma. A plataforma regista os dados e informa o utilizador do sucesso da operação.
