@@ -15,6 +15,7 @@ namespace _4Source
         private string forma;
         private double area;
         private double imi;
+        //private Forma forma;
 
         public Terreno()
         {
@@ -27,6 +28,8 @@ namespace _4Source
             this.forma = forma;
             this.area = area;
             this.imi = imi;
+            
+            
             
         }
 
@@ -55,7 +58,10 @@ namespace _4Source
         {
             get { return imi; }
             set { imi = value; }
-        }   
+        }
+
+        public string Forma { get => forma; set => forma = value; }
+
         private static bool ValidaId(int id)
         {
             Regex regex = new Regex("^[1-9]\\d*$", RegexOptions.IgnoreCase);

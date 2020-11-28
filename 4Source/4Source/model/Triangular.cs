@@ -10,8 +10,15 @@ namespace _4Source
     class Triangular : IForma
     {
         private double area;
-        public string forma = "Triangular";
-        private double largura, comprimento;
+        private double largura;
+        private double comprimento;
+
+        public Triangular(double area, double largura, double comprimento)
+        {
+            this.area = area;
+            this.largura = largura;
+            this.comprimento = comprimento;
+        }
 
         public double Area { get => area; set => area = value; }
         public double Largura { get => largura; set => largura = value; }

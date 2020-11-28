@@ -10,9 +10,15 @@ namespace _4Source
     class Rectangular : IForma
     {
         double area;
-        public string forma = "Retangular";
         double largura;
         double altura;
+
+        public Rectangular(double area, double largura, double altura)
+        {
+            this.area = area;
+            this.largura = largura;
+            this.altura = altura;
+        }
 
         public double Area { get => area; set => area = value; }
         public double Largura { get => largura; set => largura = value; }

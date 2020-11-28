@@ -124,6 +124,32 @@ namespace _4Source.views
                     Console.WriteLine("Atenção: " + e.ToString());
                 }
             } while (flag);
+            do
+            {
+                try
+                {
+                    flag = false;
+                    terreno.Forma = Utils.GetText("Forma do Terreno");
+                }
+                catch (FormaTerrenoInvalidaException e)
+                {
+                    flag = true;
+                    Console.WriteLine("Atenção: " + e.ToString());
+                }
+            } while (flag);
+            do
+            {
+                try
+                {
+                    flag = false;
+                    terreno. = Utils.GetIntNumber("ID");
+                }
+                catch (IdTerrenoInvalidoException e)
+                {
+                    flag = true;
+                    Console.WriteLine("Atenção: " + e.ToString());
+                }
+            } while (flag);
             return terreno;
         }
         
