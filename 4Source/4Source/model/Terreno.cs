@@ -60,7 +60,7 @@ namespace _4Source
             set { imi = value; }
         }
 
-        public string Forma { get => forma; set => forma = value; }
+        public IForma Forma { get => forma; set => forma = value; }
 
         private static bool ValidaId(int id)
         {

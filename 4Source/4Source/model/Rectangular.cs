@@ -9,30 +9,28 @@ namespace _4Source
     [Serializable()]
     class Rectangular : IForma
     {
-        double area;
         double largura;
-        double altura;
+        double comprimento;
 
         public Rectangular()
         {
 
         }
 
-        public Rectangular(double area, double largura, double altura)
+        public Rectangular(double largura, double comprimento)
         {
-            this.area = area;
             this.largura = largura;
-            this.altura = altura;
+            this.comprimento = comprimento;
         }
-
-        public double Area { get => area; set => area = value; }
-        public double Largura { get => largura; set => largura = value; }
-        public double Altura { get => altura; set => altura = value; }
 
         public double CalcArea()
         {
-            double area = Largura * Altura / 2;
-            return area;
+            return largura * altura;
+
+        }
+        public string GetForma()
+        {
+            return "rectangular";
         }
 
     }

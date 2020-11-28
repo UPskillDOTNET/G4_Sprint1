@@ -8,7 +8,8 @@ namespace _4Source
 {
     public interface IForma
     {
-       double CalcArea();
+        double CalcArea();
+        string GetForma();
     }
-    }
+}
 

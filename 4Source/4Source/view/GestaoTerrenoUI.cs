@@ -139,19 +139,59 @@ namespace _4Source.views
             } while (flag);
             do
             {
-                try
+                flag = false;
+                int number = Utils.GetIntNumber("Que forma tem o terreno?\n1 - Triangular\n2 - Rectangular\n3 - Circular");
+                switch (number)
                 {
-                    flag = false;
-                    terreno.Forma = Utils.GetIntNumber("ID");
-                }
-                catch (IdTerrenoInvalidoException e)
-                {
-                    flag = true;
-                    Console.WriteLine("Atenção: " + e.ToString());
+                    case 1:
+
+                        terreno.Forma = GetAreaTri();
+                        break;
+                    case 2:
+                        terreno.Forma = GetAreaRect();
+                        break;
+                    case 3:                        
+                        terreno.Forma = GetAreaCirc();
+                        break;
+                    default:
+                        Console.WriteLine("Erro. Opção inválida");
+                        flag = true;
+                        break;
                 }
             } while (flag);
             return terreno;
         }
-        
+
+
+        private static Triangular GetAreaTri()
+        {
+            double largura, comprimento;
+            do
+            {
+                largura = Utils.GetDouble("Qual a largura do Terreno?");
+                comprimento = Utils.GetDouble("Qual o comprimento do Terreno?");                
+            } while (largura <= 0 || comprimento <= 0);
+            return new Triangular(largura, comprimento);
+        }
+        private static Rectangular GetAreaRect()
+        {
+            double largura, comprimento;
+            do
+            {
+                largura = Utils.GetDouble("Qual a largura do Terreno?");
+                comprimento = Utils.GetDouble("Qual o comprimento do Terreno?");
+            } while (largura <= 0 || comprimento <= 0);
+            return new Rectangular(largura, comprimento);
+        }
+        private static Circular GetAreaCirc()
+        {
+            double diametro;
+            do
+            {
+                diametro = Utils.GetDouble("Qual o valor do diametro do Terreno?");
+
+            } while (diametro <= 0);
+            return new Circular(diametro / 2);
+        }
     }
 }

@@ -9,7 +9,6 @@ namespace _4Source
     [Serializable()]
     class Circular : IForma
     {
-        double area;
         double raio;
 
         public Circular()
@@ -17,18 +16,19 @@ namespace _4Source
 
         }
 
-        public Circular(double area, double raio)
+        public Circular(double raio)
         {
-            this.area = area;
             this.raio = raio;
         }
 
         public double CalcArea()
         {
-            double area = raio * Math.PI;
-            return area;
-            }
+            return raio * raio * Math.PI;
+        }
 
-
+        public string GetForma()
+        {
+            return "circular";
+        }
     }
 }
