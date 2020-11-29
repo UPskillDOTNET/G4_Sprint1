@@ -14,7 +14,8 @@ namespace _4Source.views {
             Console.WriteLine("3 - Editar Escritura");
             Console.WriteLine("4 - Eliminar Escritura");
             Console.WriteLine("5 - Mostrar Lista de Escrituras");
-            Console.WriteLine("6 - Voltar ao Menu Principal");
+            Console.WriteLine("6 - Calcular Percentagem de Posse de Terreno");
+            Console.WriteLine("7 - Voltar ao Menu Principal");
             Console.WriteLine("===========================\n");
             numInput = Utils.GetIntNumber("Por favor escolha uma opção:");
 
@@ -36,6 +37,8 @@ namespace _4Source.views {
                         ListarEscrituras();
                         break;
                     case 6:
+                        CalcularPercentagem();
+                    case 7:
                         Console.WriteLine("\nVolta para o menu anterior.\n");
                         Console.ReadKey();
                         views.Menu.mainMenu();

@@ -19,9 +19,10 @@ namespace _4Source
             this.Valorbase = valorbase;
             this.PessoaList = new ArrayList();
             this.FreguesiaList = new ArrayList();
+            this.escrituraList = new ArrayList();
         }
 
-        // Responsabilidade Pessoa
+        // Properties - get and set.
 
         public int Valorbase { get => valorbase; set => valorbase = value; }
         
@@ -32,6 +33,21 @@ namespace _4Source
         public ArrayList EscrituraList { get => escrituraList; set => escrituraList = value; }
 
         public string Nome { get => nome; set => nome = value; }
+
+        // Responsabilidade Pessoa
+
+        public Pessoa GetPessoaByNif(string nif)
+        {
+
+            foreach (Pessoa p in PessoaList)
+            {
+                if (p.Nif == nif)
+                {
+                    return p;
+                }
+            }
+            return null;
+        }
 
         //Criar Pessoa (Create)
         public void RegistarPessoa(Pessoa p)
@@ -55,6 +71,14 @@ namespace _4Source
             Pessoa pessoa = GetPessoaByNif(nif);
             return pessoa;
         }
+
+        //Obter todas Pessoas (Read)
+
+        public ArrayList ObterTodasPessoas()
+        {
+            return this.pessoaList;
+        }
+
 
         //Editar Pessoa (Edit)
         public void AlterarPessoa(Pessoa p)
@@ -80,44 +104,38 @@ namespace _4Source
             return pessoa;
         }
 
-        //Obter todas Pessoas
+        //Validação Nome - to be used?
+        //private static bool ValidarNome(string nome)
+        //{
+        //    Regex regex = new Regex("^[a-zA-Z]{3,24}$", RegexOptions.IgnoreCase);
+        //    Match m = regex.Match(nome);
 
-        public ArrayList ObterTodasPessoas()
+        //    if (!m.Success)
+        //    {
+        //        return false;
+        //    }
+        //    else
+        //    {
+        //        return true;
+        //    }
+
+        //}
+
+        // Responsabilidade Freguesia
+
+        public Freguesia GetFreguesiaByNome(string nome)
         {
-            return this.pessoaList;
-        }
 
-        public Pessoa GetPessoaByNif(string nif)
-        {
-
-            foreach (Pessoa p in PessoaList)
+            foreach (Freguesia f in FreguesiaList)
             {
-                if (p.Nif == nif)
+                if (f.Nome == nome)
                 {
-                    return p;
+                    return f;
                 }
             }
             return null;
         }
 
-        //Validação Nome
-        private static bool ValidarNome(string nome)
-        {
-            Regex regex = new Regex("^[a-zA-Z]{3,24}$", RegexOptions.IgnoreCase);
-            Match m = regex.Match(nome);
-
-            if (!m.Success)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-
-        }
-
-        // Responsabilidade Freguesia
         // Registar Freguesia (Create)
         public void RegistarFreguesia(Freguesia f)
         {
@@ -153,6 +171,7 @@ namespace _4Source
         }
 
         //Eliminar Freguesia (Delete)
+
         public Freguesia EliminarFreguesia(string nome)
         {
             Freguesia freguesia = GetFreguesiaByNome(nome);
@@ -168,20 +187,27 @@ namespace _4Source
             return freguesia;
         }
 
-        public Freguesia GetFreguesiaByNome(string nome)
-        {
+        // Responsabilidade Funcionario
 
-            foreach (Freguesia f in FreguesiaList)
+        Funcionario GetFuncionarioByNr(string numeroFunc)
+        {
+            Funcionario f = null;
+            foreach (Object obj in this.pessoaList)
             {
-                if (f.Nome == nome)
+                if (obj.GetType() == typeof(Funcionario))
                 {
-                    return f;
+                    f = (Funcionario)obj;
+                    if (f.numeroFunc == numeroFunc)
+                    {
+                        return f;
+                    }
                 }
             }
             return null;
         }
 
         //Registar Funcionario (Create)
+
         public void RegistarFuncionario(Funcionario p)
         {
 
@@ -204,11 +230,30 @@ namespace _4Source
             }
         }
 
+        //Pesquisar Funcionario (Read)
+
         public Funcionario PesquisarFuncionario(string nr)
         {
             Funcionario func = GetFuncionarioByNr(nr);
             return func;
         }
+
+        // Obter todos funcionarios (Read)
+
+        public ArrayList ObterTodosFuncionarios()
+        {
+            ArrayList lista = new ArrayList();
+            foreach (Pessoa p in this.pessoaList)
+            {
+                if (p.GetType() == typeof(Funcionario))
+                {
+                    lista.Add(p);
+                }
+            }
+            return lista;
+        }
+
+        // Eliminar Funcionario (Delete)
 
         public Funcionario EliminarFuncionario(string nr)
         {
@@ -224,79 +269,63 @@ namespace _4Source
             return func;
         }
 
-        public ArrayList ObterTodosFuncionarios()
-        {
-            ArrayList lista = new ArrayList();
-            foreach (Pessoa p in this.pessoaList)
-            {
-                if (p.GetType() == typeof(Funcionario))
-                {
-                    lista.Add(p);
-                }
-            }
-            return lista;
-        }
+        //Responsabilidade Escritura
 
-        Funcionario GetFuncionarioByNr(string numeroFunc)
+        public Escritura GetEscrituraByNum(int num)
         {
-            Funcionario f = null;
-            foreach (Object obj in this.pessoaList)
+
+            foreach (Escritura e in EscrituraList)
             {
-                if (obj.GetType() == typeof(Funcionario))
+                if (e.Num == num)
                 {
-                    f = (Funcionario)obj;
-                    if (f.numeroFunc == numeroFunc)
-                    {
-                        return f;
-                    }
+                    return e;
                 }
             }
             return null;
         }
 
-       
+        //Criar Escritura (Create)
+        public void RegistarEscritura(Escritura e)
+        {
+            Escritura temp = GetEscrituraByNum(e.Num);
+            if (temp == null)
+            {
+                this.EscrituraList.Add(e);
 
+            }
+            else
+            {
+                throw new EscrituraDuplicadoException(e.ToString() + "Número já existente");
+            }
 
+        }
 
+        //Pesquisar Escritura (Read)
+        public Escritura PesquisarEscritura(int num)
+        {
+            Escritura escritura = GetEscrituraByNum(num);
+            return escritura;
+        }
 
-        ////Responsabilidade Escritura
-        ////Criar Escritura (Create)
-        //public void RegistarEscritura(Escritura e) {
-        //    Escritura temp = GetEscrituraByNum(e.Num);
-        //    if (temp == null) {
-        //        this.EscrituraList.Add(e);
+        // Obter todas escrituras (Read)
+        public ArrayList ObterTodasEscrituras()
+        {
+            return this.escrituraList;
+        }
 
-        //    } else {
-        //        throw new EscrituraDuplicadoException(e.ToString() + "Número já existente");
-        //    }
-
-        //}
-
-        ////Pesquisar Escritura (Read)
-        //public Escritura PesquisarEscritura(int num) {
-        //    Escritura escritura = GetEscrituraByNum(num);
-        //    return escritura;
-        //}
-
-        ////Eliminar Escritura (Delete)
-        //public Escritura EliminarEscritura(int num) {
-        //    Escritura escritura = GetEscrituraByNum(num);
-        //    if (escritura != null) {
-        //        this.EscrituraList.Remove(escritura);
-        //    } else {
-        //        throw new ElementoNaoExistenteException(num + " Não existe");
-        //    }
-        //    return escritura;
-        //}
-
-        //public Escritura GetEscrituraByNum(int num) {
-
-        //    foreach (Escritura e in EscrituraList) {
-        //        if (e.Num == num) {
-        //            return e;
-        //        }
-        //    }
-        //    return null;
-        //}
+        //Eliminar Escritura (Delete)
+        public Escritura EliminarEscritura(int num)
+        {
+            Escritura escritura = GetEscrituraByNum(num);
+            if (escritura != null)
+            {
+                this.EscrituraList.Remove(escritura);
+            }
+            else
+            {
+                throw new ElementoNaoExistenteException(num + " Não existe");
+            }
+            return escritura;
+        }
     }
 }
