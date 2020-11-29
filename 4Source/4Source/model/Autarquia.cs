@@ -78,6 +78,9 @@ namespace _4Source
 
         public ArrayList ObterTodasPessoas()
         {
+            //pessoaList.Sort(new Pessoa.CompararIdade()); // Ordenar por idade
+            //pessoaList.Sort(new Pessoa.CompararNome()); // Ordenar por Nome
+            //pessoaList.Sort(); // Ordernar por Nif
             return this.pessoaList;
         }
 

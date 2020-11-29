@@ -9,7 +9,7 @@ using System.Text.RegularExpressions;
 namespace _4Source
 {
     [Serializable()]
-    public class Freguesia
+    public class Freguesia //: IComparer
     {
         private string nome;
         private ArrayList terrenoList;

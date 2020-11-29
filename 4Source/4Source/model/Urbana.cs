@@ -10,7 +10,6 @@ namespace _4Source
     class Urbana : IClassificacao
     {
         double area;
-        
         int valorBase;
         double indiceCont;
         double areaConst;
@@ -24,11 +23,12 @@ namespace _4Source
 
         }
 
-        public Urbana(string tipologia, double areaConst, DateTime dataConst)
+        public Urbana(string tipologia, double areaConst, DateTime dataConst, double area)
         {
             this.tipologia = tipologia;
             this.areaConst = areaConst;
             this.dataConst = dataConst;
+            this.area = area;
         }
 
         public double CalcIMI()

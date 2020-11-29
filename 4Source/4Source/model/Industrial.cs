@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace _4Source
 {
     [Serializable()]
     class Industrial : IClassificacao
     {
-        
         double area;
         string desc; 
         int valorBase; 
@@ -29,7 +29,7 @@ namespace _4Source
 
         }
 
-        public Industrial(string desc, string tipologia, double areaConst, DateTime dataConst, DateTime dataInsp, string descInsp)
+        public Industrial(string desc, string tipologia, double areaConst, DateTime dataConst, DateTime dataInsp, string descInsp, double area)
         {
             this.desc = desc;
             this.tipologia = tipologia;
@@ -37,6 +37,7 @@ namespace _4Source
             this.dataConst = dataConst;
             this.dataInsp = dataInsp;
             this.descInsp = descInsp;
+            this.area = area;
 
 
         }
@@ -46,6 +47,7 @@ namespace _4Source
 
         public double CalcIMI()
         {
+            //double area = terreno.Forma.CalcArea();
             double IMI = indiceCont*valorBase + (areaConst/area * 0.1);
             return IMI;
         }

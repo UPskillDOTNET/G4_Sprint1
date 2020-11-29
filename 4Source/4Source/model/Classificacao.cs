@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace _4Source
 {
     public interface IClassificacao
-    { double CalcIMI();
+    { 
+       double CalcIMI();
 
        string GetClassificacao();
     }

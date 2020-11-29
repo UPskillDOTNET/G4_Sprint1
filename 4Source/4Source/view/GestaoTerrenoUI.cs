@@ -66,7 +66,6 @@ namespace _4Source.views
                         Console.WriteLine("\nOpção Errada");
                         break;
                 }
-
             } while (numInput != 7);
 
         }
@@ -187,10 +186,10 @@ namespace _4Source.views
                         terreno.classificacao = GetRural();
                         break;
                     case 2:
-                        terreno.classificacao = GetUrbana();
+                        terreno.classificacao = GetUrbana(terreno.Forma.CalcArea());
                         break;
                     case 3:
-                        terreno.classificacao = GetIndustrial();
+                        terreno.classificacao = GetIndustrial(terreno.Forma.CalcArea());
                         break;
                     default:
                         Console.WriteLine("Erro. Opção inválida");
@@ -244,7 +243,7 @@ namespace _4Source.views
             } while (false);
             return new Rural(descUso);
         }
-        private static Urbana GetUrbana()
+        private static Urbana GetUrbana(double area)
         {
             string tipologia;
             double areaConst;
@@ -258,10 +257,10 @@ namespace _4Source.views
 
                 
             } while (false);
-            return new Urbana(tipologia,areaConst,dataConst);
+            return new Urbana(tipologia,areaConst,dataConst, area);
         }
 
-        private static Industrial GetIndustrial()
+        private static Industrial GetIndustrial(double area)
         {
             string desc;
             string tipologia;
@@ -282,8 +281,11 @@ namespace _4Source.views
                 
 
             } while (false);
-            return new Industrial(desc,tipologia,areaConst,dataConst,dataInsp,descInsp);
+            return new Industrial(desc,tipologia,areaConst,dataConst,dataInsp,descInsp, area);
         }
+        //private static Industrial CalcIMI()
+        //{
 
+        //}
     }
 }
