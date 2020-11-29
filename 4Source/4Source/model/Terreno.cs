@@ -30,7 +30,7 @@ namespace _4Source
 
         public override string ToString()
         {
-            return String.Format("\n\nID do Terreno: {0} \n Indice de Contribuição: {1} \n {2}\n Área: {3} \n\n{4}\nIMI:{5}", Id, classificacao.GetIndiceCont(), forma.GetForma(), forma.CalcArea(), classificacao.GetClassificacao(), classificacao.CalcIMI());
+            return String.Format("\n\nID do Terreno: {0} \n Indice de Contribuição: {1} \n {2}\n Área: {3} \n\n{4}\n IMI:{5}", Id, classificacao.GetIndiceCont(), forma.GetForma(), forma.CalcArea(), classificacao.GetClassificacao(), classificacao.CalcIMI());
         }
 
         public int Id { get => id; set => id = value; }

@@ -304,9 +304,6 @@ namespace _4Source.views
             } while (false);
             return new Industrial(indiceCont,desc,tipologia,areaConst,dataConst,dataInsp,descInsp, area);
         }
-        //private static Industrial CalcIMI()
-        //{
-
-        //}
+       
     }
 }

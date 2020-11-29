@@ -11,7 +11,9 @@ namespace _4Source.views
 
         public static void mainMenu()
         {
-
+            Console.Title = ("4Source - we make what you want us to make by your defenition of making");
+            Console.WriteLine("Default Title: {0}",
+                             Console.Title);
             do
             {
                 int numInput;
