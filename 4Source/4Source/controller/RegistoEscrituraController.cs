@@ -27,7 +27,7 @@ namespace _4Source.controllers {
     public static Escritura PesquisarEscritura(int num)
     {
 
-        Escritura escritura = null;
+            Escritura escritura = null;
         Autarquia autarquia = Dados.CarregarDados();
         escritura = autarquia.PesquisarEscritura(num);
         return escritura;
@@ -48,7 +48,7 @@ namespace _4Source.controllers {
         public static Escritura EliminarEscritura(int num)
     {
 
-        Escritura escritura = null;
+            Escritura escritura = null;
         try
         {
             Autarquia autarquia = Dados.CarregarDados();

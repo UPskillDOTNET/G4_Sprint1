@@ -115,7 +115,7 @@ namespace _4Source.views
             Pessoa pessoa = GestaoPessoaUI.CriarPessoa();
             func.Nif = pessoa.Nif;
             func.Nome = pessoa.Nome;
-            func.dataNascimento = pessoa.dataNascimento;
+            func.DataNascimento = pessoa.DataNascimento;
             bool flag;
             do
             {

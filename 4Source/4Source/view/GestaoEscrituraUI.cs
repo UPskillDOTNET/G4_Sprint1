@@ -130,7 +130,7 @@ namespace _4Source.views {
             }
             foreach (double perc in array) {
 
-                Console.WriteLine("O proprietário {0} possui {1} % do terreno", count, perc);
+                Console.WriteLine("O proprietário {0} possui {1} % do terreno.", count, perc);
                 count += 1;
             }
             double sum = array.Sum();

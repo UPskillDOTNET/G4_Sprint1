@@ -15,7 +15,7 @@ namespace _4Source {
 
         public Escritura()
         {
-
+            this.ProprietariosList = new ArrayList();
         }
 
         public Escritura(int num, DateTime data, Terreno terreno, ArrayList proprietariosList) {

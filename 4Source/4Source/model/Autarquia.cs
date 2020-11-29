@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _4Source.views;
+using System;
 using System.Collections;
 using System.Text.RegularExpressions;
 
@@ -19,9 +20,13 @@ namespace _4Source
             this.Valorbase = valorbase;
             this.PessoaList = new ArrayList();
             this.FreguesiaList = new ArrayList();
-            this.escrituraList = new ArrayList();
+            this.EscrituraList = new ArrayList();
         }
 
+        public Autarquia()
+        {
+            this.EscrituraList = new ArrayList();
+        }
         // Properties - get and set.
 
         public int Valorbase { get => valorbase; set => valorbase = value; }
@@ -301,6 +306,37 @@ namespace _4Source
 
         public void RegistarEscritura(Escritura e)
         {
+
+            string nome = Utils.GetText("Inserir o nome da freguesia a qual quer associar esta escritura:");
+            Freguesia freguesia = GetFreguesiaByNome(nome);
+            
+            if (freguesia != null)
+            {
+                int id = Utils.GetIntNumber("Inserir o nome do terreno a qual quer associar esta escritura:");
+                Terreno terreno = freguesia.GetTerrenoById(id);
+
+                if (terreno != null)
+                {
+                    terreno.Escritura = e;
+                    int numProprietarios = Utils.GetIntNumber("Quantos proprietários tem o terreno?");
+              
+                    for (int i = 0; i < numProprietarios; i++)
+                    { 
+                        string prop = Utils.GetText("Introduza o NIF do proprietário :");
+                        Pessoa pessoa = GetPessoaByNif(prop);
+                        e.ProprietariosList.Add(pessoa);
+                        pessoa.TerrenosOwned++;
+                    }
+                    
+                } else
+                {
+                    throw new IdTerrenoInvalidoException(e.ToString() + "não existe na lista de terrenos");
+                }
+            } else
+            {
+                throw new NomeFreguesiaInvalidoException(e.ToString() + "não existe na lista de freguesias");
+            }
+
             Escritura temp = GetEscrituraByNum(e.Num);
             if (temp == null)
             {
@@ -327,13 +363,14 @@ namespace _4Source
 
         public ArrayList ObterTodasEscrituras()
         {
-            return this.escrituraList;
+            return this.EscrituraList;
         }
 
         //Eliminar Escritura (Delete)
 
         public Escritura EliminarEscritura(int num)
         {
+
             Escritura escritura = GetEscrituraByNum(num);
             if (escritura != null)
             {

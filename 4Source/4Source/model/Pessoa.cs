@@ -11,32 +11,22 @@ namespace _4Source
     [Serializable()]
     public class Pessoa //: IComparer
     {
-        public string nome;
-        public string nif;
-        public DateTime dataNascimento;
+        private string nome;
+        private string nif;
+        private DateTime dataNascimento;
+        private int terrenosOwned;
 
-        public string Nome
-        {
-            get { return nome; }
-            set { nome = value; }
-        }
+        public string Nome { get => nome; set => nome = value; }
+        public string Nif { get => nif; set => nif = value; }
+        public DateTime DataNascimento { get => dataNascimento; set => dataNascimento = value; }
+        public int TerrenosOwned { get => terrenosOwned; set => terrenosOwned = value; }
 
-        public string Nif
-        {
-            get { return nif; }
-            set { nif = value; }
-        }
-
-        public DateTime DataNascimento
-        {
-            get { return dataNascimento; }
-            set { dataNascimento = value; }
-        }
         public Pessoa(string nome, string nif, DateTime dataNascimento)
         {
-            this.nome = nome;
-            this.nif = nif;
-            this.dataNascimento = dataNascimento;
+            this.Nome = nome;
+            this.Nif = nif;
+            this.DataNascimento = dataNascimento;
+            this.terrenosOwned = 0;
         }
 
         public Pessoa()
@@ -46,7 +36,7 @@ namespace _4Source
 
         public override string ToString()
         {
-            return "NIF: " + nif + "\n Nome: " + nome + "\n Data de nascimento: " + dataNascimento.ToString();
+            return "NIF: " + Nif + "\n Nome: " + Nome + "\n Data de nascimento: " + DataNascimento.ToString();
         }
 
         private static bool ValidarNome(string nome)
