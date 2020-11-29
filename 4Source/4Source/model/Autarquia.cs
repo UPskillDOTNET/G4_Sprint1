@@ -254,6 +254,14 @@ namespace _4Source
             return null;
         }
 
+        public static void RegistarEscritura() {
+            GetFreguesiaByNome(string nome)
+
+        }
+
+
+
+
         ////Responsabilidade Escritura
         ////Criar Escritura (Create)
         //public void RegistarEscritura(Escritura e) {

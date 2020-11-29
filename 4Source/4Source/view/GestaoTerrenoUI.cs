@@ -202,32 +202,5 @@ namespace _4Source.views
             } while (diametro <= 0);
             return new Circular(diametro / 2);
         }
-
-        public static void CalcularPercentagem()
-        {
-            Console.WriteLine("Quantos proprietários tem o terreno?");
-            int numProprietarios = int.Parse(Console.ReadLine());
-            double percentagem = 0;
-            double totalPercentagem = 0;
-            double[] array = new double[numProprietarios];
-            int count = 1;
-
-            for (int i = 0; i < numProprietarios; i++)
-            {
-                Console.WriteLine("Introduza a percentagem do proprietario:");
-                percentagem = double.Parse(Console.ReadLine());
-                array[i] = percentagem;
-                totalPercentagem += percentagem;
-            }
-            foreach (double perc in array)
-            {
-
-                Console.WriteLine("O proprietário {0} possui {1} % do terreno", count, perc);
-                count += 1;
-            }
-            double sum = array.Sum();
-            Console.WriteLine("Posse total dos proprietários em relação ao terreno: {0} ", sum);
-
-        }
     }
 }
