@@ -17,7 +17,7 @@ namespace _4Source.views
             Console.WindowWidth = 150;
             Console.WindowHeight = 40;
             Console.CursorVisible = false;
-            
+            ConsoleHelper.SetCurrentFont("Everson Mono", 20);
 
 
             do
