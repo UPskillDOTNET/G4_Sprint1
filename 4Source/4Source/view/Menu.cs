@@ -14,6 +14,12 @@ namespace _4Source.views
             Console.Title = ("4Source - we make what you want us to make by your defenition of making");
             Console.WriteLine("Default Title: {0}",
                              Console.Title);
+            Console.WindowWidth = 200;
+            Console.WindowHeight = 50;
+            Console.CursorVisible = false;
+            
+
+
             do
             {
                 int numInput;
@@ -28,8 +34,8 @@ namespace _4Source.views
                 Console.WriteLine("5) Gestão de Escritura");
                 Console.WriteLine("6) Cálculo de Estatisticas");
                 Console.WriteLine("7) Fechar Programa\n\n");
+                
 
-               
                 do
                 {
                     Console.ForegroundColor = ConsoleColor.Yellow;
