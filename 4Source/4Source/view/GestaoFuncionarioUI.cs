@@ -67,6 +67,7 @@ namespace _4Source.views
             ArrayList lista = RegistoFuncionarioController.ObterListaFuncionarios();
             foreach (Funcionario func in lista)
             {
+                System.Threading.Thread.Sleep(TimeSpan.FromSeconds(1));
                 Console.WriteLine(func.ToString());
             }
        

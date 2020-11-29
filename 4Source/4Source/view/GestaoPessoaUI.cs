@@ -67,6 +67,7 @@ namespace _4Source.views
             ArrayList lista = RegistoPessoaController.ObterListaPessoas();
             foreach (Pessoa pessoa in lista)
             {
+                System.Threading.Thread.Sleep(TimeSpan.FromSeconds(1));
                 Console.WriteLine(pessoa.ToString());
             }
             Console.ReadKey();

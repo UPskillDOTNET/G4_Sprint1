@@ -68,6 +68,7 @@ namespace _4Source.views
             ArrayList lista = RegistoTerrenoController.ObterListaTerrenos(nome);
             foreach (Terreno terreno in lista)
             {
+                System.Threading.Thread.Sleep(TimeSpan.FromSeconds(1));
                 Console.WriteLine("\n" + terreno.ToString());
             }
             Console.ReadKey();

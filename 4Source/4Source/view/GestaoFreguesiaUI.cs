@@ -72,6 +72,7 @@ namespace _4Source.views
             ArrayList lista = RegistoFreguesiaController.ObterListaFreguesias();
             foreach (Freguesia freguesia in lista)
             {
+                System.Threading.Thread.Sleep(TimeSpan.FromSeconds(1));
                 Console.WriteLine(freguesia.ToString());
             }
             Console.ReadKey();

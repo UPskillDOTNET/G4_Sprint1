@@ -30,6 +30,7 @@ namespace _4Source.views
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("\n\nBem vindo. Escolha a opção pretendida\n");
+                System.Threading.Thread.Sleep(TimeSpan.FromSeconds(1));
                 Console.ResetColor();
                 Console.WriteLine("1) Gestão de Pessoas.");
                 Console.WriteLine("2) Gestão de Funcionários");
@@ -42,6 +43,7 @@ namespace _4Source.views
 
                 do
                 {
+                    System.Threading.Thread.Sleep(TimeSpan.FromSeconds(1));
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     numInput = Utils.GetIntNumber("Por favor escolha uma opção:");
                     Console.ResetColor();
