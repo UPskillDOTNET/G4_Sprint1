@@ -17,9 +17,9 @@ namespace _4Source
         public IClassificacao classificacao;
         private Escritura escritura;
 
-        public Terreno()
+        public Terreno(Escritura escritura)
         {
-
+            this.escritura = escritura;
         }
         public Terreno(int id, double indiceCont, IForma forma, IClassificacao classificacao, double imi, Escritura escritura)
         {
@@ -44,6 +44,10 @@ namespace _4Source
         public Escritura Escritura { get => escritura; set => escritura = value; }
         
         
+
+        // private void adicionarEscritura(Escritura e) {
+                // this.Escritura = e;
+}
         //private static bool ValidaId(int id)
         //{
         //    Regex regex = new Regex("^[1-9]\\d*$", RegexOptions.IgnoreCase);
