@@ -50,6 +50,21 @@ namespace _4Source {
         public EscrituraDuplicadoException(string message) : base(message) {
         }
     }
+
+    public class NumeroEscrituraInvalidoException : Exception
+    {
+        public NumeroEscrituraInvalidoException(string message) : base(message)
+        {
+        }
+    }
+
+    public class DataEscrituraInvalidoException : Exception
+    {
+        public DataEscrituraInvalidoException(string message) : base(message)
+        {
+        }
+    }
+
     public class FreguesiaDuplicadoException : Exception {
         public FreguesiaDuplicadoException(string message) : base(message) {
         }

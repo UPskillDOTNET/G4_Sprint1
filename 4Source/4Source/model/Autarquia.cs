@@ -50,6 +50,7 @@ namespace _4Source
         }
 
         //Criar Pessoa (Create)
+
         public void RegistarPessoa(Pessoa p)
         {
             Pessoa temp = GetPessoaByNif(p.Nif);
@@ -66,6 +67,7 @@ namespace _4Source
         }
                 
         //Pesquisar Pessoa (Read)
+
         public Pessoa PesquisarPessoa(string nif)
         {
             Pessoa pessoa = GetPessoaByNif(nif);
@@ -81,6 +83,7 @@ namespace _4Source
 
 
         //Editar Pessoa (Edit)
+
         public void AlterarPessoa(Pessoa p)
         {
             Pessoa pessoa = GetPessoaByNif(p.Nif);
@@ -90,6 +93,7 @@ namespace _4Source
         }
 
         //Eliminar Pessoa (Delete)
+
         public Pessoa EliminarPessoa(string nif)
         {
             Pessoa pessoa = GetPessoaByNif(nif);
@@ -137,6 +141,7 @@ namespace _4Source
         }
 
         // Registar Freguesia (Create)
+
         public void RegistarFreguesia(Freguesia f)
         {
             Freguesia temp = GetFreguesiaByNome(f.Nome);
@@ -153,6 +158,7 @@ namespace _4Source
         }
 
         //Pesquisar Freguesia (Read)
+
         public Freguesia PesquisarFreguesia(string nome)
         {
             Freguesia freguesia = GetFreguesiaByNome(nome);
@@ -164,6 +170,7 @@ namespace _4Source
         }
 
         //Editar Freguesia (Edit)
+
         public void AlterarFreguesia(Freguesia f, string nomeNovo)
         {
             Freguesia freguesia = GetFreguesiaByNome(f.Nome);
@@ -285,6 +292,7 @@ namespace _4Source
         }
 
         //Criar Escritura (Create)
+
         public void RegistarEscritura(Escritura e)
         {
             Escritura temp = GetEscrituraByNum(e.Num);
@@ -300,7 +308,9 @@ namespace _4Source
 
         }
 
+ 
         //Pesquisar Escritura (Read)
+
         public Escritura PesquisarEscritura(int num)
         {
             Escritura escritura = GetEscrituraByNum(num);
@@ -308,12 +318,14 @@ namespace _4Source
         }
 
         // Obter todas escrituras (Read)
+
         public ArrayList ObterTodasEscrituras()
         {
             return this.escrituraList;
         }
 
         //Eliminar Escritura (Delete)
+
         public Escritura EliminarEscritura(int num)
         {
             Escritura escritura = GetEscrituraByNum(num);

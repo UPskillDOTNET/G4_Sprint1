@@ -19,12 +19,13 @@ namespace _4Source.views
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("\n\nBem vindo. Escolha a opção pretendida\n");
                 Console.ResetColor();
-                Console.WriteLine("1) Gestão de Pessoa.");
+                Console.WriteLine("1) Gestão de Pessoas.");
                 Console.WriteLine("2) Gestão de Funcionários");
                 Console.WriteLine("3) Gestão de Freguesias.");
                 Console.WriteLine("4) Gestão de Terrenos");
-                Console.WriteLine("5) Cálculo de Estatisticas");
-                Console.WriteLine("6) Fechar Programa\n\n");
+                Console.WriteLine("5) Gestão de Escritura");
+                Console.WriteLine("6) Cálculo de Estatisticas");
+                Console.WriteLine("7) Fechar Programa\n\n");
 
                
                 do
@@ -47,9 +48,11 @@ namespace _4Source.views
                             GestaoTerrenoUI.Menu();
                             break;
                         case 5:
-                            //GestaoEstatisticaUI.MainEstatistica();
+                            GestaoEscrituraUI.Menu();
                             break;
                         case 6:
+                            //GestaoEstatisticaUI.Menu();
+                        case 7:
                             Console.ForegroundColor = ConsoleColor.DarkRed;
                             Console.BackgroundColor = ConsoleColor.White;
                             Console.WriteLine("\nObrigado por usar 4Source.");
@@ -59,12 +62,9 @@ namespace _4Source.views
                         default:
                             Console.ForegroundColor = ConsoleColor.Red;
                             Console.WriteLine("\nNúmero de input inválido, tente novamente.\n");
-                            // Sair fora deste loop, pedir novamente o input.
                             break;
-                            
                     }
-
-                } while (numInput < 0 || numInput > 6);
+                } while (numInput < 0 || numInput > 7);
             } while (true);
 
 

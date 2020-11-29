@@ -45,7 +45,7 @@ namespace _4Source.controllers {
 
     }
 
-    public static Escritura EliminarEscritura(int num)
+        public static Escritura EliminarEscritura(int num)
     {
 
         Escritura escritura = null;
