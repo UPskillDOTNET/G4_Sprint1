@@ -1,0 +1,98 @@
+@startuml
+skinparam classAttributeIconSize 0
+hide methods
+left to right direction
+
+class Autarquia {
+  -String nome
+}
+
+class Pessoa {
+  -String nome	
+  -String nif
+  -String dataNascimento
+
+}
+
+class Funcionario {
+  -String cargo
+  -String numeroFunc
+}
+
+class Escritura {
+  -Integer num
+  -String data
+}
+
+class Freguesia {
+  -String nome
+}
+
+class Terreno {
+  -Integer id
+  -String indiceCont
+  -Double area
+  -Double imi
+}
+
+class Forma {
+  -Double area
+}
+
+class Triangular {
+  -Double area
+}
+
+class Circular {
+  -Double area
+}
+
+class Rectangular {
+  -Double area
+}
+
+class Classificacao {
+  -String desc
+  -Double areaConst
+  -String dataConst
+}
+
+class Urbana {
+  -String desc
+  -Double areaConst
+  -String dataConst
+}
+
+class Industrial {
+  -String desc
+  -Double areaConst
+  -String dataConst
+}
+
+class Rural {
+  -String desc
+  -Double areaConst
+  -String dataConst
+}
+
+Autarquia "1" -- "1...*" Freguesia : possui >
+Autarquia "1" -- "1...*" Pessoa : tem >
+Autarquia "1" -- "1...*" Funcionario : tem >
+
+Pessoa "1" -- "0..1" Funcionario : é >
+Pessoa "1...*" -- "0...*" Escritura : tem  >
+
+Freguesia "1" -- "1...*" Terreno : tem >
+Freguesia "1" .. "1...*" Pessoa : tem >
+Terreno "1..*" -- "1" Forma : tem >
+Terreno "1..*" -- "1" Classificacao : tem >
+Terreno "1" -- "1" Escritura : está contido >
+
+Forma "1" <-- "1" Triangular : é >
+Forma "1" <-- "1" Circular : é >
+Forma "1" <-- "1" Rectangular : >
+
+Classificacao "1" <-- "1" Rural : é >
+Classificacao "1" <-- "1" Urbana : é >
+Classificacao "1" <-- "1" Industrial : é >
+@enduml
