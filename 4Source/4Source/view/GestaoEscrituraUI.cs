@@ -17,9 +17,10 @@ namespace _4Source.views {
             Console.WriteLine("6 - Calcular Percentagem de Posse de Terreno");
             Console.WriteLine("7 - Voltar ao Menu Principal");
             Console.WriteLine("===========================\n");
-            numInput = Utils.GetIntNumber("Por favor escolha uma opção:");
+            
 
             do {
+                numInput = Utils.GetIntNumber("Por favor escolha uma opção:");
                 switch (numInput) {
                     case 1:
                         RegistarEscritura();
@@ -38,10 +39,10 @@ namespace _4Source.views {
                         break;
                     case 6:
                         CalcularPercentagem();
+                        break;
                     case 7:
                         Console.WriteLine("\nVolta para o menu anterior.\n");
                         Console.ReadKey();
-                        views.Menu.mainMenu();
                         break;
                     default:
                         Console.WriteLine("\nOpção errada. Escolha novamente.\n");
