@@ -14,8 +14,8 @@ namespace _4Source.views
             Console.Title = ("4Source - we make what you want us to make by your defenition of making");
             Console.WriteLine("Default Title: {0}",
                              Console.Title);
-            Console.WindowWidth = 200;
-            Console.WindowHeight = 50;
+            Console.WindowWidth = 150;
+            Console.WindowHeight = 40;
             Console.CursorVisible = false;
             
 
