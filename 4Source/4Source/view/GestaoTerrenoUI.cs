@@ -179,7 +179,7 @@ namespace _4Source.views
              do
             {
                 flag = false;
-                int number = Utils.GetIntNumber("Que Classificação possui o terreno?\n1 - Ruraç\n2 - Urbana\n3 - Industrial\n");
+                int number = Utils.GetIntNumber("Que Classificação possui o terreno?\n1 - Rural\n2 - Urbana\n3 - Industrial\n");
                 switch (number)
                 {
                     case 1:
@@ -271,10 +271,10 @@ namespace _4Source.views
             string descInsp;
             do
             {
-                desc = Utils.GetText("Qual a principla atividade industrial do terreno? ");
+                desc = Utils.GetText("Qual a principal atividade industrial do terreno? ");
                 tipologia = Utils.GetText("Qual a tipologia da construção? ");
                 areaConst = Utils.GetDouble("Qual a area da construção? ");
-                Console.WriteLine("Qual a data da Construção? ");
+                Console.WriteLine("Qual a data de Construção? ");
                 dataConst = Utils.GetData();
                 Console.WriteLine("Qual a data da ultima Inspeção? ");
                 dataInsp = Utils.GetData();
