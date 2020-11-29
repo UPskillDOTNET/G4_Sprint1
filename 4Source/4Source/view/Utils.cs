@@ -155,5 +155,66 @@ namespace _4Source.views
             } while (flag);
             return number;
         }
+
+
+        public static DateTime GetData()
+        {
+            bool flag;
+            DateTime data;
+            int ano = -1;
+            int mes = -1;
+            int dia = -1;
+            do
+            {
+                try
+                {
+                    flag = false;
+                    Console.Write("Introduza o ano: ");
+                    ano = int.Parse(Console.ReadLine());
+                }
+                catch (AnoInvalidoException e)
+                {
+                    Console.WriteLine("Ano inválido" + e.ToString());
+                    flag = true;
+                }
+                catch (FormatException)
+                {
+                    flag = true;
+                }
+            } while (flag);
+            do
+            {
+                try
+                {
+                    flag = false;
+                    Console.Write("Introduza o mês: ");
+                    mes = int.Parse(Console.ReadLine());
+
+                }
+                catch (MesInvalidoException e)
+                {
+                    Console.WriteLine("Mês inválido" + e.ToString());
+                    flag = true;
+                }
+            } while (flag);
+            do
+            {
+                try
+                {
+                    flag = false;
+                    Console.Write("Introduza o dia: ");
+                    dia = int.Parse(Console.ReadLine());
+
+                }
+                catch (DiaInvalidoException e)
+                {
+                    Console.WriteLine("Dia inválido" + e.ToString());
+                    flag = true;
+                }
+            } while (flag);
+
+            data = new DateTime(ano, mes, dia);
+            return data;
+        }
     }
 }

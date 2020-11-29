@@ -9,17 +9,35 @@ namespace _4Source
     [Serializable()]
     class Rural : IClassificacao
     {
-        string classificacao = "Rural";
-        string descUso;
+        
 
-        public string DescUso { get => descUso; set => descUso = value; }
-        int valorBase { get => valorBase; }
-        double indiceCont { get => indiceCont; }
+        public string descUso;
+        int valorBase;
+        double indiceCont;
+
+
+
+        public Rural()
+        {
+
+        }
+
+        public Rural(string descUso)
+        {
+            this.descUso = descUso;
+          
+        }
+
 
         public double CalcIMI()
         {
             double IMI = indiceCont * valorBase;
             return IMI;
+        }
+
+        public string GetClassificacao()
+        {
+            return "Rural " + "com pricipal atividade "  + descUso;
         }
     }
   }

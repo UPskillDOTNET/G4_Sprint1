@@ -47,9 +47,9 @@ namespace _4Source.views
                     case 5:
                         //RegistarEscritura();
                         break;
-                    case 6:
-                        CalcularPercentagem();
-                        break;
+                    //case 6:
+                    //    CalcularPercentagem();
+                    //    break;
                     case 7:
                         Console.WriteLine("\nVolta para o menu anterior.");
                         Console.ReadKey();
@@ -168,6 +168,30 @@ namespace _4Source.views
                         break;
                 }
             } while (flag);
+
+             do
+            {
+                flag = false;
+                int number = Utils.GetIntNumber("Que Classificação possui o terreno?\n1 - Ruraç\n2 - Urbana\n3 - Industrial\n");
+                switch (number)
+                {
+                    case 1:
+
+                        terreno.classificacao = GetRural();
+                        break;
+                    case 2:
+                        terreno.classificacao = GetUrbana();
+                        break;
+                    //case 3:
+                    //    terreno.classificacao = GetIndustrial();
+                    //    break;
+                    default:
+                        Console.WriteLine("Erro. Opção inválida");
+                        flag = true;
+                        break;
+                }
+            } while (flag);
+
             return terreno;
         }
 
@@ -202,5 +226,44 @@ namespace _4Source.views
             } while (diametro <= 0);
             return new Circular(diametro / 2);
         }
+
+        private static Rural GetRural()
+        {
+            string descUso;
+            do
+            {
+                descUso = Utils.GetText("Qual a atividade rural do Terreno?");
+
+            } while (false);
+            return new Rural(descUso);
+        }
+        private static Urbana GetUrbana()
+        {
+            string tipologia;
+            double areaConst;
+            DateTime dataConst;
+        
+            do
+            {
+                tipologia = Utils.GetText("Qual a tipologia da construção?");
+                areaConst = Utils.GetDouble("Qual a area da construção?");
+                dataConst = Utils.GetData();
+
+                
+            } while (false);
+            return new Urbana(tipologia,areaConst,dataConst);
+        }
+       
+        //private static Industrial getIndustrial()
+        //{
+        //    ouble diametro;
+        //    do
+        //    {
+        //        diametro = utils.getdouble("qual o valor do diametro do terreno?");
+
+        //    } while (diametro <= 0);
+        //    return new circular(diametro / 2);
+        //}
+
     }
 }

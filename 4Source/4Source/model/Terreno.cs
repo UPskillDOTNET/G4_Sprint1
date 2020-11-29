@@ -14,17 +14,19 @@ namespace _4Source
         private double indiceCont;
         private double imi;
         private IForma forma;
+        public IClassificacao classificacao;
         private Escritura escritura;
 
         public Terreno()
         {
 
         }
-        public Terreno(int id, double indiceCont, IForma forma, double imi, Escritura escritura)
+        public Terreno(int id, double indiceCont, IForma forma, IClassificacao classificacao, double imi, Escritura escritura)
         {
             this.Id = id;
             this.IndiceCont = indiceCont;
             this.forma = forma;
+            this.classificacao = classificacao;
             this.Imi = imi;
             this.Escritura = escritura;
 
@@ -32,7 +34,7 @@ namespace _4Source
 
         public override string ToString()
         {
-            return String.Format("ID do Terreno: {0} Indice de Contribuição: {1} Forma: {2} de área {3}", Id, IndiceCont, forma.GetForma(), forma.CalcArea());
+            return String.Format("ID do Terreno: {0} Indice de Contribuição: {1} {2} de área {3}, {4}", Id, IndiceCont, forma.GetForma(), forma.CalcArea(), classificacao.GetClassificacao());
         }
 
         public int Id { get => id; set => id = value; }

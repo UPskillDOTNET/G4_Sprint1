@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace _4Source
 {
-    interface IClassificacao
-    { double CalcIMI(); }
+    public interface IClassificacao
+    { double CalcIMI();
+
+       string GetClassificacao();
+    }
 }

@@ -9,28 +9,38 @@ namespace _4Source
     [Serializable()]
     class Urbana : IClassificacao
     {
-        string classificacao = "Urbana";
         double area;
-        string desc;
+        
         int valorBase;
         double indiceCont;
         double areaConst;
-        string dataConst;
+        DateTime dataConst;
         string tipologia;
 
-        public string Tipologia { get => tipologia; set => tipologia = value; }
-        public string DataConst { get => dataConst; set => dataConst = value; }
-        public double AreaConst { get => areaConst; set => areaConst = value; }
-        public double IndiceCont { get => indiceCont; set => indiceCont = value; }
-        public int ValorBase { get => valorBase; set => valorBase = value; }
-        public string Desc { get => desc; set => desc = value; }
-        public double Area { get => area; set => area = value; }
 
-        
+
+        public Urbana()
+        {
+
+        }
+
+        public Urbana(string tipologia, double areaConst, DateTime dataConst)
+        {
+            this.tipologia = tipologia;
+            this.areaConst = areaConst;
+            this.dataConst = dataConst;
+        }
+
         public double CalcIMI()
         {
-            double IMI = IndiceCont * ValorBase + (AreaConst / Area * 0.05);
+            double IMI = indiceCont * valorBase + (areaConst / area * 0.05);
             return IMI;
         }
+
+        public string GetClassificacao()
+        {
+            return "Urbana \n" + "do tipo " + tipologia +  "de area " + areaConst + "com data de construção " + dataConst;
+        }
+    
     }
 }

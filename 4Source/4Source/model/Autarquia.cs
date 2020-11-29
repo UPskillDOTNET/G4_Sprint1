@@ -254,10 +254,7 @@ namespace _4Source
             return null;
         }
 
-        public static void RegistarEscritura() {
-            GetFreguesiaByNome(string nome)
-
-        }
+       
 
 
 
