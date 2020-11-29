@@ -75,7 +75,7 @@ namespace _4Source.views
                 Console.WriteLine(freguesia.ToString());
             }
             Console.ReadKey();
-            Menu();
+           
         }
 
         private static void AlterarFreguesia()
@@ -93,7 +93,7 @@ namespace _4Source.views
                 Console.WriteLine("A freguesia que indicou não existe na base de dados. Tente novamente.");
             }
             Console.ReadKey();
-            Menu();
+        
         }
         private static void EliminarFreguesia()
         {
@@ -108,7 +108,7 @@ namespace _4Source.views
                 Console.WriteLine("Essa freguesia não existe!");
             }
             Console.ReadKey();
-            Menu();
+      
 
         }
 
@@ -125,14 +125,14 @@ namespace _4Source.views
                 Console.WriteLine("Não  existe!!!");
             }
             Console.ReadKey();
-            Menu();
+    
 
         }
         private static void RegistarFreguesia()
         {
             Freguesia freguesia = CriarFreguesia();
             RegistoFreguesiaController.RegistarFreguesia(freguesia);
-            Menu();
+          
         }
 
         public static Freguesia CriarFreguesia()

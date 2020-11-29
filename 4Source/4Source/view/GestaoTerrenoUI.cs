@@ -79,7 +79,7 @@ namespace _4Source.views
                 Console.WriteLine("\n" + terreno.ToString());
             }
             Console.ReadKey();
-            Menu();
+        
         }
 
         private static void EliminarTerreno()
@@ -96,7 +96,7 @@ namespace _4Source.views
                 Console.WriteLine("\n Não  existe!!!");
             }
             Console.ReadKey();
-            Menu();
+            
         }
 
         private static void PesquisarTerreno()
@@ -113,14 +113,14 @@ namespace _4Source.views
                 Console.WriteLine("\nNão  existe!!!");
             }
             Console.ReadKey();
-            Menu();
+          
         }
         private static void RegistarTerreno()
         {
             string nome = Utils.GetText("\nIntroduza o nome da freguesia a qual o terreno pertence:");
             Terreno terreno = CriarTerreno();
             RegistoTerrenoController.RegistarTerreno(nome, terreno);
-            Menu();
+           
         }
 
         public static Terreno CriarTerreno()

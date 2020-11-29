@@ -69,7 +69,7 @@ namespace _4Source.views
             {
                 Console.WriteLine(func.ToString());
             }
-            Menu();
+       
         }
 
         private static void EliminarFuncionario()
@@ -84,7 +84,7 @@ namespace _4Source.views
             {
                 Console.WriteLine("Não existe!!!");
             }
-            Menu();
+           
         }
 
         private static void PesquisarFuncionario()
@@ -99,14 +99,14 @@ namespace _4Source.views
             {
                 Console.WriteLine("Não existe!!!");
             }
-            Menu();
+            
 
         }
         private static void RegistarFuncionario()
         {
             Funcionario func = CriarFuncionario();
             RegistoFuncionarioController.RegistarFuncionario(func);
-            Menu();
+           
         }
 
         private static Funcionario CriarFuncionario()

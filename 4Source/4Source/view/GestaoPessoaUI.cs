@@ -70,7 +70,7 @@ namespace _4Source.views
                 Console.WriteLine(pessoa.ToString());
             }
             Console.ReadKey();
-            Menu();
+         
         }
 
 
@@ -88,7 +88,7 @@ namespace _4Source.views
             {
                 Console.WriteLine("Não existe!!!");
             }
-            Menu();
+           
 
         }
         private static void EliminarPessoa()
@@ -103,7 +103,7 @@ namespace _4Source.views
             {
                 Console.WriteLine("Não  existe!!!");
             }
-            Menu();
+           
 
         }
 
@@ -120,14 +120,14 @@ namespace _4Source.views
                 Console.WriteLine("Não existe!!!");
             }
             Console.ReadKey();
-            Menu();
+          
         }
 
         private static void RegistarPessoa()
         {
             Pessoa pessoa = CriarPessoa();
             RegistoPessoaController.RegistarPessoa(pessoa);
-            Menu();
+    
 
         }
 
