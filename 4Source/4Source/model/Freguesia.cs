@@ -68,6 +68,7 @@ namespace _4Source
             {
                 throw new ElementoNaoExistenteException(id + " Não existe");
             }
+            Console.WriteLine("O terreno abaixo foi eliminado");
             return terreno;
         }
 

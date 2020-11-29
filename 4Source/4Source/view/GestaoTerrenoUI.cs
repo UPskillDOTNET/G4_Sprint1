@@ -139,19 +139,19 @@ namespace _4Source.views
                     Console.WriteLine("Atenção: " + e.ToString());
                 }
             } while (flag);
-            do
-            {
-                try
-                {
-                    flag = false;
-                    terreno.IndiceCont = Utils.GetDouble("Indice de Contribuição:");
-                }
-                catch (IndiceTerrenoInvalidoException e)
-                {
-                    flag = true;
-                    Console.WriteLine("Atenção: " + e.ToString());
-                }
-            } while (flag);
+            //do
+            //{
+            //    try
+            //    {
+            //        flag = false;
+            //        terreno.IndiceCont = Utils.GetDouble("Indice de Contribuição:");
+            //    }
+            //    catch (IndiceTerrenoInvalidoException e)
+            //    {
+            //        flag = true;
+            //        Console.WriteLine("Atenção: " + e.ToString());
+            //    }
+            //} while (flag);
             do
             {
                 flag = false;
@@ -235,33 +235,47 @@ namespace _4Source.views
 
         private static Rural GetRural()
         {
+            double indiceCont;
             string descUso;
+            do
+            {
+                indiceCont = Utils.GetDouble("Qual o indice de contribuição do Terreno? (Entre 0 e 1):\n");
+            } while (indiceCont < 0 || indiceCont > 1);
             do
             {
                 descUso = Utils.GetText("Qual a atividade rural do Terreno? ");
 
             } while (false);
-            return new Rural(descUso);
+
+            return new Rural(indiceCont,descUso);
         }
         private static Urbana GetUrbana(double area)
         {
+            double indiceCont;
             string tipologia;
             double areaConst;
             DateTime dataConst;
-        
+
+            do
+            {
+                indiceCont = Utils.GetDouble("Qual o indice de contribuição do Terreno? (Entre 0 e 1)");
+            } while (indiceCont < 0 || indiceCont > 1);
+            do
+            {
+                areaConst = Utils.GetDouble("Qual a area da construção? ");
+            } while (areaConst > area || areaConst < 0);
             do
             { 
                 tipologia = Utils.GetText("Qual a tipologia da construção? ");
-                areaConst = Utils.GetDouble("Qual a area da construção? ");
                 dataConst = Utils.GetData();
-
                 
             } while (false);
-            return new Urbana(tipologia,areaConst,dataConst, area);
+            return new Urbana(indiceCont,tipologia,areaConst,dataConst, area);
         }
 
         private static Industrial GetIndustrial(double area)
         {
+            double indiceCont;
             string desc;
             string tipologia;
             double areaConst;
@@ -270,9 +284,16 @@ namespace _4Source.views
             string descInsp;
             do
             {
+                indiceCont = Utils.GetDouble("Qual o indice de contribuição do Terreno? (Entre 0 e 1)");
+            } while (indiceCont < 0 || indiceCont > 1);
+            do
+            {
+                areaConst = Utils.GetDouble("Qual a area da construção? ");
+            } while (areaConst > area || areaConst < 0);
+            do
+            {
                 desc = Utils.GetText("Qual a principal atividade industrial do terreno? ");
                 tipologia = Utils.GetText("Qual a tipologia da construção? ");
-                areaConst = Utils.GetDouble("Qual a area da construção? ");
                 Console.WriteLine("Qual a data de Construção? ");
                 dataConst = Utils.GetData();
                 Console.WriteLine("Qual a data da ultima Inspeção? ");
@@ -281,7 +302,7 @@ namespace _4Source.views
                 
 
             } while (false);
-            return new Industrial(desc,tipologia,areaConst,dataConst,dataInsp,descInsp, area);
+            return new Industrial(indiceCont,desc,tipologia,areaConst,dataConst,dataInsp,descInsp, area);
         }
         //private static Industrial CalcIMI()
         //{

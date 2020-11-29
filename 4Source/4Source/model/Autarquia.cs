@@ -108,6 +108,7 @@ namespace _4Source
             {
                 throw new ElementoNaoExistenteException(nif + " Não existe");
             }
+            Console.WriteLine("A Pessoa abaixo foi eliminada");
             return pessoa;
         }
 
@@ -185,15 +186,17 @@ namespace _4Source
         public Freguesia EliminarFreguesia(string nome)
         {
             Freguesia freguesia = GetFreguesiaByNome(nome);
+            string tempnome;
             if (freguesia != null)
             {
+                tempnome = nome;
                 this.FreguesiaList.Remove(freguesia);
             }
             else
             {
                 throw new ElementoNaoExistenteException(nome + " Não existe");
             }
-            Console.WriteLine("A freguesia {0} foi eliminada do sistema", nome);
+            Console.WriteLine("A Freguesia abaixo foi eliminada");
             return freguesia;
         }
 

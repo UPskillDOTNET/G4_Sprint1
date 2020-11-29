@@ -9,7 +9,7 @@ namespace _4Source
     public interface IClassificacao
     { 
        double CalcIMI();
-
+       double GetIndiceCont();
        string GetClassificacao();
     }
 }

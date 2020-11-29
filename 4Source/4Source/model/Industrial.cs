@@ -10,10 +10,10 @@ namespace _4Source
     [Serializable()]
     class Industrial : IClassificacao
     {
+        double indiceCont;
         double area;
         string desc; 
-        int valorBase; 
-        double indiceCont;
+        int valorBase = 1; 
         double areaConst; 
         DateTime dataConst;
         DateTime dataInsp; 
@@ -29,7 +29,7 @@ namespace _4Source
 
         }
 
-        public Industrial(string desc, string tipologia, double areaConst, DateTime dataConst, DateTime dataInsp, string descInsp, double area)
+        public Industrial(double indiceCont,string desc, string tipologia, double areaConst, DateTime dataConst, DateTime dataInsp, string descInsp, double area)
         {
             this.desc = desc;
             this.tipologia = tipologia;
@@ -55,6 +55,10 @@ namespace _4Source
         public string GetClassificacao()
         {
             return "Industrial\n Principal atividade: "  + desc + "\n Tipo: " + tipologia + "\n Area de construção: " + areaConst + "\n Data de construção: " + dataConst +  "\n\nUltima Ispeção\n"+ " Data: " + dataInsp + "\n Descrição: " + descInsp;
+        }
+        public double GetIndiceCont()
+        {
+            return indiceCont;
         }
     }
 }

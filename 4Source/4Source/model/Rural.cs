@@ -12,7 +12,7 @@ namespace _4Source
         
 
         public string descUso;
-        int valorBase;
+        int valorBase = 1;
         double indiceCont;
 
 
@@ -22,8 +22,9 @@ namespace _4Source
 
         }
 
-        public Rural(string descUso)
+        public Rural(double indiceCont, string descUso)
         {
+            this.indiceCont = indiceCont;
             this.descUso = descUso;
           
         }
@@ -38,6 +39,10 @@ namespace _4Source
         public string GetClassificacao()
         {
             return "Rural\n " + "Pricipal atividade: "  + descUso;
+        }
+        public double GetIndiceCont()
+        {
+            return indiceCont;
         }
     }
   }

@@ -11,35 +11,29 @@ namespace _4Source
     public class Terreno
     {
         private int id;
-        private double indiceCont;
-        private double imi;
         private IForma forma;
         public IClassificacao classificacao;
         private Escritura escritura;
 
-        public Terreno(Escritura escritura)
+        public Terreno()
         {
-            this.escritura = escritura;
+            this.escritura = new Escritura();
         }
-        public Terreno(int id, double indiceCont, IForma forma, IClassificacao classificacao, double imi, Escritura escritura)
+        public Terreno(int id, IForma forma, IClassificacao classificacao, Escritura escritura)
         {
             this.Id = id;
-            this.IndiceCont = indiceCont;
             this.forma = forma;
             this.classificacao = classificacao;
-            this.Imi = imi;
             this.Escritura = escritura;
 
         }
 
         public override string ToString()
         {
-            return String.Format("\n\nID do Terreno: {0} \n Indice de Contribuição: {1} \n {2}\n Área: {3} \n\n{4}\n", Id, IndiceCont, forma.GetForma(), forma.CalcArea(), classificacao.GetClassificacao());
+            return String.Format("\n\nID do Terreno: {0} \n Indice de Contribuição: {1} \n {2}\n Área: {3} \n\n{4}\nIMI:{5}", Id, classificacao.GetIndiceCont(), forma.GetForma(), forma.CalcArea(), classificacao.GetClassificacao(), classificacao.CalcIMI());
         }
 
         public int Id { get => id; set => id = value; }
-        public double IndiceCont { get => indiceCont; set => indiceCont = value; }
-        public double Imi { get => imi; set => imi = value; }
         public IForma Forma { get => forma; set => forma = value; }
         public Escritura Escritura { get => escritura; set => escritura = value; }
         
@@ -47,7 +41,7 @@ namespace _4Source
 
         // private void adicionarEscritura(Escritura e) {
                 // this.Escritura = e;
-}
+
         //private static bool ValidaId(int id)
         //{
         //    Regex regex = new Regex("^[1-9]\\d*$", RegexOptions.IgnoreCase);
