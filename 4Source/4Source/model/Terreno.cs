@@ -34,7 +34,7 @@ namespace _4Source
 
         public override string ToString()
         {
-            return String.Format("ID do Terreno: {0} Indice de Contribuição: {1} {2} de área {3}, {4}", Id, IndiceCont, forma.GetForma(), forma.CalcArea(), classificacao.GetClassificacao());
+            return String.Format("\n\nID do Terreno: {0} \n Indice de Contribuição: {1} \n {2}\n Área: {3} \n\n{4}\n", Id, IndiceCont, forma.GetForma(), forma.CalcArea(), classificacao.GetClassificacao());
         }
 
         public int Id { get => id; set => id = value; }
@@ -44,21 +44,21 @@ namespace _4Source
         public Escritura Escritura { get => escritura; set => escritura = value; }
         
         
-        private static bool ValidaId(int id)
-        {
-            Regex regex = new Regex("^[1-9]\\d*$", RegexOptions.IgnoreCase);
-            string idstring = id.ToString();
-            Match m = regex.Match(idstring);
+        //private static bool ValidaId(int id)
+        //{
+        //    Regex regex = new Regex("^[1-9]\\d*$", RegexOptions.IgnoreCase);
+        //    string idstring = id.ToString();
+        //    Match m = regex.Match(idstring);
 
-            if (!m.Success)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
+        //    if (!m.Success)
+        //    {
+        //        return false;
+        //    }
+        //    else
+        //    {
+        //        return true;
+        //    }
+        //}
     }
 }
 

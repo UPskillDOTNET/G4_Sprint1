@@ -37,7 +37,7 @@ namespace _4Source
 
         public string GetClassificacao()
         {
-            return "Rural " + "com pricipal atividade "  + descUso;
+            return "Rural\n " + "Pricipal atividade: "  + descUso;
         }
     }
   }

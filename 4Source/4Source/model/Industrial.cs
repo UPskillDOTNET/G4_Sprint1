@@ -29,12 +29,10 @@ namespace _4Source
 
         }
 
-        public Industrial(string desc, string tipologia, int valorBase, double indiceCont, double areaConst, DateTime dataConst, DateTime dataInsp, string descInsp)
+        public Industrial(string desc, string tipologia, double areaConst, DateTime dataConst, DateTime dataInsp, string descInsp)
         {
             this.desc = desc;
             this.tipologia = tipologia;
-            this.valorBase = valorBase;
-            this.indiceCont = indiceCont;
             this.areaConst = areaConst;
             this.dataConst = dataConst;
             this.dataInsp = dataInsp;
@@ -54,7 +52,7 @@ namespace _4Source
 
         public string GetClassificacao()
         {
-            return "Industrial" + desc + tipologia + areaConst + dataConst + dataInsp + descInsp;
+            return "Industrial\n Principal atividade: "  + desc + "\n Tipo: " + tipologia + "\n Area de construção: " + areaConst + "\n Data de construção: " + dataConst +  "\n\nUltima Ispeção\n"+ " Data: " + dataInsp + "\n Descrição: " + descInsp;
         }
     }
 }

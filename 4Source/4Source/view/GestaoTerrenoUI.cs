@@ -17,19 +17,25 @@ namespace _4Source.views
         {
             int numInput;
             Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("\n===Gestão de Terrenos===");
+            Console.ResetColor();
             Console.WriteLine("1 - Inserir Terreno");
             Console.WriteLine("2 - Listar Terreno");
             Console.WriteLine("3 - Eliminar Terreno");
             Console.WriteLine("4 - Listar Terrenos");
             Console.WriteLine("5 - Registar Escritura");
             Console.WriteLine("6 - Calcular Percentagem de Posse de Terreno");
-            Console.WriteLine("\n5 - Voltar\n");
+            Console.WriteLine("\n7 - Voltar\n");
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("===========================\n");
+            Console.ResetColor();
 
             do
             {
-                numInput = Utils.GetIntNumber("Por favor escolha uma opção: ");
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                numInput = Utils.GetIntNumber("Por favor escolha uma opção:");
+                Console.ResetColor();
                 switch (numInput)
                 {
                     case 1:
@@ -51,11 +57,12 @@ namespace _4Source.views
                     //    CalcularPercentagem();
                     //    break;
                     case 7:
+                        Console.ForegroundColor = ConsoleColor.Blue;
                         Console.WriteLine("\nVolta para o menu anterior.");
                         Console.ReadKey();
-                        views.Menu.mainMenu();
                         break;
                     default:
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("\nOpção Errada");
                         break;
                 }
@@ -182,9 +189,9 @@ namespace _4Source.views
                     case 2:
                         terreno.classificacao = GetUrbana();
                         break;
-                    //case 3:
-                    //    terreno.classificacao = GetIndustrial();
-                    //    break;
+                    case 3:
+                        terreno.classificacao = GetIndustrial();
+                        break;
                     default:
                         Console.WriteLine("Erro. Opção inválida");
                         flag = true;
@@ -232,7 +239,7 @@ namespace _4Source.views
             string descUso;
             do
             {
-                descUso = Utils.GetText("Qual a atividade rural do Terreno?");
+                descUso = Utils.GetText("Qual a atividade rural do Terreno? ");
 
             } while (false);
             return new Rural(descUso);
@@ -244,26 +251,39 @@ namespace _4Source.views
             DateTime dataConst;
         
             do
-            {
-                tipologia = Utils.GetText("Qual a tipologia da construção?");
-                areaConst = Utils.GetDouble("Qual a area da construção?");
+            { 
+                tipologia = Utils.GetText("Qual a tipologia da construção? ");
+                areaConst = Utils.GetDouble("Qual a area da construção? ");
                 dataConst = Utils.GetData();
 
                 
             } while (false);
             return new Urbana(tipologia,areaConst,dataConst);
         }
-       
-        //private static Industrial getIndustrial()
-        //{
-        //    ouble diametro;
-        //    do
-        //    {
-        //        diametro = utils.getdouble("qual o valor do diametro do terreno?");
 
-        //    } while (diametro <= 0);
-        //    return new circular(diametro / 2);
-        //}
+        private static Industrial GetIndustrial()
+        {
+            string desc;
+            string tipologia;
+            double areaConst;
+            DateTime dataConst; 
+            DateTime dataInsp;
+            string descInsp;
+            do
+            {
+                desc = Utils.GetText("Qual a principla atividade industrial do terreno? ");
+                tipologia = Utils.GetText("Qual a tipologia da construção? ");
+                areaConst = Utils.GetDouble("Qual a area da construção? ");
+                Console.WriteLine("Qual a data da Construção? ");
+                dataConst = Utils.GetData();
+                Console.WriteLine("Qual a data da ultima Inspeção? ");
+                dataInsp = Utils.GetData();
+                descInsp = Utils.GetText("Descrição do relatório da Inspeção: ");
+                
+
+            } while (false);
+            return new Industrial(desc,tipologia,areaConst,dataConst,dataInsp,descInsp);
+        }
 
     }
 }

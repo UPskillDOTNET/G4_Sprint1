@@ -13,16 +13,23 @@ namespace _4Source.views
         {
             int numInput;
             Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("\n===Gestão de Funcionarios===\n\n");
+            Console.ResetColor();
             Console.WriteLine("1 - Inserir Funcionario");
             Console.WriteLine("2 - Listar Funcionario");
             Console.WriteLine("3 - Eliminar Funcionario");
             Console.WriteLine("4 - Listar Funcionarios");
             Console.WriteLine("\n5 - Voltar\n");
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("===========================\n");
-            numInput = Utils.GetIntNumber("Por favor escolha uma opção: ");
+            Console.ResetColor();
+            
             do
             {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                numInput = Utils.GetIntNumber("Por favor escolha uma opção:");
+                Console.ResetColor();
                 switch (numInput)
                 {
                  
@@ -39,13 +46,15 @@ namespace _4Source.views
                         ListarFuncionarios();
                         break;
                     case 5:
+                        Console.ForegroundColor = ConsoleColor.Blue;
                         Console.WriteLine("Volta para o menu anterior");
                         Console.ReadKey();
-                       views.Menu.mainMenu();
+                    
                         break;
                     default:
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("Opção errada. Escolha novamente.");
-                        Menu();
+                       
                         break;
                 }
 

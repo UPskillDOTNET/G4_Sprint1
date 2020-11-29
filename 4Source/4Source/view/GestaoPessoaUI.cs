@@ -11,18 +11,25 @@ namespace _4Source.views
         {
             int numInput;
             Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("\n=== Gestão de Pessoas ===\n\n");
+            Console.ResetColor();
             Console.WriteLine("1 - Registar Pessoa");
             Console.WriteLine("2 - Pesquisar Pessoa");
             Console.WriteLine("3 - Editar Pessoa");
             Console.WriteLine("4 - Eliminar Pessoa");
             Console.WriteLine("5 - Mostrar Lista de Pessoas");
             Console.WriteLine("6 - Voltar ao Menu Principal");
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("===========================\n");
-            numInput = Utils.GetIntNumber("Por favor escolha uma opção: ");
+            Console.ResetColor();
+
 
             do
             {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                numInput = Utils.GetIntNumber("Por favor escolha uma opção:");
+                Console.ResetColor();
                 switch (numInput)
                 {
                     case 1:
@@ -41,13 +48,15 @@ namespace _4Source.views
                         ListarPessoas();
                         break;
                     case 6:
+                        Console.ForegroundColor = ConsoleColor.Blue;
                         Console.WriteLine("\nVolta para o menu anterior.\n");
                         Console.ReadKey();
-                        views.Menu.mainMenu();
+                
                         break;
                     default:
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("\nOpção errada. Escolha novamente.\n");
-                        Menu();
+                       
                         break;
                 }
             } while (numInput != 6);

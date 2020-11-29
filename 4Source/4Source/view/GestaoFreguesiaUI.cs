@@ -14,17 +14,24 @@ namespace _4Source.views
         {
             int numInput;
             Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("\n===Gestão de Freguesias===\n\n");
+            Console.ResetColor();
             Console.WriteLine("1 - Inserir Freguesia");
             Console.WriteLine("2 - Listar Freguesia");
             Console.WriteLine("3 - Eliminar Freguesia");
             Console.WriteLine("4 - Alterar Freguesia");
             Console.WriteLine("5 - Listar Freguesias");
             Console.WriteLine("\n6 - Voltar\n");
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("===========================\n");
-            numInput = Utils.GetIntNumber("Por favor escolha uma opção: ");
+            Console.ResetColor();
+
             do
             {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                numInput = Utils.GetIntNumber("Por favor escolha uma opção:");
+                Console.ResetColor();
                 switch (numInput)
                 {
                   
@@ -44,14 +51,16 @@ namespace _4Source.views
                         ListarFreguesias();
                         break;
                     case 6:
-                        Console.WriteLine("Volta para o menu anterior.\n");
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        Console.WriteLine("\nVolta para o menu anterior.\n");
                         Console.ReadKey();
-                        _4Source.views.Menu.mainMenu();
+                  
                         break;
                     default:
-                        Console.WriteLine("Opção Errada\n");
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("\nOpção Errada\n");
                         Console.ReadKey();
-                        Menu();
+                      
                         break;
                 }
 

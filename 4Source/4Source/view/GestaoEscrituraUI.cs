@@ -16,7 +16,7 @@ namespace _4Source.views {
             Console.WriteLine("5 - Mostrar Lista de Escrituras");
             Console.WriteLine("6 - Voltar ao Menu Principal");
             Console.WriteLine("===========================\n");
-            numInput = Utils.GetIntNumber("Por favor escolha uma opção: ");
+            numInput = Utils.GetIntNumber("Por favor escolha uma opção:");
 
             do {
                 switch (numInput) {

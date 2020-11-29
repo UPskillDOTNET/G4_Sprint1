@@ -39,7 +39,7 @@ namespace _4Source
 
         public string GetClassificacao()
         {
-            return "Urbana \n" + "do tipo " + tipologia +  "de area " + areaConst + "com data de construção " + dataConst;
+            return "Urbana" + "\n Tipo: " + tipologia +  "\n Area de construção: " + areaConst + "\n Data de construção " + dataConst;
         }
     
     }

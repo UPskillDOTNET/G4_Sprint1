@@ -16,19 +16,25 @@ namespace _4Source.views
             {
                 int numInput;
                 Console.Clear();
-                Console.WriteLine("Bem vindo. Escolha a opção pretendida\n\n");
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("\n\nBem vindo. Escolha a opção pretendida\n");
+                Console.ResetColor();
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.BackgroundColor = ConsoleColor.DarkYellow;
                 Console.WriteLine("1) Gestão de Pessoa.");
                 Console.WriteLine("2) Gestão de Funcionários");
                 Console.WriteLine("3) Gestão de Freguesias.");
                 Console.WriteLine("4) Gestão de Terrenos");
                 Console.WriteLine("5) Cálculo de Estatisticas");
                 Console.WriteLine("6) Fechar Programa\n\n");
+                Console.ResetColor();
 
                
-                numInput = Utils.GetIntNumber("Por favor escolha uma opção:");
-
                 do
                 {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    numInput = Utils.GetIntNumber("Por favor escolha uma opção:");
+                    Console.ResetColor();
                     switch (numInput)
                     {
                         case 1:
@@ -47,12 +53,15 @@ namespace _4Source.views
                             //GestaoEstatisticaUI.MainEstatistica();
                             break;
                         case 6:
-                            Console.WriteLine("Obrigado por usar 4Source.");
+                            Console.ForegroundColor = ConsoleColor.DarkRed;
+                            Console.BackgroundColor = ConsoleColor.White;
+                            Console.WriteLine("\nObrigado por usar 4Source.");
                             Console.ReadKey();
                             Environment.Exit(0);
                             break;
                         default:
-                            Console.WriteLine("Número de input inválido, tente novamente.");
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("\nNúmero de input inválido, tente novamente.\n");
                             // Sair fora deste loop, pedir novamente o input.
                             break;
                             
