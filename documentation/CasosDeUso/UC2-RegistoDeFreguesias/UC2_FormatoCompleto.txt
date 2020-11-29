@@ -1,0 +1,72 @@
+UC2 - Registar Freguesia
+
+Formato Completo
+
+Designação: Registar Freguesia
+
+Ator principal: Utilizador
+
+Partes interessadas e seus interesses: Utilizador que quer registar os dados das freguesias.
+
+Pré-condições:
+
+Pós-condições: Freguesia registada pertencente à classificação de freguesias.
+
+Cenário de Sucesso principal (ou fluxo básico): 
+1. Utilizador inicia o registo de uma nova freguesia.
+2. Plataforma retorna as opções: Registar, Editar, Consultar, Apagar.
+3. Utilizador escolhe a opção de registo.
+4. Plataforma solicita os dados da freguesia não registada (Nome).
+5. Utilizador insere os dados pedidos pela plataforma e envia para o mesmo.
+6. Plataforma apresenta os dados ao utilizador e pede confirmação.
+7. Utilizador confirma os dados.
+8. Plataforma regista a nova freguesia e informa do sucesso da operação.
+
+Extensões (fluxo alternativos):
+
+O utilizador escolhe Consultar, Editar ou Apagar mas ainda não existem dados registados.
+1. O sistema questiona se o utilizador deseja registar um dado.
+2. O utilizador aceita.
+3. O caso de uso termina. Continua do passo 1.
+
+O utilizador quer apenas ler os dados
+1. O utilizador solicita consultar.
+2. O sistema apresenta a lista de freguesias que já foram registadas.
+3. O utilizador seleciona uma freguesia.
+4. O sistema apresenta os dados da freguesia selecionada. 
+5. O caso de uso termina.
+
+O utilizador quer editar uma freguesia registada
+1. O utilizador solicita editar.
+2. O sistema apresenta a lista de freguesias que já foram registadas.
+3. O utilizador seleciona uma das freguesias.
+4. O sistema apresenta os dados da freguesia selecionada.
+5. O utilizador edita o nome da freguesia.
+6. O sistema confirma as informações editadas.
+7. O utilizador confirma.
+8. O sistema regista os dados e informa do sucesso da operação. 
+9. O caso de uso termina.
+
+O utilizador pretende apagar um dado
+1. O utilizador solicita eliminar.
+2. O sistema apresenta a lista de freguesias que já foram registadas.
+3. O utilizador seleciona uma freguesia.
+4. O sistema apresenta os dados da freguesia selecionada e pede confirmação.
+5. O utilizador confirma que pretender eliminar os dados.
+6. O sistema elimina o registo da freguesia.
+7. O caso de uso termina.
+
+A qualquer momento que o sistema caia ele pode recuperar alguns dados
+1.a) O sistema já deixa salvo os dados da freguesia caso o utilizador já os tenha inserido, seguir do passo 4.
+1. A freguesia já está registada.
+2.a) Caso a freguesia já esteja registada, pede confirmação de que se quer atualizar os dados da mesma, seguir do passo 2.
+3) O utilizador não fornece os dados.
+3.a) O caso de uso termina.
+
+Requisitos Especiais: N/A
+
+Tecnologia e Lista de variações de Dados: N/A
+
+Frequência de Ocorrência: N/A
+
+Questões em aberto: N/A

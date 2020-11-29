@@ -1,0 +1,6 @@
+UC- Registar Freguesia
+
+Formato Breve
+
+O utilizador acede à plataforma com o intuito de registar a informação relativa às freguesias.
+A plataforma apresenta quatro opções (Registar, Editar, Consultar, Apagar). O utilizador seleciona a opção registar. Aquando do registo, é-lhe pedido que indique o nome da freguesia. O utilizador introduz os dados solicitados. A plataforma apresenta os dados e pede a confirmação dos mesmos. O utilizador confirma os dados. A freguesia é adicionada à plataforma e informa o utilizador do sucesso da operação.
