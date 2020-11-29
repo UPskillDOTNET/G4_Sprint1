@@ -19,15 +19,12 @@ namespace _4Source.views
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("\n\nBem vindo. Escolha a opção pretendida\n");
                 Console.ResetColor();
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.BackgroundColor = ConsoleColor.DarkYellow;
                 Console.WriteLine("1) Gestão de Pessoa.");
                 Console.WriteLine("2) Gestão de Funcionários");
                 Console.WriteLine("3) Gestão de Freguesias.");
                 Console.WriteLine("4) Gestão de Terrenos");
                 Console.WriteLine("5) Cálculo de Estatisticas");
                 Console.WriteLine("6) Fechar Programa\n\n");
-                Console.ResetColor();
 
                
                 do
