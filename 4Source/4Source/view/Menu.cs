@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+using System.Diagnostics;
+using System.Runtime.InteropServices;
 
 namespace _4Source.views
 {
@@ -14,10 +17,11 @@ namespace _4Source.views
             Console.Title = ("4Source - we make what you want us to make by your defenition of making");
             Console.WriteLine("Default Title: {0}",
                              Console.Title);
-            Console.WindowWidth = 150;
-            Console.WindowHeight = 40;
+      
             Console.CursorVisible = false;
-            ConsoleHelper.SetCurrentFont("Everson Mono", 20);
+            ConsoleHelper.SetCurrentFont("Everson Mono", 15);
+
+
 
 
             do

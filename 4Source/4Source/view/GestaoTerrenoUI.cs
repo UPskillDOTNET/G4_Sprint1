@@ -24,9 +24,7 @@ namespace _4Source.views
             Console.WriteLine("2 - Listar Terreno");
             Console.WriteLine("3 - Eliminar Terreno");
             Console.WriteLine("4 - Listar Terrenos");
-            Console.WriteLine("5 - Registar Escritura");
-            Console.WriteLine("6 - Calcular Percentagem de Posse de Terreno");
-            Console.WriteLine("\n7 - Voltar\n");
+            Console.WriteLine("\n5 - Voltar\n");
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("===========================\n");
             Console.ResetColor();
@@ -50,13 +48,8 @@ namespace _4Source.views
                     case 4:
                         ListarTerrenos();
                         break;
+                 
                     case 5:
-                        //RegistarEscritura();
-                        break;
-                    //case 6:
-                    //    CalcularPercentagem();
-                    //    break;
-                    case 7:
                         Console.ForegroundColor = ConsoleColor.Blue;
                         Console.WriteLine("\nVolta para o menu anterior.");
                         Console.ReadKey();
@@ -139,19 +132,7 @@ namespace _4Source.views
                     Console.WriteLine("Atenção: " + e.ToString());
                 }
             } while (flag);
-            //do
-            //{
-            //    try
-            //    {
-            //        flag = false;
-            //        terreno.IndiceCont = Utils.GetDouble("Indice de Contribuição:");
-            //    }
-            //    catch (IndiceTerrenoInvalidoException e)
-            //    {
-            //        flag = true;
-            //        Console.WriteLine("Atenção: " + e.ToString());
-            //    }
-            //} while (flag);
+
             do
             {
                 flag = false;
