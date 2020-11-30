@@ -50,5 +50,9 @@ namespace _4Source
         {
             return indiceCont;
         }
+        public string GetUso()
+        {
+            return "PPHARD";
+        }
     }
 }

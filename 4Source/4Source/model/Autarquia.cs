@@ -482,16 +482,21 @@ namespace _4Source
         //private static void MostrarFreguesiasDimensao() { }
         public string MostrarAreaPredominanteFreguesia(Freguesia f)
         {
+            List<Terreno> mydata = new List<Terreno>();
             foreach (Terreno t in f.TerrenoList)
             {
                 if (t.Classificacao.GetClassificacao() == "Rural")
                 {
-                    //var results = Classificacao.Rural.DescUso;
-                    Console.WriteLine("FUNCIONA!");
+                    mydata.Add(t);                    
                 }
             }
-            return "olar";
+            var query = mydata.GroupBy(x => x.Classificacao.GetUso())
+                    .Select(group => new { DescUso = group.Key, Count = group.Count() })
+                    .OrderByDescending(x => x.Count);
+            string descUso = query.First().DescUso;
+            return descUso;
         }
+
         //private static void MostrarListaTerrenosInspecao() { }
         //private static void MostrarTop5PessoasMaisTerrenos() { }
     }

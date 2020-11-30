@@ -122,8 +122,9 @@ namespace _4Source.views
 
         private static void MostrarAreaPredominanteFreguesia()
         {
-            string nome = Utils.GetText("Digite o Nome");
+            string nome = Utils.GetText("Digite o Nome da Freguesia");
             string result = RegistoEstatisticaController.MostrarAreaPredominanteFreguesia(nome);
+            Console.WriteLine("A área predominante é: {0}", result);
         }
 
         private static void MostrarListaTerrenosInspecao() { }
