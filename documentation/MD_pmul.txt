@@ -5,13 +5,17 @@ left to right direction
 
 class Autarquia {
   -String nome
+  -Int valorBase
+  -List pessoaList
+  -List freguesiaList
+  -List escrituraList
 }
 
 class Pessoa {
   -String nome	
   -String nif
   -String dataNascimento
-
+  -Int terrenosOwned
 }
 
 class Funcionario {
@@ -20,59 +24,74 @@ class Funcionario {
 }
 
 class Escritura {
-  -Integer num
+  -Int num
   -String data
+  -List proprietariosList
+  -Terreno terreno
 }
 
 class Freguesia {
   -String nome
+  -List terrenoList
 }
 
 class Terreno {
-  -Integer id
-  -String indiceCont
-  -Double area
-  -Double imi
+  -Int id
+  -IForma forma
+  -IClassificacao classificacao
+  -Escritura escritura
 }
 
 class Forma {
-  -Double area
 }
 
 class Triangular {
-  -Double area
+  -Double largura
+  -Double comprimento
 }
 
 class Circular {
-  -Double area
+  -Double raio
 }
 
 class Rectangular {
-  -Double area
+  -Double largura
+  -Double comprimento
 }
 
 class Classificacao {
-  -String desc
-  -Double areaConst
-  -String dataConst
 }
 
 class Urbana {
-  -String desc
+  -Double area
   -Double areaConst
-  -String dataConst
+  -DateTime dataConst
+  -Double indiceCont
+  -String tipologia
+  -Int valorBase
 }
 
 class Industrial {
+  -Double indiceCont
+  -Double area
   -String desc
-  -Double areaConst
-  -String dataConst
+  -Int valorBase 
+  -Double areaConst 
+  -DateTime dataConst
+  -DateTime dataInsp 
+  -String descInsp
+  -String tipologia
 }
 
 class Rural {
-  -String desc
-  -Double areaConst
-  -String dataConst
+  -String descUso
+  -Int valorBase
+  -Double indiceCont
+}
+
+class Proprietario {
+  -Double percentagem
+  -List terrenosList
 }
 
 Autarquia "1" -- "1...*" Freguesia : possui >
@@ -80,7 +99,9 @@ Autarquia "1" -- "1...*" Pessoa : tem >
 Autarquia "1" -- "1...*" Funcionario : tem >
 
 Pessoa "1" -- "0..1" Funcionario : é >
-Pessoa "1...*" -- "0...*" Escritura : tem  >
+Pessoa "1" -- "0..1" Proprietario : é >
+
+Proprietario "1" -- "1" Escritura : tem >
 
 Freguesia "1" -- "1...*" Terreno : tem >
 Freguesia "1" .. "1...*" Pessoa : tem >
