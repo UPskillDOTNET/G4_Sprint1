@@ -17,29 +17,20 @@ namespace _4Source.controller
             return lista;
         }
 
-        public static bool AlterarFreguesia(Freguesia freguesia, string nomeNovo)
+        public static ArrayList MostrarTop5PessoasMaisVelhas()
         {
-            bool flag = true;
-            try
-            {
-                Autarquia autarquia = Dados.CarregarDados();
-                autarquia.AlterarFreguesia(freguesia, nomeNovo);
-            }
-            catch (ElementoNaoExistenteException e)
-            {
-                flag = false;
-                Console.WriteLine("Atenção: " + e.ToString());
-            }
-            return flag;
+            Autarquia autarquia = Dados.CarregarDados();
+            ArrayList lista = autarquia.MostrarTop5PessoasMaisVelhas();
+            return lista;
         }
 
-        public static Freguesia PesquisarFreguesia(string nome)
+        public static double MostrarAreaTotalAutarquia()
         {
+            double areaTotal = 0;
 
-            Freguesia freguesia = null;
             Autarquia autarquia = Dados.CarregarDados();
-            freguesia = autarquia.PesquisarFreguesia(nome);
-            return freguesia;
+            areaTotal = autarquia.MostrarAreaTotalAutarquia();
+            return areaTotal;
 
         }
 

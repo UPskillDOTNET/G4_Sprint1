@@ -165,13 +165,13 @@ namespace _4Source.views
                 {
                     case 1:
 
-                        terreno.classificacao = GetRural();
+                        terreno.Classificacao = GetRural();
                         break;
                     case 2:
-                        terreno.classificacao = GetUrbana(terreno.Forma.CalcArea());
+                        terreno.Classificacao = GetUrbana(terreno.Forma.CalcArea());
                         break;
                     case 3:
-                        terreno.classificacao = GetIndustrial(terreno.Forma.CalcArea());
+                        terreno.Classificacao = GetIndustrial(terreno.Forma.CalcArea());
                         break;
                     default:
                         Console.WriteLine("Erro. Opção inválida");

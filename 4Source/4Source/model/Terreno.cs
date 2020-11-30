@@ -12,7 +12,7 @@ namespace _4Source
     {
         private int id;
         private IForma forma;
-        public IClassificacao classificacao;
+        private IClassificacao classificacao;
         private Escritura escritura;
 
         public Terreno()
@@ -23,24 +23,25 @@ namespace _4Source
         {
             this.Id = id;
             this.forma = forma;
-            this.classificacao = classificacao;
+            this.Classificacao = classificacao;
             this.Escritura = escritura;
 
         }
 
         public override string ToString()
         {
-            return String.Format("\n\nID do Terreno: {0} \n Indice de Contribuição: {1} \n {2}\n Área: {3} \n\n{4}\n IMI:{5}", Id, classificacao.GetIndiceCont(), forma.GetForma(), forma.CalcArea(), classificacao.GetClassificacao(), classificacao.CalcIMI());
+            return String.Format("\n\nID do Terreno: {0} \n Indice de Contribuição: {1} \n {2}\n Área: {3} \n\n{4}\n IMI:{5}", Id, Classificacao.GetIndiceCont(), forma.GetForma(), forma.CalcArea(), Classificacao.GetClassificacao(), Classificacao.CalcIMI());
         }
 
         public int Id { get => id; set => id = value; }
         public IForma Forma { get => forma; set => forma = value; }
         public Escritura Escritura { get => escritura; set => escritura = value; }
-        
-        
+        public IClassificacao Classificacao { get => classificacao; set => classificacao = value; }
+
+
 
         // private void adicionarEscritura(Escritura e) {
-                // this.Escritura = e;
+        // this.Escritura = e;
 
         //private static bool ValidaId(int id)
         //{

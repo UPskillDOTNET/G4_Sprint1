@@ -24,9 +24,9 @@ namespace _4Source.views
             Console.WriteLine("4) Apresentar a percentagem de área rural (terrenos rurais) do concelho.");
             Console.WriteLine("5) Apresentar uma listagem das freguesias ordenadas por valor patrimonial dos terrenos do tipo urbano.");
             Console.WriteLine("6) Apresentar uma listagem das freguesias ordenadas por dimensão.");
-            Console.WriteLine("7)  Apresentar a atividade rural predominante numa dada freguesia.");
-            Console.WriteLine("8)  Apresentar uma listagem dos terrenos do tipo industrial com a data de inspeção posterior a uma dada data.");
-            Console.WriteLine("9)  Consultar o top 5 das pessoas com mais terrenos.");
+            Console.WriteLine("7) Apresentar a atividade rural predominante numa dada freguesia.");
+            Console.WriteLine("8) Apresentar uma listagem dos terrenos do tipo industrial com a data de inspeção posterior a uma dada data.");
+            Console.WriteLine("9) Consultar o top 5 das pessoas com mais terrenos.");
             Console.WriteLine("\n10) Fechar Programa\n\n");
             do
             {
@@ -88,8 +88,22 @@ namespace _4Source.views
             Console.ReadKey();
 
         }
-        private static void MostrarTop5PessoasMaisVelhas() { }
-        private static void MostrarAreaTotalAutarquia() { }
+        private static void MostrarTop5PessoasMaisVelhas()
+        {
+            ArrayList lista = RegistoEstatisticaController.MostrarTop5PessoasMaisVelhas();
+            foreach (Pessoa p in lista)
+            {
+                System.Threading.Thread.Sleep(TimeSpan.FromSeconds(1));
+                Console.WriteLine("\n" + p.ToString());
+            }
+            Console.ReadKey();
+        }
+
+        private static void MostrarAreaTotalAutarquia() 
+        {
+            double areaTotal = RegistoEstatisticaController.MostrarAreaTotalAutarquia();
+            Console.WriteLine("A área total da autarquia é de: {0}", areaTotal);
+        }
         private static void MostrarPercentagemAreaRuralAutarquia() { }
         private static void MostrarListaFreguesiasValorPatrimonial() { }
         private static void MostrarFreguesiasDimensao() { }
