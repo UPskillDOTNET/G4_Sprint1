@@ -13,7 +13,7 @@ namespace _4Source.views
     {
         public static void mainMenu()
         {
-            Console.Title = ("4Source - we make what you want us to make by your defenition of making");
+            Console.Title = ("4Source - we make what you want us to make by your definition of making");
             Console.WriteLine("Default Title: {0}",
                              Console.Title);
       
