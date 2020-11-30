@@ -70,9 +70,6 @@ namespace _4Source {
         //Obter todas Pessoas (Read)
 
         public ArrayList ObterTodasPessoas() {
-            //pessoaList.Sort(new Pessoa.CompararIdade()); // Ordenar por idade
-            //pessoaList.Sort(new Pessoa.CompararNome()); // Ordenar por Nome
-            //pessoaList.Sort(); // Ordernar por Nif
             return this.pessoaList;
         }
 
@@ -352,8 +349,41 @@ namespace _4Source {
             }
             return list;
         }
-        //private static void MostrarTop5PessoasMaisVelhas() { }
-        //private static void MostrarAreaTotalAutarquia() { }
+
+        // Funciona mas não dá sort como queremos
+
+        public ArrayList MostrarTop5PessoasMaisVelhas() {
+
+            ArrayList lista = new ArrayList();
+            pessoaList.Sort(new Pessoa.CompararIdade());
+
+            for (int i = 0; i < 5; i++)
+            {
+                lista.Add(PessoaList[i]);
+            }
+            return lista;
+        
+        }
+
+        public double MostrarAreaTotalAutarquia() {
+
+            double areaTotal = 0;
+
+            foreach (Freguesia f in freguesiaList)
+            {
+               foreach (Terreno t in f.TerrenoList)
+                {
+                    areaTotal += t.Forma.CalcArea();
+                }
+            }
+            return areaTotal;
+        }
+        //pessoaList.Sort(new Pessoa.CompararIdade()); // Ordenar por idade
+        //pessoaList.Sort(new Pessoa.CompararNome()); // Ordenar por Nome
+        //pessoaList.Sort(); // Ordernar por Nif
+
+
+
         //private static void MostrarPercentagemAreaRuralAutarquia() { }
         //private static void MostrarListaFreguesiasValorPatrimonial() { }
         //private static void MostrarFreguesiasDimensao() { }
