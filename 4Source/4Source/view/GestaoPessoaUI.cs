@@ -1,6 +1,7 @@
 ﻿using _4Source.controllers;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace _4Source.views
 {
@@ -64,7 +65,7 @@ namespace _4Source.views
 
         private static void ListarPessoas()
         {
-            ArrayList lista = RegistoPessoaController.ObterListaPessoas();
+            List<Pessoa> lista = RegistoPessoaController.ObterListaPessoas();
             foreach (Pessoa pessoa in lista)
             {
                 System.Threading.Thread.Sleep(TimeSpan.FromSeconds(1));

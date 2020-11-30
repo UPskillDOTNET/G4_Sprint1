@@ -50,9 +50,9 @@ namespace _4Source.controllers
 
         }
 
-        public static ArrayList ObterListaTerrenos(string nomeFreguesia) {
+        public static List<Terreno> ObterListaTerrenos(string nomeFreguesia) {
 
-            ArrayList lista = null;
+            List<Terreno> lista = null;
 
             Autarquia autarquia = Dados.CarregarDados();
             Freguesia freguesia = autarquia.GetFreguesiaByNome(nomeFreguesia);

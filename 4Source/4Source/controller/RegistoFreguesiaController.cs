@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using _4Source.persistencia;
 
 
@@ -40,9 +41,9 @@ namespace _4Source.controllers {
 
         }
 
-        public static ArrayList ObterListaFreguesias() {
+        public static List<Freguesia> ObterListaFreguesias() {
 
-            ArrayList lista = null;
+            List<Freguesia> lista = null;
 
             Autarquia autarquia = Dados.CarregarDados();
             lista = autarquia.ObterTodasFreguesias();

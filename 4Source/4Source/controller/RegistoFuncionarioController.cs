@@ -2,6 +2,7 @@
 using _4Source.persistencia;
 using _4Source;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace _4Source.controllers
 {
@@ -52,10 +53,10 @@ namespace _4Source.controllers
             return func;
 
         }
-        public static ArrayList ObterListaFuncionarios()
+        public static List<Funcionario> ObterListaFuncionarios()
         {
 
-            ArrayList lista = null;
+            List<Funcionario> lista = null;
 
             Autarquia autarquia = Dados.CarregarDados();
             lista = autarquia.ObterTodosFuncionarios();

@@ -25,7 +25,7 @@ namespace _4Source
         {
             this.Nome = nome;
             this.Nif = nif;
-            this.DataNascimento = dataNascimento;
+            this.DataNascimento = dataNascimento.Date;
             this.terrenosOwned = 0;
         }
 
@@ -85,17 +85,12 @@ namespace _4Source
         //    return ((new CaseInsensitiveComparer()).Compare(((Pessoa)y).Nif, ((Pessoa)x).Nif));
         //}
 
-        public class CompararIdade : IComparer
-        {
-            public int Compare(object x, object y)
-            {
-                if (((Pessoa)x).dataNascimento < ((Pessoa)x).dataNascimento)
-                    return -1;
-                if (((Pessoa)x).dataNascimento > ((Pessoa)x).dataNascimento)
-                    return 1;
-                return 0;
-            }
-        }
+
+        //public List<Pessoa> ListarIdade() 
+        //{
+            
+        //    return SortedList;
+        //}
 
         //public class CompararNome : IComparer
         //{

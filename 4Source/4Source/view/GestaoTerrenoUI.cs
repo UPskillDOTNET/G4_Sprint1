@@ -65,7 +65,7 @@ namespace _4Source.views
         private static void ListarTerrenos()
         {
             string nome = Utils.GetText("Digite o nome da Freguesia:");
-            ArrayList lista = RegistoTerrenoController.ObterListaTerrenos(nome);
+            List<Terreno> lista = RegistoTerrenoController.ObterListaTerrenos(nome);
             foreach (Terreno terreno in lista)
             {
                 System.Threading.Thread.Sleep(TimeSpan.FromSeconds(1));

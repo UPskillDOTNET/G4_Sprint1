@@ -10,17 +10,17 @@ namespace _4Source.controller
 {
     class RegistoEstatisticaController
     {
-        public static ArrayList MostrarPessoasDeterminadaData(DateTime data)
+        public static List<Pessoa> MostrarPessoasDeterminadaData(DateTime data)
         {
             Autarquia autarquia = Dados.CarregarDados();
-            ArrayList lista = autarquia.MostrarPessoasDeterminadaData(data);
+            List<Pessoa> lista = autarquia.MostrarPessoasDeterminadaData(data);
             return lista;
         }
 
-        public static ArrayList MostrarTop5PessoasMaisVelhas()
+        public static List<Pessoa> MostrarTop5PessoasMaisVelhas()
         {
             Autarquia autarquia = Dados.CarregarDados();
-            ArrayList lista = autarquia.MostrarTop5PessoasMaisVelhas();
+            List<Pessoa> lista = autarquia.MostrarTop5PessoasMaisVelhas();
             return lista;
         }
 

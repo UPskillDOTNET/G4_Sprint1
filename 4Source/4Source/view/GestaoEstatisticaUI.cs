@@ -79,7 +79,7 @@ namespace _4Source.views
         }
         private static void MostrarPessoasDeterminadaData() {
             DateTime data = Utils.GetDataNascimento();
-            ArrayList lista = RegistoEstatisticaController.MostrarPessoasDeterminadaData(data);
+            List<Pessoa> lista = RegistoEstatisticaController.MostrarPessoasDeterminadaData(data);
             foreach (Pessoa p in lista)
             {
                 System.Threading.Thread.Sleep(TimeSpan.FromSeconds(1));
@@ -90,7 +90,7 @@ namespace _4Source.views
         }
         private static void MostrarTop5PessoasMaisVelhas()
         {
-            ArrayList lista = RegistoEstatisticaController.MostrarTop5PessoasMaisVelhas();
+            List<Pessoa> lista = RegistoEstatisticaController.MostrarTop5PessoasMaisVelhas();
             foreach (Pessoa p in lista)
             {
                 System.Threading.Thread.Sleep(TimeSpan.FromSeconds(1));

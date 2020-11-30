@@ -58,7 +58,7 @@ namespace _4Source.views {
         }
 
         private static void ListarEscrituras() {
-            ArrayList lista = RegistoEscrituraController.ObterListaEscrituras();
+            List<Escritura> lista = RegistoEscrituraController.ObterListaEscrituras();
             foreach (Escritura escritura in lista) {
 
                 System.Threading.Thread.Sleep(TimeSpan.FromSeconds(1));

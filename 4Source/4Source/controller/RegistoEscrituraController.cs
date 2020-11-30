@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using _4Source.persistencia;
 using _4Source;
 
@@ -34,10 +35,10 @@ namespace _4Source.controllers {
 
     }
 
-    public static ArrayList ObterListaEscrituras()
+    public static List<Escritura> ObterListaEscrituras()
     {
 
-        ArrayList lista = null;
+            List<Escritura> lista = null;
 
         Autarquia autarquia = Dados.CarregarDados();
         lista = autarquia.ObterTodasEscrituras();

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using _4Source;
 using _4Source.persistencia;
 
@@ -67,10 +68,10 @@ namespace _4Source.controllers
             return pessoa;
         }
 
-        public static ArrayList ObterListaPessoas()
+        public static List<Pessoa> ObterListaPessoas()
         {
 
-            ArrayList lista = null;
+            List<Pessoa> lista = null;
 
             Autarquia autarquia = Dados.CarregarDados();
             lista = autarquia.ObterTodasPessoas();

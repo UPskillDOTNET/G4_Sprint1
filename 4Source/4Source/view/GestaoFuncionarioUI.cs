@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using _4Source.controllers;
 using System.Linq;
 using System.Text;
@@ -60,7 +61,7 @@ namespace _4Source.views
 
         private static void ListarFuncionarios()
         {
-            ArrayList lista = RegistoFuncionarioController.ObterListaFuncionarios();
+            List<Funcionario> lista = RegistoFuncionarioController.ObterListaFuncionarios();
             foreach (Funcionario func in lista)
             {
                 System.Threading.Thread.Sleep(TimeSpan.FromSeconds(1));

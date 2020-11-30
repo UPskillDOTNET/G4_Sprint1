@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -69,7 +70,7 @@ namespace _4Source.views
         }
          private static void ListarFreguesias()
         {
-            ArrayList lista = RegistoFreguesiaController.ObterListaFreguesias();
+            List<Freguesia> lista = RegistoFreguesiaController.ObterListaFreguesias();
             foreach (Freguesia freguesia in lista)
             {
                 System.Threading.Thread.Sleep(TimeSpan.FromSeconds(1));

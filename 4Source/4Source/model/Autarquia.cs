@@ -1,37 +1,39 @@
 ﻿using _4Source.views;
 using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace _4Source {
     [Serializable()]
     public class Autarquia {
         private string nome;
-        private ArrayList pessoaList;
-        private ArrayList freguesiaList;
-        private ArrayList escrituraList;
+        private List<Pessoa> pessoaList;
+        private List<Freguesia> freguesiaList;
+        private List<Escritura> escrituraList;
         private int valorbase;
 
         public Autarquia(string nome, int valorbase) {
             this.Nome = nome;
             this.Valorbase = valorbase;
-            this.PessoaList = new ArrayList();
-            this.FreguesiaList = new ArrayList();
-            this.EscrituraList = new ArrayList();
+            this.PessoaList = new List<Pessoa>();
+            this.FreguesiaList = new List<Freguesia>();
+            this.EscrituraList = new List<Escritura>();
         }
 
         public Autarquia() {
-            this.EscrituraList = new ArrayList();
+            this.EscrituraList = new List<Escritura>();
         }
         // Properties - get and set.
 
         public int Valorbase { get => valorbase; set => valorbase = value; }
 
-        public ArrayList FreguesiaList { get => freguesiaList; set => freguesiaList = value; }
+        public List<Freguesia> FreguesiaList { get => freguesiaList; set => freguesiaList = value; }
 
-        public ArrayList PessoaList { get => pessoaList; set => pessoaList = value; }
+        public List<Pessoa> PessoaList { get => pessoaList; set => pessoaList = value; }
 
-        public ArrayList EscrituraList { get => escrituraList; set => escrituraList = value; }
+        public List<Escritura> EscrituraList { get => escrituraList; set => escrituraList = value; }
 
         public string Nome { get => nome; set => nome = value; }
 
@@ -69,7 +71,7 @@ namespace _4Source {
 
         //Obter todas Pessoas (Read)
 
-        public ArrayList ObterTodasPessoas() {
+        public List<Pessoa> ObterTodasPessoas() {
             return this.pessoaList;
         }
 
@@ -145,7 +147,7 @@ namespace _4Source {
             return freguesia;
         }
 
-        public ArrayList ObterTodasFreguesias() {
+        public List<Freguesia> ObterTodasFreguesias() {
             return this.freguesiaList;
         }
 
@@ -212,11 +214,11 @@ namespace _4Source {
 
         // Obter todos funcionarios (Read)
 
-        public ArrayList ObterTodosFuncionarios() {
-            ArrayList lista = new ArrayList();
+        public List<Funcionario> ObterTodosFuncionarios() {
+            List<Funcionario> lista = new List<Funcionario>();
             foreach (Pessoa p in this.pessoaList) {
                 if (p.GetType() == typeof(Funcionario)) {
-                    lista.Add(p);
+                    lista.Add((Funcionario)p);
                 }
             }
             return lista;
@@ -264,7 +266,7 @@ namespace _4Source {
                     for (int i = 0; i < numProprietarios; i++) {
                         string prop = Utils.GetText("Introduza o NIF do proprietário :");
                         Pessoa pessoa = GetPessoaByNif(prop);
-                        e.ProprietariosList.Add(pessoa);
+                        e.ProprietariosList.Add((model.Proprietario)pessoa);
                         pessoa.TerrenosOwned++;
                     }
 
@@ -307,7 +309,7 @@ namespace _4Source {
         }
         // Obter todas escrituras (Read)
 
-        public ArrayList ObterTodasEscrituras() {
+        public List<Escritura> ObterTodasEscrituras() {
             return this.EscrituraList;
         }
 
@@ -335,8 +337,8 @@ namespace _4Source {
         }
         // Responsabilidades de calculo de estatisticas
 
-        public ArrayList MostrarPessoasDeterminadaData(DateTime data) {
-            ArrayList list = new ArrayList();
+        public List<Pessoa> MostrarPessoasDeterminadaData(DateTime data) {
+            List<Pessoa> list = new List<Pessoa>();
 
             foreach (Pessoa p in pessoaList)
             {
@@ -352,16 +354,12 @@ namespace _4Source {
 
         // Funciona mas não dá sort como queremos
 
-        public ArrayList MostrarTop5PessoasMaisVelhas() {
+        public List<Pessoa> MostrarTop5PessoasMaisVelhas() {
 
-            ArrayList lista = new ArrayList();
-            pessoaList.Sort(new Pessoa.CompararIdade());
+            List<Pessoa> PessoaList = this.PessoaList;
+            List<Pessoa> SortedList = PessoaList.OrderBy(p => p.DataNascimento).Take(5).ToList();
 
-            for (int i = 0; i < 5; i++)
-            {
-                lista.Add(PessoaList[i]);
-            }
-            return lista;
+            return SortedList;
         
         }
 

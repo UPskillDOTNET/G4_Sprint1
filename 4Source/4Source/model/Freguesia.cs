@@ -12,17 +12,17 @@ namespace _4Source
     public class Freguesia //: IComparer
     {
         private string nome;
-        private ArrayList terrenoList;
+        private List<Terreno> terrenoList;
 
         public Freguesia(string nome)
         {
             this.nome = nome;
-            this.terrenoList = new ArrayList();
+            this.terrenoList = new List<Terreno>();
         }
 
         public Freguesia()
         {
-            this.terrenoList = new ArrayList();
+            this.terrenoList = new List<Terreno>();
         }
 
         public override string ToString()
@@ -36,7 +36,7 @@ namespace _4Source
             set { nome = value; }
         }
 
-        public ArrayList TerrenoList { get => terrenoList; set => terrenoList = value; }
+        public List<Terreno> TerrenoList { get => terrenoList; set => terrenoList = value; }
 
         public void RegistarTerreno(Terreno t)
         {
@@ -72,7 +72,7 @@ namespace _4Source
             return terreno;
         }
 
-        public ArrayList ObterTodosTerrenos()
+        public List<Terreno> ObterTodosTerrenos()
         {
             return this.TerrenoList;
         }

@@ -1,20 +1,21 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace _4Source.model
 {
-    class Proprietario : Pessoa 
+    public class Proprietario : Pessoa 
     {
         double percentagem;
-        ArrayList listaTerrenos;
+        List<Terreno> listaTerrenos;
 
         public Proprietario(double percentagem)
         {
             this.Percentagem = percentagem;
-            this.ListaTerrenos = new ArrayList();
+            this.ListaTerrenos = new List<Terreno>();
         }
 
         public Proprietario()
@@ -23,6 +24,6 @@ namespace _4Source.model
         }
 
         public double Percentagem { get => percentagem; set => percentagem = value; }
-        public ArrayList ListaTerrenos { get => listaTerrenos; set => listaTerrenos = value; }
+        public List<Terreno> ListaTerrenos { get => listaTerrenos; set => listaTerrenos = value; }
     }
 }
