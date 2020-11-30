@@ -65,7 +65,7 @@ namespace _4Source.views {
                 Console.WriteLine(escritura.ToString());
             }
             Console.ReadKey();
-            Menu();
+      
         }
 
 
@@ -77,7 +77,7 @@ namespace _4Source.views {
             } else {
                 Console.WriteLine("Não  existe!!!");
             }
-            Menu();
+         
         }
 
         private static void PesquisarEscritura() {
@@ -89,13 +89,13 @@ namespace _4Source.views {
                 Console.WriteLine("Não existe!!!");
             }
             Console.ReadKey();
-            Menu();
+          
         }
 
         private static void RegistarEscritura() {
             Escritura escritura = CriarEscritura();
             RegistoEscrituraController.RegistarEscritura(escritura);
-            Menu();
+          
         }
 
         public static Escritura CriarEscritura() {

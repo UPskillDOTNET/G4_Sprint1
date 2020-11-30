@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace _4Source.model
 {
+
+
+    [Serializable()]
     public class Proprietario : Pessoa 
     {
         double percentagem;

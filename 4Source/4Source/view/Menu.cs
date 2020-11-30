@@ -16,8 +16,8 @@ namespace _4Source.views
             Console.Title = ("4Source - we make what you want us to make by your definition of making");
             Console.WriteLine("Default Title: {0}",
                              Console.Title);
-      
-            Console.CursorVisible = false;
+
+            Console.CursorSize =1;
             ConsoleHelper.SetCurrentFont("Everson Mono", 15);
 
             do
@@ -26,7 +26,7 @@ namespace _4Source.views
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("\n\nBem vindo. Escolha a opção pretendida\n");
-                System.Threading.Thread.Sleep(TimeSpan.FromSeconds(1));
+                System.Threading.Thread.Sleep(TimeSpan.FromSeconds(0.25));
                 Console.ResetColor();
                 Console.WriteLine("1) Gestão de Pessoas");
                 Console.WriteLine("2) Gestão de Funcionários");
@@ -34,12 +34,15 @@ namespace _4Source.views
                 Console.WriteLine("4) Gestão de Terrenos");
                 Console.WriteLine("5) Gestão de Escritura");
                 Console.WriteLine("6) Cálculo de Estatisticas");
-                Console.WriteLine("\n7) Fechar Programa\n\n");
-                
+                Console.Write(" ".PadRight(10, ' '));
+                Console.WriteLine("7) Fechar Programa\n\n".PadLeft(350));
+    
+             
+
 
                 do
                 {
-                    System.Threading.Thread.Sleep(TimeSpan.FromSeconds(1));
+                    System.Threading.Thread.Sleep(TimeSpan.FromSeconds(0.25));
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     numInput = Utils.GetIntNumber("Por favor escolha uma opção:");
                     Console.ResetColor();

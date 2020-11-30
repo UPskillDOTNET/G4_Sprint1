@@ -27,7 +27,10 @@ namespace _4Source.views
             Console.WriteLine("7) Apresentar a atividade rural predominante numa dada freguesia.");
             Console.WriteLine("8) Apresentar uma listagem dos terrenos do tipo industrial com a data de inspeção posterior a uma dada data.");
             Console.WriteLine("9) Consultar o top 5 das pessoas com mais terrenos.");
-            Console.WriteLine("\n10) Fechar Programa\n\n");
+            Console.WriteLine("\n10) Voltar para o menu anterior\n");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine(":===============////===========////==========///===================////===================:\n");
+            Console.ResetColor();
             do
             {
                 Console.ForegroundColor = ConsoleColor.Yellow;
