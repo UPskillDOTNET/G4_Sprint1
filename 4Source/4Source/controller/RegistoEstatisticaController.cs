@@ -34,14 +34,14 @@ namespace _4Source.controller
 
         }
 
-        public static ArrayList ObterListaFreguesias()
+        public static double MostrarPercentagemAreaRuralAutarquia()
         {
 
-            ArrayList lista = null;
+            double areaRural = 0;
 
             Autarquia autarquia = Dados.CarregarDados();
-            lista = autarquia.ObterTodasFreguesias();
-            return lista;
+            areaRural = autarquia.MostrarPercentagemAreaRuralAutarquia();
+            return areaRural;
 
         }
 

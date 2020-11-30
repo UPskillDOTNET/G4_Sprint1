@@ -378,6 +378,23 @@ namespace _4Source {
             }
             return areaTotal;
         }
+
+        public double MostrarPercentagemAreaRuralAutarquia()
+        {
+            double areaRural = 0;
+
+            foreach (Freguesia f in freguesiaList)
+            {
+                foreach (Terreno t in f.TerrenoList)
+                {
+                    if (t.Classificacao.GetClassificacao() == "Rural")
+                    {
+                        areaRural += t.Forma.CalcArea();
+                    }
+                }
+            }
+            return areaRural;
+        }
         //pessoaList.Sort(new Pessoa.CompararIdade()); // Ordenar por idade
         //pessoaList.Sort(new Pessoa.CompararNome()); // Ordenar por Nome
         //pessoaList.Sort(); // Ordernar por Nif

@@ -99,12 +99,21 @@ namespace _4Source.views
             Console.ReadKey();
         }
 
-        private static void MostrarAreaTotalAutarquia() 
+        private static double MostrarAreaTotalAutarquia() 
         {
             double areaTotal = RegistoEstatisticaController.MostrarAreaTotalAutarquia();
             Console.WriteLine("A área total da autarquia é de: {0}", areaTotal);
+            return areaTotal;
         }
-        private static void MostrarPercentagemAreaRuralAutarquia() { }
+
+        private static void MostrarPercentagemAreaRuralAutarquia() {
+
+            double areaTotal = MostrarAreaTotalAutarquia();
+            double areaRural = RegistoEstatisticaController.MostrarAreaTotalAutarquia();
+            double percentagemRural = (areaRural * 100) / (areaTotal);
+            Console.WriteLine("A percentagem da área rural da autarquia é de {0} %", percentagemRural);
+      
+                }
         private static void MostrarListaFreguesiasValorPatrimonial() { }
         private static void MostrarFreguesiasDimensao() { }
         private static void MostrarAreaPredominanteFreguesia() { }

@@ -30,6 +30,11 @@ namespace _4Source
             this.area = area;
         }
 
+        public override string ToString()
+        {
+            return "Urbana" + "\n Tipo: " + tipologia + "\n Area de construção: " + areaConst + "\n Data de construção " + dataConst;
+        }
+
         public double CalcIMI()
         {
             double IMI = indiceCont * valorBase + (areaConst / area * 0.05);
@@ -39,7 +44,7 @@ namespace _4Source
 
         public string GetClassificacao()
         {
-            return "Urbana" + "\n Tipo: " + tipologia +  "\n Area de construção: " + areaConst + "\n Data de construção " + dataConst;
+            return "Urbana";
         }
         public double GetIndiceCont()
         {

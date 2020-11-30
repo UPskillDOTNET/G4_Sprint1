@@ -29,6 +29,11 @@ namespace _4Source
           
         }
 
+        public override string ToString()
+        {
+            return "Rural\n " + "Pricipal atividade: " + descUso;
+        }
+
 
         public double CalcIMI()
         {
@@ -38,7 +43,7 @@ namespace _4Source
 
         public string GetClassificacao()
         {
-            return "Rural\n " + "Pricipal atividade: "  + descUso;
+            return "Rural";
         }
         public double GetIndiceCont()
         {

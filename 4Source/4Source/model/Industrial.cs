@@ -20,10 +20,6 @@ namespace _4Source
         string descInsp; 
         string tipologia;
 
-
-
-
-
         public Industrial()
         {
 
@@ -38,13 +34,12 @@ namespace _4Source
             this.dataInsp = dataInsp;
             this.descInsp = descInsp;
             this.area = area;
-
-
         }
 
-
-
-
+        public override string ToString()
+        {
+            return "Industrial\n Principal atividade: " + desc + "\n Tipo: " + tipologia + "\n Area de construção: " + areaConst + "\n Data de construção: " + dataConst + "\n\nUltima Ispeção\n" + " Data: " + dataInsp + "\n Descrição: " + descInsp;
+        }
         public double CalcIMI()
         {
             //double area = terreno.Forma.CalcArea();
@@ -54,7 +49,7 @@ namespace _4Source
 
         public string GetClassificacao()
         {
-            return "Industrial\n Principal atividade: "  + desc + "\n Tipo: " + tipologia + "\n Area de construção: " + areaConst + "\n Data de construção: " + dataConst +  "\n\nUltima Ispeção\n"+ " Data: " + dataInsp + "\n Descrição: " + descInsp;
+            return "Industrial";
         }
         public double GetIndiceCont()
         {
