@@ -32,7 +32,6 @@ namespace _4Source.views
                 Console.ResetColor();
                 switch (numInput)
                 {
-                 
                     case 1:
                         RegistarFuncionario();
                         break;
@@ -49,15 +48,12 @@ namespace _4Source.views
                         Console.ForegroundColor = ConsoleColor.Blue;
                         Console.WriteLine("Volta para o menu anterior");
                         Console.ReadKey();
-                    
                         break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("Opção errada. Escolha novamente.");
-                       
                         break;
                 }
-
             } while (numInput != 5);
         }
 
@@ -85,7 +81,6 @@ namespace _4Source.views
             {
                 Console.WriteLine("Não existe!!!");
             }
-           
         }
 
         private static void PesquisarFuncionario()
@@ -100,14 +95,11 @@ namespace _4Source.views
             {
                 Console.WriteLine("Não existe!!!");
             }
-            
-
         }
         private static void RegistarFuncionario()
         {
             Funcionario func = CriarFuncionario();
             RegistoFuncionarioController.RegistarFuncionario(func);
-           
         }
 
         private static Funcionario CriarFuncionario()
@@ -134,11 +126,7 @@ namespace _4Source.views
             func.Cargo = Utils.GetText("Cargo:");
             return func;
         }
-
-          
-       
-
-        }
-
     }
+
+}
 

@@ -19,7 +19,7 @@ namespace _4Source.views
             Console.WriteLine("3 - Editar Pessoa");
             Console.WriteLine("4 - Eliminar Pessoa");
             Console.WriteLine("5 - Mostrar Lista de Pessoas");
-            Console.WriteLine("6 - Voltar ao Menu Principal");
+            Console.WriteLine("\n6 - Voltar ao Menu Principal\n");
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("===========================\n");
             Console.ResetColor();

@@ -59,7 +59,7 @@ namespace _4Source.views
                         Console.WriteLine("\nOpção Errada");
                         break;
                 }
-            } while (numInput != 7);
+            } while (numInput != 5);
 
         }
         private static void ListarTerrenos()
