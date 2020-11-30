@@ -1,0 +1,41 @@
+@startuml
+skinparam classAttributeIconSize 0
+hide methods
+left to right direction
+
+class Autarquia {
+  -String nome
+}
+
+class Pessoa {
+  -String nome	
+  -String nif
+  -String dataNascimento
+
+}
+
+class Escritura {
+  -Integer num
+  -String data
+}
+
+class Freguesia {
+  -String nome
+}
+
+class Terreno {
+  -Integer id
+  -String indiceCont
+  -Double area
+  -Double imi
+}
+
+Autarquia "1" -- "1...*" Freguesia : possui >
+Autarquia "1" -- "1...*" Pessoa : tem >
+
+Pessoa "1...*" -- "0...*" Escritura : tem  >
+
+Freguesia "1" -- "1...*" Terreno : tem >
+Freguesia "1" .. "1...*" Pessoa : tem >
+Terreno "1" -- "1" Escritura : está contido >
+@enduml

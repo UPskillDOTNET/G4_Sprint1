@@ -1,0 +1,17 @@
+@startuml
+skinparam classAttributeIconSize 0
+hide methods
+left to right direction
+
+class Autarquia {
+  -String nome
+}
+
+class Pessoa {
+  -String nome	
+  -String nif
+  -String dataNascimento
+}
+
+Autarquia "1" -- "1...*" Pessoa : tem >
+@enduml

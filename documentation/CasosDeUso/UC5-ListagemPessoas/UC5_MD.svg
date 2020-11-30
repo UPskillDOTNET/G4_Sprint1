@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="99px" preserveAspectRatio="none" style="width:355px;height:99px;" version="1.1" viewBox="0 0 355 99" width="355px" zoomAndPan="magnify"><defs><filter height="300%" id="fg7hu5fdojdkv" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[b8b6ee908b7faff6fecf4288f82e2ead]
+class Autarquia--><rect codeLine="5" fill="#FEFECE" filter="url(#fg7hu5fdojdkv)" height="52.8047" id="Autarquia" style="stroke:#A80036;stroke-width:1.5;" width="88" x="7" y="19.5"/><ellipse cx="22" cy="35.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M24.3438,31.1719 C23.4063,30.7344 22.8125,30.5938 21.9375,30.5938 C19.3125,30.5938 17.3125,32.6719 17.3125,35.3906 L17.3125,36.5156 C17.3125,39.0938 19.4219,40.9844 22.3125,40.9844 C23.5313,40.9844 24.6875,40.6875 25.4375,40.1406 C26.0156,39.7344 26.3438,39.2813 26.3438,38.8906 C26.3438,38.4375 25.9531,38.0469 25.4844,38.0469 C25.2656,38.0469 25.0625,38.125 24.875,38.3125 C24.4219,38.7969 24.4219,38.7969 24.2344,38.8906 C23.8125,39.1563 23.125,39.2813 22.3594,39.2813 C20.3125,39.2813 19.0156,38.1875 19.0156,36.4844 L19.0156,35.3906 C19.0156,33.6094 20.2656,32.2969 22,32.2969 C22.5781,32.2969 23.1875,32.4531 23.6563,32.7031 C24.1406,32.9844 24.3125,33.2031 24.4063,33.6094 C24.4688,34.0156 24.5,34.1406 24.6406,34.2656 C24.7813,34.4063 25.0156,34.5156 25.2344,34.5156 C25.5,34.5156 25.7656,34.375 25.9375,34.1563 C26.0469,34 26.0781,33.8125 26.0781,33.3906 L26.0781,31.9688 C26.0781,31.5313 26.0625,31.4063 25.9688,31.25 C25.8125,30.9844 25.5313,30.8438 25.2344,30.8438 C24.9375,30.8438 24.7344,30.9375 24.5156,31.25 L24.3438,31.1719 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="56" x="36" y="39.6543">Autarquia</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="94" y1="51.5" y2="51.5"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="74" x="13" y="65.7104">-String nome</text><!--MD5=[ec4e9ac521a71f7b069122f6baf1b57e]
+class Pessoa--><rect codeLine="9" fill="#FEFECE" filter="url(#fg7hu5fdojdkv)" height="78.4141" id="Pessoa" style="stroke:#A80036;stroke-width:1.5;" width="145" x="196" y="7"/><ellipse cx="242.75" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M245.0938,18.6719 C244.1563,18.2344 243.5625,18.0938 242.6875,18.0938 C240.0625,18.0938 238.0625,20.1719 238.0625,22.8906 L238.0625,24.0156 C238.0625,26.5938 240.1719,28.4844 243.0625,28.4844 C244.2813,28.4844 245.4375,28.1875 246.1875,27.6406 C246.7656,27.2344 247.0938,26.7813 247.0938,26.3906 C247.0938,25.9375 246.7031,25.5469 246.2344,25.5469 C246.0156,25.5469 245.8125,25.625 245.625,25.8125 C245.1719,26.2969 245.1719,26.2969 244.9844,26.3906 C244.5625,26.6563 243.875,26.7813 243.1094,26.7813 C241.0625,26.7813 239.7656,25.6875 239.7656,23.9844 L239.7656,22.8906 C239.7656,21.1094 241.0156,19.7969 242.75,19.7969 C243.3281,19.7969 243.9375,19.9531 244.4063,20.2031 C244.8906,20.4844 245.0625,20.7031 245.1563,21.1094 C245.2188,21.5156 245.25,21.6406 245.3906,21.7656 C245.5313,21.9063 245.7656,22.0156 245.9844,22.0156 C246.25,22.0156 246.5156,21.875 246.6875,21.6563 C246.7969,21.5 246.8281,21.3125 246.8281,20.8906 L246.8281,19.4688 C246.8281,19.0313 246.8125,18.9063 246.7188,18.75 C246.5625,18.4844 246.2813,18.3438 245.9844,18.3438 C245.6875,18.3438 245.4844,18.4375 245.2656,18.75 L245.0938,18.6719 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="43" x="263.25" y="27.1543">Pessoa</text><line style="stroke:#A80036;stroke-width:1.5;" x1="197" x2="340" y1="39" y2="39"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="74" x="202" y="53.2104">-String nome</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="55" x="202" y="66.0151">-String nif</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="133" x="202" y="78.8198">-String dataNascimento</text><!--MD5=[9d1f79f015101a430f970ca1fac3815a]
+link Autarquia to Pessoa--><path codeLine="17" d="M95.0917,46 C123.834,46 162.316,46 195.632,46 " fill="none" id="Autarquia-Pessoa" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="135,37.5664,125.9549,34.6275,125.9549,40.5053,135,37.5664" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="26" x="139" y="42.0669">tem</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="8" x="103.0569" y="59.3363">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="27" x="160.9399" y="58.7223">1...*</text><!--MD5=[e46cf32604efa1b7d7437eedc5ed426b]
+@startuml
+skinparam classAttributeIconSize 0
+hide methods
+left to right direction
+
+class Autarquia {
+  -String nome
+}
+
+class Pessoa {
+  -String nome	
+  -String nif
+  -String dataNascimento
+
+}
+
+
+Autarquia "1" - - "1...*" Pessoa : tem >
+@enduml
+
+PlantUML version 1.2020.21beta7(Unknown compile time)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>
