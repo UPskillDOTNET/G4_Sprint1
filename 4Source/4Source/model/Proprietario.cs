@@ -26,6 +26,14 @@ namespace _4Source.model
 
         }
 
+        public Proprietario(Pessoa other)
+        {
+            this.Nome = other.Nome;
+            this.Nif = other.Nif;
+            this.DataNascimento = other.DataNascimento;
+            this.TerrenosOwned = other.TerrenosOwned;
+        }
+
         public double Percentagem { get => percentagem; set => percentagem = value; }
         public List<Terreno> ListaTerrenos { get => listaTerrenos; set => listaTerrenos = value; }
     }
