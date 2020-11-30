@@ -73,7 +73,7 @@ namespace _4Source.views
                         break;
                 }
 
-            } while (numInput != 0);
+            } while (numInput != 10);
         }
         private static void MostrarPessoasDeterminadaData() { }
         private static void MostrarTop5PessoasMaisVelhas() { }
