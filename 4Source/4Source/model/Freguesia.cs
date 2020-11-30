@@ -14,6 +14,7 @@ namespace _4Source
         private string nome;
         private List<Terreno> terrenoList;
 
+
         public Freguesia(string nome)
         {
             this.nome = nome;
@@ -24,7 +25,7 @@ namespace _4Source
         {
             this.terrenoList = new List<Terreno>();
         }
-
+        
         public override string ToString()
         {
             return "Nome da freguesia: " + nome;
@@ -37,6 +38,7 @@ namespace _4Source
         }
 
         public List<Terreno> TerrenoList { get => terrenoList; set => terrenoList = value; }
+        public double ContriAuttotal { get; set; }
 
         public void RegistarTerreno(Terreno t)
         {

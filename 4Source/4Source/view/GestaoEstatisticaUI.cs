@@ -51,7 +51,7 @@ namespace _4Source.views
                         MostrarPercentagemAreaRuralAutarquia();
                         break;
                     case 5:
-                        MostrarListaFreguesiasValorPatrimonial();
+                        MostrarTopContri();
                         break;
                     case 6:
                         MostrarFreguesiasDimensao();
@@ -117,7 +117,18 @@ namespace _4Source.views
       
         }
 
-        private static void MostrarListaFreguesiasValorPatrimonial() { }
+        private static void MostrarTopContri() {
+
+            List<Freguesia> lista = RegistoEstatisticaController.MostrarTopContri();
+            foreach (Freguesia f in lista)
+            {
+                System.Threading.Thread.Sleep(TimeSpan.FromSeconds(1));
+                Console.WriteLine("\n" + f.ToString());
+            }
+            Console.ReadKey();
+
+
+        }
         private static void MostrarFreguesiasDimensao() { }
 
         private static void MostrarAreaPredominanteFreguesia()

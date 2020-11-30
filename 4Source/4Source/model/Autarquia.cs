@@ -487,7 +487,7 @@ namespace _4Source
             {
                 if (t.Classificacao.GetClassificacao() == "Rural")
                 {
-                    mydata.Add(t);                    
+                    mydata.Add(t);
                 }
             }
             var query = mydata.GroupBy(x => x.Classificacao.GetUso())
@@ -507,7 +507,37 @@ namespace _4Source
             return SortedList;
 
         }
-        //private static void MostrarListaTerrenosInspecao() { }
-        //private static void MostrarTop5PessoasMaisTerrenos() { }
+
+
+
+        public void ClaclcontriAutarquia()
+        {
+            double contriAut = 0;
+            double contriAuttotal = 0;
+            foreach (Freguesia f in freguesiaList)
+            {
+                foreach (Terreno t in f.TerrenoList)
+                {
+
+
+                    contriAut += t.Classificacao.GetIndiceCont() * valorbase;
+
+                }
+
+                contriAuttotal = contriAut;
+            }
+
+        }
+        public List<Freguesia> MostrarTopContri()
+        {
+
+            List<Freguesia> FreguesiaList = this.FreguesiaList;
+            List<Freguesia> SortedList = FreguesiaList.OrderBy(f => f.ContriAuttotal).ToList();
+
+            return SortedList;
+            //private static void MostrarListaTerrenosInspecao() { }
+            //private static void MostrarTop5PessoasMaisTerrenos() { }
+
+        }
     }
 }
