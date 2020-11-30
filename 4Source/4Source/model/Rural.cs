@@ -9,13 +9,13 @@ namespace _4Source
     [Serializable()]
     class Rural : IClassificacao
     {
-        
 
-        public string descUso;
+
+        private string descUso;
         int valorBase = 1;
         double indiceCont;
 
-
+        public string DescUso { get => descUso; set => descUso = value; }
 
         public Rural()
         {
@@ -25,13 +25,13 @@ namespace _4Source
         public Rural(double indiceCont, string descUso)
         {
             this.indiceCont = indiceCont;
-            this.descUso = descUso;
+            this.DescUso = descUso;
           
         }
 
         public override string ToString()
         {
-            return "Rural\n " + "Pricipal atividade: " + descUso;
+            return "Rural\n " + "Pricipal atividade: " + DescUso;
         }
 
 

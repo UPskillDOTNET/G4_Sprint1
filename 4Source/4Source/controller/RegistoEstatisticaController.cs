@@ -45,21 +45,8 @@ namespace _4Source.controller
 
         }
 
-        public static Freguesia EliminarFreguesia(string nome)
-        {
-
-            Freguesia freguesia = null;
-            try
-            {
-                Autarquia autarquia = Dados.CarregarDados();
-                freguesia = autarquia.EliminarFreguesia(nome);
-            }
-            catch (ElementoNaoExistenteException e)
-            {
-
-                Console.WriteLine("Atenção: " + e.ToString());
-            }
-            return freguesia;
-        }
+    //    public static string MostrarAreaPredominanteFreguesia() {
+    //        string
+    //}
     }
 }
