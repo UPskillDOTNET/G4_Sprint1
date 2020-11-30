@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="controller\RegistoEstatisticaController.cs" />
     <Compile Include="controller\RegistoEscrituraController.cs" />
     <Compile Include="controller\RegistoFreguesiaController.cs" />
     <Compile Include="controller\RegistoFuncionarioController.cs" />

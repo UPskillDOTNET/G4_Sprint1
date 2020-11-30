@@ -336,5 +336,29 @@ namespace _4Source {
             }
             return null;
         }
+        // Responsabilidades de calculo de estatisticas
+
+        public ArrayList MostrarPessoasDeterminadaData(DateTime data) {
+            ArrayList list = new ArrayList();
+
+            foreach (Pessoa p in pessoaList)
+            {
+                DateTime.Compare(data, p.DataNascimento);
+                if (data > p.DataNascimento)
+                {
+                    list.Add(p);
+                }
+                  
+            }
+            return list;
+        }
+        //private static void MostrarTop5PessoasMaisVelhas() { }
+        //private static void MostrarAreaTotalAutarquia() { }
+        //private static void MostrarPercentagemAreaRuralAutarquia() { }
+        //private static void MostrarListaFreguesiasValorPatrimonial() { }
+        //private static void MostrarFreguesiasDimensao() { }
+        //private static void MostrarAreaPredominanteFreguesia() { }
+        //private static void MostrarListaTerrenosInspecao() { }
+        //private static void MostrarTop5PessoasMaisTerrenos() { }
     }
 }
