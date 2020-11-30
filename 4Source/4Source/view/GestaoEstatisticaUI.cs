@@ -57,7 +57,7 @@ namespace _4Source.views
                         MostrarFreguesiasDimensao();
                         break;
                     case 7:
-                        //MostrarAreaPredominanteFreguesia();
+                        MostrarAreaPredominanteFreguesia();
                         break;
                     case 8:
                         MostrarListaTerrenosInspecao();
@@ -115,15 +115,17 @@ namespace _4Source.views
             double percentagemRural = (areaRural / areaTotal) * 100;
             Console.WriteLine("A percentagem da área rural da autarquia é de {0} %", percentagemRural);
       
-                }
+        }
 
         private static void MostrarListaFreguesiasValorPatrimonial() { }
         private static void MostrarFreguesiasDimensao() { }
-        //private static void MostrarAreaPredominanteFreguesia()
-        //{
 
-        //    string areaPred = RegistoEstatisticaController.MostrarAreaPredominanteFreguesia();
-        //}
+        private static void MostrarAreaPredominanteFreguesia()
+        {
+            string nome = Utils.GetText("Digite o Nome");
+            string result = RegistoEstatisticaController.MostrarAreaPredominanteFreguesia(nome);
+        }
+
         private static void MostrarListaTerrenosInspecao() { }
         private static void MostrarTop5PessoasMaisTerrenos() { }
     }

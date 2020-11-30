@@ -45,8 +45,13 @@ namespace _4Source.controller
 
         }
 
-    //    public static string MostrarAreaPredominanteFreguesia() {
-    //        string
-    //}
+        public static string MostrarAreaPredominanteFreguesia(string nome)
+        {
+
+            Autarquia autarquia = Dados.CarregarDados();
+            Freguesia freguesia = autarquia.GetFreguesiaByNome(nome);
+            string areaPred = autarquia.MostrarAreaPredominanteFreguesia(freguesia);
+            return areaPred;
+        }
     }
 }

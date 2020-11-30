@@ -5,16 +5,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace _4Source {
+namespace _4Source
+{
     [Serializable()]
-    public class Autarquia {
+    public class Autarquia
+    {
         private string nome;
         private List<Pessoa> pessoaList;
         private List<Freguesia> freguesiaList;
         private List<Escritura> escrituraList;
         private int valorbase;
 
-        public Autarquia(string nome, int valorbase) {
+        public Autarquia(string nome, int valorbase)
+        {
             this.Nome = nome;
             this.Valorbase = valorbase;
             this.PessoaList = new List<Pessoa>();
@@ -22,7 +25,8 @@ namespace _4Source {
             this.EscrituraList = new List<Escritura>();
         }
 
-        public Autarquia() {
+        public Autarquia()
+        {
             this.EscrituraList = new List<Escritura>();
         }
         // Properties - get and set.
@@ -39,10 +43,13 @@ namespace _4Source {
 
         // Responsabilidade Pessoa
 
-        public Pessoa GetPessoaByNif(string nif) {
+        public Pessoa GetPessoaByNif(string nif)
+        {
 
-            foreach (Pessoa p in PessoaList) {
-                if (p.Nif == nif) {
+            foreach (Pessoa p in PessoaList)
+            {
+                if (p.Nif == nif)
+                {
                     return p;
                 }
             }
@@ -51,12 +58,16 @@ namespace _4Source {
 
         //Criar Pessoa (Create)
 
-        public void RegistarPessoa(Pessoa p) {
+        public void RegistarPessoa(Pessoa p)
+        {
             Pessoa temp = GetPessoaByNif(p.Nif);
-            if (temp == null) {
+            if (temp == null)
+            {
                 this.PessoaList.Add(p);
 
-            } else {
+            }
+            else
+            {
                 throw new NifDuplicadoException(p.ToString() + "Nif já existente");
             }
 
@@ -64,21 +75,24 @@ namespace _4Source {
 
         //Pesquisar Pessoa (Read)
 
-        public Pessoa PesquisarPessoa(string nif) {
+        public Pessoa PesquisarPessoa(string nif)
+        {
             Pessoa pessoa = GetPessoaByNif(nif);
             return pessoa;
         }
 
         //Obter todas Pessoas (Read)
 
-        public List<Pessoa> ObterTodasPessoas() {
+        public List<Pessoa> ObterTodasPessoas()
+        {
             return this.pessoaList;
         }
 
 
         //Editar Pessoa (Edit)
 
-        public void AlterarPessoa(Pessoa p) {
+        public void AlterarPessoa(Pessoa p)
+        {
             Pessoa pessoa = GetPessoaByNif(p.Nif);
             pessoa.Nif = p.Nif;
             pessoa.Nome = p.Nome;
@@ -87,11 +101,15 @@ namespace _4Source {
 
         //Eliminar Pessoa (Delete)
 
-        public Pessoa EliminarPessoa(string nif) {
+        public Pessoa EliminarPessoa(string nif)
+        {
             Pessoa pessoa = GetPessoaByNif(nif);
-            if (pessoa != null) {
+            if (pessoa != null)
+            {
                 this.PessoaList.Remove(pessoa);
-            } else {
+            }
+            else
+            {
                 throw new ElementoNaoExistenteException(nif + " Não existe");
             }
             Console.WriteLine("A Pessoa abaixo foi eliminada");
@@ -117,10 +135,13 @@ namespace _4Source {
 
         // Responsabilidade Freguesia
 
-        public Freguesia GetFreguesiaByNome(string nome) {
+        public Freguesia GetFreguesiaByNome(string nome)
+        {
 
-            foreach (Freguesia f in FreguesiaList) {
-                if (f.Nome == nome) {
+            foreach (Freguesia f in FreguesiaList)
+            {
+                if (f.Nome == nome)
+                {
                     return f;
                 }
             }
@@ -129,12 +150,16 @@ namespace _4Source {
 
         // Registar Freguesia (Create)
 
-        public void RegistarFreguesia(Freguesia f) {
+        public void RegistarFreguesia(Freguesia f)
+        {
             Freguesia temp = GetFreguesiaByNome(f.Nome);
-            if (temp == null) {
+            if (temp == null)
+            {
                 this.FreguesiaList.Add(f);
 
-            } else {
+            }
+            else
+            {
                 throw new NomeDuplicadoException(f.ToString() + "Nome já existente");
             }
 
@@ -142,31 +167,38 @@ namespace _4Source {
 
         //Pesquisar Freguesia (Read)
 
-        public Freguesia PesquisarFreguesia(string nome) {
+        public Freguesia PesquisarFreguesia(string nome)
+        {
             Freguesia freguesia = GetFreguesiaByNome(nome);
             return freguesia;
         }
 
-        public List<Freguesia> ObterTodasFreguesias() {
+        public List<Freguesia> ObterTodasFreguesias()
+        {
             return this.freguesiaList;
         }
 
         //Editar Freguesia (Edit)
 
-        public void AlterarFreguesia(Freguesia f, string nomeNovo) {
+        public void AlterarFreguesia(Freguesia f, string nomeNovo)
+        {
             Freguesia freguesia = GetFreguesiaByNome(f.Nome);
             freguesia.Nome = nomeNovo;
         }
 
         //Eliminar Freguesia (Delete)
 
-        public Freguesia EliminarFreguesia(string nome) {
+        public Freguesia EliminarFreguesia(string nome)
+        {
             Freguesia freguesia = GetFreguesiaByNome(nome);
             string tempnome;
-            if (freguesia != null) {
+            if (freguesia != null)
+            {
                 tempnome = nome;
                 this.FreguesiaList.Remove(freguesia);
-            } else {
+            }
+            else
+            {
                 throw new ElementoNaoExistenteException(nome + " Não existe");
             }
             Console.WriteLine("A Freguesia abaixo foi eliminada");
@@ -175,12 +207,16 @@ namespace _4Source {
 
         // Responsabilidade Funcionario
 
-        Funcionario GetFuncionarioByNr(string numeroFunc) {
+        Funcionario GetFuncionarioByNr(string numeroFunc)
+        {
             Funcionario f = null;
-            foreach (Object obj in this.pessoaList) {
-                if (obj.GetType() == typeof(Funcionario)) {
+            foreach (Object obj in this.pessoaList)
+            {
+                if (obj.GetType() == typeof(Funcionario))
+                {
                     f = (Funcionario)obj;
-                    if (f.numeroFunc == numeroFunc) {
+                    if (f.numeroFunc == numeroFunc)
+                    {
                         return f;
                     }
                 }
@@ -190,34 +226,45 @@ namespace _4Source {
 
         //Registar Funcionario (Create)
 
-        public void RegistarFuncionario(Funcionario p) {
+        public void RegistarFuncionario(Funcionario p)
+        {
 
             Pessoa temp = GetPessoaByNif(p.Nif);
-            if (temp == null) {
+            if (temp == null)
+            {
                 Funcionario temp1 = GetFuncionarioByNr(p.numeroFunc);
-                if (temp1 == null) {
+                if (temp1 == null)
+                {
                     this.pessoaList.Add(p);
-                } else {
+                }
+                else
+                {
                     throw new NumeroFuncionarioDuplicadoException(p.ToString() + " O número está duplicado");
                 }
-            } else {
+            }
+            else
+            {
                 throw new NifDuplicadoException(p.ToString() + " O NIF está duplicado");
             }
         }
 
         //Pesquisar Funcionario (Read)
 
-        public Funcionario PesquisarFuncionario(string nr) {
+        public Funcionario PesquisarFuncionario(string nr)
+        {
             Funcionario func = GetFuncionarioByNr(nr);
             return func;
         }
 
         // Obter todos funcionarios (Read)
 
-        public List<Funcionario> ObterTodosFuncionarios() {
+        public List<Funcionario> ObterTodosFuncionarios()
+        {
             List<Funcionario> lista = new List<Funcionario>();
-            foreach (Pessoa p in this.pessoaList) {
-                if (p.GetType() == typeof(Funcionario)) {
+            foreach (Pessoa p in this.pessoaList)
+            {
+                if (p.GetType() == typeof(Funcionario))
+                {
                     lista.Add((Funcionario)p);
                 }
             }
@@ -226,11 +273,15 @@ namespace _4Source {
 
         // Eliminar Funcionario (Delete)
 
-        public Funcionario EliminarFuncionario(string nr) {
+        public Funcionario EliminarFuncionario(string nr)
+        {
             Funcionario func = GetFuncionarioByNr(nr);
-            if (func != null) {
+            if (func != null)
+            {
                 this.pessoaList.Remove(func);
-            } else {
+            }
+            else
+            {
                 throw new ElementoNaoExistenteException(nr + " Não existe");
             }
             return func;
@@ -238,10 +289,13 @@ namespace _4Source {
 
         //Responsabilidade Escritura
 
-        public Escritura GetEscrituraByNum(int num) {
+        public Escritura GetEscrituraByNum(int num)
+        {
 
-            foreach (Escritura e in EscrituraList) {
-                if (e.Num == num) {
+            foreach (Escritura e in EscrituraList)
+            {
+                if (e.Num == num)
+                {
                     return e;
                 }
             }
@@ -250,38 +304,49 @@ namespace _4Source {
 
         //Criar Escritura (Create)
 
-        public void RegistarEscritura(Escritura e) {
+        public void RegistarEscritura(Escritura e)
+        {
 
             string nome = Utils.GetText("Inserir o nome da freguesia a qual quer associar esta escritura:");
             Freguesia freguesia = GetFreguesiaByNome(nome);
 
-            if (freguesia != null) {
+            if (freguesia != null)
+            {
                 int id = Utils.GetIntNumber("Inserir o nome do terreno a qual quer associar esta escritura:");
                 Terreno terreno = freguesia.GetTerrenoById(id);
 
-                if (terreno != null) {
+                if (terreno != null)
+                {
                     terreno.Escritura = e;
                     int numProprietarios = Utils.GetIntNumber("Quantos proprietários tem o terreno?");
 
-                    for (int i = 0; i < numProprietarios; i++) {
+                    for (int i = 0; i < numProprietarios; i++)
+                    {
                         string prop = Utils.GetText("Introduza o NIF do proprietário :");
                         Pessoa pessoa = GetPessoaByNif(prop);
                         e.ProprietariosList.Add((model.Proprietario)pessoa);
                         pessoa.TerrenosOwned++;
                     }
 
-                } else {
+                }
+                else
+                {
                     throw new IdTerrenoInvalidoException(e.ToString() + "não existe na lista de terrenos");
                 }
-            } else {
+            }
+            else
+            {
                 throw new NomeFreguesiaInvalidoException(e.ToString() + "não existe na lista de freguesias");
             }
 
             Escritura temp = GetEscrituraByNum(e.Num);
-            if (temp == null) {
+            if (temp == null)
+            {
                 this.EscrituraList.Add(e);
 
-            } else {
+            }
+            else
+            {
                 throw new EscrituraDuplicadoException(e.ToString() + "Número já existente");
             }
 
@@ -290,16 +355,19 @@ namespace _4Source {
 
         //Pesquisar Escritura (Read)
 
-        public Escritura PesquisarEscritura(int num) {
+        public Escritura PesquisarEscritura(int num)
+        {
 
             string nome = Utils.GetText("Inserir o nome da freguesia da escritura associada:");
             Freguesia freguesia = GetFreguesiaByNome(nome);
 
-            if (freguesia != null) {
+            if (freguesia != null)
+            {
                 int id = Utils.GetIntNumber("Inserir o nome do terreno da escritura associada:");
                 Terreno terreno = freguesia.GetTerrenoById(id);
 
-                if (terreno != null) {
+                if (terreno != null)
+                {
 
                     Escritura escritura = GetEscrituraByNum(num);
                     return escritura;
@@ -309,25 +377,32 @@ namespace _4Source {
         }
         // Obter todas escrituras (Read)
 
-        public List<Escritura> ObterTodasEscrituras() {
+        public List<Escritura> ObterTodasEscrituras()
+        {
             return this.EscrituraList;
         }
 
         //Eliminar Escritura (Delete)
 
-        public Escritura EliminarEscritura(int num) {
+        public Escritura EliminarEscritura(int num)
+        {
             string nome = Utils.GetText("Inserir o nome da freguesia da escritura associada:");
             Freguesia freguesia = GetFreguesiaByNome(nome);
 
-            if (freguesia != null) {
+            if (freguesia != null)
+            {
                 int id = Utils.GetIntNumber("Inserir o nome do terreno da escritura associada:");
                 Terreno terreno = freguesia.GetTerrenoById(id);
 
-                if (terreno != null) {
+                if (terreno != null)
+                {
                     Escritura escritura = GetEscrituraByNum(num);
-                    if (escritura != null) {
+                    if (escritura != null)
+                    {
                         this.EscrituraList.Remove(escritura);
-                    } else {
+                    }
+                    else
+                    {
                         throw new ElementoNaoExistenteException(num + " Não existe");
                     }
                 }
@@ -337,7 +412,8 @@ namespace _4Source {
         }
         // Responsabilidades de calculo de estatisticas
 
-        public List<Pessoa> MostrarPessoasDeterminadaData(DateTime data) {
+        public List<Pessoa> MostrarPessoasDeterminadaData(DateTime data)
+        {
             List<Pessoa> list = new List<Pessoa>();
 
             foreach (Pessoa p in pessoaList)
@@ -347,29 +423,31 @@ namespace _4Source {
                 {
                     list.Add(p);
                 }
-                  
+
             }
             return list;
         }
 
-        // Funciona mas não dá sort como queremos
+        // Sort as 5 pessoas mais velhas
 
-        public List<Pessoa> MostrarTop5PessoasMaisVelhas() {
+        public List<Pessoa> MostrarTop5PessoasMaisVelhas()
+        {
 
             List<Pessoa> PessoaList = this.PessoaList;
             List<Pessoa> SortedList = PessoaList.OrderBy(p => p.DataNascimento).Take(5).ToList();
 
             return SortedList;
-        
+
         }
 
-        public double MostrarAreaTotalAutarquia() {
+        public double MostrarAreaTotalAutarquia()
+        {
 
             double areaTotal = 0;
 
             foreach (Freguesia f in freguesiaList)
             {
-               foreach (Terreno t in f.TerrenoList)
+                foreach (Terreno t in f.TerrenoList)
                 {
                     areaTotal += t.Forma.CalcArea();
                 }
@@ -402,7 +480,18 @@ namespace _4Source {
         //private static void MostrarPercentagemAreaRuralAutarquia() { }
         //private static void MostrarListaFreguesiasValorPatrimonial() { }
         //private static void MostrarFreguesiasDimensao() { }
-        //private static void MostrarAreaPredominanteFreguesia() { }
+        public string MostrarAreaPredominanteFreguesia(Freguesia f)
+        {
+            foreach (Terreno t in f.TerrenoList)
+            {
+                if (t.Classificacao.GetClassificacao() == "Rural")
+                {
+                    //var results = Classificacao.Rural.DescUso;
+                    Console.WriteLine("FUNCIONA!");
+                }
+            }
+            return "olar";
+        }
         //private static void MostrarListaTerrenosInspecao() { }
         //private static void MostrarTop5PessoasMaisTerrenos() { }
     }
