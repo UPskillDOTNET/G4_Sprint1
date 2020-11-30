@@ -53,5 +53,14 @@ namespace _4Source.controller
             string areaPred = autarquia.MostrarAreaPredominanteFreguesia(freguesia);
             return areaPred;
         }
+
+
+
+        public static List<Pessoa> MostrarTopProprietarios()
+        {
+            Autarquia autarquia = Dados.CarregarDados();
+            List<Pessoa> lista = autarquia.MostrarTopProprietarios();
+            return lista;
+        }
     }
 }

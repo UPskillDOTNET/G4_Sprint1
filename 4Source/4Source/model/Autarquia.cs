@@ -497,6 +497,16 @@ namespace _4Source
             return descUso;
         }
 
+
+        public List<Pessoa> MostrarTopProprietarios()
+        {
+
+            List<Pessoa> PessoaList = this.PessoaList;
+            List<Pessoa> SortedList = PessoaList.OrderBy(p => p.TerrenosOwned).Take(5).ToList();
+
+            return SortedList;
+
+        }
         //private static void MostrarListaTerrenosInspecao() { }
         //private static void MostrarTop5PessoasMaisTerrenos() { }
     }
