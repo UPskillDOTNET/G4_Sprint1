@@ -1,0 +1,43 @@
+@startuml
+autonumber
+
+actor "Utilizador" as USR
+
+USR -> CalcIndicesUI : Inicia um pedido de consulta dos índices territoriais da autarquia
+activate CalcIndicesUI
+
+CalcIndicesUI --> USR : Pergunta que ínidices o utilizador pretende verificar
+
+USR -> CalcIndicesUI : Seleciona o atributo que será utilizado como parâmetro(ListParametroOrdem)
+CalcIndicesUI -> CalcIndicesController : listParam = get(ListParametroOrdem)
+activate CalcIndicesController
+
+CalcIndicesController -> Plataforma : listParam = get(ListParametroOrdem)
+activate Plataforma
+deactivate CalcIndicesController
+
+CalcIndicesUI --> USR : Questiona o utilizador de que freguesias pretende verificar os índices
+deactivate CalcIndicesUI
+deactivate Plataforma
+
+USR -> CalcIndicesUI : Seleciona a freguesia que pretende
+activate CalcIndicesUI
+
+CalcIndicesUI -> CalcIndicesController : freguesia = getFreguesiaByNome(fregnome)
+activate CalcIndicesController
+
+CalcIndicesController -> Plataforma : getFreguesiaByNome(fregnome)
+activate Plataforma
+
+Plataforma -> ListIndices : novaLista = novaList(ListParametroOrdem)
+activate ListIndices
+deactivate ListIndices
+deactivate Plataforma
+deactivate CalcIndicesController
+
+CalcIndicesUI --> USR : A plataforma apresenta os índices da autarquia usando o atributo selecionado
+deactivate CalcIndicesUI
+
+participant "listParam\n:List<String>" as LIST_PARAM
+participant "novaLista\n:List<Indices>" as LIST_NOVA
+@enduml
