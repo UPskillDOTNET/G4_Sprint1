@@ -66,13 +66,27 @@ namespace _4Source.views
                             GestaoEstatisticaUI.Menu();
                             break;
                         case 7:
+                            ConsoleHelper.SetCurrentFont("Everson Mono", 20);
+                            Console.Clear();
+                            Console.ForegroundColor = ConsoleColor.DarkBlue;
+                            Console.BackgroundColor = ConsoleColor.Gray;
+                            Console.Write(" ".PadRight(10));
+                            Console.WriteLine("Obrigado por usar 4Source\n".PadLeft(20));
+                            Console.ResetColor();
                             Console.ForegroundColor = ConsoleColor.DarkRed;
                             Console.BackgroundColor = ConsoleColor.White;
-                            Console.WriteLine("\nObrigado por usar 4Source.");
+                            Console.Write("João Martins".PadRight(20));
+                            Console.WriteLine("Tiago Azevedo".PadLeft(20));
+                            Console.Write("Caio Reis".PadRight(20));
+                            Console.WriteLine("Maria Gomes".PadLeft(20));
+                            Console.Write("Sergio Pinto".PadRight(20));
+                            Console.WriteLine(" ".PadLeft(20));
+
                             Console.ReadKey();
                             Environment.Exit(0);
                             break;
                         default:
+                            Console.Beep();
                             Console.ForegroundColor = ConsoleColor.Red;
                             Console.WriteLine("\nNúmero de input inválido, tente novamente.\n");
                             break;
