@@ -12,7 +12,7 @@ namespace _4Source
 
 
         private string descUso;
-        int valorBase = 1;
+        int valorBase = 10;
         double indiceCont;
 
         public string DescUso { get => descUso; set => descUso = value; }

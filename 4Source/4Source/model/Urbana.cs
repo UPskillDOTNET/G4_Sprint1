@@ -10,7 +10,7 @@ namespace _4Source
     class Urbana : IClassificacao
     {
         double area;
-        int valorBase = 1;
+        int valorBase = 10;
         double areaConst;
         double indiceCont;
         DateTime dataConst;

@@ -13,7 +13,7 @@ namespace _4Source
         double indiceCont;
         double area;
         string desc; 
-        int valorBase = 1; 
+        int valorBase = 10; 
         double areaConst; 
         DateTime dataConst;
         DateTime dataInsp; 
