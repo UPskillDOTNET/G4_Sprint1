@@ -27,7 +27,7 @@ namespace _4Source.views
             Console.WriteLine("7) Apresentar a atividade rural predominante numa dada freguesia.");
             Console.WriteLine("8) Apresentar uma listagem dos terrenos do tipo industrial com a data de inspeção posterior a uma dada data.");
             Console.WriteLine("9) Consultar o top 5 das pessoas com mais terrenos.");
-            Console.WriteLine("\n10) Voltar para o menu anterior\n");
+            Console.WriteLine("\n0) Voltar para o menu anterior\n");
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine(":===============////===========////==========///===================////===================:\n");
             Console.ResetColor();
@@ -38,9 +38,6 @@ namespace _4Source.views
                 Console.ResetColor();
                 switch (numInput)
                 {
-                    case 0:
-                        Console.WriteLine("Volta para o menu anterior.");
-                        break;
                     case 1:
                         MostrarPessoasDeterminadaData();
                         break;
@@ -68,12 +65,14 @@ namespace _4Source.views
                     case 9:
                         MostrarTop5PessoasMaisTerrenos();
                         break;
-                    case 10:
+                    case 0:
                         Console.ForegroundColor = ConsoleColor.Blue;
                         Console.WriteLine("\nVolta para o menu anterior.");
                         Console.ReadKey();
                         break;
                     default:
+                        Console.Beep();
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("Opção Errada");
                         break;
                 }

@@ -92,7 +92,10 @@ namespace _4Source.views
             }
             else
             {
+                Console.Beep();
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("A freguesia que indicou não existe na base de dados. Tente novamente.");
+                Console.ResetColor();
             }
             Console.ReadKey();
         
@@ -107,7 +110,10 @@ namespace _4Source.views
             }
             else
             {
+                Console.Beep();
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Essa freguesia não existe!");
+                Console.ResetColor();
             }
             Console.ReadKey();
       
@@ -124,7 +130,10 @@ namespace _4Source.views
             }
             else
             {
-                Console.WriteLine("Não  existe!!!");
+                Console.Beep();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Essa freguesia não existe!");
+                Console.ResetColor();
             }
             Console.ReadKey();
     
@@ -151,7 +160,10 @@ namespace _4Source.views
                 catch (NomeFreguesiaInvalidoException e)
                 {
                     flag = true;
+                    Console.Beep();
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Atenção: " + e.ToString());
+                    Console.ResetColor();
                 }
             } while (flag);
             return freguesia;
@@ -172,7 +184,10 @@ namespace _4Source.views
                 catch (NomeFreguesiaInvalidoException e)
                 {
                     flag = true;
+                    Console.Beep();
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Atenção: " + e.ToString());
+                    Console.ResetColor();
                 }
             } while (flag);
             return nome;

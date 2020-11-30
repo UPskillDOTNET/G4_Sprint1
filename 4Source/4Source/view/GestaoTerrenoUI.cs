@@ -55,6 +55,7 @@ namespace _4Source.views
                         Console.ReadKey();
                         break;
                     default:
+                        Console.Beep();
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("\nOpção Errada");
                         break;
@@ -86,7 +87,10 @@ namespace _4Source.views
             }
             else
             {
+                Console.Beep();
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("\n Não  existe!!!");
+                Console.ResetColor();
             }
             Console.ReadKey();
             
@@ -103,7 +107,10 @@ namespace _4Source.views
             }
             else
             {
+                Console.Beep();
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("\nNão  existe!!!");
+                Console.ResetColor();
             }
             Console.ReadKey();
           
@@ -130,7 +137,10 @@ namespace _4Source.views
                 catch (IdTerrenoInvalidoException e)
                 {
                     flag = true;
+                    Console.Beep();
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Atenção: " + e.ToString());
+                    Console.ResetColor();
                 }
             } while (flag);
 
@@ -151,7 +161,10 @@ namespace _4Source.views
                         terreno.Forma = GetAreaCirc();
                         break;
                     default:
+                        Console.Beep();
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("Erro. Opção inválida");
+                        Console.ResetColor();
                         flag = true;
                         break;
                 }
@@ -174,7 +187,10 @@ namespace _4Source.views
                         terreno.Classificacao = GetIndustrial(terreno.Forma.CalcArea());
                         break;
                     default:
+                        Console.Beep();
+                        Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("Erro. Opção inválida");
+                        Console.ResetColor();
                         flag = true;
                         break;
                 }

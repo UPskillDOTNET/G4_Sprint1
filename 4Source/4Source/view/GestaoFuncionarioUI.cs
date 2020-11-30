@@ -51,6 +51,7 @@ namespace _4Source.views
                         Console.ReadKey();
                         break;
                     default:
+                        Console.Beep();
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("Opção errada. Escolha novamente.");
                         break;
@@ -80,7 +81,10 @@ namespace _4Source.views
             }
             else
             {
-                Console.WriteLine("Não existe!!!");
+                Console.Beep();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Não  existe!!!");
+                Console.ResetColor();
             }
         }
 
@@ -94,7 +98,10 @@ namespace _4Source.views
             }
             else
             {
-                Console.WriteLine("Não existe!!!");
+                Console.Beep();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Não  existe!!!");
+                Console.ResetColor();
             }
         }
         private static void RegistarFuncionario()
@@ -121,7 +128,10 @@ namespace _4Source.views
                 catch (NumeroFuncionarioInvalidoException e)
                 {
                     flag = true;
+                    Console.Beep();
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Atenção: " + e.ToString());
+                    Console.ResetColor();
                 }
             } while (flag);
             func.Cargo = Utils.GetText("Cargo:");

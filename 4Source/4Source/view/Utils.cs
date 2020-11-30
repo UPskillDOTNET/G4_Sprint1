@@ -61,7 +61,10 @@ namespace _4Source.views
                 }
                 catch (AnoInvalidoException e)
                 {
+                    Console.Beep();
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Ano inválido" + e.ToString());
+                    Console.ResetColor();
                     flag = true;
                 }
                 catch (FormatException)
@@ -80,7 +83,10 @@ namespace _4Source.views
                 }
                 catch (MesInvalidoException e)
                 {
+                    Console.Beep();
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Mês inválido" + e.ToString());
+                    Console.ResetColor();
                     flag = true;
                 }
             } while (flag);
@@ -95,7 +101,10 @@ namespace _4Source.views
                 }
                 catch (DiaInvalidoException e)
                 {
+                    Console.Beep();
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Dia inválido" + e.ToString());
+                    Console.ResetColor();
                     flag = true;
                 }
             } while (flag);
@@ -174,7 +183,10 @@ namespace _4Source.views
                 }
                 catch (AnoInvalidoException e)
                 {
+                    Console.Beep();
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Ano inválido" + e.ToString());
+                    Console.ResetColor();
                     flag = true;
                 }
                 catch (FormatException)
@@ -193,7 +205,10 @@ namespace _4Source.views
                 }
                 catch (MesInvalidoException e)
                 {
+                    Console.Beep();
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Mês inválido" + e.ToString());
+                    Console.ResetColor();
                     flag = true;
                 }
             } while (flag);
@@ -208,7 +223,10 @@ namespace _4Source.views
                 }
                 catch (DiaInvalidoException e)
                 {
+                    Console.Beep();
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Dia inválido" + e.ToString());
+                    Console.ResetColor();
                     flag = true;
                 }
             } while (flag);

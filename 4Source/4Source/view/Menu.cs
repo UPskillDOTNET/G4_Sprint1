@@ -34,8 +34,7 @@ namespace _4Source.views
                 Console.WriteLine("4) Gestão de Terrenos");
                 Console.WriteLine("5) Gestão de Escritura");
                 Console.WriteLine("6) Cálculo de Estatisticas");
-                Console.Write(" ".PadRight(10, ' '));
-                Console.WriteLine("7) Fechar Programa\n\n".PadLeft(350));
+                Console.WriteLine("\n7) Fechar Programa\n\n");
     
              
 

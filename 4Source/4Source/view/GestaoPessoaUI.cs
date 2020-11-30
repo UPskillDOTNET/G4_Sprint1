@@ -55,6 +55,7 @@ namespace _4Source.views
                 
                         break;
                     default:
+                        Console.Beep();
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("\nOpção errada. Escolha novamente.\n");
                        
@@ -88,7 +89,10 @@ namespace _4Source.views
             }
             else
             {
+                Console.Beep();
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Não existe!!!");
+                Console.ResetColor();
             }
            
 
@@ -103,7 +107,10 @@ namespace _4Source.views
             }
             else
             {
+                Console.Beep();
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Não  existe!!!");
+                Console.ResetColor();
             }
            
 
@@ -119,7 +126,10 @@ namespace _4Source.views
             }
             else
             {
+                Console.Beep();
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Não existe!!!");
+                Console.ResetColor();
             }
             Console.ReadKey();
           
@@ -148,7 +158,10 @@ namespace _4Source.views
                 catch (NifInvalidoException e)
                 {
                     flag = true;
+                    Console.Beep();
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Atenção: " + e.ToString());
+                    Console.ResetColor();
                 }
             } while (flag);
             do
@@ -161,7 +174,10 @@ namespace _4Source.views
                 catch (NomePessoaInvalidoException e)
                 {
                     flag = true;
+                    Console.Beep();
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Atenção: " + e.ToString());
+                    Console.ResetColor();
                 }
             } while (flag);
             do
@@ -174,7 +190,10 @@ namespace _4Source.views
                 catch (NomePessoaInvalidoException e)
                 {
                     flag = true;
+                    Console.Beep();
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Atenção: " + e.ToString());
+                    Console.ResetColor();
                 }
             } while (flag);
             return pessoa;
@@ -192,7 +211,10 @@ namespace _4Source.views
                 catch (NomePessoaInvalidoException e)
                 {
                     flag = true;
+                    Console.Beep();
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Atenção: " + e.ToString());
+                    Console.ResetColor();
                 }
             } while (flag);
             pessoa.DataNascimento = new DateTime();

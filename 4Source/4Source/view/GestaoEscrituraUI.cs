@@ -49,6 +49,7 @@ namespace _4Source.views {
                         Console.ReadKey();
                         break;
                     default:
+                        Console.Beep();
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("\nOpção errada. Escolha novamente.\n");
                         Menu();
@@ -75,6 +76,8 @@ namespace _4Source.views {
             if (escritura != null) {
                 Console.WriteLine(escritura.ToString());
             } else {
+                Console.Beep();
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Não  existe!!!");
             }
          
@@ -86,6 +89,8 @@ namespace _4Source.views {
             if (escritura != null) {
                 Console.WriteLine(escritura.ToString());
             } else {
+                Console.Beep();
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Não existe!!!");
             }
             Console.ReadKey();
@@ -107,6 +112,8 @@ namespace _4Source.views {
                     escritura.Num = Utils.GetIntNumber("Numero de Escritura:");
                 } catch (NumeroEscrituraInvalidoException e) {
                     flag = true;
+                    Console.Beep();
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Atenção: " + e.ToString());
                 }
             } while (flag);
@@ -116,6 +123,8 @@ namespace _4Source.views {
                     escritura.Data = Utils.GetData();
                 } catch (DataEscrituraInvalidoException e) {
                     flag = true;
+                    Console.Beep();
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Atenção: " + e.ToString());
                 }
             } while (flag);
