@@ -1,0 +1,15 @@
+@startuml
+skinparam classAttributeIconSize 0
+hide methods
+left to right direction
+
+class Autarquia {
+  -String nome
+}
+
+class Freguesia {
+  -String nome
+}
+
+Autarquia "1" -- "1...*" Freguesia : possui >
+@enduml
