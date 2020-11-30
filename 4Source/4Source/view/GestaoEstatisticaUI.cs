@@ -127,7 +127,18 @@ namespace _4Source.views
         }
 
         private static void MostrarListaTerrenosInspecao() { }
-        private static void MostrarTop5PessoasMaisTerrenos() { }
+        private static void MostrarTop5PessoasMaisTerrenos()
+        {
+
+            List<Pessoa> lista = RegistoEstatisticaController.MostrarTopProprietarios();
+            foreach (Pessoa p in lista)
+            {
+                System.Threading.Thread.Sleep(TimeSpan.FromSeconds(1));
+                Console.WriteLine("\n" + p.ToString());
+            }
+            Console.ReadKey();
+
+        }
     }
 }
 
