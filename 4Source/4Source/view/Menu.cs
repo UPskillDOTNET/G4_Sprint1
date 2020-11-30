@@ -61,7 +61,8 @@ namespace _4Source.views
                             GestaoEscrituraUI.Menu();
                             break;
                         case 6:
-                            //GestaoEstatisticaUI.Menu();
+                            GestaoEstatisticaUI.Menu();
+                            break;
                         case 7:
                             Console.ForegroundColor = ConsoleColor.DarkRed;
                             Console.BackgroundColor = ConsoleColor.White;

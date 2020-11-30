@@ -85,17 +85,17 @@ namespace _4Source
         //    return ((new CaseInsensitiveComparer()).Compare(((Pessoa)y).Nif, ((Pessoa)x).Nif));
         //}
 
-        //public class CompararIdade : IComparer
-        //{
-        //    public int Compare(object x, object y)
-        //    {
-        //        if (((Pessoa)x).dataNascimento < ((Pessoa)x).dataNascimento)
-        //            return -1;
-        //        if (((Pessoa)x).dataNascimento > ((Pessoa)x).dataNascimento)
-        //            return 1;
-        //        return 0;
-        //    }
-        //}
+        public class CompararIdade : IComparer
+        {
+            public int Compare(object x, object y)
+            {
+                if (((Pessoa)x).dataNascimento < ((Pessoa)x).dataNascimento)
+                    return -1;
+                if (((Pessoa)x).dataNascimento > ((Pessoa)x).dataNascimento)
+                    return 1;
+                return 0;
+            }
+        }
 
         //public class CompararNome : IComparer
         //{

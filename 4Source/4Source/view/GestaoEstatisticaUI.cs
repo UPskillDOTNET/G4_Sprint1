@@ -1,4 +1,6 @@
-﻿using System;
+﻿using _4Source.controller;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +10,7 @@ namespace _4Source.views
 {
     class GestaoEstatisticaUI
     {
-        public static void MainEstatistica()
+        public static void Menu()
         {
 
             int numInput;
@@ -75,7 +77,17 @@ namespace _4Source.views
 
             } while (numInput != 10);
         }
-        private static void MostrarPessoasDeterminadaData() { }
+        private static void MostrarPessoasDeterminadaData() {
+            DateTime data = Utils.GetDataNascimento();
+            ArrayList lista = RegistoEstatisticaController.MostrarPessoasDeterminadaData(data);
+            foreach (Pessoa p in lista)
+            {
+                System.Threading.Thread.Sleep(TimeSpan.FromSeconds(1));
+                Console.WriteLine("\n" + p.ToString());
+            }
+            Console.ReadKey();
+
+        }
         private static void MostrarTop5PessoasMaisVelhas() { }
         private static void MostrarAreaTotalAutarquia() { }
         private static void MostrarPercentagemAreaRuralAutarquia() { }
