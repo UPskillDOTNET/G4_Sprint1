@@ -1,4 +1,5 @@
-﻿using _4Source.views;
+﻿using _4Source.model;
+using _4Source.views;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -324,7 +325,8 @@ namespace _4Source
                     {
                         string prop = Utils.GetText("Introduza o NIF do proprietário :");
                         Pessoa pessoa = GetPessoaByNif(prop);
-                        e.ProprietariosList.Add((model.Proprietario)pessoa);
+                        Proprietario teste = new Proprietario(pessoa);
+                        e.ProprietariosList.Add(teste);
                         pessoa.TerrenosOwned++;
                     }
 
