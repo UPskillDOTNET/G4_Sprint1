@@ -473,15 +473,7 @@ namespace _4Source
             }
             return areaRural;
         }
-        //pessoaList.Sort(new Pessoa.CompararIdade()); // Ordenar por idade
-        //pessoaList.Sort(new Pessoa.CompararNome()); // Ordenar por Nome
-        //pessoaList.Sort(); // Ordernar por Nif
 
-
-
-        //private static void MostrarPercentagemAreaRuralAutarquia() { }
-        //private static void MostrarListaFreguesiasValorPatrimonial() { }
-        //private static void MostrarFreguesiasDimensao() { }
         public string MostrarAreaPredominanteFreguesia(Freguesia f)
         {
             List<Terreno> mydata = new List<Terreno>();
@@ -537,9 +529,43 @@ namespace _4Source
             List<Freguesia> SortedList = FreguesiaList.OrderBy(f => f.ContriAuttotal).ToList();
 
             return SortedList;
-            //private static void MostrarListaTerrenosInspecao() { }
-            //private static void MostrarTop5PessoasMaisTerrenos() { }
-
         }
+
+        public List<Terreno> MostrarListaTerrenosInspecao(DateTime data, string nome)
+        {
+            List<Terreno> mydata = new List<Terreno>();
+            Freguesia freguesia = GetFreguesiaByNome(nome);
+
+            foreach (Terreno t in freguesia.TerrenoList)
+            {
+                if (t.Classificacao.GetClassificacao() == "Industrial")
+                {
+                    DateTime.Compare(data, t.Classificacao.GetData());
+                    if (data < t.Escritura.Data)
+                    {
+                        mydata.Add(t);
+                    }
+
+                }
+            }
+            return mydata;
+        }
+
+        public List<Freguesia> MostrarFreguesiasDimensao()
+        {
+            List<Freguesia> newList = new List<Freguesia>();
+
+            foreach (Freguesia f in freguesiaList)
+            {
+                foreach (Terreno t in f.TerrenoList)
+                {
+                    f.DimensaoTotal += t.Forma.CalcArea();
+                }
+                newList.Add(f);
+            }
+            List<Freguesia> teste = newList.OrderByDescending(f => f.DimensaoTotal).ToList();
+            return teste;
+        }
+        
     }
 }

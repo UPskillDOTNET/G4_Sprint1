@@ -35,7 +35,12 @@ namespace _4Source {
 
         public override string ToString()
         {
+
             return String.Format("Número de escritura: {0} Data: {1}", Num, Data.ToString("dd/MM/yyyy"));
+
+        
+            
+
         }
     }
 }

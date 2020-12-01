@@ -129,7 +129,14 @@ namespace _4Source.views
 
 
         }
-        private static void MostrarFreguesiasDimensao() { }
+        private static void MostrarFreguesiasDimensao() {
+            List<Freguesia> lista = RegistoEstatisticaController.MostrarFreguesiasDimensao();
+                foreach (Freguesia f in lista)
+            {
+                System.Threading.Thread.Sleep(TimeSpan.FromSeconds(1));
+                Console.WriteLine("\n" + f.ToString());
+            }
+        }
 
         private static void MostrarAreaPredominanteFreguesia()
         {
@@ -138,7 +145,20 @@ namespace _4Source.views
             Console.WriteLine("A área predominante é: {0}", result);
         }
 
-        private static void MostrarListaTerrenosInspecao() { }
+
+        // Verificar se isto funciona, ainda nao testei
+        private static void MostrarListaTerrenosInspecao() {
+            string nome = Utils.GetText("Digite o Nome da Freguesia");
+            DateTime data = Utils.GetData();
+         
+            List<Terreno> lista = RegistoEstatisticaController.MostrarListaTerrenosInspecao(data, nome);
+            foreach (Terreno t in lista)
+            {
+                System.Threading.Thread.Sleep(TimeSpan.FromSeconds(1));
+                Console.WriteLine("\n" + t.ToString());
+            }
+            Console.ReadKey();
+        }
         private static void MostrarTop5PessoasMaisTerrenos()
         {
 

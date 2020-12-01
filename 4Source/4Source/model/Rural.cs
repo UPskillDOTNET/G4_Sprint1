@@ -53,6 +53,11 @@ namespace _4Source
         {
             return this.descUso;
         }
+
+        public DateTime GetData()
+        {
+            return new DateTime(1010,1,1);
+        }
     }
   }
 

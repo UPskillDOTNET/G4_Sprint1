@@ -67,5 +67,19 @@ namespace _4Source.controller
             List<Pessoa> lista = autarquia.MostrarTopProprietarios();
             return lista;
         }
+
+        public static List<Terreno> MostrarListaTerrenosInspecao(DateTime data, string nome)
+        {
+            Autarquia autarquia = Dados.CarregarDados();
+            List<Terreno> lista = autarquia.MostrarListaTerrenosInspecao(data, nome);
+            return lista;
+        }
+
+        public static List<Freguesia> MostrarFreguesiasDimensao()
+        {
+            Autarquia autarquia = Dados.CarregarDados();
+            List<Freguesia> lista = autarquia.MostrarFreguesiasDimensao();
+            return lista;
+        }
     }
 }

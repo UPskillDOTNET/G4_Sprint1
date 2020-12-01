@@ -12,5 +12,6 @@ namespace _4Source
        double GetIndiceCont();
        string GetClassificacao();
         string GetUso();
+        DateTime GetData();
     }
 }
