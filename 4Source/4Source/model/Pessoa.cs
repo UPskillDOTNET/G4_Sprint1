@@ -17,9 +17,37 @@ namespace _4Source
         private DateTime dataNascimento;
         private int terrenosOwned;
 
-      
-        public string Nome { get => nome; set => nome = value; }
-        public string Nif { get => nif; set => nif = value; }
+
+        public string Nome   // property
+        {
+            get { return nome; }   // get method
+            set
+            {
+                if (ValidarNome(value))
+                {
+                    nome = value;
+                }
+                else
+                {
+                    throw new NomeInvalidoException("Nome inválido");
+                }
+            }
+        }
+        public string Nif   // property
+        {
+            get { return nif; }   // get method
+            set
+            {
+                if (ValidarNif(value))
+                {
+                    nif = value;
+                }
+                else
+                {
+                    throw new NifInvalidoException("NIF inválido");
+                }
+            }
+        }
         public DateTime DataNascimento { get => dataNascimento; set => dataNascimento = value; }
         public int TerrenosOwned { get => terrenosOwned; set => terrenosOwned = value; }
 

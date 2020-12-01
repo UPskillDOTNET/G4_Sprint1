@@ -3,14 +3,23 @@
 namespace _4Source {
     public class DataInvalidaException : Exception {
         public DataInvalidaException(string message) : base(message) {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Data Introduzida Invalida");
+            Console.ResetColor();
         }
     }
     public class NifInvalidoException : Exception {
         public NifInvalidoException(string message) : base(message) {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("NIF Invalido");
+            Console.ResetColor();
         }
     }
     public class NomeInvalidoException : Exception {
         public NomeInvalidoException(string message) : base(message) {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Nome Invalido");
+            Console.ResetColor();
         }
     }
     public class NumeroFuncionarioInvalidoException : Exception {
