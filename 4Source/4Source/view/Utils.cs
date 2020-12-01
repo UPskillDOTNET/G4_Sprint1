@@ -284,13 +284,11 @@ namespace _4Source.views
                     ██║╚██╗██║██║   ██║   ██║   
                     ██║ ╚████║╚██████╔╝   ██║   
                     ╚═╝  ╚═══╝ ╚═════╝    ╚═╝   
-                                                                  
-                                                              
-                                                              
-                                                              
-
 ";
+            Console.ForegroundColor = ConsoleColor.Red;
+            
             Console.WriteLine(title);
+            Console.ResetColor();
 
 
 
