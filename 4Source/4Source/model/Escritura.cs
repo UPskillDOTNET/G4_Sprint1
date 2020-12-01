@@ -35,7 +35,10 @@ namespace _4Source {
 
         public override string ToString()
         {
-            return String.Format("Número de escritura: {0} Data: {1}", Num, Data);
+            //To be done
+            //proprietariosList.ForEach(Console.WriteLine);
+            return String.Format("Número de escritura: {0} Data: {1} Proprietarios {2}", Num, Data);
+            
         }
     }
 }
