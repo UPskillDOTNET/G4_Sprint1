@@ -103,38 +103,12 @@ namespace _4Source.views {
         }
 
         private static void RegistarEscritura() {
-            Escritura escritura = CriarEscritura();
+            Escritura escritura = Terreno.CriarEscritura();
             RegistoEscrituraController.RegistarEscritura(escritura);
           
         }
 
-        public static Escritura CriarEscritura() {
-            Escritura escritura = new Escritura();
-            bool flag;
-            do {
-                try {
-                    flag = false;
-                    escritura.Num = Utils.GetIntNumber("Numero de Escritura:");
-                } catch (NumeroEscrituraInvalidoException e) {
-                    flag = true;
-                    Console.Beep();
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Atenção: " + e.ToString());
-                }
-            } while (flag);
-            do {
-                try {
-                    flag = false;
-                    escritura.Data = Utils.GetData();
-                } catch (DataEscrituraInvalidoException e) {
-                    flag = true;
-                    Console.Beep();
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Atenção: " + e.ToString());
-                }
-            } while (flag);
-            return escritura;
-        }
+      
 
         public static void CalcularPercentagem() {
             Console.WriteLine("Quantos proprietários tem o terreno?");
