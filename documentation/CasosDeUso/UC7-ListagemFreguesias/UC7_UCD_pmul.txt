@@ -1,0 +1,77 @@
+@startuml
+class Autarquia {
+-String nome
+-Int valorBase
+-List pessoaList
+-List freguesiaList
+-List escrituraList
++Valorbase.get() : int
++Valorbase.set(int) : void
++FreguesiaList.get() : List<Freguesia>
++FreguesiaList.set(List<Freguesia>) : void
++PessoaList.get() : List<Pessoa>
++PessoaList.set(List<Pessoa>) : void
++EscrituraList.get() : List<Escritura>
++EscrituraList.set(List<Escritura>) : void
++Nome.get() : string
++Nome.set(string) : void
++GetPessoaByNif(string) : Pessoa
++RegistarPessoa(Pessoa) : void
++PesquisarPessoa(string) : Pessoa
++ObterTodasPessoas() : List<Pessoa>
++AlterarPessoa(Pessoa) : void
++EliminarPessoa(string) : Pessoa
++GetFreguesiaByNome(string) : Freguesia
++RegistarFreguesia(Freguesia) : void
++PesquisarFreguesia(string) : Freguesia
++ObterTodasFreguesias() : List<Freguesia>
++AlterarFreguesia(Freguesia, string) : void
++EliminarFreguesia(string) : Freguesia
++GetFuncionarioByNr(string) : Funcionario
++RegistarFuncionario(Funcionario) : void
++PesquisarFuncionario(string) : Funcionario
++ObterTodosFuncionarios() : List<Funcionario>
++EliminarFuncionario(string) : Funcionario
++GetEscrituraByNum(int) : Escritura
++RegistarEscritura(Escritura) : void
++PesquisarEscritura(int) : Escritura
++ObterTodasEscrituras() : List<Escritura>
++EliminarEscritura(int) : Escritura
++MostrarPessoasDeterminadaData(DateTime) : List<Pessoa>
++MostrarTop5PessoasMaisVelhas() : List<Pessoa>
++MostrarAreaTotalAutarquia() : double
++MostrarPercentagemAreaRuralAutarquia() : double
++MostrarAreaPredominanteFreguesia(Freguesia) : string
++MostrarTopProprietarios() : List<Pessoa>
++CalcContriAutarquia() : List<Freguesia>
++MostrarListaTerrenosInspecao(DateTime, string) : List<Terreno>
++MostrarFreguesiasDimensao() : List<Freguesia>
+
+}
+
+class Freguesia {
+-String nome
+-List terrenoList
++Freguesia(string)
++Freguesia()
++ToString() : string
++TerrenoList.get() : List<Terreno>
++TerrenoList.set(List<Terreno>) : void
++ContriAuttotal.get() : double
++ContriAuttotal.set(double) : void
++Nome.get() : string
++Nome.set(string) : void
++DimensaoTotal.get() : double
++DimensaoTotal.set(double) : void
++ContriAuto.get() : double
++ContriAuto.set(double) : void
++RegistarTerreno(Terreno) : void
++PesquisarTerreno(int) : Terreno
++EliminarTerreno(int) : Terreno
++ObterTodosTerrenos() : List<Terreno>
++GetTerrenoById(int) : Terreno
+
+}
+
+Autarquia "1" -- "1...*" Freguesia : possui >
+@enduml

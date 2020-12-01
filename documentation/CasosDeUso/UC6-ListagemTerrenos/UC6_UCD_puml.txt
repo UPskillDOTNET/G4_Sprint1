@@ -1,0 +1,230 @@
+@startuml
+class Autarquia {
+-String nome
+-Int valorBase
+-List pessoaList
+-List freguesiaList
+-List escrituraList
++Valorbase.get() : int
++Valorbase.set(int) : void
++FreguesiaList.get() : List<Freguesia>
++FreguesiaList.set(List<Freguesia>) : void
++PessoaList.get() : List<Pessoa>
++PessoaList.set(List<Pessoa>) : void
++EscrituraList.get() : List<Escritura>
++EscrituraList.set(List<Escritura>) : void
++Nome.get() : string
++Nome.set(string) : void
++GetPessoaByNif(string) : Pessoa
++RegistarPessoa(Pessoa) : void
++PesquisarPessoa(string) : Pessoa
++ObterTodasPessoas() : List<Pessoa>
++AlterarPessoa(Pessoa) : void
++EliminarPessoa(string) : Pessoa
++GetFreguesiaByNome(string) : Freguesia
++RegistarFreguesia(Freguesia) : void
++PesquisarFreguesia(string) : Freguesia
++ObterTodasFreguesias() : List<Freguesia>
++AlterarFreguesia(Freguesia, string) : void
++EliminarFreguesia(string) : Freguesia
++GetFuncionarioByNr(string) : Funcionario
++RegistarFuncionario(Funcionario) : void
++PesquisarFuncionario(string) : Funcionario
++ObterTodosFuncionarios() : List<Funcionario>
++EliminarFuncionario(string) : Funcionario
++GetEscrituraByNum(int) : Escritura
++RegistarEscritura(Escritura) : void
++PesquisarEscritura(int) : Escritura
++ObterTodasEscrituras() : List<Escritura>
++EliminarEscritura(int) : Escritura
++MostrarPessoasDeterminadaData(DateTime) : List<Pessoa>
++MostrarTop5PessoasMaisVelhas() : List<Pessoa>
++MostrarAreaTotalAutarquia() : double
++MostrarPercentagemAreaRuralAutarquia() : double
++MostrarAreaPredominanteFreguesia(Freguesia) : string
++MostrarTopProprietarios() : List<Pessoa>
++CalcContriAutarquia() : List<Freguesia>
++MostrarListaTerrenosInspecao(DateTime, string) : List<Terreno>
++MostrarFreguesiasDimensao() : List<Freguesia>
+
+}
+
+class Freguesia {
+-String nome
+-List terrenoList
++Freguesia(string)
++Freguesia()
++ToString() : string
++TerrenoList.get() : List<Terreno>
++TerrenoList.set(List<Terreno>) : void
++ContriAuttotal.get() : double
++ContriAuttotal.set(double) : void
++Nome.get() : string
++Nome.set(string) : void
++DimensaoTotal.get() : double
++DimensaoTotal.set(double) : void
++ContriAuto.get() : double
++ContriAuto.set(double) : void
++RegistarTerreno(Terreno) : void
++PesquisarTerreno(int) : Terreno
++EliminarTerreno(int) : Terreno
++ObterTodosTerrenos() : List<Terreno>
++GetTerrenoById(int) : Terreno
+
+}
+
+class Terreno {
+-Int id
+-IForma forma
+-IClassificacao classificacao
+-Escritura escritura
++Terreno()
++Terreno(int, IForma, IClassificacao, Escritura)
++ToString() : string
++Id.get() : int
++Id.set(int) : void
++Forma.get() : IForma
++Forma.set(IForma) : void
++Escritura.get() : Escritura
++Escritura.set(Escritura) : void
++Classificacao.get() : IClassificacao
++Classificacao.set(IClassificacao) : void
+
+}
+
+class Forma {
++CalcArea() : double
++GetForma() : string
+}
+
+class Triangular {
+-Double largura
+-Double comprimento
++Triangular()
++Triangular(double, double)
++CalcArea() : double
++GetForma() : string
+
+}
+
+class Circular {
++Double raio
++Circular()
++Circular(double)
++CalcArea() : double
++GetForma() : string
+
+}
+
+class Rectangular {
+-Double largura
+-Double comprimento
++Rectangular()
++Rectangular(double, double)
++CalcArea() : double
++GetForma() : string
+
+}
+
+class Classificacao {
+-Double CalcIMI()
+-Double GetIndiceCont()
+-String GetClassificacao()
++CalcIMI() : double
++GetIndiceCont() : double
++GetClassificacao() : string
++GetUso() : string
++GetData() : DateTime
+
+}
+
+class Urbana {
+-Double area
+-Double areaConst
+-DateTime dataConst
+-Double indiceCont
+-String tipologia
+-Int valorBase
++Urbana()
++Urbana(double, string, double, DateTime, double)
++ToString() : string
++CalcIMI() : double
++GetClassificacao() : string
++GetIndiceCont() : double
++GetUso() : string
++GetData() : DateTime
+
+}
+
+class Industrial {
+-Double indiceCont
+-Double area
+-String desc
+-Int valorBase 
+-Double areaConst 
+-DateTime dataConst
+-DateTime dataInsp 
+-String descInsp
+-String tipologia
+-IndiceCont.get() : double
+-IndiceCont.set(double) : void
++IndiceCont.get() : double
++IndiceCont.set(double) : void
++Area.get() : double
++Area.set(double) : void
++Desc.get() : string
++Desc.set(string) : void
++ValorBase.get() : int
++ValorBase.set(int) : void
++AreaConst.get() : double
++AreaConst.set(double) : void
++DataConst.get() : DateTime
++DataConst.set(DateTime) : void
++DataInsp.get() : DateTime
++DataInsp.set(DateTime) : void
++DescInsp.get() : string
++DescInsp.set(string) : void
++Tipologia.get() : string
++Tipologia.set(string) : void
++Industrial()
++Industrial(double, string, string, double, DateTime, DateTime, string, double)
++ToString() : string
++CalcIMI() : double
++GetClassificacao() : string
++GetIndiceCont() : double
++GetUso() : string
++GetData() : DateTime
+
+}
+
+class Rural {
+-String descUso
+-Int valorBase
+-Double indiceCont
++DescUso.get() : string
++DescUso.set(string) : void
++Rural()
++Rural(double, string)
++ToString() : string
++CalcIMI() : double
++GetClassificacao() : string
++GetIndiceCont() : double
++GetUso() : string
++GetData() : DateTime
+
+}
+
+Autarquia "1" -- "1..." Freguesia : possui >
+
+Freguesia "1" -- "1..." Terreno : tem >
+Terreno "1.." -- "1" Forma : tem >
+Terreno "1.." -- "1" Classificacao : tem >
+
+Forma "1" <-- "1" Triangular : é >
+Forma "1" <-- "1" Circular : é >
+Forma "1" <-- "1" Rectangular : >
+
+Classificacao "1" <-- "1" Rural : é >
+Classificacao "1" <-- "1" Urbana : é >
+Classificacao "1" <-- "1" Industrial : é >
+@enduml
