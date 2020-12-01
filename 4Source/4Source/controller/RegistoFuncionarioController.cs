@@ -20,7 +20,8 @@ namespace _4Source.controllers
             catch (NifDuplicadoException e)
             {
                 flag = false;
-                Console.WriteLine("Advertencia: " + e.ToString());
+                Console.WriteLine("Advertencia: Este NIF já se encontra no sistema.");
+                Console.ReadKey();
             }
             return flag;
         }
@@ -38,7 +39,7 @@ namespace _4Source.controllers
             catch (ElementoNaoExistenteException e)
             {
 
-                Console.WriteLine("Advertencia: " + e.ToString());
+                Console.WriteLine("Advertencia: Este número de funcionario não se encontra no sistema.");
             }
             return func;
 

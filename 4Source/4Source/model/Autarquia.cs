@@ -92,12 +92,43 @@ namespace _4Source
 
         //Editar Pessoa (Edit)
 
-        public void AlterarPessoa(Pessoa p)
+        public Pessoa AlterarPessoa(Pessoa pessoa)
         {
-            Pessoa pessoa = GetPessoaByNif(p.Nif);
-            pessoa.Nif = p.Nif;
-            pessoa.Nome = p.Nome;
-            pessoa.DataNascimento = p.DataNascimento;
+            Pessoa autarquiaPessoa = pessoaList.Find(p => p.Nif == pessoa.Nif);
+            bool flag;
+            do
+            {
+                try
+                {
+                    flag = false;
+                    autarquiaPessoa.Nome = Utils.GetText("Nome:");
+                }
+                catch (NomeInvalidoException)
+                {
+                    flag = true;
+                    Console.Beep();
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Atenção: Nome Invalido.");
+                }
+            } while (flag);
+            do
+            {
+                try
+                {
+                    flag = false;
+                    autarquiaPessoa.DataNascimento = Utils.GetDataNascimento();
+                }
+                catch (DataInvalidaException)
+                {
+                    flag = true;
+                    Console.Beep();
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Atenção: Data Invalida.");
+                }
+            } while (flag);
+            
+            return autarquiaPessoa;
+
         }
 
         //Eliminar Pessoa (Delete)
@@ -113,7 +144,6 @@ namespace _4Source
             {
                 throw new ElementoNaoExistenteException(nif + " Não existe");
             }
-            Console.WriteLine("A Pessoa abaixo foi eliminada");
             return pessoa;
         }
 

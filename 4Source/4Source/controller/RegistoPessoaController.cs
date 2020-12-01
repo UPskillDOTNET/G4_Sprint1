@@ -36,21 +36,19 @@ namespace _4Source.controllers
             return pessoa;
         }
 
-        public static bool AlterarPessoa(Pessoa pessoa)
+        public static Pessoa AlterarPessoa(Pessoa pessoa)
         {
-            bool flag = true;
             try
             {
                 Autarquia autarquia = Dados.CarregarDados();
-                autarquia.AlterarPessoa(pessoa);
+                Pessoa updatedPessoa = autarquia.AlterarPessoa(pessoa);
                 Dados.GuardarDados(autarquia);
             }
             catch (ElementoNaoExistenteException e)
             {
-                flag = false;
                 Console.WriteLine("Advertencia: " + e.ToString());
             }
-            return flag;
+            return pessoa;
         }
 
         public static Pessoa EliminarPessoa(string nif)
@@ -78,7 +76,6 @@ namespace _4Source.controllers
 
             Autarquia autarquia = Dados.CarregarDados();
             lista = autarquia.ObterTodasPessoas();
-            //Dados.GuardarDados(autarquia);
             return lista;
 
         }

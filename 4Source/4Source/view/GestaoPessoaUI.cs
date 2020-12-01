@@ -67,6 +67,14 @@ namespace _4Source.views
         private static void ListarPessoas()
         {
             List<Pessoa> lista = RegistoPessoaController.ObterListaPessoas();
+
+            if (lista.Count == 0)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\nNão se encontram pessoas inscritas na plataforma actualmente.");
+                Console.ResetColor();
+            }
+
             foreach (Pessoa pessoa in lista)
             {
                 
@@ -87,8 +95,7 @@ namespace _4Source.views
             if (pessoa != null)
             {
                 Console.WriteLine(pessoa.ToString());
-                Pessoa pessoaAlterada = AlterarPessoa(pessoa);
-                RegistoPessoaController.AlterarPessoa(pessoaAlterada);
+                Pessoa pessoaAlterada = RegistoPessoaController.AlterarPessoa(pessoa);
             }
             else
             {
@@ -97,7 +104,7 @@ namespace _4Source.views
                 Console.WriteLine("Não existe!!!");
                 Console.ResetColor();
             }
-           
+            Console.ReadKey();
 
         }
         private static void EliminarPessoa()
@@ -107,15 +114,18 @@ namespace _4Source.views
             if (pessoa != null)
             {
                 Console.WriteLine(pessoa.ToString());
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine("\nA pessoa {0} foi eliminada do sistema.", pessoa.Nome);
+                Console.ResetColor();
             }
             else
             {
                 Console.Beep();
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Não  existe!!!");
+                Console.WriteLine("Não existe!!!");
                 Console.ResetColor();
             }
-           
+            Console.ReadKey();
 
         }
 
@@ -144,34 +154,8 @@ namespace _4Source.views
         {
             Pessoa pessoa = Autarquia.CriarPessoa();
             RegistoPessoaController.RegistarPessoa(pessoa);
-    
+
 
         }
-
-       
-        public static Pessoa AlterarPessoa(Pessoa pessoa)
-        {
-            bool flag;
-            do
-            {
-                try
-                {
-                    flag = false;
-                    pessoa.Nome = Utils.GetText("Nome: ");
-                }
-                catch (NomePessoaInvalidoException e)
-                {
-                    flag = true;
-                    Console.Beep();
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Atenção: " + e.ToString());
-                    Console.ResetColor();
-                }
-            } while (flag);
-            pessoa.DataNascimento = new DateTime();
-            return pessoa;
-        }
-
-        
     }
 }

@@ -65,6 +65,14 @@ namespace _4Source.views
         private static void ListarFuncionarios()
         {
             List<Funcionario> lista = RegistoFuncionarioController.ObterListaFuncionarios();
+
+            if (lista.Count == 0)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Não se encontram funcionários inscritos na plataforma actualmente.");
+                Console.ResetColor();
+            }
+
             foreach (Funcionario func in lista)
             {
                 System.Threading.Thread.Sleep(TimeSpan.FromSeconds(1));
@@ -81,13 +89,18 @@ namespace _4Source.views
             Funcionario func = RegistoFuncionarioController.EliminarFuncionario(nr);
             if (func != null)
             {
+                Console.WriteLine("------------------------------");
                 Console.WriteLine(func.ToString());
+                Console.WriteLine("------------------------------");
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine("O funcionário {0} foi eliminado do sistema.", func.numeroFunc);
+                Console.ResetColor();
             }
             else
             {
                 Console.Beep();
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Não  existe!!!");
+                Console.WriteLine("Não existe!!!");
                 Console.ResetColor();
             }
             Console.ReadKey();
@@ -99,13 +112,15 @@ namespace _4Source.views
             Funcionario func = RegistoFuncionarioController.PesquisarFuncionario(nr);
             if (func != null)
             {
+                Console.WriteLine("------------------------------");
                 Console.WriteLine(func.ToString());
+                Console.WriteLine("------------------------------");
             }
             else
             {
                 Console.Beep();
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Não  existe!!!");
+                Console.WriteLine("Não existe!!!");
                 Console.ResetColor();
             }
             Console.ReadKey();
