@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using _4Source.views;
 
 namespace _4Source
 {
@@ -40,24 +41,11 @@ namespace _4Source
 
 
 
-        // private void adicionarEscritura(Escritura e) {
-        // this.Escritura = e;
 
-        //private static bool ValidaId(int id)
-        //{
-        //    Regex regex = new Regex("^[1-9]\\d*$", RegexOptions.IgnoreCase);
-        //    string idstring = id.ToString();
-        //    Match m = regex.Match(idstring);
+       
 
-        //    if (!m.Success)
-        //    {
-        //        return false;
-        //    }
-        //    else
-        //    {
-        //        return true;
-        //    }
-        //}
+
+
     }
 }
 

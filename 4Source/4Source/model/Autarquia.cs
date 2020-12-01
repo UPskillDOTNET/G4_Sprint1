@@ -185,6 +185,30 @@ namespace _4Source
             return null;
         }
 
+        // Registar Freguesia (Creator)
+        public static Freguesia CriarFreguesia()
+        {
+            Freguesia freguesia = new Freguesia();
+            bool flag;
+            do
+            {
+                try
+                {
+                    flag = false;
+                    freguesia.Nome = Utils.GetText("Nome");
+                }
+                catch (NomeFreguesiaInvalidoException e)
+                {
+                    flag = true;
+                    Console.Beep();
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Atenção: " + e.ToString());
+                    Console.ResetColor();
+                }
+            } while (flag);
+            return freguesia;
+        }
+
         // Registar Freguesia (Create)
 
         public void RegistarFreguesia(Freguesia f)

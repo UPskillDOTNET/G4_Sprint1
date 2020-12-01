@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using System.Collections;
 using System.Globalization;
+using _4Source.views;
 
 namespace _4Source
 {
@@ -41,6 +42,7 @@ namespace _4Source
                 if (ValidarNif(value))
                 {
                     nif = value;
+
                 }
                 else
                 {
@@ -122,25 +124,32 @@ namespace _4Source
 
         }
 
-        //public int Compare(object x, object y)
-        //{
-        //    return ((new CaseInsensitiveComparer()).Compare(((Pessoa)y).Nif, ((Pessoa)x).Nif));
-        //}
-
-
-        //public List<Pessoa> ListarIdade() 
-        //{
-            
-        //    return SortedList;
-        //}
-
-        //public class CompararNome : IComparer
-        //{
-        //    public int Compare(object x, object y)
-        //    {
-
-        //        return ((new CaseInsensitiveComparer()).Compare(((Pessoa)y).Nome, ((Pessoa)x).Nome));
-        //    }
-        //}
+        public static Funcionario CriarFuncionario()
+        {
+            Funcionario func = new Funcionario();
+            Pessoa pessoa = Autarquia.CriarPessoa();
+            func.Nif = pessoa.Nif;
+            func.Nome = pessoa.Nome;
+            func.DataNascimento = pessoa.DataNascimento;
+            bool flag;
+            do
+            {
+                try
+                {
+                    flag = false;
+                    func.numeroFunc = Utils.GetText("Numero:");
+                }
+                catch (NumeroFuncionarioInvalidoException e)
+                {
+                    flag = true;
+                    Console.Beep();
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Atenção: " + e.ToString());
+                    Console.ResetColor();
+                }
+            } while (flag);
+            func.Cargo = Utils.GetText("Cargo:");
+            return func;
+        }
     }
 }

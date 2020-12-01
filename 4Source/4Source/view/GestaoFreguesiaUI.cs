@@ -144,33 +144,12 @@ namespace _4Source.views
         }
         private static void RegistarFreguesia()
         {
-            Freguesia freguesia = CriarFreguesia();
+            Freguesia freguesia = Autarquia.CriarFreguesia();
             RegistoFreguesiaController.RegistarFreguesia(freguesia);
           
         }
 
-        public static Freguesia CriarFreguesia()
-        {
-            Freguesia freguesia = new Freguesia();
-            bool flag;
-            do
-            {
-                try
-                {
-                    flag = false;
-                    freguesia.Nome = Utils.GetText("Nome");
-                }
-                catch (NomeFreguesiaInvalidoException e)
-                {
-                    flag = true;
-                    Console.Beep();
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Atenção: " + e.ToString());
-                    Console.ResetColor();
-                }
-            } while (flag);
-            return freguesia;
-        }
+       
 
         public static string AlterarFreguesia(Freguesia freguesia)
         {

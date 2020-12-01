@@ -107,37 +107,11 @@ namespace _4Source.views
         }
         private static void RegistarFuncionario()
         {
-            Funcionario func = CriarFuncionario();
+            Funcionario func = Pessoa.CriarFuncionario();
             RegistoFuncionarioController.RegistarFuncionario(func);
         }
 
-        private static Funcionario CriarFuncionario()
-        {
-            Funcionario func = new Funcionario();
-            Pessoa pessoa = Autarquia.CriarPessoa();
-            func.Nif = pessoa.Nif;
-            func.Nome = pessoa.Nome;
-            func.DataNascimento = pessoa.DataNascimento;
-            bool flag;
-            do
-            {
-                try
-                {
-                    flag = false;
-                    func.numeroFunc = Utils.GetText("Numero:");
-                }
-                catch (NumeroFuncionarioInvalidoException e)
-                {
-                    flag = true;
-                    Console.Beep();
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Atenção: " + e.ToString());
-                    Console.ResetColor();
-                }
-            } while (flag);
-            func.Cargo = Utils.GetText("Cargo:");
-            return func;
-        }
+     
     }
 
 }
