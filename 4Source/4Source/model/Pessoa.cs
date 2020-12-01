@@ -68,6 +68,7 @@ namespace _4Source
         }
 
         public int TerrenosOwned { get => terrenosOwned; set => terrenosOwned = value; }
+        public double Percentagem { get; internal set; }
 
         public Pessoa(string nome, string nif, DateTime dataNascimento)
         {
@@ -91,8 +92,10 @@ namespace _4Source
         {
             Regex regex = new Regex("^[a-zA-Z]{3,24}$", RegexOptions.IgnoreCase);
             Match m = regex.Match(nome);
+            Regex regex2 = new Regex(@"^[A-Za-z]+[\s][A-Za-z]{3,24}$", RegexOptions.IgnoreCase);
+            Match l = regex2.Match(nome);
 
-            if (!m.Success)
+            if (!l.Success)
             {
                 return false;
             }

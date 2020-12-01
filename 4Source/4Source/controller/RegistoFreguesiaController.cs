@@ -35,8 +35,16 @@ namespace _4Source.controllers {
         public static Freguesia PesquisarFreguesia(string nome) {
 
             Freguesia freguesia = null;
-            Autarquia autarquia = Dados.CarregarDados();
+            try
+            {
+                Autarquia autarquia = Dados.CarregarDados();
             freguesia = autarquia.PesquisarFreguesia(nome);
+            }
+            catch (ElementoNaoExistenteException e)
+            {
+                
+                Console.WriteLine("Atenção: freguesia não existe");
+            }
             return freguesia;
 
         }
