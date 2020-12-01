@@ -68,9 +68,11 @@ namespace _4Source.views
             foreach (Funcionario func in lista)
             {
                 System.Threading.Thread.Sleep(TimeSpan.FromSeconds(1));
+                Console.WriteLine("------------------------------");
                 Console.WriteLine(func.ToString());
+                Console.WriteLine("------------------------------");
             }
-       
+            Console.ReadKey();
         }
 
         private static void EliminarFuncionario()
@@ -88,6 +90,7 @@ namespace _4Source.views
                 Console.WriteLine("Não  existe!!!");
                 Console.ResetColor();
             }
+            Console.ReadKey();
         }
 
         private static void PesquisarFuncionario()
@@ -105,14 +108,13 @@ namespace _4Source.views
                 Console.WriteLine("Não  existe!!!");
                 Console.ResetColor();
             }
+            Console.ReadKey();
         }
         private static void RegistarFuncionario()
         {
             Funcionario func = Pessoa.CriarFuncionario();
             RegistoFuncionarioController.RegistarFuncionario(func);
         }
-
-     
     }
 
 }

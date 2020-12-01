@@ -26,7 +26,7 @@ namespace _4Source
         }
 
         public override string ToString() {
-            return base.ToString() + "\nnumero: " + numeroFunc + "\ncargo='" + cargo;
+            return base.ToString() + "\nNumero: " + numeroFunc + "\nCargo: " + cargo;
         }
 
         public string Cargo {
