@@ -12,51 +12,54 @@ namespace _4Source.views
     {
         public static void Menu()
         {
-            int numInput;
-            Console.Clear();
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("\n===Gestão de Funcionarios===\n\n");
-            Console.ResetColor();
-            Console.WriteLine("1 - Inserir Funcionario");
-            Console.WriteLine("2 - Listar Funcionario");
-            Console.WriteLine("3 - Eliminar Funcionario");
-            Console.WriteLine("4 - Listar Funcionarios");
-            Console.WriteLine("\n5 - Voltar\n");
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("===========================\n");
-            Console.ResetColor();
-            
             do
             {
+                int numInput;
+                Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                numInput = Utils.GetIntNumber("Por favor escolha uma opção:");
+                Console.WriteLine("\n===Gestão de Funcionarios===\n\n");
                 Console.ResetColor();
-                switch (numInput)
+                Console.WriteLine("1 - Inserir Funcionario");
+                Console.WriteLine("2 - Listar Funcionario");
+                Console.WriteLine("3 - Eliminar Funcionario");
+                Console.WriteLine("4 - Listar Funcionarios");
+                Console.WriteLine("\n5 - Voltar\n");
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("===========================\n");
+                Console.ResetColor();
+
+                do
                 {
-                    case 1:
-                        RegistarFuncionario();
-                        break;
-                    case 2:
-                        PesquisarFuncionario();
-                        break;
-                    case 3:
-                        EliminarFuncionario();
-                        break;
-                    case 4:
-                        ListarFuncionarios();
-                        break;
-                    case 5:
-                        Console.ForegroundColor = ConsoleColor.Blue;
-                        Console.WriteLine("Volta para o menu anterior");
-                        Console.ReadKey();
-                        break;
-                    default:
-                        Console.Beep();
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("Opção errada. Escolha novamente.");
-                        break;
-                }
-            } while (numInput != 5);
+
+                    numInput = Utils.GetIntNumber("Por favor escolha uma opção:");
+
+                    switch (numInput)
+                    {
+                        case 1:
+                            RegistarFuncionario();
+                            break;
+                        case 2:
+                            PesquisarFuncionario();
+                            break;
+                        case 3:
+                            EliminarFuncionario();
+                            break;
+                        case 4:
+                            ListarFuncionarios();
+                            break;
+                        case 5:
+                            Console.ForegroundColor = ConsoleColor.Blue;
+                            Console.WriteLine("Volta para o menu anterior");
+                            Console.ReadKey();
+                            break;
+                        default:
+                            Console.Beep();
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("Opção errada. Escolha novamente.");
+                            break;
+                    }
+                } while (numInput != 5);
+            } while (true);
         }
 
 

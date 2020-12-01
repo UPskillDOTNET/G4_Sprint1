@@ -13,59 +13,61 @@ namespace _4Source.views
     {
         public static void Menu()
         {
-            int numInput;
-            Console.Clear();
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("\n===Gestão de Freguesias===\n\n");
-            Console.ResetColor();
-            Console.WriteLine("1 - Inserir Freguesia");
-            Console.WriteLine("2 - Listar Freguesia");
-            Console.WriteLine("3 - Eliminar Freguesia");
-            Console.WriteLine("4 - Alterar Freguesia");
-            Console.WriteLine("5 - Listar Freguesias");
-            Console.WriteLine("\n6 - Voltar\n");
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("===========================\n");
-            Console.ResetColor();
-
             do
             {
+                int numInput;
+                Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                numInput = Utils.GetIntNumber("Por favor escolha uma opção:");
+                Console.WriteLine("\n===Gestão de Freguesias===\n\n");
                 Console.ResetColor();
-                switch (numInput)
-                {
-                  
-                    case 1:
-                        RegistarFreguesia();
-                        break;
-                    case 2:
-                        PesquisarFreguesia();
-                        break;
-                    case 3:
-                        EliminarFreguesia();
-                        break;
-                    case 4:
-                        AlterarFreguesia();
-                        break;
-                    case 5:
-                        ListarFreguesias();
-                        break;
-                    case 6:
-                        Console.ForegroundColor = ConsoleColor.Blue;
-                        Console.WriteLine("\nVolta para o menu anterior.\n");
-                        Console.ReadKey();
-                  
-                        break;
-                    default:
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("\nOpção Errada\n");
-                        Console.ReadKey();
-                      
-                        break;
-                }
+                Console.WriteLine("1 - Inserir Freguesia");
+                Console.WriteLine("2 - Listar Freguesia");
+                Console.WriteLine("3 - Eliminar Freguesia");
+                Console.WriteLine("4 - Alterar Freguesia");
+                Console.WriteLine("5 - Listar Freguesias");
+                Console.WriteLine("\n6 - Voltar\n");
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("===========================\n");
+                Console.ResetColor();
 
-            } while (numInput != 6);
+                do
+                {
+
+                    numInput = Utils.GetIntNumber("Por favor escolha uma opção:");
+                    switch (numInput)
+                    {
+
+                        case 1:
+                            RegistarFreguesia();
+                            break;
+                        case 2:
+                            PesquisarFreguesia();
+                            break;
+                        case 3:
+                            EliminarFreguesia();
+                            break;
+                        case 4:
+                            AlterarFreguesia();
+                            break;
+                        case 5:
+                            ListarFreguesias();
+                            break;
+                        case 6:
+                            Console.ForegroundColor = ConsoleColor.Blue;
+                            Console.WriteLine("\nVolta para o menu anterior.\n");
+                            Console.ReadKey();
+
+                            break;
+                        default:
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("\nOpção Errada\n");
+                            Console.ReadKey();
+
+                            break;
+                    }
+
+                } while (numInput != 6);
+            } while (true);
 
         }
          private static void ListarFreguesias()

@@ -8,54 +8,60 @@ namespace _4Source.views {
     class GestaoEscrituraUI {
 
         public static void Menu() {
-            int numInput;
-            Console.Clear();
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.ResetColor();
-            Console.WriteLine("\n=== Gestão de Escrituras ===\n\n");
-            Console.WriteLine("1 - Registar Escritura");
-            Console.WriteLine("2 - Pesquisar Escritura");
-            Console.WriteLine("3 - Eliminar Escritura");
-            Console.WriteLine("4 - Mostrar Lista de Escrituras");
-            Console.WriteLine("5 - Calcular Percentagem de Posse de Terreno");
-            Console.WriteLine("\n6 - Voltar ao Menu Principal\n");
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("===========================\n");
-            Console.ResetColor();
-
-            do {
+            do
+            {
+                int numInput;
+                Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                numInput = Utils.GetIntNumber("Por favor escolha uma opção:");
                 Console.ResetColor();
-                switch (numInput) {
-                    case 1:
-                        RegistarEscritura();
-                        break;
-                    case 2:
-                        PesquisarEscritura();
-                        break;
-                    case 3:
-                        EliminarEscritura();
-                        break;
-                    case 4:
-                        ListarEscrituras();
-                        break;
-                    case 5:
-                        CalcularPercentagem();
-                        break;
-                    case 6:
-                        Console.ForegroundColor = ConsoleColor.Blue;
-                        Console.WriteLine("\nVolta para o menu anterior.\n");
-                        Console.ReadKey();
-                        break;
-                    default:
-                        Console.Beep();
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("\nOpção errada. Escolha novamente.\n");
-                        Menu();
-                        break;
-                }
-            } while (numInput != 6);
+                Console.WriteLine("\n=== Gestão de Escrituras ===\n\n");
+                Console.WriteLine("1 - Registar Escritura");
+                Console.WriteLine("2 - Pesquisar Escritura");
+                Console.WriteLine("3 - Eliminar Escritura");
+                Console.WriteLine("4 - Mostrar Lista de Escrituras");
+                Console.WriteLine("5 - Calcular Percentagem de Posse de Terreno");
+                Console.WriteLine("\n6 - Voltar ao Menu Principal\n");
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("===========================\n");
+                Console.ResetColor();
+
+                do
+                {
+                    numInput = Utils.GetIntNumber("Por favor escolha uma opção:");
+                    switch (numInput)
+                    {
+                        case 1:
+                            RegistarEscritura();
+                            break;
+                        case 2:
+                            PesquisarEscritura();
+                            break;
+                        case 3:
+                            EliminarEscritura();
+                            break;
+                        case 4:
+                            ListarEscrituras();
+                            break;
+                        case 5:
+                            CalcularPercentagem();
+                            break;
+                        case 6:
+                            Console.ForegroundColor = ConsoleColor.Blue;
+                            Console.WriteLine("\nVolta para o menu anterior.\n");
+                            Console.ReadKey();
+                            break;
+                        default:
+                            Console.Beep();
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("\nOpção errada. Escolha novamente.\n");
+                            Menu();
+                            break;
+                    }
+                } while (numInput != 6);
+            } while (true);
+
+    
+           
         }
 
         private static void ListarEscrituras() {

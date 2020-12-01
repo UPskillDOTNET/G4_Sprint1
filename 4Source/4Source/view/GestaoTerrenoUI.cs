@@ -15,52 +15,54 @@ namespace _4Source.views
     {
         public static void Menu()
         {
-            int numInput;
-            Console.Clear();
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("\n===Gestão de Terrenos===");
-            Console.ResetColor();
-            Console.WriteLine("1 - Inserir Terreno");
-            Console.WriteLine("2 - Listar Terreno");
-            Console.WriteLine("3 - Eliminar Terreno");
-            Console.WriteLine("4 - Listar Terrenos");
-            Console.WriteLine("\n5 - Voltar\n");
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("===========================\n");
-            Console.ResetColor();
 
             do
             {
+                int numInput;
+                Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                numInput = Utils.GetIntNumber("Por favor escolha uma opção:");
+                Console.WriteLine("\n===Gestão de Terrenos===");
                 Console.ResetColor();
-                switch (numInput)
+                Console.WriteLine("1 - Inserir Terreno");
+                Console.WriteLine("2 - Listar Terreno");
+                Console.WriteLine("3 - Eliminar Terreno");
+                Console.WriteLine("4 - Listar Terrenos");
+                Console.WriteLine("\n5 - Voltar\n");
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("===========================\n");
+                Console.ResetColor();
+
+                do
                 {
-                    case 1:
-                        RegistarTerreno();
-                        break;
-                    case 2:
-                        PesquisarTerreno();
-                        break;
-                    case 3:
-                        EliminarTerreno();
-                        break;
-                    case 4:
-                        ListarTerrenos();
-                        break;
-                 
-                    case 5:
-                        Console.ForegroundColor = ConsoleColor.Blue;
-                        Console.WriteLine("\nVolta para o menu anterior.");
-                        Console.ReadKey();
-                        break;
-                    default:
-                        Console.Beep();
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("\nOpção Errada");
-                        break;
-                }
-            } while (numInput != 5);
+                    numInput = Utils.GetIntNumber("Por favor escolha uma opção:");
+                    switch (numInput)
+                    {
+                        case 1:
+                            RegistarTerreno();
+                            break;
+                        case 2:
+                            PesquisarTerreno();
+                            break;
+                        case 3:
+                            EliminarTerreno();
+                            break;
+                        case 4:
+                            ListarTerrenos();
+                            break;
+
+                        case 5:
+                            Console.ForegroundColor = ConsoleColor.Blue;
+                            Console.WriteLine("\nVolta para o menu anterior.");
+                            Console.ReadKey();
+                            break;
+                        default:
+                            Console.Beep();
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("\nOpção Errada");
+                            break;
+                    }
+                } while (numInput != 5);
+            } while (true);
 
         }
         private static void ListarTerrenos()

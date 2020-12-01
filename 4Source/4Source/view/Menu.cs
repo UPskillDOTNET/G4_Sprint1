@@ -6,16 +6,8 @@ namespace _4Source.views
     {
         public static void mainMenu()
         {
-            Console.Title = ("4Source - we make what you want us to make by your definition of making");
-            Console.WriteLine("Default Title: {0}",
-                             Console.Title);
-
-            Console.CursorSize = 1;
-            ConsoleHelper.SetCurrentFont("Everson Mono", 15);
-            Console.Clear();
-
+            Utils.conPref();
             Utils.logo();
-            System.Threading.Thread.Sleep(TimeSpan.FromSeconds(2.5));
 
             do
             {
@@ -38,10 +30,9 @@ namespace _4Source.views
 
                 do
                 {
-                    System.Threading.Thread.Sleep(TimeSpan.FromSeconds(0.25));
-                    Console.ForegroundColor = ConsoleColor.Yellow;
+                   
                     numInput = Utils.GetIntNumber("Por favor escolha uma opção:");
-                    Console.ResetColor();
+                
                     switch (numInput)
                     {
                         case 1:

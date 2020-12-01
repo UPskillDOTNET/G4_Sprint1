@@ -15,6 +15,8 @@ namespace _4Source.views
             bool flag;
             int number = -1;
             string text;
+            System.Threading.Thread.Sleep(TimeSpan.FromSeconds(0.25));
+            Console.ForegroundColor = ConsoleColor.Yellow;
             do
             {
                 try
@@ -42,7 +44,6 @@ namespace _4Source.views
             string text = "";
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write(label + " ");
-            Console.ResetColor();
             text = Console.ReadLine();
             return text;
         }
@@ -54,22 +55,21 @@ namespace _4Source.views
             int ano = -1;
             int mes = -1;
             int dia = -1;
+            Console.ForegroundColor = ConsoleColor.Yellow;
             do
             {
                 try
                 {
                     flag = false;
-                    Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.Write("Introduza o ano: ");
-                    Console.ResetColor();
                     ano = int.Parse(Console.ReadLine());
                 }
                 catch (AnoInvalidoException e)
                 {
                     Console.Beep();
+                    Console.ResetColor();
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Ano inválido" + e.ToString());
-                    Console.ResetColor();
                     flag = true;
                 }
                 catch (FormatException)
@@ -82,18 +82,16 @@ namespace _4Source.views
                 try
                 {
                     flag = false;
-                    Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.Write("Introduza o mês: ");
-                    Console.ResetColor();
                     mes = int.Parse(Console.ReadLine());
 
                 }
                 catch (MesInvalidoException e)
                 {
                     Console.Beep();
+                    Console.ResetColor();
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Mês inválido" + e.ToString());
-                    Console.ResetColor();
                     flag = true;
                 }
             } while (flag);
@@ -102,18 +100,17 @@ namespace _4Source.views
                 try
                 {
                     flag = false;
-                    Console.ForegroundColor = ConsoleColor.Yellow;
+                   
                     Console.Write("Introduza o dia: ");
-                    Console.ResetColor();
                     dia = int.Parse(Console.ReadLine());
 
                 }
                 catch (DiaInvalidoException e)
                 {
                     Console.Beep();
+                    Console.ResetColor();
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Dia inválido" + e.ToString());
-                    Console.ResetColor();
                     flag = true;
                 }
             } while (flag);
@@ -153,6 +150,7 @@ namespace _4Source.views
             bool flag;
             double number = 1.0;
             string text;
+            Console.ForegroundColor = ConsoleColor.Yellow;
             do
             {
                 try
@@ -182,6 +180,7 @@ namespace _4Source.views
             int ano = -1;
             int mes = -1;
             int dia = -1;
+            Console.ForegroundColor = ConsoleColor.Yellow;
             do
             {
                 try
@@ -193,9 +192,10 @@ namespace _4Source.views
                 catch (AnoInvalidoException e)
                 {
                     Console.Beep();
+                    Console.ResetColor();
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Ano inválido" + e.ToString());
-                    Console.ResetColor();
+                    
                     flag = true;
                 }
                 catch (FormatException)
@@ -246,22 +246,23 @@ namespace _4Source.views
 
         public static void menuExit()
         {
-
-            ConsoleHelper.SetCurrentFont("Everson Mono", 20);
             Console.Clear();
+            string title = @"                                            Obrigado e um bem Haja da 4source                                           ";
+            string tittle2 = @"
+ 
+                             Caio Reis                                           João Martins              
+                             Mariana Gomes                                       Tiago Azevedo             
+                             Sergio Pinto                                                                   ";
+
+
             Console.ForegroundColor = ConsoleColor.DarkBlue;
-            Console.BackgroundColor = ConsoleColor.Gray;
-            Console.Write(" ".PadRight(10));
-            Console.WriteLine("Obrigado por usar 4Source\n".PadLeft(20));
-            Console.ResetColor();
-            Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.BackgroundColor = ConsoleColor.White;
-            Console.Write("João Martins".PadRight(20));
-            Console.WriteLine("Tiago Azevedo".PadLeft(20));
-            Console.Write("Caio Reis".PadRight(20));
-            Console.WriteLine("Maria Gomes".PadLeft(20));
-            Console.Write("Sergio Pinto".PadRight(20));
-            Console.WriteLine(" ".PadLeft(20));
+            Console.WriteLine(title);
+            Console.ResetColor();
+            System.Threading.Thread.Sleep(TimeSpan.FromSeconds(0.75));
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(tittle2);
+            Console.ResetColor();
         }
 
         public static void logo()
@@ -304,18 +305,30 @@ namespace _4Source.views
             Console.ForegroundColor = ConsoleColor.DarkBlue;
             Console.WriteLine(title2);
             Console.ResetColor();
+            System.Threading.Thread.Sleep(TimeSpan.FromSeconds(2.5));
 
 
 
 
         }
 
+        public static void conPref() {
+            
+            
+            Console.Title = ("4Source - we make what you want us to make by your definition of making");
+            Console.WriteLine("Default Title: {0}",
+                             Console.Title);
+
+            Console.CursorSize = 1;
+            ConsoleHelper.SetCurrentFont("Everson Mono", 15);
+            Console.Clear();
+
+         }
 
 
 
 
-
-        public static string ValidarNif(string label)
+    public static string ValidarNif(string label)
         {
             Regex regex = new Regex(" ^\\d{9}$", RegexOptions.IgnoreCase);
             Match m = regex.Match(label);
