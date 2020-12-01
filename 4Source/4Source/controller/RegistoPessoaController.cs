@@ -17,10 +17,13 @@ namespace _4Source.controllers
                 autarquia.RegistarPessoa(pessoa);
                 Dados.GuardarDados(autarquia);
             }
-            catch (NifDuplicadoException e)
+            catch (NifDuplicadoException )
             {
                 flag = false;
-                Console.WriteLine("Advertencia: " + e.ToString());
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Beep();
+                Console.WriteLine("Advertencia: Nif já existente. Porfavor escolha uma nova opção" );
+                Console.ReadKey();
             }
             return flag;
         }

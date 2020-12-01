@@ -114,7 +114,7 @@ namespace _4Source.views
         private static Funcionario CriarFuncionario()
         {
             Funcionario func = new Funcionario();
-            Pessoa pessoa = GestaoPessoaUI.CriarPessoa();
+            Pessoa pessoa = Autarquia.CriarPessoa();
             func.Nif = pessoa.Nif;
             func.Nome = pessoa.Nome;
             func.DataNascimento = pessoa.DataNascimento;

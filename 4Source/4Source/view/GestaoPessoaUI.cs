@@ -143,64 +143,13 @@ namespace _4Source.views
 
         private static void RegistarPessoa()
         {
-            Pessoa pessoa = CriarPessoa();
+            Pessoa pessoa = Autarquia.CriarPessoa();
             RegistoPessoaController.RegistarPessoa(pessoa);
     
 
         }
 
-        public static Pessoa CriarPessoa()
-        {
-            Pessoa pessoa = new Pessoa();
-            bool flag;
-
-            do
-            {
-                try
-                {
-                    flag = false;
-                    pessoa.Nif = Utils.GetText("NIF:");
-                }
-                catch (NifInvalidoException e)
-                {
-                    flag = true;
-                    Console.Beep();
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Atenção: NIF Invalido.");
-                }
-            } while (flag);
-            do
-            {
-                try
-                {
-                    flag = false;
-                    pessoa.Nome = Utils.GetText("Nome:");
-                }
-                catch (NomeInvalidoException e)
-                {
-                    flag = true;
-                    Console.Beep();
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Atenção: Nome Invalido.");
-                }
-            } while (flag);
-            do
-            {
-                try
-                {
-                    flag = false;
-                    pessoa.DataNascimento = Utils.GetDataNascimento();
-                }
-                catch (DataInvalidaException e)
-                {
-                    flag = true;
-                    Console.Beep();
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Atenção: Data Invalida.");
-                }
-            } while (flag);
-            return pessoa;
-        }
+       
         public static Pessoa AlterarPessoa(Pessoa pessoa)
         {
             bool flag;

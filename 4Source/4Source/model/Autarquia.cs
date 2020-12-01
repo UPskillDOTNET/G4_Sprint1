@@ -117,24 +117,60 @@ namespace _4Source
             return pessoa;
         }
 
-        //Validação Nome - to be used?
-        //private static bool ValidarNome(string nome)
-        //{
-        //    Regex regex = new Regex("^[a-zA-Z]{3,24}$", RegexOptions.IgnoreCase);
-        //    Match m = regex.Match(nome);
 
-        //    if (!m.Success)
-        //    {
-        //        return false;
-        //    }
-        //    else
-        //    {
-        //        return true;
-        //    }
+        //Criar Pessoa (Creator)
+        public static Pessoa CriarPessoa()
+        {
+            Pessoa pessoa = new Pessoa();
+            bool flag;
 
-        //}
-
-        // Responsabilidade Freguesia
+            do
+            {
+                try
+                {
+                    flag = false;
+                    pessoa.Nif = Utils.GetText("NIF:");
+                }
+                catch (NifInvalidoException)
+                {
+                    flag = true;
+                    Console.Beep();
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Atenção: NIF Invalido.");
+                }
+            } while (flag);
+            do
+            {
+                try
+                {
+                    flag = false;
+                    pessoa.Nome = Utils.GetText("Nome:");
+                }
+                catch (NomeInvalidoException )
+                {
+                    flag = true;
+                    Console.Beep();
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Atenção: Nome Invalido.");
+                }
+            } while (flag);
+            do
+            {
+                try
+                {
+                    flag = false;
+                    pessoa.DataNascimento = Utils.GetDataNascimento();
+                }
+                catch (DataInvalidaException)
+                {
+                    flag = true;
+                    Console.Beep();
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Atenção: Data Invalida.");
+                }
+            } while (flag);
+            return pessoa;
+        }
 
         public Freguesia GetFreguesiaByNome(string nome)
         {

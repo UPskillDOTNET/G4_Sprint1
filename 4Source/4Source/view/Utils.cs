@@ -56,14 +56,16 @@ namespace _4Source.views
             int ano = -1;
             int mes = -1;
             int dia = -1;
-            Console.ForegroundColor = ConsoleColor.Yellow;
             do
             {
                 try
                 {
                     flag = false;
+                    Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.Write("Introduza o ano: ");
+                    Console.ResetColor();
                     ano = int.Parse(Console.ReadLine());
+                   
                 }
                 catch (AnoInvalidoException e)
                 {
@@ -71,6 +73,7 @@ namespace _4Source.views
                     Console.ResetColor();
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Ano inválido" + e.ToString());
+                    Console.ResetColor();
                     flag = true;
                 }
                 catch (FormatException)
@@ -83,8 +86,11 @@ namespace _4Source.views
                 try
                 {
                     flag = false;
+                    Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.Write("Introduza o mês: ");
+                    Console.ResetColor();
                     mes = int.Parse(Console.ReadLine());
+              
 
                 }
                 catch (MesInvalidoException e)
@@ -93,6 +99,7 @@ namespace _4Source.views
                     Console.ResetColor();
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Mês inválido" + e.ToString());
+                    Console.ResetColor();
                     flag = true;
                 }
             } while (flag);
@@ -101,21 +108,21 @@ namespace _4Source.views
                 try
                 {
                     flag = false;
-                   
+                    Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.Write("Introduza o dia: ");
+                    Console.ResetColor();
                     dia = int.Parse(Console.ReadLine());
 
                 }
                 catch (DiaInvalidoException e)
                 {
                     Console.Beep();
-                    Console.ResetColor();
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Dia inválido" + e.ToString());
+                    Console.ResetColor();
                     flag = true;
                 }
             } while (flag);
-
             dataNascimento = new DateTime(ano, mes, dia);
             return dataNascimento;
         }
@@ -181,22 +188,26 @@ namespace _4Source.views
             int ano = -1;
             int mes = -1;
             int dia = -1;
-            Console.ForegroundColor = ConsoleColor.Yellow;
+            
             do
             {
                 try
                 {
                     flag = false;
+                    Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.Write("Introduza o ano: ");
+                    Console.ResetColor();
+
+
                     ano = int.Parse(Console.ReadLine());
                 }
                 catch (AnoInvalidoException e)
                 {
                     Console.Beep();
-                    Console.ResetColor();
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Ano inválido" + e.ToString());
-                    
+                    Console.ResetColor();
+
                     flag = true;
                 }
                 catch (FormatException)
@@ -209,7 +220,9 @@ namespace _4Source.views
                 try
                 {
                     flag = false;
+                    Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.Write("Introduza o mês: ");
+                    Console.ResetColor();
                     mes = int.Parse(Console.ReadLine());
 
                 }
@@ -219,6 +232,7 @@ namespace _4Source.views
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Mês inválido" + e.ToString());
                     Console.ResetColor();
+            
                     flag = true;
                 }
             } while (flag);
@@ -227,7 +241,9 @@ namespace _4Source.views
                 try
                 {
                     flag = false;
+                    Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.Write("Introduza o dia: ");
+                    Console.ResetColor();
                     dia = int.Parse(Console.ReadLine());
 
                 }
@@ -240,7 +256,7 @@ namespace _4Source.views
                     flag = true;
                 }
             } while (flag);
-
+            
             data = new DateTime(ano, mes, dia);
             return data;
         }
@@ -275,33 +291,21 @@ namespace _4Source.views
             string title = @"
 
 
-            ██╗  ██╗    ███████╗ ██████╗ ██╗   ██╗██████╗  ██████╗███████╗
-            ██║  ██║    ██╔════╝██╔═══██╗██║   ██║██╔══██╗██╔════╝██╔════╝
-            ███████║    ███████╗██║   ██║██║   ██║██████╔╝██║     █████╗  
-            ╚════██║    ╚════██║██║   ██║██║   ██║██╔══██╗██║     ██╔══╝  
-                 ██║    ███████║╚██████╔╝╚██████╔╝██║  ██║╚██████╗███████╗
-                 ╚═╝    ╚══════╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝ ╚═════╝╚══════╝
-                                                              
-           
-            ";
 
-            string title2 = @"
 
-                                                   
-                                    ██╗    ██╗███████╗    ██████╗  ██████╗                        
-                                    ██║    ██║██╔════╝    ██╔══██╗██╔═══██╗                       
-                                    ██║ █╗ ██║█████╗      ██║  ██║██║   ██║                       
-                                    ██║███╗██║██╔══╝      ██║  ██║██║   ██║                       
-                                    ╚███╔███╔╝███████╗    ██████╔╝╚██████╔╝                       
-                                     ╚══╝╚══╝ ╚══════╝    ╚═════╝  ╚═════╝                        
-                                                              
-                                                              
-                    ███╗   ██╗ ██████╗ ████████╗
-                    ████╗  ██║██╔═══██╗╚══██╔══╝
-                    ██╔██╗ ██║██║   ██║   ██║   
-                    ██║╚██╗██║██║   ██║   ██║   
-                    ██║ ╚████║╚██████╔╝   ██║   
-                    ╚═╝  ╚═══╝ ╚═════╝    ╚═╝   ";
+
+
+
+
+
+                                   ██╗  ██╗    ███████╗ ██████╗ ██╗   ██╗██████╗  ██████╗███████╗
+                                   ██║  ██║    ██╔════╝██╔═══██╗██║   ██║██╔══██╗██╔════╝██╔════╝";
+
+            string title2 = @"                                   ███████║    ███████╗██║   ██║██║   ██║██████╔╝██║     █████╗  
+                                   ╚════██║    ╚════██║██║   ██║██║   ██║██╔══██╗██║     ██╔══╝  
+                                        ██║    ███████║╚██████╔╝╚██████╔╝██║  ██║╚██████╗███████╗
+                                        ╚═╝    ╚══════╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝ ╚═════╝╚══════╝                                      
+                               ";
             
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(title);
