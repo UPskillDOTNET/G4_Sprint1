@@ -52,14 +52,13 @@ namespace _4Source.views
                             Console.ForegroundColor = ConsoleColor.Blue;
                             Console.WriteLine("\nVolta para o menu anterior.\n");
                             Console.ReadKey();
-
                             break;
                         default:
                             Console.Beep();
                             Console.ForegroundColor = ConsoleColor.Red;
                             Console.WriteLine("\nOpção errada. Escolha novamente.\n");
-
-                            break;
+                            Console.ReadKey();
+                        break;
                     }
                 } while (numInput != 6);
            

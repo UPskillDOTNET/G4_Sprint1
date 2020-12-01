@@ -54,7 +54,8 @@ namespace _4Source.views
                             Console.Beep();
                             Console.ForegroundColor = ConsoleColor.Red;
                             Console.WriteLine("Opção errada. Escolha novamente.");
-                            break;
+                        Console.ReadKey();
+                        break;
                     }
                 } while (numInput != 5);
            
