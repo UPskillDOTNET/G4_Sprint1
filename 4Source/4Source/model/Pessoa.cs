@@ -38,7 +38,7 @@ namespace _4Source
 
         public override string ToString()
         {
-            return "NIF: " + Nif + "\n Nome: " + Nome + "\n Data de nascimento: " + DataNascimento.ToString("dd/MM/yyyy");
+            return "NIF: " + Nif + "\nNome: " + Nome + "\nData de nascimento: " + DataNascimento.ToString("dd/MM/yyyy");
         }
 
         private static bool ValidarNome(string nome)

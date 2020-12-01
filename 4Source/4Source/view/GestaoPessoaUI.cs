@@ -70,7 +70,9 @@ namespace _4Source.views
             foreach (Pessoa pessoa in lista)
             {
                 System.Threading.Thread.Sleep(TimeSpan.FromSeconds(1));
+                Console.WriteLine("------------------------------");
                 Console.WriteLine(pessoa.ToString());
+                Console.WriteLine("------------------------------");
             }
             Console.ReadKey();
          
@@ -122,7 +124,9 @@ namespace _4Source.views
             Pessoa pessoa = RegistoPessoaController.PesquisarPessoa(nif);
             if (pessoa != null)
             {
+                Console.WriteLine("------------------------------");
                 Console.WriteLine(pessoa.ToString());
+                Console.WriteLine("------------------------------");
             }
             else
             {
