@@ -292,7 +292,6 @@ namespace _4Source
             {
                 throw new ElementoNaoExistenteException(nome + " Não existe");
             }
-            Console.WriteLine("A Freguesia abaixo foi eliminada");
             return freguesia;
         }
 

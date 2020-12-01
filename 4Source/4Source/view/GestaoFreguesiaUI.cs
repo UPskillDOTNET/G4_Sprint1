@@ -121,7 +121,7 @@ namespace _4Source.views
             {
                 Console.WriteLine(freguesia.ToString());
                 Console.ForegroundColor = ConsoleColor.Blue;
-                Console.WriteLine("\nA pessoa {0} foi eliminada do sistema.", freguesia.Nome);
+                Console.WriteLine("\nA freguesia {0} foi eliminada do sistema.", freguesia.Nome);
                 Console.ResetColor();
             }
             else
