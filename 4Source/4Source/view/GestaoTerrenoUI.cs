@@ -65,15 +65,61 @@ namespace _4Source.views
         }
         private static void ListarTerrenos()
         {
-            string nome = Utils.GetText("Digite o nome da Freguesia:");
-            List<Terreno> lista = RegistoTerrenoController.ObterListaTerrenos(nome);
-            foreach (Terreno terreno in lista)
+            bool flag = false;
+            List<Terreno> lista;
+            do // while(true)
             {
-                System.Threading.Thread.Sleep(TimeSpan.FromSeconds(1));
-                Console.WriteLine("\n" + terreno.ToString());
-            }
+                string nome = Utils.GetText("Digite o nome da Freguesia:");
+                try
+                {
+                    flag = false;
+                    lista = RegistoTerrenoController.ObterListaTerrenos(nome);
+                    foreach (Terreno terreno in lista)
+                    {
+                        System.Threading.Thread.Sleep(TimeSpan.FromSeconds(1));
+                        Console.WriteLine("\n" + terreno.ToString());
+                    }
+                    // break;
+                }
+                catch (NomeFreguesiaInvalidoException ex)
+                {
+                    flag = true;
+                    Console.Beep();
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine(ex.Message);
+                    Console.ResetColor();
+                }
+                catch (ListaTerrenoVaziaException ex)
+                {
+                    Console.Beep();
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine(ex.Message);
+                    Console.ResetColor();
+                }
+
+            } while (flag);
             Console.ReadKey();
         
+        }
+        private static void PesquisarTerreno()
+        {
+            string nome = Utils.GetText("\nDigite o Nome da Freguesia:");
+            int id = Utils.GetIntNumber("\nDigite o Id:");
+            try
+            {
+                Terreno terreno = RegistoTerrenoController.PesquisarTerreno(nome, id);
+                Console.WriteLine(terreno.ToString());
+
+            }
+            catch (MasterException ex)
+            {
+                Console.Beep();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(ex.Message);
+                Console.ResetColor();
+            }
+            Console.ReadKey();
+
         }
 
         private static void EliminarTerreno()
@@ -83,7 +129,9 @@ namespace _4Source.views
             Terreno terreno = RegistoTerrenoController.EliminarTerreno(nome, id);
             if (terreno != null)
             {
+                Console.WriteLine("------------------------------");
                 Console.WriteLine(terreno.ToString());
+                Console.WriteLine("------------------------------");
             }
             else
             {
@@ -96,38 +144,14 @@ namespace _4Source.views
             
         }
 
-        private static void PesquisarTerreno()
-        {
-            string nome = Utils.GetText("\nDigite o Nome da Freguesia:");
-            int id = Utils.GetIntNumber("\nDigite o Id:");
-            Terreno terreno = RegistoTerrenoController.PesquisarTerreno(nome, id);
-            if (terreno != null)
-            {
-                Console.WriteLine("------------------------------");
-                Console.WriteLine(terreno.ToString());
-                Console.WriteLine("------------------------------");
-            }
-            else
-            {
-                Console.Beep();
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("\nNão  existe!!!");
-                Console.ResetColor();
-            }
-            Console.ReadKey();
-          
-        }
+
         private static void RegistarTerreno()
         {
             string nome = Utils.GetText("\nIntroduza o nome da freguesia a qual o terreno pertence:");
             Terreno terreno = Freguesia.CriarTerreno();
             RegistoTerrenoController.RegistarTerreno(nome, terreno);
            
-        }
-
-      
-
-
+        } 
        
     }
 }

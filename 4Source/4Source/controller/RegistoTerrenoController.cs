@@ -40,23 +40,37 @@ namespace _4Source.controllers
 
 
         }
-        public static Terreno PesquisarTerreno(string nomeFreguesia, int id) {
-
+        public static Terreno PesquisarTerreno(string nomeFreguesia, int id)
+        {          
             Terreno terreno = null;
             Autarquia autarquia = Dados.CarregarDados();
             Freguesia freguesia = autarquia.GetFreguesiaByNome(nomeFreguesia);
+            
+            if (freguesia == null)
+            {
+                throw new NomeFreguesiaInvalidoException("Freguesia não encontrada");
+            }
             terreno = freguesia.PesquisarTerreno(id);
+            if (terreno == null)
+            {
+                throw new NomeTerrenoInvalidoException("Este terreno não existe");
+            }
             return terreno;
-
         }
 
-        public static List<Terreno> ObterListaTerrenos(string nomeFreguesia) {
-
-            List<Terreno> lista = null;
-
+        public static List<Terreno> ObterListaTerrenos(string nomeFreguesia) 
+        {           
             Autarquia autarquia = Dados.CarregarDados();
             Freguesia freguesia = autarquia.GetFreguesiaByNome(nomeFreguesia);
-            lista = freguesia.ObterTodosTerrenos();
+            if (freguesia == null)
+            {
+                throw new NomeFreguesiaInvalidoException("Freguesia não encontrada");
+            }
+            List<Terreno> lista = freguesia.ObterTodosTerrenos();
+            if (lista == null || lista.Count == 0)
+            {
+                throw new ListaTerrenoVaziaException("Esta freguesia não possui nenhum terreno");
+            }
             return lista;
 
         }
