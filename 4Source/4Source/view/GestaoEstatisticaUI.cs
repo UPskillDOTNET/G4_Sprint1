@@ -12,29 +12,28 @@ namespace _4Source.views
     {
         public static void Menu()
         {
-            do
-            {
+           
                 int numInput;
-                Console.Clear();
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("\n===Mostrar Estatisticas===");
-                Console.ResetColor();
-                Console.WriteLine("1) Apresentar lista de pessoas que nasceram antes duma determinada data.");
-                Console.WriteLine("2) Apresentar lista das 5 pessoas mais velhas.");
-                Console.WriteLine("3) Apresentar a área total de terrenos do concelho.");
-                Console.WriteLine("4) Apresentar a percentagem de área rural (terrenos rurais) do concelho.");
-                Console.WriteLine("5) Apresentar uma listagem das freguesias ordenadas por valor patrimonial dos terrenos do tipo urbano.");
-                Console.WriteLine("6) Apresentar uma listagem das freguesias ordenadas por dimensão.");
-                Console.WriteLine("7) Apresentar a atividade rural predominante numa dada freguesia.");
-                Console.WriteLine("8) Apresentar uma listagem dos terrenos do tipo industrial com a data de inspeção posterior a uma dada data.");
-                Console.WriteLine("9) Consultar o top 5 das pessoas com mais terrenos.");
-                Console.WriteLine("\n0) Voltar para o menu anterior\n");
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine(":===============////===========////==========///===================////===================:\n");
-                Console.ResetColor();
+          
                 do
                 {
-
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("\n===Mostrar Estatisticas===");
+                    Console.ResetColor();
+                    Console.WriteLine("1) Apresentar lista de pessoas que nasceram antes duma determinada data.");
+                    Console.WriteLine("2) Apresentar lista das 5 pessoas mais velhas.");
+                    Console.WriteLine("3) Apresentar a área total de terrenos do concelho.");
+                    Console.WriteLine("4) Apresentar a percentagem de área rural (terrenos rurais) do concelho.");
+                    Console.WriteLine("5) Apresentar uma listagem das freguesias ordenadas por valor patrimonial dos terrenos do tipo urbano.");
+                    Console.WriteLine("6) Apresentar uma listagem das freguesias ordenadas por dimensão.");
+                    Console.WriteLine("7) Apresentar a atividade rural predominante numa dada freguesia.");
+                    Console.WriteLine("8) Apresentar uma listagem dos terrenos do tipo industrial com a data de inspeção posterior a uma dada data.");
+                    Console.WriteLine("9) Consultar o top 5 das pessoas com mais terrenos.");
+                    Console.WriteLine("\n0) Voltar para o menu anterior\n");
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine(":===============////===========////==========///===================////===================:\n");
+                    Console.ResetColor();
                     numInput = Utils.GetIntNumber("Por favor escolha uma opção:");
 
                     switch (numInput)
@@ -79,7 +78,7 @@ namespace _4Source.views
                     }
 
                 } while (numInput != 0);
-            } while (true);
+          
 
     
         }

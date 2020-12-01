@@ -12,24 +12,22 @@ namespace _4Source.views
     {
         public static void Menu()
         {
-            do
-            {
                 int numInput;
-                Console.Clear();
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("\n===Gestão de Funcionarios===\n\n");
-                Console.ResetColor();
-                Console.WriteLine("1 - Inserir Funcionario");
-                Console.WriteLine("2 - Listar Funcionario");
-                Console.WriteLine("3 - Eliminar Funcionario");
-                Console.WriteLine("4 - Listar Funcionarios");
-                Console.WriteLine("\n5 - Voltar\n");
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("===========================\n");
-                Console.ResetColor();
+               
 
                 do
-                {
+                {   Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("\n===Gestão de Funcionarios===\n\n");
+                    Console.ResetColor();
+                    Console.WriteLine("1 - Inserir Funcionario");
+                    Console.WriteLine("2 - Listar Funcionario");
+                    Console.WriteLine("3 - Eliminar Funcionario");
+                    Console.WriteLine("4 - Listar Funcionarios");
+                    Console.WriteLine("\n5 - Voltar\n");
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("===========================\n");
+                    Console.ResetColor();
 
                     numInput = Utils.GetIntNumber("Por favor escolha uma opção:");
 
@@ -59,7 +57,7 @@ namespace _4Source.views
                             break;
                     }
                 } while (numInput != 5);
-            } while (true);
+           
         }
 
 

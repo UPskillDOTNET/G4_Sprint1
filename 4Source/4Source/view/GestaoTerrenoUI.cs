@@ -16,24 +16,22 @@ namespace _4Source.views
         public static void Menu()
         {
 
-            do
-            {
                 int numInput;
-                Console.Clear();
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("\n===Gestão de Terrenos===");
-                Console.ResetColor();
-                Console.WriteLine("1 - Inserir Terreno");
-                Console.WriteLine("2 - Listar Terreno");
-                Console.WriteLine("3 - Eliminar Terreno");
-                Console.WriteLine("4 - Listar Terrenos");
-                Console.WriteLine("\n5 - Voltar\n");
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("===========================\n");
-                Console.ResetColor();
 
-                do
-                {
+
+                do { 
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("\n===Gestão de Terrenos===");
+                    Console.ResetColor();
+                    Console.WriteLine("1 - Inserir Terreno");
+                    Console.WriteLine("2 - Listar Terreno");
+                    Console.WriteLine("3 - Eliminar Terreno");
+                    Console.WriteLine("4 - Listar Terrenos");
+                    Console.WriteLine("\n5 - Voltar\n");
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("===========================\n");
+                    Console.ResetColor();
                     numInput = Utils.GetIntNumber("Por favor escolha uma opção:");
                     switch (numInput)
                     {
@@ -62,7 +60,7 @@ namespace _4Source.views
                             break;
                     }
                 } while (numInput != 5);
-            } while (true);
+          
 
         }
         private static void ListarTerrenos()

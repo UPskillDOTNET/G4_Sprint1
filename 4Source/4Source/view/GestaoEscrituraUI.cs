@@ -8,25 +8,25 @@ namespace _4Source.views {
     class GestaoEscrituraUI {
 
         public static void Menu() {
-            do
-            {
+           
                 int numInput;
-                Console.Clear();
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.ResetColor();
-                Console.WriteLine("\n=== Gestão de Escrituras ===\n\n");
-                Console.WriteLine("1 - Registar Escritura");
-                Console.WriteLine("2 - Pesquisar Escritura");
-                Console.WriteLine("3 - Eliminar Escritura");
-                Console.WriteLine("4 - Mostrar Lista de Escrituras");
-                Console.WriteLine("5 - Calcular Percentagem de Posse de Terreno");
-                Console.WriteLine("\n6 - Voltar ao Menu Principal\n");
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("===========================\n");
-                Console.ResetColor();
+               
 
                 do
                 {
+                    Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.ResetColor();
+                    Console.WriteLine("\n=== Gestão de Escrituras ===\n\n");
+                    Console.WriteLine("1 - Registar Escritura");
+                    Console.WriteLine("2 - Pesquisar Escritura");
+                    Console.WriteLine("3 - Eliminar Escritura");
+                    Console.WriteLine("4 - Mostrar Lista de Escrituras");
+                    Console.WriteLine("5 - Calcular Percentagem de Posse de Terreno");
+                    Console.WriteLine("\n6 - Voltar ao Menu Principal\n");
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("===========================\n");
+                    Console.ResetColor();
                     numInput = Utils.GetIntNumber("Por favor escolha uma opção:");
                     switch (numInput)
                     {
@@ -58,8 +58,7 @@ namespace _4Source.views {
                             break;
                     }
                 } while (numInput != 6);
-            } while (true);
-
+           
     
            
         }

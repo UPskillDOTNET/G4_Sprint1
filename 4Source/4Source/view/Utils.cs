@@ -16,7 +16,6 @@ namespace _4Source.views
             int number = -1;
             string text;
             System.Threading.Thread.Sleep(TimeSpan.FromSeconds(0.25));
-            Console.ForegroundColor = ConsoleColor.Yellow;
             do
             {
                 try
@@ -44,8 +43,10 @@ namespace _4Source.views
             string text = "";
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write(label + " ");
+            Console.ResetColor();
             text = Console.ReadLine();
             return text;
+           
         }
 
         public static DateTime GetDataNascimento()
@@ -247,7 +248,10 @@ namespace _4Source.views
         public static void menuExit()
         {
             Console.Clear();
-            string title = @"                                            Obrigado e um bem Haja da 4source                                           ";
+            string title = @"
+
+
+                                           Obrigado e um bem Haja da 4source                                           ";
             string tittle2 = @"
  
                              Caio Reis                                           João Martins              
