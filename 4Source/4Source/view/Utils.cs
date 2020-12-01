@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using _4Source;
+using System.Text.RegularExpressions;
 
 namespace _4Source.views
 {
@@ -44,7 +45,7 @@ namespace _4Source.views
             return text;
         }
 
-        public static DateTime GetDataNascimento() 
+        public static DateTime GetDataNascimento()
         {
             bool flag;
             DateTime dataNascimento;
@@ -234,5 +235,97 @@ namespace _4Source.views
             data = new DateTime(ano, mes, dia);
             return data;
         }
+
+        public static void menuExit()
+        {
+
+            ConsoleHelper.SetCurrentFont("Everson Mono", 20);
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
+            Console.BackgroundColor = ConsoleColor.Gray;
+            Console.Write(" ".PadRight(10));
+            Console.WriteLine("Obrigado por usar 4Source\n".PadLeft(20));
+            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.Write("João Martins".PadRight(20));
+            Console.WriteLine("Tiago Azevedo".PadLeft(20));
+            Console.Write("Caio Reis".PadRight(20));
+            Console.WriteLine("Maria Gomes".PadLeft(20));
+            Console.Write("Sergio Pinto".PadRight(20));
+            Console.WriteLine(" ".PadLeft(20));
+        }
+
+        public static void logo()
+        {
+
+            string title = @"
+
+
+            ██╗  ██╗    ███████╗ ██████╗ ██╗   ██╗██████╗  ██████╗███████╗
+            ██║  ██║    ██╔════╝██╔═══██╗██║   ██║██╔══██╗██╔════╝██╔════╝
+            ███████║    ███████╗██║   ██║██║   ██║██████╔╝██║     █████╗  
+            ╚════██║    ╚════██║██║   ██║██║   ██║██╔══██╗██║     ██╔══╝  
+                 ██║    ███████║╚██████╔╝╚██████╔╝██║  ██║╚██████╗███████╗
+                 ╚═╝    ╚══════╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝ ╚═════╝╚══════╝
+                                                              
+                                                              
+                                    ██╗    ██╗███████╗    ██████╗  ██████╗                        
+                                    ██║    ██║██╔════╝    ██╔══██╗██╔═══██╗                       
+                                    ██║ █╗ ██║█████╗      ██║  ██║██║   ██║                       
+                                    ██║███╗██║██╔══╝      ██║  ██║██║   ██║                       
+                                    ╚███╔███╔╝███████╗    ██████╔╝╚██████╔╝                       
+                                     ╚══╝╚══╝ ╚══════╝    ╚═════╝  ╚═════╝                        
+                                                              
+                                                              
+                    ███╗   ██╗ ██████╗ ████████╗
+                    ████╗  ██║██╔═══██╗╚══██╔══╝
+                    ██╔██╗ ██║██║   ██║   ██║   
+                    ██║╚██╗██║██║   ██║   ██║   
+                    ██║ ╚████║╚██████╔╝   ██║   
+                    ╚═╝  ╚═══╝ ╚═════╝    ╚═╝   
+                                                                  
+                                                              
+                                                              
+                                                              
+
+";
+            Console.WriteLine(title);
+
+
+
+
+        }
+
+
+
+
+
+
+        public static string ValidarNif(string label)
+        {
+            Regex regex = new Regex("^\\d{9}$", RegexOptions.IgnoreCase);
+            Match m = regex.Match(label);
+
+            do
+            {
+
+                string text = "";
+                Console.Write(label + " ");
+                text = Console.ReadLine();
+
+
+                if (!m.Success)
+                {
+                    return text;
+                    
+                }
+
+
+            } while (true);
+
+        }
     }
 }
+
+
