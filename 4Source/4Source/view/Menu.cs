@@ -19,6 +19,10 @@ namespace _4Source.views
 
             Console.CursorSize =1;
             ConsoleHelper.SetCurrentFont("Everson Mono", 15);
+            Console.Clear();
+
+            Utils.logo();
+            System.Threading.Thread.Sleep(TimeSpan.FromSeconds(2.5));
 
             do
             {
@@ -66,22 +70,7 @@ namespace _4Source.views
                             GestaoEstatisticaUI.Menu();
                             break;
                         case 7:
-                            ConsoleHelper.SetCurrentFont("Everson Mono", 20);
-                            Console.Clear();
-                            Console.ForegroundColor = ConsoleColor.DarkBlue;
-                            Console.BackgroundColor = ConsoleColor.Gray;
-                            Console.Write(" ".PadRight(10));
-                            Console.WriteLine("Obrigado por usar 4Source\n".PadLeft(20));
-                            Console.ResetColor();
-                            Console.ForegroundColor = ConsoleColor.DarkRed;
-                            Console.BackgroundColor = ConsoleColor.White;
-                            Console.Write("João Martins".PadRight(20));
-                            Console.WriteLine("Tiago Azevedo".PadLeft(20));
-                            Console.Write("Caio Reis".PadRight(20));
-                            Console.WriteLine("Maria Gomes".PadLeft(20));
-                            Console.Write("Sergio Pinto".PadRight(20));
-                            Console.WriteLine(" ".PadLeft(20));
-
+                            Utils.menuExit();
                             Console.ReadKey();
                             Environment.Exit(0);
                             break;
