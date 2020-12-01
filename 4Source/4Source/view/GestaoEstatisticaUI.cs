@@ -51,7 +51,7 @@ namespace _4Source.views
                         MostrarPercentagemAreaRuralAutarquia();
                         break;
                     case 5:
-                        MostrarTopContri();
+                        CalcContriAutarquia();
                         break;
                     case 6:
                         MostrarFreguesiasDimensao();
@@ -77,7 +77,7 @@ namespace _4Source.views
                         break;
                 }
 
-            } while (numInput != 10);
+            } while (numInput != 0);
         }
         private static void MostrarPessoasDeterminadaData() {
             DateTime data = Utils.GetDataNascimento();
@@ -117,9 +117,10 @@ namespace _4Source.views
       
         }
 
-        private static void MostrarTopContri() {
+        private static void CalcContriAutarquia()
+        {
 
-            List<Freguesia> lista = RegistoEstatisticaController.MostrarTopContri();
+            List<Freguesia> lista = RegistoEstatisticaController.CalcContriAutarquia();
             foreach (Freguesia f in lista)
             {
                 System.Threading.Thread.Sleep(TimeSpan.FromSeconds(1));
@@ -145,8 +146,6 @@ namespace _4Source.views
             Console.WriteLine("A área predominante é: {0}", result);
         }
 
-
-        // Verificar se isto funciona, ainda nao testei
         private static void MostrarListaTerrenosInspecao() {
             string nome = Utils.GetText("Digite o Nome da Freguesia");
             DateTime data = Utils.GetData();

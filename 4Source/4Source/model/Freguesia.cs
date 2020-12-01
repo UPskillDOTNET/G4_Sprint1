@@ -14,6 +14,7 @@ namespace _4Source
         private string nome;
         private List<Terreno> terrenoList;
         private double dimensaoTotal;
+        private double contriAuto;
 
 
         public Freguesia(string nome)
@@ -37,6 +38,7 @@ namespace _4Source
         public double ContriAuttotal { get; set; }
         public string Nome { get => nome; set => nome = value; }
         public double DimensaoTotal { get => dimensaoTotal; set => dimensaoTotal = value; }
+        public double ContriAuto { get => contriAuto; set => contriAuto = value; }
 
         public void RegistarTerreno(Terreno t)
         {

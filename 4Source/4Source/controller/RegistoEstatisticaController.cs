@@ -54,10 +54,10 @@ namespace _4Source.controller
             return areaPred;
         }
 
-        public static List<Freguesia> MostrarTopContri()
+        public static List<Freguesia> CalcContriAutarquia()
         {
             Autarquia autarquia = Dados.CarregarDados();
-            List<Freguesia> lista = autarquia.MostrarTopContri();
+            List<Freguesia> lista = autarquia.CalcContriAutarquia();
             return lista;
         }
 

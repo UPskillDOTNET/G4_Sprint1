@@ -496,37 +496,28 @@ namespace _4Source
         {
 
             List<Pessoa> PessoaList = this.PessoaList;
-            List<Pessoa> SortedList = PessoaList.OrderBy(p => p.TerrenosOwned).Take(5).ToList();
+            List<Pessoa> SortedList = PessoaList.OrderByDescending(p => p.TerrenosOwned).Take(5).ToList();
 
             return SortedList;
 
         }
 
-
-
-        public void ClaclcontriAutarquia()
+        public List<Freguesia> CalcContriAutarquia()
         {
-            double contriAut = 0;
-            double contriAuttotal = 0;
-            foreach (Freguesia f in freguesiaList)
+            List<Freguesia> FreguesiaList = this.FreguesiaList;
+
+            foreach (Freguesia f in FreguesiaList)
             {
                 foreach (Terreno t in f.TerrenoList)
                 {
-
-
-                    contriAut += t.Classificacao.GetIndiceCont() * valorbase;
-
+                    if (t.Classificacao.GetClassificacao() == "Urbana")
+                    {
+                        f.ContriAuto += t.Classificacao.GetIndiceCont() * valorbase;
+                    }
                 }
-
-                contriAuttotal = contriAut;
             }
 
-        }
-        public List<Freguesia> MostrarTopContri()
-        {
-
-            List<Freguesia> FreguesiaList = this.FreguesiaList;
-            List<Freguesia> SortedList = FreguesiaList.OrderBy(f => f.ContriAuttotal).ToList();
+            List<Freguesia> SortedList = FreguesiaList.OrderByDescending(f => f.ContriAuto).ToList();
 
             return SortedList;
         }
@@ -541,7 +532,7 @@ namespace _4Source
                 if (t.Classificacao.GetClassificacao() == "Industrial")
                 {
                     DateTime.Compare(data, t.Classificacao.GetData());
-                    if (data < t.Escritura.Data)
+                    if (data > t.Escritura.Data)
                     {
                         mydata.Add(t);
                     }
@@ -566,6 +557,6 @@ namespace _4Source
             List<Freguesia> teste = newList.OrderByDescending(f => f.DimensaoTotal).ToList();
             return teste;
         }
-        
+
     }
 }
