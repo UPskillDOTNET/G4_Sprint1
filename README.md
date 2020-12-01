@@ -2,7 +2,7 @@
 
 # **Sprint #1**
 
-> Creation of a console-based software used for municipality and people management. Development process using the sprint methodology, starting from the software design planning and implementation to the debugging process.
+> Creation of a console-based software used for municipality and people management. Development process in C# programming language, using the sprint methodology, starting from the software design planning and implementation to the debugging process.
 
 ## Team Members
 
