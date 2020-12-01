@@ -20,6 +20,16 @@ namespace _4Source
         string descInsp; 
         string tipologia;
 
+        public double IndiceCont { get => indiceCont; set => indiceCont = value; }
+        public double Area { get => area; set => area = value; }
+        public string Desc { get => desc; set => desc = value; }
+        public int ValorBase { get => valorBase; set => valorBase = value; }
+        public double AreaConst { get => areaConst; set => areaConst = value; }
+        public DateTime DataConst { get => dataConst; set => dataConst = value; }
+        public DateTime DataInsp { get => dataInsp; set => dataInsp = value; }
+        public string DescInsp { get => descInsp; set => descInsp = value; }
+        public string Tipologia { get => tipologia; set => tipologia = value; }
+
         public Industrial()
         {
 
@@ -27,23 +37,22 @@ namespace _4Source
 
         public Industrial(double indiceCont,string desc, string tipologia, double areaConst, DateTime dataConst, DateTime dataInsp, string descInsp, double area)
         {
-            this.desc = desc;
-            this.tipologia = tipologia;
-            this.areaConst = areaConst;
-            this.dataConst = dataConst;
-            this.dataInsp = dataInsp;
-            this.descInsp = descInsp;
-            this.area = area;
+            this.Desc = desc;
+            this.Tipologia = tipologia;
+            this.AreaConst = areaConst;
+            this.DataConst = dataConst;
+            this.DataInsp = dataInsp;
+            this.DescInsp = descInsp;
+            this.Area = area;
         }
 
         public override string ToString()
         {
-            return "Industrial\n Principal atividade: " + desc + "\n Tipo: " + tipologia + "\n Area de construção: " + areaConst + "\n Data de construção: " + dataConst + "\n\nUltima Ispeção\n" + " Data: " + dataInsp + "\n Descrição: " + descInsp;
+            return "Industrial\n Principal atividade: " + Desc + "\n Tipo: " + Tipologia + "\n Area de construção: " + AreaConst + "\n Data de construção: " + DataConst + "\n\nUltima Ispeção\n" + " Data: " + DataInsp + "\n Descrição: " + DescInsp;
         }
         public double CalcIMI()
         {
-            //double area = terreno.Forma.CalcArea();
-            double IMI = indiceCont*valorBase + (areaConst/area * 0.1);
+            double IMI = IndiceCont*ValorBase + (AreaConst/Area * 0.1);
             return IMI;
         }
 
@@ -53,11 +62,16 @@ namespace _4Source
         }
         public double GetIndiceCont()
         {
-            return indiceCont;
+            return IndiceCont;
         }
         public string GetUso()
         {
-            return this.desc;
+            return this.Desc;
+        }
+
+        public DateTime GetData()
+        {
+            return this.dataInsp;
         }
     }
 }

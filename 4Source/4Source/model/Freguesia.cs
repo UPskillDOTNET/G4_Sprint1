@@ -13,11 +13,12 @@ namespace _4Source
     {
         private string nome;
         private List<Terreno> terrenoList;
+        private double dimensaoTotal;
 
 
         public Freguesia(string nome)
         {
-            this.nome = nome;
+            this.Nome = nome;
             this.terrenoList = new List<Terreno>();
         }
 
@@ -28,17 +29,14 @@ namespace _4Source
         
         public override string ToString()
         {
-            return "Nome da freguesia: " + nome;
+            return "Nome da freguesia: " + Nome;
         }
 
-        public string Nome
-        {
-            get { return nome; }
-            set { nome = value; }
-        }
-
+ 
         public List<Terreno> TerrenoList { get => terrenoList; set => terrenoList = value; }
         public double ContriAuttotal { get; set; }
+        public string Nome { get => nome; set => nome = value; }
+        public double DimensaoTotal { get => dimensaoTotal; set => dimensaoTotal = value; }
 
         public void RegistarTerreno(Terreno t)
         {
@@ -81,7 +79,7 @@ namespace _4Source
 
         public Terreno GetTerrenoById(int id)
         {
-            // A primeira interação do terreno está sempre nula por isso causa erro
+     
             foreach (Terreno t in TerrenoList)
             {
                 if (t.Id == id)

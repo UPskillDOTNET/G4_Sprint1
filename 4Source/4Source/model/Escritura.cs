@@ -37,7 +37,7 @@ namespace _4Source {
         {
             //To be done
             //proprietariosList.ForEach(Console.WriteLine);
-            return String.Format("Número de escritura: {0} Data: {1} Proprietarios {2}", Num, Data);
+            return String.Format("Número de escritura: {0} Data: {1} Proprietarios", Num, Data);
             
         }
     }

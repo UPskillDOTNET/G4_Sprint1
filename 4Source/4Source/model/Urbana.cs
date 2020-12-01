@@ -54,5 +54,10 @@ namespace _4Source
         {
             return "PPHARD";
         }
+
+        public DateTime GetData()
+        {
+            return this.dataConst;
+        }
     }
 }
