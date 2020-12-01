@@ -17,7 +17,19 @@ namespace _4Source {
         public NumeroFuncionarioInvalidoException(string message) : base(message) {
         }
     }
+    public class ListaTerrenoVaziaException : MasterException
+    {
+        public ListaTerrenoVaziaException(string message) : base(message) { }
+    }
 
+    public class MasterException: Exception
+    {
+        public MasterException(string message) : base(message) { }
+    }
+    public class NomeTerrenoInvalidoException : MasterException
+    {
+        public NomeTerrenoInvalidoException(string message) : base(message) { }
+    }
     public class IdTerrenoInvalidoException : Exception {
         public IdTerrenoInvalidoException(string message) : base(message) { }
     }
@@ -70,7 +82,8 @@ namespace _4Source {
         }
     }
 
-    public class NomeFreguesiaInvalidoException : Exception {
+    public class NomeFreguesiaInvalidoException : MasterException
+    {
         public NomeFreguesiaInvalidoException(string message) : base(message) {
 
         }
