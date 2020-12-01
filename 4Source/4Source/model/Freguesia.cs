@@ -18,6 +18,23 @@ namespace _4Source
         private double contriAuto;
 
 
+        public string Nome   // property
+        {
+            get { return nome; }   // get method
+            set
+            {
+                if (ValidarNome(value))
+                {
+                    nome = value;
+                }
+                else
+                {
+                    throw new NomeInvalidoException("Nome inválido");
+                }
+            }
+        }
+
+
         public Freguesia(string nome)
         {
             this.Nome = nome;
@@ -31,13 +48,13 @@ namespace _4Source
         
         public override string ToString()
         {
-            return "Nome da freguesia: " + Nome;
+            return "Nome da freguesia: " + nome;
         }
 
  
         public List<Terreno> TerrenoList { get => terrenoList; set => terrenoList = value; }
         public double ContriAuttotal { get; set; }
-        public string Nome { get => nome; set => nome = value; }
+       
         public double DimensaoTotal { get => dimensaoTotal; set => dimensaoTotal = value; }
         public double ContriAuto { get => contriAuto; set => contriAuto = value; }
 
@@ -275,5 +292,27 @@ namespace _4Source
             } while (false);
             return new Industrial(indiceCont, desc, tipologia, areaConst, dataConst, dataInsp, descInsp, area);
         }
+
+
+       
+        private static bool ValidarNome(string nome)
+        {
+            Regex regex = new Regex("^[a-zA-Z]{3,24}$", RegexOptions.IgnoreCase);
+            Match m = regex.Match(nome);
+            Regex regex2 = new Regex(@"^[A-Za-z]+[\s][A-Za-z]{3,24}$", RegexOptions.IgnoreCase);
+            Match l = regex2.Match(nome);
+
+            if (!m.Success)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+
+        }
     }
+
 }

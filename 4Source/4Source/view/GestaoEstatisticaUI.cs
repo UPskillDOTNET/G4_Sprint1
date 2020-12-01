@@ -88,6 +88,7 @@ namespace _4Source.views
             foreach (Pessoa p in lista)
             {
                 System.Threading.Thread.Sleep(TimeSpan.FromSeconds(1));
+                Console.WriteLine("------------------------------");
                 Console.WriteLine("\n" + p.ToString());
             }
             Console.ReadKey();
@@ -99,6 +100,7 @@ namespace _4Source.views
             foreach (Pessoa p in lista)
             {
                 System.Threading.Thread.Sleep(TimeSpan.FromSeconds(1));
+                Console.WriteLine("------------------------------");
                 Console.WriteLine("\n" + p.ToString());
             }
             Console.ReadKey();
@@ -108,7 +110,9 @@ namespace _4Source.views
         {
             double areaTotal = RegistoEstatisticaController.MostrarAreaTotalAutarquia();
             Console.WriteLine("A área total da autarquia é de: {0}", areaTotal);
+            Console.ReadKey();
             return areaTotal;
+          
         }
 
         private static void MostrarPercentagemAreaRuralAutarquia() {
@@ -117,6 +121,7 @@ namespace _4Source.views
             double areaRural = RegistoEstatisticaController.MostrarPercentagemAreaRuralAutarquia();
             double percentagemRural = (areaRural / areaTotal) * 100;
             Console.WriteLine("A percentagem da área rural da autarquia é de {0} %", percentagemRural);
+            Console.ReadKey();
       
         }
 
@@ -127,6 +132,7 @@ namespace _4Source.views
             foreach (Freguesia f in lista)
             {
                 System.Threading.Thread.Sleep(TimeSpan.FromSeconds(1));
+                Console.WriteLine("------------------------------");
                 Console.WriteLine("\n" + f.ToString());
             }
             Console.ReadKey();
@@ -138,6 +144,7 @@ namespace _4Source.views
                 foreach (Freguesia f in lista)
             {
                 System.Threading.Thread.Sleep(TimeSpan.FromSeconds(1));
+                Console.WriteLine("------------------------------");
                 Console.WriteLine("\n" + f.ToString());
             }
         }
@@ -157,6 +164,7 @@ namespace _4Source.views
             foreach (Terreno t in lista)
             {
                 System.Threading.Thread.Sleep(TimeSpan.FromSeconds(1));
+                Console.WriteLine("------------------------------");
                 Console.WriteLine("\n" + t.ToString());
             }
             Console.ReadKey();
@@ -168,6 +176,7 @@ namespace _4Source.views
             foreach (Pessoa p in lista)
             {
                 System.Threading.Thread.Sleep(TimeSpan.FromSeconds(1));
+                Console.WriteLine("------------------------------");
                 Console.WriteLine("\n" + p.ToString());
             }
             Console.ReadKey();

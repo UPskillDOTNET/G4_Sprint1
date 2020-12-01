@@ -103,7 +103,9 @@ namespace _4Source.views
             Terreno terreno = RegistoTerrenoController.PesquisarTerreno(nome, id);
             if (terreno != null)
             {
+                Console.WriteLine("------------------------------");
                 Console.WriteLine(terreno.ToString());
+                Console.WriteLine("------------------------------");
             }
             else
             {
