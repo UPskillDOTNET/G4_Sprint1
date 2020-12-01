@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using System.Collections;
+using System.Globalization;
 
 namespace _4Source
 {
@@ -16,6 +17,7 @@ namespace _4Source
         private DateTime dataNascimento;
         private int terrenosOwned;
 
+      
         public string Nome { get => nome; set => nome = value; }
         public string Nif { get => nif; set => nif = value; }
         public DateTime DataNascimento { get => dataNascimento; set => dataNascimento = value; }
@@ -36,7 +38,7 @@ namespace _4Source
 
         public override string ToString()
         {
-            return "NIF: " + Nif + "\n Nome: " + Nome + "\n Data de nascimento: " + DataNascimento.ToString();
+            return "NIF: " + Nif + "\n Nome: " + Nome + "\n Data de nascimento: " + DataNascimento.ToString("dd/MM/yyyy");
         }
 
         private static bool ValidarNome(string nome)

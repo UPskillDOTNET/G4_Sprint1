@@ -32,7 +32,7 @@ namespace _4Source
 
         public override string ToString()
         {
-            return "Urbana" + "\n Tipo: " + tipologia + "\n Area de construção: " + areaConst + "\n Data de construção " + dataConst;
+            return "Urbana" + "\n Tipo: " + tipologia + "\n Area de construção: " + areaConst + "\n Data de construção " + dataConst.ToString("dd/MM/yyyy");
         }
 
         public double CalcIMI()
