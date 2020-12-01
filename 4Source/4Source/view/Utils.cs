@@ -277,7 +277,12 @@ namespace _4Source.views
                  ██║    ███████║╚██████╔╝╚██████╔╝██║  ██║╚██████╗███████╗
                  ╚═╝    ╚══════╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝ ╚═════╝╚══════╝
                                                               
-                                                              
+           
+            ";
+
+            string title2 = @"
+
+                                                   
                                     ██╗    ██╗███████╗    ██████╗  ██████╗                        
                                     ██║    ██║██╔════╝    ██╔══██╗██╔═══██╗                       
                                     ██║ █╗ ██║█████╗      ██║  ██║██║   ██║                       
@@ -291,11 +296,13 @@ namespace _4Source.views
                     ██╔██╗ ██║██║   ██║   ██║   
                     ██║╚██╗██║██║   ██║   ██║   
                     ██║ ╚████║╚██████╔╝   ██║   
-                    ╚═╝  ╚═══╝ ╚═════╝    ╚═╝   
-";
-            Console.ForegroundColor = ConsoleColor.Red;
+                    ╚═╝  ╚═══╝ ╚═════╝    ╚═╝   ";
             
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(title);
+            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
+            Console.WriteLine(title2);
             Console.ResetColor();
 
 
@@ -310,7 +317,7 @@ namespace _4Source.views
 
         public static string ValidarNif(string label)
         {
-            Regex regex = new Regex("^\\d{9}$", RegexOptions.IgnoreCase);
+            Regex regex = new Regex(" ^\\d{9}$", RegexOptions.IgnoreCase);
             Match m = regex.Match(label);
 
             do

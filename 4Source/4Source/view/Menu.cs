@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.IO;
-using System.Diagnostics;
-using System.Runtime.InteropServices;
 
 namespace _4Source.views
 {
@@ -17,7 +10,7 @@ namespace _4Source.views
             Console.WriteLine("Default Title: {0}",
                              Console.Title);
 
-            Console.CursorSize =1;
+            Console.CursorSize = 1;
             ConsoleHelper.SetCurrentFont("Everson Mono", 15);
             Console.Clear();
 
@@ -39,8 +32,8 @@ namespace _4Source.views
                 Console.WriteLine("5) Gestão de Escritura");
                 Console.WriteLine("6) Cálculo de Estatisticas");
                 Console.WriteLine("\n7) Fechar Programa\n\n");
-    
-             
+
+
 
 
                 do
