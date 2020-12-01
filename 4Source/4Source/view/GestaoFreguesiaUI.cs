@@ -74,10 +74,20 @@ namespace _4Source.views
          private static void ListarFreguesias()
         {
             List<Freguesia> lista = RegistoFreguesiaController.ObterListaFreguesias();
+
+            if (lista.Count == 0)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\nNão existem freguesias inscritas na plataforma actualmente.");
+                Console.ResetColor();
+            }
+
             foreach (Freguesia freguesia in lista)
             {
                 System.Threading.Thread.Sleep(TimeSpan.FromSeconds(1));
+                Console.WriteLine("------------------------------");
                 Console.WriteLine(freguesia.ToString());
+                Console.WriteLine("------------------------------");
             }
             Console.ReadKey();
            
@@ -105,7 +115,7 @@ namespace _4Source.views
         }
         private static void EliminarFreguesia()
         {
-            string nome = Utils.GetText("Digite o Nome");
+            string nome = Utils.GetText("Digite o Nome da Freguesia que quer eliminar: ");
             Freguesia freguesia = RegistoFreguesiaController.EliminarFreguesia(nome);
             if (freguesia != null)
             {
@@ -125,7 +135,7 @@ namespace _4Source.views
 
         private static void PesquisarFreguesia()
         {
-            string nome = Utils.GetText("Digite o Nome");
+            string nome = Utils.GetText("Digite o Nome da Freguesia que pretende pesquisar: ");
             Freguesia freguesia = RegistoFreguesiaController.PesquisarFreguesia(nome);
             if (freguesia != null)
             {

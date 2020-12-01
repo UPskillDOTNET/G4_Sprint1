@@ -225,7 +225,7 @@ namespace _4Source
                 try
                 {
                     flag = false;
-                    freguesia.Nome = Utils.GetText("Nome");
+                    freguesia.Nome = Utils.GetText("Nome da freguesia: ");
                 }
                 catch (NomeFreguesiaInvalidoException e)
                 {
