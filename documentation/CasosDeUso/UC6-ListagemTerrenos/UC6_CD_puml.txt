@@ -5,23 +5,32 @@ class Autarquia {
 -List pessoaList
 -List freguesiaList
 -List escrituraList
++Autarquia(string, int)
++Autarquia()
++Valorbase : int
 +Valorbase.get() : int
 +Valorbase.set(int) : void
++FreguesiaList : List<Freguesia>
 +FreguesiaList.get() : List<Freguesia>
 +FreguesiaList.set(List<Freguesia>) : void
++PessoaList : List<Pessoa>
 +PessoaList.get() : List<Pessoa>
 +PessoaList.set(List<Pessoa>) : void
++EscrituraList : List<Escritura>
 +EscrituraList.get() : List<Escritura>
 +EscrituraList.set(List<Escritura>) : void
++Nome : string
 +Nome.get() : string
 +Nome.set(string) : void
 +GetPessoaByNif(string) : Pessoa
 +RegistarPessoa(Pessoa) : void
 +PesquisarPessoa(string) : Pessoa
 +ObterTodasPessoas() : List<Pessoa>
-+AlterarPessoa(Pessoa) : void
++AlterarPessoa(Pessoa) : Pessoa
 +EliminarPessoa(string) : Pessoa
++CriarPessoa() : Pessoa
 +GetFreguesiaByNome(string) : Freguesia
++CriarFreguesia() : Freguesia
 +RegistarFreguesia(Freguesia) : void
 +PesquisarFreguesia(string) : Freguesia
 +ObterTodasFreguesias() : List<Freguesia>
@@ -46,23 +55,27 @@ class Autarquia {
 +CalcContriAutarquia() : List<Freguesia>
 +MostrarListaTerrenosInspecao(DateTime, string) : List<Terreno>
 +MostrarFreguesiasDimensao() : List<Freguesia>
-
 }
 
 class Freguesia {
 -String nome
 -List terrenoList
+-Double contriAuto
 +Freguesia(string)
 +Freguesia()
 +ToString() : string
++TerrenoList : List<Terreno>
 +TerrenoList.get() : List<Terreno>
 +TerrenoList.set(List<Terreno>) : void
++ContriAuttotal : double
 +ContriAuttotal.get() : double
 +ContriAuttotal.set(double) : void
 +Nome.get() : string
 +Nome.set(string) : void
++DimensaoTotal : double
 +DimensaoTotal.get() : double
 +DimensaoTotal.set(double) : void
++ContriAuto : double
 +ContriAuto.get() : double
 +ContriAuto.set(double) : void
 +RegistarTerreno(Terreno) : void
@@ -70,7 +83,13 @@ class Freguesia {
 +EliminarTerreno(int) : Terreno
 +ObterTodosTerrenos() : List<Terreno>
 +GetTerrenoById(int) : Terreno
-
++CriarTerreno() : Terreno
+-GetAreaTri() : Triangular
+-GetAreaRect() : Rectangular
+-GetAreaCirc() : Circular
+-GetRural() : Rural
+-GetUrbana(double) : Urbana
+-GetIndustrial(double) : Industrial
 }
 
 class Terreno {
@@ -81,14 +100,19 @@ class Terreno {
 +Terreno()
 +Terreno(int, IForma, IClassificacao, Escritura)
 +ToString() : string
++Id : int
 +Id.get() : int
 +Id.set(int) : void
++Forma : IForma
 +Forma.get() : IForma
 +Forma.set(IForma) : void
++Escritura : Escritura
 +Escritura.get() : Escritura
 +Escritura.set(Escritura) : void
++Classificacao : IClassificacao
 +Classificacao.get() : IClassificacao
 +Classificacao.set(IClassificacao) : void
++CriarEscritura() : Escritura
 
 }
 
@@ -96,7 +120,6 @@ class Forma {
 +CalcArea() : double
 +GetForma() : string
 }
-
 class Triangular {
 -Double largura
 -Double comprimento
@@ -130,12 +153,8 @@ class Classificacao {
 -Double CalcIMI()
 -Double GetIndiceCont()
 -String GetClassificacao()
-+CalcIMI() : double
-+GetIndiceCont() : double
-+GetClassificacao() : string
 +GetUso() : string
 +GetData() : DateTime
-
 }
 
 class Urbana {
@@ -153,7 +172,6 @@ class Urbana {
 +GetIndiceCont() : double
 +GetUso() : string
 +GetData() : DateTime
-
 }
 
 class Industrial {
@@ -166,8 +184,6 @@ class Industrial {
 -DateTime dataInsp 
 -String descInsp
 -String tipologia
--IndiceCont.get() : double
--IndiceCont.set(double) : void
 +IndiceCont.get() : double
 +IndiceCont.set(double) : void
 +Area.get() : double
@@ -194,13 +210,13 @@ class Industrial {
 +GetIndiceCont() : double
 +GetUso() : string
 +GetData() : DateTime
-
 }
 
 class Rural {
 -String descUso
 -Int valorBase
 -Double indiceCont
++DescUso : string
 +DescUso.get() : string
 +DescUso.set(string) : void
 +Rural()
@@ -211,8 +227,8 @@ class Rural {
 +GetIndiceCont() : double
 +GetUso() : string
 +GetData() : DateTime
-
 }
+
 
 Autarquia "1" -- "1..." Freguesia : possui >
 

@@ -5,23 +5,32 @@ class Autarquia {
 -List pessoaList
 -List freguesiaList
 -List escrituraList
++Autarquia(string, int)
++Autarquia()
++Valorbase : int
 +Valorbase.get() : int
 +Valorbase.set(int) : void
++FreguesiaList : List<Freguesia>
 +FreguesiaList.get() : List<Freguesia>
 +FreguesiaList.set(List<Freguesia>) : void
++PessoaList : List<Pessoa>
 +PessoaList.get() : List<Pessoa>
 +PessoaList.set(List<Pessoa>) : void
++EscrituraList : List<Escritura>
 +EscrituraList.get() : List<Escritura>
 +EscrituraList.set(List<Escritura>) : void
++Nome : string
 +Nome.get() : string
 +Nome.set(string) : void
 +GetPessoaByNif(string) : Pessoa
 +RegistarPessoa(Pessoa) : void
 +PesquisarPessoa(string) : Pessoa
 +ObterTodasPessoas() : List<Pessoa>
-+AlterarPessoa(Pessoa) : void
++AlterarPessoa(Pessoa) : Pessoa
 +EliminarPessoa(string) : Pessoa
++CriarPessoa() : Pessoa
 +GetFreguesiaByNome(string) : Freguesia
++CriarFreguesia() : Freguesia
 +RegistarFreguesia(Freguesia) : void
 +PesquisarFreguesia(string) : Freguesia
 +ObterTodasFreguesias() : List<Freguesia>
@@ -46,29 +55,30 @@ class Autarquia {
 +CalcContriAutarquia() : List<Freguesia>
 +MostrarListaTerrenosInspecao(DateTime, string) : List<Terreno>
 +MostrarFreguesiasDimensao() : List<Freguesia>
-
 }
 
 class Pessoa {
 -String nome	
 -String nif
--String dataNascimento
+-DateTime dataNascimento
 -Int terrenosOwned
 +Nome.get() : string
 +Nome.set(string) : void
 +Nif.get() : string
 +Nif.set(string) : void
++DataNascimento : DateTime
 +DataNascimento.get() : DateTime
 +DataNascimento.set(DateTime) : void
++TerrenosOwned : int
 +TerrenosOwned.get() : int
 +TerrenosOwned.set(int) : void
 +Pessoa(string, string, DateTime)
 +Pessoa()
 +ToString() : string
-+ValidarNome(string) : bool
+-ValidarNome(string) : bool
 -ValidarNif(string) : bool
-+ValidarAno(DateTime) : bool
++ValidarAno(DateTime) : int
++CriarFuncionario() : Funcionario
 }
-
 Autarquia "1" -- "1...*" Pessoa : tem >
 @enduml
