@@ -40,7 +40,9 @@ namespace _4Source.views
         public static string GetText(string label)
         {
             string text = "";
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.Write(label + " ");
+            Console.ResetColor();
             text = Console.ReadLine();
             return text;
         }
@@ -57,7 +59,9 @@ namespace _4Source.views
                 try
                 {
                     flag = false;
+                    Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.Write("Introduza o ano: ");
+                    Console.ResetColor();
                     ano = int.Parse(Console.ReadLine());
                 }
                 catch (AnoInvalidoException e)
@@ -78,7 +82,9 @@ namespace _4Source.views
                 try
                 {
                     flag = false;
+                    Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.Write("Introduza o mês: ");
+                    Console.ResetColor();
                     mes = int.Parse(Console.ReadLine());
 
                 }
@@ -96,7 +102,9 @@ namespace _4Source.views
                 try
                 {
                     flag = false;
+                    Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.Write("Introduza o dia: ");
+                    Console.ResetColor();
                     dia = int.Parse(Console.ReadLine());
 
                 }
