@@ -166,8 +166,7 @@ namespace _4Source.views
                     flag = true;
                     Console.Beep();
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Atenção: " + e.ToString());
-                    Console.ResetColor();
+                    Console.WriteLine("Atenção: NIF Invalido.");
                 }
             } while (flag);
             do
@@ -177,13 +176,12 @@ namespace _4Source.views
                     flag = false;
                     pessoa.Nome = Utils.GetText("Nome:");
                 }
-                catch (NomePessoaInvalidoException e)
+                catch (NomeInvalidoException e)
                 {
                     flag = true;
                     Console.Beep();
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Atenção: " + e.ToString());
-                    Console.ResetColor();
+                    Console.WriteLine("Atenção: Nome Invalido.");
                 }
             } while (flag);
             do
@@ -193,13 +191,12 @@ namespace _4Source.views
                     flag = false;
                     pessoa.DataNascimento = Utils.GetDataNascimento();
                 }
-                catch (NomePessoaInvalidoException e)
+                catch (DataInvalidaException e)
                 {
                     flag = true;
                     Console.Beep();
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Atenção: " + e.ToString());
-                    Console.ResetColor();
+                    Console.WriteLine("Atenção: Data Invalida.");
                 }
             } while (flag);
             return pessoa;

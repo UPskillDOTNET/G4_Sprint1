@@ -48,7 +48,23 @@ namespace _4Source
                 }
             }
         }
-        public DateTime DataNascimento { get => dataNascimento; set => dataNascimento = value; }
+
+        public DateTime DataNascimento   // property
+        {
+            get { return dataNascimento; }   // get method
+            set
+            {
+                if (ValidarAno(value) <= 0)
+                {
+                    dataNascimento = value;
+                }
+                else
+                {
+                    throw new DataInvalidaException("Data inválida");
+                }
+            }
+        }
+
         public int TerrenosOwned { get => terrenosOwned; set => terrenosOwned = value; }
 
         public Pessoa(string nome, string nif, DateTime dataNascimento)
@@ -100,13 +116,9 @@ namespace _4Source
                 return true;
             }
         }
-        public static bool ValidarAno(DateTime ano)
+        public static int ValidarAno(DateTime ano)
         {
-            if (ano.Year > DateTime.Now.Year)
-            {
-                return false;
-            }
-            return true;
+             return DateTime.Compare(ano, DateTime.Today);
 
         }
 
