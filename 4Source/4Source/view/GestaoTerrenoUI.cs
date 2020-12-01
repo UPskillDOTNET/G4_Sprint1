@@ -129,7 +129,9 @@ namespace _4Source.views
             Terreno terreno = RegistoTerrenoController.EliminarTerreno(nome, id);
             if (terreno != null)
             {
+                Console.WriteLine("------------------------------");
                 Console.WriteLine(terreno.ToString());
+                Console.WriteLine("------------------------------");
             }
             else
             {
