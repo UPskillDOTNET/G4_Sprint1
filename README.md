@@ -24,6 +24,6 @@
 
 * UPSkill & Manel dos Computadores
 
-## Documentação
+## Documentation
 
 [Relatório Técnico do Projeto](https://github.com/sergiovspinto/team4_PBL_4Source/blob/7737be5bb441b045a7f67fd72ea4cc738bcd025e/documentation/Relatorio_Tecnico_Team4.pdf)
