@@ -25,9 +25,6 @@ namespace _4Source.views
                 Console.WriteLine("6) Cálculo de Estatisticas");
                 Console.WriteLine("\n7) Fechar Programa\n\n");
 
-
-
-
                 do
                 {
                    

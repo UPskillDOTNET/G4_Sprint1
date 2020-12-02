@@ -67,7 +67,9 @@ namespace _4Source.views {
             foreach (Escritura escritura in lista) {
 
                 System.Threading.Thread.Sleep(TimeSpan.FromSeconds(1));
+                Console.WriteLine("------------------------------");
                 Console.WriteLine(escritura.ToString());
+                Console.WriteLine("------------------------------");
             }
             Console.ReadKey();
       
@@ -78,20 +80,27 @@ namespace _4Source.views {
             int num = Utils.GetIntNumber("Digite o numero da escritura:");
             Escritura escritura = RegistoEscrituraController.EliminarEscritura(num);
             if (escritura != null) {
+                Console.WriteLine("------------------------------");
                 Console.WriteLine(escritura.ToString());
+                Console.WriteLine("------------------------------");
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine("A escritura {0} foi eliminado do sistema.", escritura.Num);
+                Console.ResetColor();
             } else {
                 Console.Beep();
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Não  existe!!!");
+                Console.WriteLine("Não existe!!!");
             }
-         
+            Console.ReadKey();
         }
 
         private static void PesquisarEscritura() {
             int num = Utils.GetIntNumber("Digite o numero da escritura:");
             Escritura escritura = RegistoEscrituraController.PesquisarEscritura(num);
             if (escritura != null) {
+                Console.WriteLine("------------------------------");
                 Console.WriteLine(escritura.ToString());
+                Console.WriteLine("------------------------------");
             } else {
                 Console.Beep();
                 Console.ForegroundColor = ConsoleColor.Red;
@@ -104,7 +113,7 @@ namespace _4Source.views {
         private static void RegistarEscritura() {
             Escritura escritura = Terreno.CriarEscritura();
             RegistoEscrituraController.RegistarEscritura(escritura);
-          
+            Console.ReadKey();
         }
 
       
