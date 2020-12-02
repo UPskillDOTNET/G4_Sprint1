@@ -49,11 +49,9 @@ namespace _4Source
         public override string ToString()
         {
 
-            return "Industrial\n Principal atividade: " + desc + "\n Tipo: " + tipologia + "\n Area de construção: " + areaConst + "\n Data de construção: " + dataConst.ToString("dd/MM/yyyy") + "\n\nUltima Ispeção\n" + " Data: " + dataInsp.ToString("dd/MM/yyyy") + "\n Descrição: " + descInsp;
-
-           
-
+            return "Industrial\nPrincipal atividade: " + desc + "\nTipo: " + tipologia + "\nArea de construção: " + areaConst + "\nData de construção: " + dataConst.ToString("dd/MM/yyyy") + "\n\nUltima Inspeção\n" + "Data: " + dataInsp.ToString("dd/MM/yyyy") + "\nDescrição: " + descInsp;
         }
+
         public double CalcIMI()
         {
             double IMI = IndiceCont*ValorBase + (AreaConst/Area * 0.1);

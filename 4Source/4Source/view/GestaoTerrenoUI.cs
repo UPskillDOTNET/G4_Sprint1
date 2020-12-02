@@ -77,7 +77,9 @@ namespace _4Source.views
                     foreach (Terreno terreno in lista)
                     {
                         System.Threading.Thread.Sleep(TimeSpan.FromSeconds(1));
-                        Console.WriteLine("\n" + terreno.ToString());
+                        Console.WriteLine("------------------------------");
+                        Console.WriteLine(terreno.ToString());
+                        Console.WriteLine("------------------------------");
                     }
                     // break;
                 }
@@ -108,7 +110,9 @@ namespace _4Source.views
             try
             {
                 Terreno terreno = RegistoTerrenoController.PesquisarTerreno(nome, id);
+                Console.WriteLine("------------------------------");
                 Console.WriteLine(terreno.ToString());
+                Console.WriteLine("------------------------------");
 
             }
             catch (MasterException ex)
@@ -124,20 +128,23 @@ namespace _4Source.views
 
         private static void EliminarTerreno()
         {
-            string nome = Utils.GetText("\n Digite o nome da Freguesia:");
-            int id = Utils.GetIntNumber("\n Digite o ID:");
+            string nome = Utils.GetText("Digite o nome da Freguesia:");
+            int id = Utils.GetIntNumber("Digite o ID:");
             Terreno terreno = RegistoTerrenoController.EliminarTerreno(nome, id);
             if (terreno != null)
             {
                 Console.WriteLine("------------------------------");
                 Console.WriteLine(terreno.ToString());
                 Console.WriteLine("------------------------------");
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine("O terreno {0} foi eliminado do sistema.", terreno.Id);
+                Console.ResetColor();
             }
             else
             {
                 Console.Beep();
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("\n Não  existe!!!");
+                Console.WriteLine("Não existe!!!");
                 Console.ResetColor();
             }
             Console.ReadKey();
@@ -147,7 +154,7 @@ namespace _4Source.views
 
         private static void RegistarTerreno()
         {
-            string nome = Utils.GetText("\nIntroduza o nome da freguesia a qual o terreno pertence:");
+            string nome = Utils.GetText("Introduza o nome da freguesia a qual o terreno pertence:");
             Terreno terreno = Freguesia.CriarTerreno();
             RegistoTerrenoController.RegistarTerreno(nome, terreno);
            

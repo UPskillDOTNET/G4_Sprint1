@@ -48,12 +48,12 @@ namespace _4Source.controllers
             
             if (freguesia == null)
             {
-                throw new NomeFreguesiaInvalidoException("Freguesia não encontrada");
+                throw new NomeFreguesiaInvalidoException("Freguesia não encontrada no sistema.");
             }
             terreno = freguesia.PesquisarTerreno(id);
             if (terreno == null)
             {
-                throw new NomeTerrenoInvalidoException("Este terreno não existe");
+                throw new NomeTerrenoInvalidoException("Este terreno não existe no sistema.");
             }
             return terreno;
         }
@@ -64,12 +64,12 @@ namespace _4Source.controllers
             Freguesia freguesia = autarquia.GetFreguesiaByNome(nomeFreguesia);
             if (freguesia == null)
             {
-                throw new NomeFreguesiaInvalidoException("Freguesia não encontrada");
+                throw new NomeFreguesiaInvalidoException("Freguesia não encontrada no sistema.");
             }
             List<Terreno> lista = freguesia.ObterTodosTerrenos();
             if (lista == null || lista.Count == 0)
             {
-                throw new ListaTerrenoVaziaException("Esta freguesia não possui nenhum terreno");
+                throw new ListaTerrenoVaziaException("Esta freguesia não possui nenhum terreno associado no sistema.");
             }
             return lista;
 

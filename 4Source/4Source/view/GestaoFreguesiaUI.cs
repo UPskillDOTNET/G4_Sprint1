@@ -142,7 +142,9 @@ namespace _4Source.views
             Freguesia freguesia = RegistoFreguesiaController.PesquisarFreguesia(nome);
             if (freguesia != null)
             {
+                Console.WriteLine("------------------------------");
                 Console.WriteLine(freguesia.ToString());
+                Console.WriteLine("------------------------------");
             }
             else
             {

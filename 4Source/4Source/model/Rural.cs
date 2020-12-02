@@ -31,7 +31,7 @@ namespace _4Source
 
         public override string ToString()
         {
-            return "Rural\n " + "Pricipal atividade: " + DescUso;
+            return "Rural\nPricipal atividade: " + DescUso;
         }
 
 

@@ -109,7 +109,6 @@ namespace _4Source
             {
                 throw new ElementoNaoExistenteException(id + " Não existe");
             }
-            Console.WriteLine("O terreno abaixo foi eliminado");
             return terreno;
         }
 
@@ -187,7 +186,6 @@ namespace _4Source
                 switch (number)
                 {
                     case 1:
-
                         terreno.Classificacao = GetRural();
                         break;
                     case 2:
@@ -271,11 +269,11 @@ namespace _4Source
             } while (indiceCont < 0 || indiceCont > 1);
             do
             {
-                areaConst = Utils.GetDouble("Qual a area da construção? ");
+                areaConst = Utils.GetDouble("Qual a area da construção?");
             } while (areaConst > area || areaConst < 0);
             do
             {
-                tipologia = Utils.GetText("Qual a tipologia da construção? ");
+                tipologia = Utils.GetText("Qual a tipologia da construção?");
                 dataConst = Utils.GetData();
 
             } while (false);
@@ -301,14 +299,19 @@ namespace _4Source
             } while (areaConst > area || areaConst < 0);
             do
             {
+
                 desc = Utils.GetText("Qual a principal atividade industrial do terreno? ");
                 tipologia = Utils.GetText("Qual a tipologia da construção? ");
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("Qual a data de Construção? ");
+                Console.ResetColor();
                 dataConst = Utils.GetData();
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("Qual a data da ultima Inspeção? ");
+                Console.ResetColor();
                 dataInsp = Utils.GetData();
                 descInsp = Utils.GetText("Descrição do relatório da Inspeção: ");
-
+                Console.ResetColor();
 
             } while (false);
             return new Industrial(indiceCont, desc, tipologia, areaConst, dataConst, dataInsp, descInsp, area);
