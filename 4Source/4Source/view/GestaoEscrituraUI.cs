@@ -69,6 +69,8 @@ namespace _4Source.views {
                 System.Threading.Thread.Sleep(TimeSpan.FromSeconds(1));
                 Console.WriteLine("------------------------------");
                 Console.WriteLine(escritura.ToString());
+                Console.WriteLine("Proprietários:");
+                Escritura.GetProprietarios(escritura.ProprietariosList);
                 Console.WriteLine("------------------------------");
             }
 

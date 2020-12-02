@@ -29,9 +29,9 @@ namespace _4Source {
         }
     
         public Terreno Terreno { get => terreno; set => terreno = value; }
-        public List<Proprietario> ProprietariosList { get => proprietariosList; set => proprietariosList = value; }
         public DateTime Data { get => data; set => data = value; }
         public int Num { get => num; set => num = value; }
+        public List<Proprietario> ProprietariosList { get => proprietariosList; set => proprietariosList = value; }
 
         public override string ToString()
         {
@@ -39,6 +39,7 @@ namespace _4Source {
             return String.Format("Número de escritura: {0}\nData: {1}", Num, Data.ToString("dd/MM/yyyy"));
 
         }
+
 
         //public Proprietario GetProprietarioByNif(string nif)
         //{
@@ -53,21 +54,29 @@ namespace _4Source {
         //    return null;
         //}
 
-        public Proprietario GetProprietarioByNif(string nif)
+        //public Proprietario GetProprietarioByNif(string nif)
+        //{
+        //    Proprietario p = null;
+        //    foreach (Object obj in this.ProprietariosList)
+        //    {
+        //        if (obj.GetType() == typeof(Proprietario))
+        //        {
+        //            p = (Proprietario)obj;
+        //            if (p.Nif == nif)
+        //            {
+        //                return p;
+        //            }
+        //        }
+        //    }
+        //    return null;
+        //}
+
+        public static void GetProprietarios(List<Proprietario> proprietarioList)
         {
-            Proprietario p = null;
-            foreach (Object obj in this.ProprietariosList)
+            for (int i = 0; i < proprietarioList.Count; i++)
             {
-                if (obj.GetType() == typeof(Proprietario))
-                {
-                    p = (Proprietario)obj;
-                    if (p.Nif == nif)
-                    {
-                        return p;
-                    }
-                }
+                Console.WriteLine(proprietarioList[i]);
             }
-            return null;
         }
     }
     }
