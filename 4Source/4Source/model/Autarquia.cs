@@ -251,7 +251,11 @@ namespace _4Source
             }
             else
             {
-                throw new NomeDuplicadoException(f.ToString() + "Nome já existente");
+                Console.Beep();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(f.ToString() + "Nome já existente");
+                Console.ResetColor();
+                Console.ReadKey();
             }
 
         }

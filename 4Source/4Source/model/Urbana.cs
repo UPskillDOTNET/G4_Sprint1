@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace _4Source
 {
@@ -20,6 +21,7 @@ namespace _4Source
         {
 
         }
+       
 
         public Urbana(double indiceCont, string tipologia, double areaConst, DateTime dataConst, double area)
         {
@@ -59,5 +61,8 @@ namespace _4Source
         {
             return this.dataConst;
         }
+
+       
+        }
     }
-}
+

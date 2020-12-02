@@ -90,10 +90,9 @@ namespace _4Source
 
         private static bool ValidarNome(string nome)
         {
-            Regex regex = new Regex("^[a-zA-Z]{3,24}$", RegexOptions.IgnoreCase);
-            Match m = regex.Match(nome);
-            Regex regex2 = new Regex(@"^[A-Za-z]+[\s][A-Za-z]{3,24}$", RegexOptions.IgnoreCase);
-            Match l = regex2.Match(nome);
+            
+            Regex regex = new Regex(@"^([a-zA-Z]\w{3,28})+(\s([a-zA-Z]\w{3,28})+)*$", RegexOptions.IgnoreCase);
+            Match l = regex.Match(nome);
 
             if (!l.Success)
             {

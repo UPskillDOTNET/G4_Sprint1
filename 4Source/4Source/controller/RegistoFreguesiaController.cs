@@ -40,7 +40,7 @@ namespace _4Source.controllers {
                 Autarquia autarquia = Dados.CarregarDados();
             freguesia = autarquia.PesquisarFreguesia(nome);
             }
-            catch (ElementoNaoExistenteException e)
+            catch (ElementoNaoExistenteException)
             {
                 
                 Console.WriteLine("Atenção: freguesia não existe");
