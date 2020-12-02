@@ -126,7 +126,7 @@ namespace _4Source
                     Console.WriteLine("Atenção: Data Invalida.");
                 }
             } while (flag);
-            
+
             return autarquiaPessoa;
 
         }
@@ -176,7 +176,7 @@ namespace _4Source
                     flag = false;
                     pessoa.Nome = Utils.GetText("Nome:");
                 }
-                catch (NomeInvalidoException )
+                catch (NomeInvalidoException)
                 {
                     flag = true;
                     Console.Beep();
@@ -651,6 +651,5 @@ namespace _4Source
             List<Freguesia> teste = newList.OrderByDescending(f => f.DimensaoTotal).ToList();
             return teste;
         }
-
     }
 }

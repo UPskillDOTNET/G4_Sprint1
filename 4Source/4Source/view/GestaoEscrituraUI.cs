@@ -71,6 +71,7 @@ namespace _4Source.views {
                 Console.WriteLine(escritura.ToString());
                 Console.WriteLine("------------------------------");
             }
+
             Console.ReadKey();
       
         }

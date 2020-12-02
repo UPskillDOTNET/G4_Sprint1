@@ -69,7 +69,7 @@ namespace _4Source
         
         public override string ToString()
         {
-            return "Nome da freguesia: " + nome;
+            return "Nome da freguesia: " + nome + "\nNúmero de Terrenos: " + terrenoList.Count;
         }
 
  

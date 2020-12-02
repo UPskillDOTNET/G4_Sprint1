@@ -17,7 +17,7 @@ namespace _4Source.controllers
                 autarquia.RegistarPessoa(pessoa);
                 Dados.GuardarDados(autarquia);
             }
-            catch (NifDuplicadoException )
+            catch (NifDuplicadoException)
             {
                 flag = false;
                 Console.ForegroundColor = ConsoleColor.Red;

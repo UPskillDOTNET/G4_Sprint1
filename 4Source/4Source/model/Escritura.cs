@@ -36,11 +36,38 @@ namespace _4Source {
         public override string ToString()
         {
 
-            return String.Format("Número de escritura: {0} Data: {1}", Num, Data.ToString("dd/MM/yyyy"));
-
-        
-            
+            return String.Format("Número de escritura: {0}\nData: {1}", Num, Data.ToString("dd/MM/yyyy"));
 
         }
+
+        //public Proprietario GetProprietarioByNif(string nif)
+        //{
+
+        //        foreach (Proprietario p in ProprietariosList)
+        //        {
+        //        if (p.Nif == nif)
+        //        {
+        //            return p;
+        //        }
+        //    }
+        //    return null;
+        //}
+
+        public Proprietario GetProprietarioByNif(string nif)
+        {
+            Proprietario p = null;
+            foreach (Object obj in this.ProprietariosList)
+            {
+                if (obj.GetType() == typeof(Proprietario))
+                {
+                    p = (Proprietario)obj;
+                    if (p.Nif == nif)
+                    {
+                        return p;
+                    }
+                }
+            }
+            return null;
+        }
     }
-}
+    }
