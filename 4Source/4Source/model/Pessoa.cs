@@ -68,8 +68,7 @@ namespace _4Source
         }
 
         public int TerrenosOwned { get => terrenosOwned; set => terrenosOwned = value; }
-        public double Percentagem { get; internal set; }
-
+    
         public Pessoa(string nome, string nif, DateTime dataNascimento)
         {
             this.Nome = nome;

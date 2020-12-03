@@ -655,14 +655,13 @@ namespace _4Source
         public double CalcularPercentagem(Escritura escritura, int numProprietarios)
         {
             List<Proprietario> lista = escritura.ProprietariosList;
-            double percentagem = 0;
             double totalPercentagem = 0;
             double total = 0;
             
             for (int i = 0; i < lista.Count; i++)
             {
                 Console.WriteLine("Introduza a percentagem do proprietario:");
-                percentagem = double.Parse(Console.ReadLine());
+                double percentagem = double.Parse(Console.ReadLine());
                 lista[i].Percentagem += percentagem;
                 total += percentagem;
                 totalPercentagem -= percentagem;

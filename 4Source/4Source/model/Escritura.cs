@@ -36,7 +36,7 @@ namespace _4Source {
         public override string ToString()
         {
 
-            return String.Format("Número de escritura: {0}\nData: {1}", Num, Data.ToString("dd/MM/yyyy"));
+            return String.Format("Número de escritura: {0}\nData: {1}\n", Num, Data.ToString("dd/MM/yyyy"));
 
         }
 
@@ -52,13 +52,8 @@ namespace _4Source {
         {
             for (int i = 0; i < escritura.ProprietariosList.Count; i++)
             {
-                Console.WriteLine(escritura.ProprietariosList[i]);
+                Console.WriteLine("NIF do Proprietário: {0}\nPercentagem: {1}%",escritura.ProprietariosList[i],escritura.ProprietariosList[i].Percentagem);
             }
-        }
-
-        public static void addPercentagem(List<Proprietario> proprietarioList)
-        {
-
         }
     }
     }

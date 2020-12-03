@@ -67,8 +67,9 @@ namespace _4Source.controllers {
         public static double CalcularPercentagem(Escritura escritura, int numProprietarios)
         {
             Autarquia autarquia = Dados.CarregarDados();
+            double teste = autarquia.CalcularPercentagem(escritura, numProprietarios);
             Dados.GuardarDados(autarquia);
-            return autarquia.CalcularPercentagem(escritura, numProprietarios);
+            return teste;
         }
     }
 }
