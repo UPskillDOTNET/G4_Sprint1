@@ -1,4 +1,5 @@
 ﻿using _4Source.controllers;
+using _4Source.model;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -43,8 +44,8 @@ namespace _4Source.views {
                             ListarEscrituras();
                             break;
                         case 5:
-                            CalcularPercentagem();
-                            break;
+                        CalcularPercentagem();
+                        break;
                         case 6:
                             Console.ForegroundColor = ConsoleColor.Blue;
                             Console.WriteLine("\nVolta para o menu anterior.\n");
@@ -66,11 +67,18 @@ namespace _4Source.views {
             List<Escritura> lista = RegistoEscrituraController.ObterListaEscrituras();
             foreach (Escritura escritura in lista) {
 
+                if (lista.Count == 0)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Não se encontram escrituras inscritas na plataforma actualmente.");
+                    Console.ResetColor();
+                }
+
                 System.Threading.Thread.Sleep(TimeSpan.FromSeconds(1));
                 Console.WriteLine("------------------------------");
                 Console.WriteLine(escritura.ToString());
                 Console.WriteLine("Proprietários:");
-                Escritura.GetProprietarios(escritura.ProprietariosList);
+                Escritura.GetProprietarios(escritura);
                 Console.WriteLine("------------------------------");
             }
 
@@ -119,29 +127,28 @@ namespace _4Source.views {
             Console.ReadKey();
         }
 
-      
+        public static void CalcularPercentagem()
+        {
+            double percentagemProp = 0;
 
-        public static void CalcularPercentagem() {
+            int num = Utils.GetIntNumber("Digite o numero da escritura:");
+            Escritura escritura = RegistoEscrituraController.PesquisarEscritura(num);
+
+            if (escritura != null)
+            {
             Console.WriteLine("Quantos proprietários tem o terreno?");
             int numProprietarios = int.Parse(Console.ReadLine());
-            double percentagem = 0;
-            double totalPercentagem = 0;
-            double[] array = new double[numProprietarios];
-            int count = 1;
-
-            for (int i = 0; i < numProprietarios; i++) {
-                Console.WriteLine("Introduza a percentagem do proprietario:");
-                percentagem = double.Parse(Console.ReadLine());
-                array[i] = percentagem;
-                totalPercentagem += percentagem;
+            percentagemProp = RegistoEscrituraController.CalcularPercentagem(escritura, numProprietarios);
             }
-            foreach (double perc in array) {
 
-                Console.WriteLine("O proprietário {0} possui {1} % do terreno.", count, perc);
-                count += 1;
+            foreach (Proprietario p in escritura.ProprietariosList)
+            {
+                Console.WriteLine("Proprietario {0}: {1}%\n", p.Nif, p.Percentagem);
             }
-            double sum = array.Sum();
-            Console.WriteLine("Posse total dos proprietários em relação ao terreno: {0} ", sum);
+           
+            Console.WriteLine("Posse total dos proprietários em relação ao terreno: {0}% ", percentagemProp);
+            Console.ReadKey();
         }
+        
     }
 }

@@ -40,43 +40,25 @@ namespace _4Source {
 
         }
 
-
-        //public Proprietario GetProprietarioByNif(string nif)
+        //public static void GetProprietarios(List<Proprietario> proprietarioList)
         //{
-
-        //        foreach (Proprietario p in ProprietariosList)
-        //        {
-        //        if (p.Nif == nif)
-        //        {
-        //            return p;
-        //        }
-        //    }
-        //    return null;
-        //}
-
-        //public Proprietario GetProprietarioByNif(string nif)
-        //{
-        //    Proprietario p = null;
-        //    foreach (Object obj in this.ProprietariosList)
+        //    for (int i = 0; i < proprietarioList.Count; i++)
         //    {
-        //        if (obj.GetType() == typeof(Proprietario))
-        //        {
-        //            p = (Proprietario)obj;
-        //            if (p.Nif == nif)
-        //            {
-        //                return p;
-        //            }
-        //        }
+        //        Console.WriteLine(proprietarioList[i]);
         //    }
-        //    return null;
         //}
 
-        public static void GetProprietarios(List<Proprietario> proprietarioList)
+        public static void GetProprietarios(Escritura escritura)
         {
-            for (int i = 0; i < proprietarioList.Count; i++)
+            for (int i = 0; i < escritura.ProprietariosList.Count; i++)
             {
-                Console.WriteLine(proprietarioList[i]);
+                Console.WriteLine(escritura.ProprietariosList[i]);
             }
+        }
+
+        public static void addPercentagem(List<Proprietario> proprietarioList)
+        {
+
         }
     }
     }

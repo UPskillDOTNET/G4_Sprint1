@@ -651,5 +651,27 @@ namespace _4Source
             List<Freguesia> teste = newList.OrderByDescending(f => f.DimensaoTotal).ToList();
             return teste;
         }
+
+        public double CalcularPercentagem(Escritura escritura, int numProprietarios)
+        {
+            List<Proprietario> lista = escritura.ProprietariosList;
+            double percentagem = 0;
+            double totalPercentagem = 0;
+            double total = 0;
+            
+            for (int i = 0; i < lista.Count; i++)
+            {
+                Console.WriteLine("Introduza a percentagem do proprietario:");
+                percentagem = double.Parse(Console.ReadLine());
+                lista[i].Percentagem += percentagem;
+                total += percentagem;
+                totalPercentagem -= percentagem;
+
+                // Falta a validaçao do 100%
+            }
+
+            return total;
+        }
+        
     }
 }
