@@ -458,7 +458,7 @@ namespace _4Source
 
             if (freguesia != null)
             {
-                int id = Utils.GetIntNumber("Inserir o nome do terreno da escritura associada:");
+                int id = Utils.GetIntNumber("Inserir o número do terreno da escritura associada:");
                 Terreno terreno = freguesia.GetTerrenoById(id);
 
                 if (terreno != null)
@@ -474,7 +474,7 @@ namespace _4Source
 
         public List<Escritura> ObterTodasEscrituras()
         {
-            return this.EscrituraList;
+            return EscrituraList;
         }
 
         //Eliminar Escritura (Delete)
@@ -652,17 +652,16 @@ namespace _4Source
             return teste;
         }
 
-        public double CalcularPercentagem(Escritura escritura, int numProprietarios)
+        public double CalcularPercentagem(Escritura escritura)
         {
-            List<Proprietario> lista = escritura.ProprietariosList;
             double totalPercentagem = 0;
             double total = 0;
             
-            for (int i = 0; i < lista.Count; i++)
+            for (int i = 0; i < escritura.ProprietariosList.Count; i++)
             {
-                Console.WriteLine("Introduza a percentagem do proprietario:");
+                Console.WriteLine("Introduza a percentagem do proprietario {0}:", escritura.ProprietariosList[i].Nome);
                 double percentagem = double.Parse(Console.ReadLine());
-                lista[i].Percentagem += percentagem;
+                escritura.ProprietariosList[i].Percentagem += percentagem;
                 total += percentagem;
                 totalPercentagem -= percentagem;
 

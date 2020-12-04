@@ -28,7 +28,7 @@ namespace _4Source.controllers {
     public static Escritura PesquisarEscritura(int num)
     {
 
-            Escritura escritura = null;
+        Escritura escritura = null;
         Autarquia autarquia = Dados.CarregarDados();
         escritura = autarquia.PesquisarEscritura(num);
         return escritura;
@@ -64,10 +64,10 @@ namespace _4Source.controllers {
         return escritura;
     }
 
-        public static double CalcularPercentagem(Escritura escritura, int numProprietarios)
+        public static double CalcularPercentagem(Escritura escritura)
         {
             Autarquia autarquia = Dados.CarregarDados();
-            double teste = autarquia.CalcularPercentagem(escritura, numProprietarios);
+            double teste = autarquia.CalcularPercentagem(escritura);
             Dados.GuardarDados(autarquia);
             return teste;
         }

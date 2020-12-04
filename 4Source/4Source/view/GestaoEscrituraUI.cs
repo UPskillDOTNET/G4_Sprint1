@@ -136,9 +136,10 @@ namespace _4Source.views {
 
             if (escritura != null)
             {
-            Console.WriteLine("Quantos proprietários tem o terreno?");
-            int numProprietarios = int.Parse(Console.ReadLine());
-            percentagemProp = RegistoEscrituraController.CalcularPercentagem(escritura, numProprietarios);
+            //Console.WriteLine("Quantos proprietários tem o terreno?");
+            //int numProprietarios = int.Parse(Console.ReadLine());
+
+            percentagemProp = RegistoEscrituraController.CalcularPercentagem(escritura);
             }
 
             foreach (Proprietario p in escritura.ProprietariosList)
