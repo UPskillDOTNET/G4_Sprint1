@@ -44,8 +44,8 @@ namespace _4Source.views {
                             ListarEscrituras();
                             break;
                         case 5:
-                        CalcularPercentagem();
-                        break;
+                            CalcularPercentagem();
+                            break;
                         case 6:
                             Console.ForegroundColor = ConsoleColor.Blue;
                             Console.WriteLine("\nVolta para o menu anterior.\n");
@@ -144,6 +144,7 @@ namespace _4Source.views {
 
             foreach (Proprietario p in escritura.ProprietariosList)
             {
+
                 Console.WriteLine("Proprietario {0}: {1}%\n", p.Nif, p.Percentagem);
             }
            
