@@ -354,15 +354,16 @@ namespace _4Source
 
         public List<Funcionario> ObterTodosFuncionarios()
         {
-            List<Funcionario> lista = new List<Funcionario>();
-            foreach (Pessoa p in this.pessoaList)
-            {
-                if (p.GetType() == typeof(Funcionario))
-                {
-                    lista.Add((Funcionario)p);
-                }
-            }
-            return lista;
+            //List<Funcionario> lista = new List<Funcionario>();
+            //foreach (Pessoa p in this.pessoaList)
+            //{
+            //    if (p.GetType() == typeof(Funcionario))
+            //    {
+            //        lista.Add((Funcionario)p);
+            //    }
+            //}
+            //return lista;
+            return pessoaList.Where(p => p.GetType() == typeof(Funcionario)).Select(p => (Funcionario)p).ToList();
         }
 
         // Eliminar Funcionario (Delete)
@@ -385,15 +386,7 @@ namespace _4Source
 
         public Escritura GetEscrituraByNum(int num)
         {
-
-            foreach (Escritura e in EscrituraList)
-            {
-                if (e.Num == num)
-                {
-                    return e;
-                }
-            }
-            return null;
+            return escrituraList.Find(e => e.Num == num);
         }
 
         //Criar Escritura (Create)
