@@ -41,7 +41,7 @@ namespace _4Source
 
         private static bool ValidarNome(string nome)
         {
-            Regex regex = new Regex(@"^([a-zA-Z]\w{3,28})+(\s([a-zA-Z]\w{3,28})+)*$", RegexOptions.IgnoreCase);
+            Regex regex = new Regex(@"^([a-zA-Z]\w{3,14})+(\s([a-zA-Z]\w{1,28})+)*$", RegexOptions.IgnoreCase);
             Match m = regex.Match(nome);
            
             if (!m.Success)
